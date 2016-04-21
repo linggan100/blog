@@ -154,11 +154,11 @@ a:focus {
   padding: 25px 0 15px; }
   .post .post-title {
     margin: 0;
-    color: #2186E6;
+    color: #1C77CE;
     text-align: left;
     font: bold 20px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
-      color: #2186E6; }
+      color: #1C77CE; }
   .post .post-meta {
     padding: 0;
     margin: 15px 0 0;
@@ -1119,7 +1119,7 @@ figure.highlight {
     line-height: 25px;
     font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
     font-size: 15px;
-    color: #2186E6;
+    color: #1C77CE;
     border-bottom: none;
     float: left; }
     .post-nav a.pre {
