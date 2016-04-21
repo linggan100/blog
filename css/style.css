@@ -154,11 +154,11 @@ a:focus {
   padding: 25px 0 15px; }
   .post .post-title {
     margin: 0;
-    color: #555;
+    color: #2186E6;
     text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 20px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
-      color: #555; }
+      color: #2186E6; }
   .post .post-meta {
     padding: 0;
     margin: 15px 0 0;
@@ -216,7 +216,8 @@ a:focus {
     .post .post-content h2 {
       margin: 1.4em 0 1.1em;
       border-bottom: 1px solid #eee;
-      overflow: hidden; }
+      overflow: hidden;
+      font-size: 1.3em; }
     .post .post-content h3 {
       margin: 1.4em 0 1.1em; }
     .post .post-content pre code {
@@ -1118,7 +1119,7 @@ figure.highlight {
     line-height: 25px;
     font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
     font-size: 15px;
-    color: #555;
+    color: #2186E6;
     border-bottom: none;
     float: left; }
     .post-nav a.pre {
