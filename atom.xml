@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>灵感的小窝</title>
-  <subtitle>生活琐碎、前端杂谈、诗情画意、随心笔记</subtitle>
+  <subtitle>生活琐碎、前端杂谈</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
