@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="CSS," />
@@ -52,49 +90,69 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x6765;&amp;#x804A;&amp;#x804A;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x5F53;&amp;#x7136;&amp;#xFF0C;&amp;#x5BF9;&amp;#x4E8E;web&amp;#x6765;&amp;#x8BF4;&amp;#xFF0C;&amp;#x56FE;&amp;#x7247;&amp;#x662F;&amp;#x4E2A;&amp;#x5927;&amp;#x547D;&amp;#x9898;&amp;#xFF0C;&amp;#x59">
+<meta name="description" content="今天来聊聊图片，当然，对于web来说，图片是个大命题，多大呢？要多大有多大~ 这里只谈它是怎么“不听话的”，然后让它乖一点。
+Web的世界里有很多问题，与之对应的基本也有很多情景和对策。那么问题就来了，我们遇到某种情景和找到的对策也都具有偶然性，下面来挑很多人都遇到过的一种情况说说。
+上篇文章我们谈了inline-block的空隙，这篇文依然是聊空隙。通过上篇文，我们可以看出，其实空隙和元素本身并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片以及其他替换元素的空隙问题">
 <meta property="og:url" content="http://yoursite.com/2015/04/18/img-ele-gap/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x6765;&amp;#x804A;&amp;#x804A;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x5F53;&amp;#x7136;&amp;#xFF0C;&amp;#x5BF9;&amp;#x4E8E;web&amp;#x6765;&amp;#x8BF4;&amp;#xFF0C;&amp;#x56FE;&amp;#x7247;&amp;#x662F;&amp;#x4E2A;&amp;#x5927;&amp;#x547D;&amp;#x9898;&amp;#xFF0C;&amp;#x59">
-<meta property="og:image" content="http://yoursite.com/2015/04/18/img-ele-gap/1.png">
-<meta property="og:image" content="http://yoursite.com/2015/04/18/img-ele-gap/2.png">
-<meta property="og:image" content="http://yoursite.com/2015/04/18/img-ele-gap/3.png">
-<meta property="og:image" content="http://yoursite.com/2015/04/18/img-ele-gap/4.png">
+<meta property="og:description" content="今天来聊聊图片，当然，对于web来说，图片是个大命题，多大呢？要多大有多大~ 这里只谈它是怎么“不听话的”，然后让它乖一点。
+Web的世界里有很多问题，与之对应的基本也有很多情景和对策。那么问题就来了，我们遇到某种情景和找到的对策也都具有偶然性，下面来挑很多人都遇到过的一种情况说说。
+上篇文章我们谈了inline-block的空隙，这篇文依然是聊空隙。通过上篇文，我们可以看出，其实空隙和元素本身并">
+<meta property="og:image" content="http://yoursite.com/img-ele-gap/1.png">
+<meta property="og:image" content="http://yoursite.com/img-ele-gap/2.png">
+<meta property="og:image" content="http://yoursite.com/img-ele-gap/3.png">
+<meta property="og:image" content="http://yoursite.com/img-ele-gap/4.png">
 <meta property="og:updated_time" content="2016-02-24T13:54:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片以及其他替换元素的空隙问题">
-<meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x6765;&amp;#x804A;&amp;#x804A;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x5F53;&amp;#x7136;&amp;#xFF0C;&amp;#x5BF9;&amp;#x4E8E;web&amp;#x6765;&amp;#x8BF4;&amp;#xFF0C;&amp;#x56FE;&amp;#x7247;&amp;#x662F;&amp;#x4E2A;&amp;#x5927;&amp;#x547D;&amp;#x9898;&amp;#xFF0C;&amp;#x59">
+<meta name="twitter:description" content="今天来聊聊图片，当然，对于web来说，图片是个大命题，多大呢？要多大有多大~ 这里只谈它是怎么“不听话的”，然后让它乖一点。
+Web的世界里有很多问题，与之对应的基本也有很多情景和对策。那么问题就来了，我们遇到某种情景和找到的对策也都具有偶然性，下面来挑很多人都遇到过的一种情况说说。
+上篇文章我们谈了inline-block的空隙，这篇文依然是聊空隙。通过上篇文，我们可以看出，其实空隙和元素本身并">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 图片以及其他替换元素的空隙问题 | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2015/04/18/img-ele-gap/"/>
+
+
+
+
+
+  <title>图片以及其他替换元素的空隙问题 | 灵感之见</title>
   
 
 
@@ -103,48 +161,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -152,43 +218,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -203,49 +279,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/18/img-ele-gap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                图片以及其他替换元素的空隙问题
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">图片以及其他替换元素的空隙问题</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-18T00:00:00+08:00" content="2015-04-18">
-              2015-04-18
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-18T00:00:00+08:00">
+                2015-04-18
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -253,7 +348,6 @@
 
                 
                 
-
               
             </span>
           
@@ -263,27 +357,34 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>&#x4ECA;&#x5929;&#x6765;&#x804A;&#x804A;&#x56FE;&#x7247;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5BF9;&#x4E8E;web&#x6765;&#x8BF4;&#xFF0C;&#x56FE;&#x7247;&#x662F;&#x4E2A;&#x5927;&#x547D;&#x9898;&#xFF0C;&#x591A;&#x5927;&#x5462;&#xFF1F;&#x8981;&#x591A;&#x5927;&#x6709;&#x591A;&#x5927;~ &#x8FD9;&#x91CC;&#x53EA;&#x8C08;&#x5B83;&#x662F;&#x600E;&#x4E48;&#x201C;&#x4E0D;&#x542C;&#x8BDD;&#x7684;&#x201D;&#xFF0C;&#x7136;&#x540E;&#x8BA9;&#x5B83;&#x4E56;&#x4E00;&#x70B9;&#x3002;</p>
-<p>Web&#x7684;&#x4E16;&#x754C;&#x91CC;&#x6709;&#x5F88;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x57FA;&#x672C;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x60C5;&#x666F;&#x548C;&#x5BF9;&#x7B56;&#x3002;&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x5C31;&#x6765;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x9047;&#x5230;&#x67D0;&#x79CD;&#x60C5;&#x666F;&#x548C;&#x627E;&#x5230;&#x7684;&#x5BF9;&#x7B56;&#x4E5F;&#x90FD;&#x5177;&#x6709;&#x5076;&#x7136;&#x6027;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x6311;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x9047;&#x5230;&#x8FC7;&#x7684;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x8BF4;&#x8BF4;&#x3002;</p>
-<p>&#x4E0A;&#x7BC7;&#x6587;&#x7AE0;&#x6211;&#x4EEC;&#x8C08;&#x4E86;inline-block&#x7684;&#x7A7A;&#x9699;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x4F9D;&#x7136;&#x662F;&#x804A;&#x7A7A;&#x9699;&#x3002;&#x901A;&#x8FC7;&#x4E0A;&#x7BC7;&#x6587;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5176;&#x5B9E;&#x7A7A;&#x9699;&#x548C;&#x5143;&#x7D20;&#x672C;&#x8EAB;&#x5E76;&#x65E0;&#x76F4;&#x63A5;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x771F;&#x7684;&#x5C31;&#x662F;&#x201C;&#x7A7A;&#x9699;&#x201D;&#x3002;&#x4F46;&#x662F;&#x5C0F;&#x5C0F;&#x7684;&#x7A7A;&#x9699;&#x5374;&#x5E38;&#x7ED9;&#x6211;&#x4EEC;&#x5E26;&#x6765;&#x5C0F;&#x5C0F;&#x7684;&#x56F0;&#x60D1;&#x548C;&#x9EBB;&#x70E6;&#x3002;</p>
-<p>&#x573A;&#x666F;&#xFF1A;&#x201C;&#x8FD9;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#x554A;&#xFF0C;&#x6211;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x7ED9;&#x56FE;&#x7247;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x7A7A;&#x9699;&#xFF1F;&#xFF01;&#x7136;&#x540E;&#xFF0C;margin&#x3001;padding&#x3001;border&#x3001;outline&#x2026;&#xFF08;&#x4E03;&#x5927;&#x59D1;&#x516B;&#x5927;&#x59E8;&#xFF09;&#x5168;&#x90FD;&#x53BB;&#x6389;&#x4E86;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x6709;&#xFF1F;&#xFF01;&#x80BF;&#x4E48;&#x529E;&#x5450;&#xFF1F;&#xFF01;&#x201D;</p>
-<p>&#x5BF9;&#x4E8E;&#x4EE5;&#x4E0A;&#x573A;&#x666F;&#x4F60;&#x662F;&#x5426;&#x719F;&#x6089;&#x634F;&#xFF1F;~&#x9887;&#x6709;&#x75C5;&#x6025;&#x4E71;&#x6295;&#x533B;&#xFF0C;reset&#x6389;&#x5B83;&#x5168;&#x5BB6;&#x7684;&#x610F;&#x5473;&#x54C8;&#xFF01;</p>
-<p>&#x518D;&#x7A0D;&#x5FAE;&#x5206;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x6765;&#x8BF4;&#xFF08;&#x5176;&#x5B9E;&#x6CA1;&#x5565;&#x533A;&#x522B;&#xFF09;&#xFF0C;&#x4E00;&#x79CD;&#x662F;img&#x201C;&#x88F8;&#x5954;&#x201D;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x88AB;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x5305;&#x88F9;&#xFF0C;&#x6BD4;&#x5982;div&#x6216;&#x8005;li&#x7B49;&#x3002;</p>
-<p>&#x201C;&#x88F8;&#x5954;&#x201D;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+        <p>今天来聊聊图片，当然，对于web来说，图片是个大命题，多大呢？要多大有多大~ 这里只谈它是怎么“不听话的”，然后让它乖一点。</p>
+<p>Web的世界里有很多问题，与之对应的基本也有很多情景和对策。那么问题就来了，我们遇到某种情景和找到的对策也都具有偶然性，下面来挑很多人都遇到过的一种情况说说。</p>
+<p>上篇文章我们谈了inline-block的空隙，这篇文依然是聊空隙。通过上篇文，我们可以看出，其实空隙和元素本身并无直接关系，因为它真的就是“空隙”。但是小小的空隙却常给我们带来小小的困惑和麻烦。</p>
+<p>场景：“这是怎么回事啊，我什么都没有给图片设置，为什么这里有个空隙？！然后，margin、padding、border、outline…（七大姑八大姨）全都去掉了，为什么还有？！肿么办呐？！”</p>
+<p>对于以上场景你是否熟悉捏？~颇有病急乱投医，reset掉它全家的意味哈！</p>
+<p>再稍微分两种情况来说（其实没啥区别），一种是img“裸奔”，另一种是被其他元素包裹，比如div或者li等。</p>
+<p>“裸奔”代码如下：</p>
 <pre><code>&lt;div class=&quot;img_list&quot;&gt;
     &lt;img src=&quot;images/xiang01.jpg&quot; alt=&quot;&quot;&gt;
     &lt;img src=&quot;images/xiang02.jpg&quot; alt=&quot;&quot;&gt;            
@@ -291,24 +392,24 @@
     &lt;img src=&quot;images/xiang04.jpg&quot; alt=&quot;&quot;&gt;
     &lt;img src=&quot;images/xiang05.jpg&quot; alt=&quot;&quot;&gt;            
 &lt;/div&gt;
-</code></pre><p>&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="/2015/04/18/img-ele-gap/1.png" alt=""></p>
-<p>&#x806A;&#x660E;&#x5982;&#x4F60;&#x5E94;&#x8BE5;&#x770B;&#x51FA;&#x7AEF;&#x502A;&#x4E86;&#x5BF9;&#x5427;&#xFF1F;&#x662F;&#x7684;&#xFF0C;&#x6BCF;&#x5F20;&#x56FE;&#x7247;&#x7684;&#x53F3;&#x8FB9;&#x5982;&#x9884;&#x671F;&#x822C;&#x51FA;&#x73B0;&#x4E86;&#x7A7A;&#x9699;&#xFF0C;&#x4F46;&#x4E8B;&#x5B9E;&#x4EC5;&#x4EC5;&#x5982;&#x6B64;&#x4E48;&#xFF1F;~ &#x6211;&#x4EEC;&#x628A;&#x5BB9;&#x5668;&#x7F29;&#x5C0F;&#x770B;&#x4E00;&#x4E0B; duang~</p>
-<p><img src="/2015/04/18/img-ele-gap/2.png" alt=""></p>
-<p>&#x539F;&#x6765;&#x4E0D;&#x53EA;&#x662F;&#x53F3;&#x8FB9;&#x6709;&#xFF0C;&#x4E0B;&#x9762;&#x4E5F;&#x6709;&#xFF1F;&#x4F3C;&#x66FE;&#x76F8;&#x8BC6;&#x5417;&#xFF1F;</p>
-<p><strong>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;font-size&#xFF1A;0&#xFF1B;</strong></p>
-<p>&#x662F;&#x7684;&#x3002;&#x201C;&#x97F3;&#x70C2;&#x4E0D;&#x5520;&#x55D1;&#x201D;&#x90A3;&#x5BB6;&#x4F19;&#x597D;&#x50CF;&#x4E5F;&#x662F;&#x6709;&#x7A7A;&#x9699;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x628A;&#x5B83;&#x6D88;&#x9664;&#x6389;&#x8BD5;&#x8BD5;&#xFF0C;&#x628A;font-size&#x8BBE;&#x7F6E;&#x4E3A;0&#xFF1B;</p>
-<p><img src="/2015/04/18/img-ele-gap/3.png" alt=""></p>
-<p>&#x545C;&#x547C;&#xFF0C;&#x679C;&#x7136;&#xFF0C;&#x90A3;&#x8FD9;&#x662F;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
-<p><strong>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;float</strong></p>
-<p>&#x7531;&#x4E8E;float&#x80FD;&#x8BA9;&#x5143;&#x7D20;&#x8131;&#x79BB;&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#xFF0C;&#x53EF;&#x8C13;&#x6709;&#x6467;&#x6BC1;&#x4E00;&#x5207;&#x7684;&#x67B6;&#x52BF;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x4E0D;&#x610F;&#x5916;&#xFF0C;&#x4F7F;&#x7528;float&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x4ED6;&#x4EEC;&#x6D88;&#x5931;&#x4E8E;&#x65E0;&#x5F62;&#xFF0C;&#x5982;&#x679C;&#x8D76;&#x4E0A;&#x4F60;&#x5236;&#x4F5C;&#x56FE;&#x6587;&#x6DF7;&#x6392;&#x6587;&#x5B57;&#x73AF;&#x7ED5;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x4E00;&#x4E3E;&#x4E24;&#x5F97;&#x4E86;~</p>
-<p><strong>&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;vertical-align&#xFF1A;XX&#xFF1B;</strong></p>
-<p>&#x6216;&#x8BB8;&#x4F60;&#x4F1A;&#x6709;&#x70B9;&#x5947;&#x602A;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;XX&#xFF1F;&#x6CA1;&#x9519;&#xFF0C;&#x6709;&#x4E9B;&#x6587;&#x7AE0;&#x4E2D;&#x6709;&#x8BF4;&#x8BBE;&#x4E3A;&#x201C;top&#x201D;&#xFF0C;&#x6709;&#x4E9B;&#x6587;&#x7AE0;&#x4E2D;&#x8BF4;&#x7528;&#x201C;bottom&#x201D;&#xFF0C;&#x53EF;&#x662F;&#x5728;css&#x5982;&#x6B64;&#x7684;&#x7CBE;&#x5F69;&#x4E16;&#x754C;&#x91CC;&#xFF0C;&#x4F60;&#x4F1A;&#x5BF9;&#x8FD9;&#x4E48;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7B54;&#x6848;&#x6EE1;&#x8DB3;&#x4E48;&#xFF1F;&#x603B;&#x4F1A;&#x591A;&#x95EE;&#x51E0;&#x4E2A;why&#xFF1F;&#x7136;&#x540E;&#xFF0C;you try try &#x4FBF;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#xFF0C;&#x539F;&#x6765;&#x8BBE;&#x7F6E;top|bottom|middle|text-bottom|text-top&#x7B49;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x6D88;&#x9664;&#x6389;&#x8FD9;&#x4E2A;&#x7A7A;&#x9699;&#x7684;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5F80;&#x5F80;&#x9875;&#x9762;&#x4E2D;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x5B64;&#x7ACB;&#x7684;&#x5B58;&#x5728;&#x7740;&#xFF0C;&#x8BBE;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x5176;&#x4ED6;&#x7684;&#x5185;&#x5BB9;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x7EC6;&#x8BF4;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x5404;&#x4F4D;&#x53BB;&#x4E86;&#x89E3;&#x4E0B;vertical-align&#x65B9;&#x9762;&#x7684;&#x4E1C;&#x4E1C;&#xFF08;&#x4E0B;&#x9762;&#x6709;&#x4E2A;&#x5F20;&#x8001;&#x5E08;&#x7684;&#x94FE;&#x63A5;&#xFF09;&#x3002;&#x81F3;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;vertical-align&#x6709;&#x9664;&#x6389;&#x8FD9;&#x4E2A;&#x7A7A;&#x9699;&#x7684;&#x4F5C;&#x7528;&#x5462;&#xFF1F;</p>
-<p>&#x636E;&#x4E0D;&#x5B8C;&#x5168;&#x8003;&#x5BDF;&#xFF0C;&#x56FE;&#x7247;&#x6587;&#x5B57;&#x7B49;inline&#x5143;&#x7D20;&#x9ED8;&#x8BA4;&#x662F;&#x548C;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x7684;baseline&#x5BF9;&#x9F50;&#x7684;&#xFF0C;&#x800C;baseline&#x53C8;&#x548C;&#x7236;&#x7EA7;&#x5E95;&#x8FB9;&#x6709;&#x4E00;&#x5B9A;&#x8DDD;&#x79BB;&#xFF08;&#x8FD9;&#x4E2A;&#x8DDD;&#x79BB;&#x548C; font-size&#xFF0C;font-family &#x76F8;&#x5173;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x7F6E; vertical-align&#x7684;&#x67D0;&#x4E9B;&#x503C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x8BD5;&#x4E00;&#x4E0B;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x8D1F;&#x767E;&#x5206;&#x6BD4;&#x503C;&#x4E5F;&#x884C;&#x54E6;~</p>
-<p><strong>&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;display&#xFF1A;block&#xFF1B;</strong></p>
-<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x53EF;&#x884C;&#x7684;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8DDF;&#x65B9;&#x6CD5;&#x4E09;&#x548C;&#x65B9;&#x6CD5;&#x4E8C;&#x6709;&#x7740;&#x67D0;&#x79CD;&#x5FAE;&#x5999;&#x7684;&#x8054;&#x7CFB;&#xFF0C;what&#xFF1F;&#x83AB;&#x6025;&#xFF0C;&#x5148;&#x6765;&#x8BF4;&#x8DDF;&#x65B9;&#x6CD5;&#x4E09;&#x6709;&#x4F55;&#x8054;&#x7CFB;&#xFF0C;&#x65B9;&#x6CD5;&#x4E09;&#x91CC;&#xFF0C;&#x626F;&#x5230;&#x4E86;baseline&#xFF0C;&#x4E5F;&#x626F;&#x5230;&#x4E86;vertical-align&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x626F;&#x4E00;&#x626F;&#x5B83;&#x5728;&#x54EA;&#x4E9B;&#x5143;&#x7D20;&#x4E0A;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;block&#x7EA7;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x73A9;&#x513F;&#x4E0D;&#x4E86;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x89C1;&#x5F20;&#x8001;&#x5E08;&#x725B;&#x5976;/&#x679C;&#x51BB;/&#x575A;&#x679C;&#xFF0C;&#x6545;&#x800C;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;block&#xFF0C;&#x5B83;&#x5C31;&#x5E72;&#x6389;&#x4E86;&#x7A7A;&#x9699;&#x3002;&#x8DDF;&#x65B9;&#x6CD5;&#x4E8C;&#x7684;&#x5173;&#x7CFB;&#x662F;&#xFF0C;&#x4E0D;&#x77E5;&#x5927;&#x5BB6;&#x662F;&#x5426;&#x6CE8;&#x610F;&#x5230;&#x884C;&#x7EA7;&#x5143;&#x7D20;&#x5728;&#x8BBE;&#x7F6E;float&#x4E4B;&#x540E;&#xFF0C;&#x5177;&#x5907;&#x4E86;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x6240;&#x5177;&#x5907;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6BD4;&#x5982;&#x8BBE;&#x7F6E;&#x5BBD;&#x9AD8;&#xFF0C;&#x5185;&#x5916;&#x8FB9;&#x8DDD;&#x7B49;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6D6E;&#x52A8;&#xFF0C;&#x6548;&#x679C;&#x8DDF;&#x6B64;&#x6CD5;&#x7C7B;&#x4F3C;&#x3002; &#x5F53;&#x7136;&#xFF0C;&#x9274;&#x4E8E;block&#x4E4B;&#x540E;&#x4F1A;&#x6539;&#x53D8;&#x5B83;&#x672C;&#x8EAB;inline&#x7684;&#x8868;&#x73B0;&#xFF0C;&#x6709;&#x4E9B;&#x670B;&#x53CB;&#x53EF;&#x80FD;&#x4F1A;&#x8003;&#x8651;inline-block&#xFF0C;but&#x8FD9;&#x6837;&#x662F;&#x4E0D;&#x51D1;&#x6548;&#x7684;&#xFF0C;&#x51B5;&#x4E14;&#xFF0C;&#x5B83;&#x672C;&#x8EAB;&#x5C31;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<p><strong>&#x65B9;&#x6CD5;&#x4E94;&#xFF1A;&#x4E3A;&#x7236;&#x5BB9;&#x5668;&#x8BBE;&#x7F6E;&#x9AD8;&#x5EA6;</strong></p>
-<p>&#x73B0;&#x5728;&#x624D;&#x8BF4;&#x8D77;&#x8FD9;&#x4E2A;&#x770B;&#x8D77;&#x6765;&#x5E73;&#x5E38;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4E0D;&#x662F;&#x6211;&#x4E0D;&#x591F;&#x5766;&#x767D;&#xFF0C;&#x56E0;&#x4E3A;&#x5F88;&#x591A;&#x4EBA;&#x53EF;&#x80FD;&#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x9047;&#x5230;&#x8FC7;&#x56FE;&#x7247;&#x7A7A;&#x9699;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F1A;&#x89C9;&#x5F97;&#x8FD9;&#x662F;&#x4E2A;&#x633A;&#x96BE;&#x9047;&#x5230;&#x7684;bug&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x7136;&#xFF0C;&#x6CA1;&#x6709;&#x9047;&#x5230;&#x53F3;&#x8FB9;&#x7684;&#x7A7A;&#x9699;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4E0D;&#x662F;&#x88F8;&#x5954;&#xFF0C;&#x8B6C;&#x5982;&#x8FD9;&#x6837;&#xFF1A;</p>
+</code></pre><p>实现如下：</p>
+<p><img src="img-ele-gap/1.png" alt=""></p>
+<p>聪明如你应该看出端倪了对吧？是的，每张图片的右边如预期般出现了空隙，但事实仅仅如此么？~ 我们把容器缩小看一下 duang~</p>
+<p><img src="img-ele-gap/2.png" alt=""></p>
+<p>原来不只是右边有，下面也有？似曾相识吗？</p>
+<p><strong>方法一：font-size：0；</strong></p>
+<p>是的。“音烂不唠嗑”那家伙好像也是有空隙，那我们用其中一种方法把它消除掉试试，把font-size设置为0；</p>
+<p><img src="img-ele-gap/3.png" alt=""></p>
+<p>呜呼，果然，那这是第一种方法。</p>
+<p><strong>方法二：float</strong></p>
+<p>由于float能让元素脱离正常文档流，可谓有摧毁一切的架势，这里也不意外，使用float就可以使他们消失于无形，如果赶上你制作图文混排文字环绕的效果，那就是一举两得了~</p>
+<p><strong>方法三：vertical-align：XX；</strong></p>
+<p>或许你会有点奇怪，为什么是XX？没错，有些文章中有说设为“top”，有些文章中说用“bottom”，可是在css如此的精彩世界里，你会对这么一个简单的答案满足么？总会多问几个why？然后，you try try 便会发现，，原来设置top|bottom|middle|text-bottom|text-top等都是可以消除掉这个空隙的，但需要注意，往往页面中不是一个图片孤立的存在着，设定不同的值可能会对其他的内容产生不同的影响，这里不细说，具体请各位去了解下vertical-align方面的东东（下面有个张老师的链接）。至于为什么vertical-align有除掉这个空隙的作用呢？</p>
+<p>据不完全考察，图片文字等inline元素默认是和父级元素的baseline对齐的，而baseline又和父级底边有一定距离（这个距离和 font-size，font-family 相关），所以设置 vertical-align的某些值可以避免这种情况出现。你可以试一下设置一个具体的负百分比值也行哦~</p>
+<p><strong>方法四：display：block；</strong></p>
+<p>为什么这种方法是可行的呢？其实这个方法跟方法三和方法二有着某种微妙的联系，what？莫急，先来说跟方法三有何联系，方法三里，扯到了baseline，也扯到了vertical-align，但没有扯一扯它在哪些元素上起作用，是的，对于block级的元素，它们是玩儿不了的，也可见张老师牛奶/果冻/坚果，故而，设置为block，它就干掉了空隙。跟方法二的关系是，不知大家是否注意到行级元素在设置float之后，具备了块级元素所具备的功能，比如设置宽高，内外边距等，所以，浮动，效果跟此法类似。 当然，鉴于block之后会改变它本身inline的表现，有些朋友可能会考虑inline-block，but这样是不凑效的，况且，它本身就存在这样的问题。</p>
+<p><strong>方法五：为父容器设置高度</strong></p>
+<p>现在才说起这个看起来平常的方法可不是我不够坦白，因为很多人可能从来没有遇到过图片空隙这样的问题，会觉得这是个挺难遇到的bug，其实不然，没有遇到右边的空隙是因为，只要它不是裸奔，譬如这样：</p>
 <pre><code>&lt;ul class=&quot;img_list&quot;&gt;
     &lt;li&gt;&lt;img src=&quot;images/xiang01.jpg&quot; alt=&quot;&quot;&gt;
         &lt;/li&gt;
@@ -321,29 +422,66 @@
     &lt;li&gt;&lt;img src=&quot;images/xiang05.jpg&quot; alt=&quot;&quot;&gt;
         &lt;/li&gt;
 &lt;/ul&gt;
-</code></pre><p>img&#x88AB;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5305;&#x88F9;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;li&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x522B;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x53F3;&#x8FB9;&#x7684;&#x7A7A;&#x9699;&#x5C31;&#x6CA1;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x5B58;&#x5728;&#x4E8E;img&#x4E4B;&#x95F4;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x5C42;&#x5BB9;&#x5668;&#x5C06;&#x5176;&#x9694;&#x5F00;&#x3002;&#x5F53;&#x7136;&#x4E86;&#xFF0C;&#x53EF;&#x80FD;&#x8FD8;&#x4F1A;&#x56E0;&#x4E3A;&#x8BBE;&#x7F6E;&#x4E86;margin&#x503C;&#xFF0C;&#x4ECE;&#x89C6;&#x89C9;&#x4E0A;&#x76F4;&#x63A5;&#x5FFD;&#x7565;&#x4E86;&#x7A7A;&#x9699;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5728;&#x8BA8;&#x8BBA;&#x4E4B;&#x5217;&#x54C8;~ &#x6CA1;&#x6709;&#x9047;&#x5230;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x7A7A;&#x9699;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x65E0;&#x610F;&#x95F4;&#x4F7F;&#x7528;&#x4E86;&#x80FD;&#x591F;&#x6D88;&#x9664;&#x6389;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x5E73;&#x5E38;&#x548C;&#x81EA;&#x7136;&#x7684;&#x5C31;&#x662F;&#x8BBE;&#x7F6E;&#x7236;&#x5BB9;&#x5668;&#x9AD8;&#x5EA6;&#x4E86;&#x3002;</p>
-<p><strong>&#x65B9;&#x6CD5;&#x516D;&#xFF1A;&#x65E0;&#x7F1D;&#x6392;&#x5217;</strong></p>
-<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x548C;&#x6D88;&#x9664;inline-block&#x7A7A;&#x9699;&#x540C;&#x7406;&#xFF0C;&#x8BA9;&#x5B83;&#x4EEC;&#x7D27;&#x5BC6;&#x6392;&#x5217;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x8FC7;&#x540C;&#x6837;&#xFF0C;&#x4ECE;&#x4EE3;&#x7801;&#x7684;&#x683C;&#x5F0F;&#x4E0A;&#x6765;&#x8BF4;&#x4E0D;&#x5B9C;&#x91C7;&#x53D6;&#x3002;</p>
-<p>&#x8BA8;&#x8BBA;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x8C8C;&#x4F3C;&#x8FD9;&#x79CD;&#x73B0;&#x8C61;&#x662F;img&#x6240;&#x72EC;&#x6709;&#x7684;&#xFF0C;&#x662F;&#x4E48;&#xFF1F;&#x806A;&#x660E;&#x5982;&#x4F60;&#x53EF;&#x80FD;&#x53C8;&#x731C;&#x5BF9;&#xFF0C;no&#xFF01;~ &#x53EF;&#x80FD;&#x5927;&#x5BB6;&#x90FD;&#x77E5;&#x9053;html&#x7684;&#x5143;&#x7D20;&#x4E2D;&#x6709;&#x4E00;&#x7C7B;&#x5143;&#x7D20;&#x53EB;&#x505A;&#x66FF;&#x6362;&#x5143;&#x7D20;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x66FF;&#x6362;&#x5143;&#x7D20;&#x5462;&#xFF0C;&#x54B1;&#x62FF;&#x89C4;&#x8303;&#x8BF4;&#x8BF4;&#x4E8B;&#x513F;&#x5427;&#xFF1B;&#x4EE5;img&#x4E3A;&#x4F8B;&#xFF1A;</p>
-<p>The IMG element embeds an image in the current document at the location of the element&#x2019;s definition. The IMG element has no content; it is usually replaced inline by the image designated by the src attribute&#x3002;</p>
-<p>&#x8FD9;&#x662F;&#x89C4;&#x8303;&#x91CC;&#x5BF9;img&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x6765;img&#x5143;&#x7D20;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#xFF0C;&#x5B83;&#x662F;&#x628A;&#x6765;&#x81EA;src&#x5C5E;&#x6027;&#x503C;&#x7684;&#x90A3;&#x4E2A;&#x56FE;&#x7247;&#x5D4C;&#x5165;&#x9875;&#x9762;&#x4E2D;&#x3002;</p>
-<p>&#x8BF4;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x60F3;&#x8D77;&#x8FD8;&#x6709;&#x4E0D;&#x5C11;&#x5143;&#x7D20;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1F;&#x6BD4;&#x5982;input&#x3001;textarea&#x3001;select&#x7B49;&#x7B49;&#xFF1F;</p>
-<p>&#x662F;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x540C;&#x6837;&#x5B58;&#x5728;&#x7740;&#x7F1D;&#x9699;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF0C;&#x770B;&#x56FE;</p>
-<p><img src="/2015/04/18/img-ele-gap/4.png" alt=""></p>
-<p>&#x662F;&#x5426;&#x6709;&#x79D2;&#x61C2;&#x7684;&#x611F;&#x89C9;&#xFF1F;</p>
-<p>&#x597D;&#x5427;&#xFF0C;&#x626F;&#x4E86;&#x4E0D;&#x5C11;&#x4E86;&#xFF0C;&#x91CC;&#x9762;&#x63D0;&#x5230;&#x4E86;&#x597D;&#x51E0;&#x4E2A;&#x4E1C;&#x4E1C;&#xFF0C;&#x6CA1;&#x6709;&#x7EC6;&#x8C08;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x6311;&#x51FA;&#x6765;&#x90FD;&#x591F;&#x559D;&#x4E00;&#x58F6;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4E0D;&#x7EC6;&#x804A;&#x4E86;&#xFF0C;&#x91CD;&#x70B9;&#x8FD8;&#x662F;&#x5E2E;&#x52A9;&#x6709;&#x9047;&#x5230;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x7684;&#x670B;&#x53CB;&#x627E;&#x5230;&#x8F83;&#x5408;&#x9002;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x3002;&#x6587;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x4E0D;&#x5F53;&#x4E4B;&#x5904;&#xFF0C;&#x8FD8;&#x671B;&#x6307;&#x6559;&#x3002;</p>
-<p>&#x6B22;&#x8FCE;&#x6765;&#x8FD9;&#x91CC;&#x4EA4;&#x6D41;&#xFF1A;152128548<br>&#x6B22;&#x8FCE;&#x5173;&#x6CE8;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#xFF1A;&#x524D;&#x7AEF;&#x5468;&#x672B; </p>
+</code></pre><p>img被一个容器包裹起来，这里是li，还可以是别的，那么右边的空隙就没了，因为它是存在于img之间，这里有一层容器将其隔开。当然了，可能还会因为设置了margin值，从视觉上直接忽略了空隙的存在，不在讨论之列哈~ 没有遇到过下面的空隙，可能是无意间使用了能够消除掉它的方法，最平常和自然的就是设置父容器高度了。</p>
+<p><strong>方法六：无缝排列</strong></p>
+<p>这个方法和消除inline-block空隙同理，让它们紧密排列即可，不过同样，从代码的格式上来说不宜采取。</p>
+<p>讨论了这么多，貌似这种现象是img所独有的，是么？聪明如你可能又猜对，no！~ 可能大家都知道html的元素中有一类元素叫做替换元素，什么是替换元素呢，咱拿规范说说事儿吧；以img为例：</p>
+<p>The IMG element embeds an image in the current document at the location of the element’s definition. The IMG element has no content; it is usually replaced inline by the image designated by the src attribute。</p>
+<p>这是规范里对img的描述，简单说来img元素没有内容，它是把来自src属性值的那个图片嵌入页面中。</p>
+<p>说到这里，是不是想起还有不少元素是这样的？比如input、textarea、select等等？</p>
+<p>是的，它们同样存在着缝隙问题，为什么呢，看图</p>
+<p><img src="img-ele-gap/4.png" alt=""></p>
+<p>是否有秒懂的感觉？</p>
+<p>好吧，扯了不少了，里面提到了好几个东东，没有细谈，因为每一个挑出来都够喝一壶的，所以，不细聊了，重点还是帮助有遇到类似问题的朋友找到较合适的解决方法。文中可能有不当之处，还望指教。</p>
+<p>欢迎来这里交流：152128548<br>欢迎关注微信公众号：前端周末 </p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -355,6 +493,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -369,6 +509,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -377,26 +521,29 @@
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -409,7 +556,7 @@
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -427,49 +574,53 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -491,27 +642,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -520,168 +665,162 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
+
       
 
     </div>
@@ -702,237 +841,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -940,24 +894,124 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

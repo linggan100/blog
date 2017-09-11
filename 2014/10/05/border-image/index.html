@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="CSS," />
@@ -52,51 +90,68 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="&amp;#x8BDD;&amp;#x8BF4;&amp;#x5927;&amp;#x5BB6;&amp;#x4E0D;&amp;#x7BA1;&amp;#x7528;&amp;#x8FC7;&amp;#x6CA1;&amp;#x7528;&amp;#x8FC7;&amp;#xFF0C;&amp;#x5BF9;border-image&amp;#x5E94;&amp;#x8BE5;&amp;#x90FD;&amp;#x6709;&amp;#x6240;&amp;#x8033;&amp;#x95FB;&amp;#xFF0C;&amp;#x76F8;&amp;#x6BD4;css2">
+<meta name="description" content="话说大家不管用过没用过，对border-image应该都有所耳闻，相比css2.1，css3的新东西那么多，为什么要挑这个来说呢，因为我个人经验来说，这个相对来说较难理解。那它到底是什么，又怎么用呢，有哪些需要注意的地方？这方面也有书籍和文章讲，如果你看过，却觉得没搞懂，也没弄明白怎么回事，那么希望这篇文章可以帮到你！我不会按常理出牌~
+首先要跟大家说的是，不要先入为主的走入一个死胡同，不然很难走">
 <meta property="og:type" content="article">
 <meta property="og:title" content="轻松入门css3之border-image">
 <meta property="og:url" content="http://yoursite.com/2014/10/05/border-image/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="&amp;#x8BDD;&amp;#x8BF4;&amp;#x5927;&amp;#x5BB6;&amp;#x4E0D;&amp;#x7BA1;&amp;#x7528;&amp;#x8FC7;&amp;#x6CA1;&amp;#x7528;&amp;#x8FC7;&amp;#xFF0C;&amp;#x5BF9;border-image&amp;#x5E94;&amp;#x8BE5;&amp;#x90FD;&amp;#x6709;&amp;#x6240;&amp;#x8033;&amp;#x95FB;&amp;#xFF0C;&amp;#x76F8;&amp;#x6BD4;css2">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/1.png">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/2.png">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/3.png">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/4.png">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/5.png">
-<meta property="og:image" content="http://yoursite.com/2014/10/05/border-image/6.png">
+<meta property="og:description" content="话说大家不管用过没用过，对border-image应该都有所耳闻，相比css2.1，css3的新东西那么多，为什么要挑这个来说呢，因为我个人经验来说，这个相对来说较难理解。那它到底是什么，又怎么用呢，有哪些需要注意的地方？这方面也有书籍和文章讲，如果你看过，却觉得没搞懂，也没弄明白怎么回事，那么希望这篇文章可以帮到你！我不会按常理出牌~
+首先要跟大家说的是，不要先入为主的走入一个死胡同，不然很难走">
+<meta property="og:image" content="http://yoursite.com/border-image/1.png">
+<meta property="og:image" content="http://yoursite.com/border-image/2.png">
+<meta property="og:image" content="http://yoursite.com/border-image/3.png">
+<meta property="og:image" content="http://yoursite.com/border-image/4.png">
+<meta property="og:image" content="http://yoursite.com/border-image/5.png">
+<meta property="og:image" content="http://yoursite.com/border-image/6.png">
 <meta property="og:updated_time" content="2016-02-24T13:48:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="轻松入门css3之border-image">
-<meta name="twitter:description" content="&amp;#x8BDD;&amp;#x8BF4;&amp;#x5927;&amp;#x5BB6;&amp;#x4E0D;&amp;#x7BA1;&amp;#x7528;&amp;#x8FC7;&amp;#x6CA1;&amp;#x7528;&amp;#x8FC7;&amp;#xFF0C;&amp;#x5BF9;border-image&amp;#x5E94;&amp;#x8BE5;&amp;#x90FD;&amp;#x6709;&amp;#x6240;&amp;#x8033;&amp;#x95FB;&amp;#xFF0C;&amp;#x76F8;&amp;#x6BD4;css2">
+<meta name="twitter:description" content="话说大家不管用过没用过，对border-image应该都有所耳闻，相比css2.1，css3的新东西那么多，为什么要挑这个来说呢，因为我个人经验来说，这个相对来说较难理解。那它到底是什么，又怎么用呢，有哪些需要注意的地方？这方面也有书籍和文章讲，如果你看过，却觉得没搞懂，也没弄明白怎么回事，那么希望这篇文章可以帮到你！我不会按常理出牌~
+首先要跟大家说的是，不要先入为主的走入一个死胡同，不然很难走">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 轻松入门css3之border-image | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2014/10/05/border-image/"/>
+
+
+
+
+
+  <title>轻松入门css3之border-image | 灵感之见</title>
   
 
 
@@ -105,48 +160,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -154,43 +217,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -205,49 +278,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/10/05/border-image/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                轻松入门css3之border-image
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">轻松入门css3之border-image</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-10-05T00:00:00+08:00" content="2014-10-05">
-              2014-10-05
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-05T00:00:00+08:00">
+                2014-10-05
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -255,7 +347,6 @@
 
                 
                 
-
               
             </span>
           
@@ -265,78 +356,122 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>&#x8BDD;&#x8BF4;&#x5927;&#x5BB6;&#x4E0D;&#x7BA1;&#x7528;&#x8FC7;&#x6CA1;&#x7528;&#x8FC7;&#xFF0C;&#x5BF9;border-image&#x5E94;&#x8BE5;&#x90FD;&#x6709;&#x6240;&#x8033;&#x95FB;&#xFF0C;&#x76F8;&#x6BD4;css2.1&#xFF0C;css3&#x7684;&#x65B0;&#x4E1C;&#x897F;&#x90A3;&#x4E48;&#x591A;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6311;&#x8FD9;&#x4E2A;&#x6765;&#x8BF4;&#x5462;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4E2A;&#x4EBA;&#x7ECF;&#x9A8C;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x8F83;&#x96BE;&#x7406;&#x89E3;&#x3002;&#x90A3;&#x5B83;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x53C8;&#x600E;&#x4E48;&#x7528;&#x5462;&#xFF0C;&#x6709;&#x54EA;&#x4E9B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF1F;&#x8FD9;&#x65B9;&#x9762;&#x4E5F;&#x6709;&#x4E66;&#x7C4D;&#x548C;&#x6587;&#x7AE0;&#x8BB2;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x770B;&#x8FC7;&#xFF0C;&#x5374;&#x89C9;&#x5F97;&#x6CA1;&#x641E;&#x61C2;&#xFF0C;&#x4E5F;&#x6CA1;&#x5F04;&#x660E;&#x767D;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF0C;&#x90A3;&#x4E48;&#x5E0C;&#x671B;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x53EF;&#x4EE5;&#x5E2E;&#x5230;&#x4F60;&#xFF01;&#x6211;&#x4E0D;&#x4F1A;&#x6309;&#x5E38;&#x7406;&#x51FA;&#x724C;~</p>
-<p>&#x9996;&#x5148;&#x8981;&#x8DDF;&#x5927;&#x5BB6;&#x8BF4;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x5148;&#x5165;&#x4E3A;&#x4E3B;&#x7684;&#x8D70;&#x5165;&#x4E00;&#x4E2A;&#x6B7B;&#x80E1;&#x540C;&#xFF0C;&#x4E0D;&#x7136;&#x5F88;&#x96BE;&#x8D70;&#x51FA;&#x6765;&#xFF0C;&#x56FE;&#x7247;&#x8FB9;&#x6846;&#xFF0C;&#x8DDF;&#x4F7F;&#x7528;&#x7EBF;&#x578B;&#x8FB9;&#x6846;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A;&#x601D;&#x7EF4;&#x8981;&#x8F6C;&#x6362;&#x8FC7;&#x6765;&#xFF0C;&#x4F7F;&#x7528;&#x7EBF;&#x578B;&#x8FB9;&#x6846;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x201C;&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;&#x201D;&#x3001;&#x201C;&#x7C7B;&#x578B;&#x201D;&#x548C;&#x201C;&#x989C;&#x8272;&#x201D;&#x3002;&#x90A3;&#x4E48;&#x8FB9;&#x6846;&#x5C31;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x4F7F;&#x7528;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x4E0D;&#x80FD;&#x7167;&#x642C;&#xFF0C;&#x5B83;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x5957;&#x89C4;&#x5219;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8BF7;&#x6E05;&#x7A7A;&#x4F60;&#x7684;&#x8111;&#x888B;&#xFF0C;&#x5FD8;&#x5374;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x5B66;&#x4E60;&#xFF08;&#x8FD9;&#x8BDD;&#x597D;&#x50CF;&#x5728;&#x6B66;&#x4FA0;&#x7247;&#x91CC;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#xFF09;~</p>
-<p>&#x4F60;&#x9700;&#x8981;&#x638C;&#x63E1;&#x7684;&#x8981;&#x9886;&#x53EA;&#x6709;&#x4E24;&#x70B9;&#xFF1A;</p>
-<p>&#x4E00;&#x3001;&#x56FE;&#x7247;&#x88C1;&#x526A;&#x7684;&#x65B9;&#x5F0F;<br>&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x88C1;&#x526A;&#xFF0C;&#x88C1;&#x526A;&#x5B8C;&#x4E4B;&#x540E;&#x505A;&#x4E86;&#x54EA;&#x4E9B;&#x52A8;&#x4F5C;&#xFF1F;</p>
-<h2 id="&#x5148;&#x6765;&#x8BF4;&#x7B2C;&#x4E00;&#x70B9;"><a href="#&#x5148;&#x6765;&#x8BF4;&#x7B2C;&#x4E00;&#x70B9;" class="headerlink" title="&#x5148;&#x6765;&#x8BF4;&#x7B2C;&#x4E00;&#x70B9;"></a>&#x5148;&#x6765;&#x8BF4;&#x7B2C;&#x4E00;&#x70B9;</h2><p>&#x4E0D;&#x8981;&#x89C9;&#x5F97;&#x8FD9;&#x662F;&#x6709;&#x591A;&#x9EBB;&#x70E6;&#xFF0C;&#x591A;&#x6DF1;&#x5965;&#xFF0C;&#x5927;&#x5BB6;&#x90FD;&#x73A9;&#x513F;&#x8FC7;&#x4E00;&#x79CD;&#x667A;&#x529B;&#x6E38;&#x620F;&#x5427;&#xFF0C;&#x53EB;&#x505A;&#x201C;&#x4F60;&#x80FD;&#x7528;&#x51E0;&#x5200;&#x628A;&#x4E00;&#x4E2A;&#x6B63;&#x65B9;&#x5F62;&#x5207;&#x6210;&#x4E5D;&#x5757;&#xFF1F;&#x201D;&#x6216;&#x8005;&#x8BF4;&#x201C;&#x53EA;&#x7528;&#x51E0;&#x5200;&#x4F60;&#x80FD;&#x628A;&#x4EC0;&#x4E48;&#x5207;&#x6210;&#x591A;&#x5C11;&#x5757;&#x201D;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x56FE;&#x7247;&#x88C1;&#x526A;&#x662F;&#x4E00;&#x4E2A;&#x9053;&#x7406;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x77AC;&#x95F4;&#x89C9;&#x5F97;&#x4EB2;&#x5207;&#x5F88;&#x591A;&#xFF1F;&#x5B83;&#x5C31;&#x662F;&#x6A2A;&#x7AD6;&#x5404;&#x4E24;&#x5200;&#x6765;&#x628A;&#x4F60;&#x6240;&#x9009;&#x53D6;&#x7684;&#x56FE;&#x7247;&#x5207;&#x6210;&#x4E5D;&#x4EFD;&#xFF0C;&#x5C31;&#x662F;&#x5F88;&#x591A;&#x8D44;&#x6599;&#x91CC;&#x8BF4;&#x7684;&#x201C;&#x4E5D;&#x5BAB;&#x683C;&#x201D;&#x6A21;&#x6837;&#xFF0C;&#x662F;&#x600E;&#x4E48;&#x5207;&#x7684;&#x5462;&#xFF1F;&#x6CE8;&#x610F;&#xFF0C;&#x5207;&#x7684;&#x6B21;&#x6570;&#x662F;4&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x86EE;&#x719F;&#x6089;&#x7684;&#x5427;&#xFF0C;margin&#x3001;padding&#x3001;border&#x7B49;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x6709;&#x56DB;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x89C4;&#x5219;&#x5427;&#xFF0C;&#x6B64;&#x5904;&#x4E5F;&#x4E00;&#x6837;&#xFF0C;&#x9075;&#x5FAA;&#x4E0A;&#x3001;&#x53F3;&#x3001;&#x4E0B;&#x3001;&#x5DE6;&#xFF0C;&#x90A3;&#x662F;&#x600E;&#x4E48;&#x6D4B;&#x91CF;&#x7684;&#x5462;&#xFF1F;&#x4F60;&#x5E94;&#x8BE5;&#x731C;&#x5230;&#x4E86;&#xFF0C;&#x662F;&#x4ECE;&#x8FB9;&#x7F18;&#x5411;&#x91CC;&#x6D4B;&#x91CF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0A;&#x8FB9;&#x7F18;&#x5411;&#x4E0B;&#xFF0C;&#x53F3;&#x8FB9;&#x7F18;&#x5411;&#x5DE6;&#xFF0C;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x3002;&#x50CF;&#x5176;&#x4ED6;&#x89C4;&#x5219;&#x4E00;&#x6837;&#xFF0C;&#x4F60;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x4E4B;&#xFF0C;&#x5199;&#x4E00;&#x4E2A;&#xFF0C;&#x4E24;&#x4E2A;&#x3001;&#x4E09;&#x4E2A;&#x90FD;&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x4F1A;&#x5728;&#x4E0B;&#x9762;&#x5949;&#x4E0A;&#xFF01;~</p>
-<h2 id="&#x518D;&#x8BF4;&#x7B2C;&#x4E8C;&#x70B9;"><a href="#&#x518D;&#x8BF4;&#x7B2C;&#x4E8C;&#x70B9;" class="headerlink" title="&#x518D;&#x8BF4;&#x7B2C;&#x4E8C;&#x70B9;"></a>&#x518D;&#x8BF4;&#x7B2C;&#x4E8C;&#x70B9;</h2><p>&#x6216;&#x8BB8;&#x4F1A;&#x6709;&#x4EBA;&#x8BF4;&#xFF0C;&#x6211;&#x770B;&#x4F60;&#x8BF4;&#x600E;&#x4E48;&#x6D4B;&#x91CF;&#xFF0C;&#x600E;&#x4E48;&#x88C1;&#x526A;&#xFF0C;&#x5934;&#x90FD;&#x5927;&#x4E86;&#xFF0C;&#x5230;&#x5E95;&#x662F;&#x8981;&#x5E72;&#x561B;&#x554A;&#xFF1F;&#x6211;&#x5C31;&#x7528;&#x4E2A;&#x8FB9;&#x6846;&#x8FD8;&#x641E;&#x8FD9;&#x4E48;&#x590D;&#x6742;&#x3002;&#x76F8;&#x4FE1;&#x6211;&#xFF0C;&#x5E76;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x8BF4;&#x660E;&#x88C1;&#x526A;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x5E72;&#x561B;&#xFF0C;&#x6765;&#x62FF;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;w3c&#x6559;&#x7A0B;&#x7F51;&#x7684;&#x56FE;&#x7247;</p>
-<p><img src="/2014/10/05/border-image/1.png" alt=""></p>
-<p>&#x5148;&#x8FD9;&#x4E48;&#x7C97;&#x7CD9;&#x7684;&#x7ED9;&#x5927;&#x5BB6;&#x753B;&#x4E00;&#x5E45;&#xFF0C;&#x5DF2;&#x7ECF;&#x5207;&#x6210;&#x4E5D;&#x5757;&#x4E86;&#x5BF9;&#x5427;&#xFF0C;&#x90A3;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8981;&#x5E72;&#x561B;&#x5462;&#xFF0C;&#x8981;&#x53D1;&#x529F;&#x4E86;&#xFF01;&#x5475;&#x5475;&#xFF0C;&#x5F00;&#x73A9;&#x7B11;&#x3002;</p>
-<p>&#x56FE;&#x7247;&#x8FB9;&#x6846;&#x7684;&#x7ED8;&#x5236;&#x8FDB;&#x5165;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF0C;&#x4E5F;&#x662F;&#x6700;&#x5173;&#x952E;&#x7684;&#x4E00;&#x6B65;&#xFF1A;</p>
-<p>&#x5207;&#x8BB0;&#xFF0C;&#x56DB;&#x4E2A;&#x89D2;&#x662F;&#x4E0D;&#x52A8;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5F53;&#x4F60;&#x5E94;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x56FE;&#x7247;&#x4F5C;&#x4E3A;&#x8FB9;&#x6846;&#xFF0C;&#x56DB;&#x4E2A;&#x89D2;&#x8FD8;&#x662F;&#x7EA2;&#x8272;&#x83F1;&#x5F62;&#xFF0C;&#x4F60;&#x4E5F;&#x63A7;&#x5236;&#x4E0D;&#x4E86;&#x5B83;&#xFF08;&#x9664;&#x4E86;&#x5C3A;&#x5BF8;&#xFF09;&#x3002;&#x90A3;&#x4E2D;&#x95F4;&#x5462;&#xFF0C;&#x4E2D;&#x95F4;&#x4E5F;&#x662F;&#x4E0D;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x5927;&#x6F20;&#x54E5;&#x7684;&#x6587;&#x7AE0;&#x91CC;&#x628A;&#x5B83;&#x79F0;&#x4E3A;&#x201C;&#x76F2;&#x533A;&#x201D;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x62FF;&#x6389;&#xFF01;&#x5C31;&#x53EA;&#x5269;&#x56DB;&#x4E2A;&#x9EC4;&#x8272;&#x83F1;&#x5F62;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x6B63;&#x7ECF;&#x7684;&#x8BB2;&#x4E00;&#x4E0B;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x3002;&#x6211;&#x505A;&#x4E00;&#x4E2A;&#x5F62;&#x8C61;&#x7684;&#x6BD4;&#x55BB;&#x5427;&#xFF0C;&#x7ED9;&#x5143;&#x7D20;&#x52A0;&#x4E0A;&#x8FD9;&#x4E48;&#x4E00;&#x4E2A;&#x8FB9;&#x6846;&#xFF0C;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x627E;&#x4E86;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x533A;&#x57DF;&#x628A;&#x4E2D;&#x95F4;&#x638F;&#x7A7A;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5411;&#x56DB;&#x5468;&#x6491;&#x5F00;&#xFF01;</p>
-<p>&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x683C;&#x5F0F;&#xFF1A;<br>border-image:url(&#x56FE;&#x7247;&#x8DEF;&#x5F84;)    &#x88C1;&#x526A;&#x5C3A;&#x5BF8;   &#x88C1;&#x526A;&#x8FC7;&#x540E;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#xFF08;&#x5C31;&#x4E0A;&#x56FE;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x56DB;&#x4E2A;&#x9EC4;&#x8272;&#x83F1;&#x5F62;&#x7684;&#x6392;&#x5217;&#x65B9;&#x5F0F;&#xFF09;</p>
-<p>&#x6392;&#x5217;&#x65B9;&#x5F0F;&#x6709;&#x4E09;&#x79CD;round&#x3001;repeat&#x3001;stretch&#x5206;&#x522B;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x662F;&#x4EC0;&#x4E48;&#x6548;&#x679C;</p>
-<p>round&#xFF08;&#x5E73;&#x94FA;&#xFF09;</p>
+        <p>话说大家不管用过没用过，对border-image应该都有所耳闻，相比css2.1，css3的新东西那么多，为什么要挑这个来说呢，因为我个人经验来说，这个相对来说较难理解。那它到底是什么，又怎么用呢，有哪些需要注意的地方？这方面也有书籍和文章讲，如果你看过，却觉得没搞懂，也没弄明白怎么回事，那么希望这篇文章可以帮到你！我不会按常理出牌~</p>
+<p>首先要跟大家说的是，不要先入为主的走入一个死胡同，不然很难走出来，图片边框，跟使用线型边框的时候不一样，这个思维要转换过来，使用线型边框的时候，你只需要设置“边框宽度”、“类型”和“颜色”。那么边框就出来了，使用图片的时候你可不能照搬，它有自己的一套规则，所以，请清空你的脑袋，忘却才能更好的学习（这话好像在武侠片里比较常用）~</p>
+<p>你需要掌握的要领只有两点：</p>
+<p>一、图片裁剪的方式<br>二、为什么要裁剪，裁剪完之后做了哪些动作？</p>
+<h2 id="先来说第一点"><a href="#先来说第一点" class="headerlink" title="先来说第一点"></a>先来说第一点</h2><p>不要觉得这是有多麻烦，多深奥，大家都玩儿过一种智力游戏吧，叫做“你能用几刀把一个正方形切成九块？”或者说“只用几刀你能把什么切成多少块”，等等。图片裁剪是一个道理，是不是瞬间觉得亲切很多？它就是横竖各两刀来把你所选取的图片切成九份，就是很多资料里说的“九宫格”模样，是怎么切的呢？注意，切的次数是4，这个数字蛮熟悉的吧，margin、padding、border等这些都是有四个方向的规则吧，此处也一样，遵循上、右、下、左，那是怎么测量的呢？你应该猜到了，是从边缘向里测量，也就是上边缘向下，右边缘向左，依次类推。像其他规则一样，你同样可以简写之，写一个，两个、三个都没问题，有注意事项会在下面奉上！~</p>
+<h2 id="再说第二点"><a href="#再说第二点" class="headerlink" title="再说第二点"></a>再说第二点</h2><p>或许会有人说，我看你说怎么测量，怎么裁剪，头都大了，到底是要干嘛啊？我就用个边框还搞这么复杂。相信我，并不复杂，为了更好的说明裁剪完成之后干嘛，来拿张图片，这也是w3c教程网的图片</p>
+<p><img src="border-image/1.png" alt=""></p>
+<p>先这么粗糙的给大家画一幅，已经切成九块了对吧，那接下来，要干嘛呢，要发功了！呵呵，开玩笑。</p>
+<p>图片边框的绘制进入了最后一步，也是最关键的一步：</p>
+<p>切记，四个角是不动的，也就是说，当你应用了这个图片作为边框，四个角还是红色菱形，你也控制不了它（除了尺寸）。那中间呢，中间也是不显示的，大漠哥的文章里把它称为“盲区”，是的，拿掉！就只剩四个黄色菱形了。接下来，我们就来正经的讲一下，会发生什么。我做一个形象的比喻吧，给元素加上这么一个边框，就相当于找了一个图片，然后按你想要的区域把中间掏空，接下来向四周撑开！</p>
+<p>来看一下格式：<br>border-image:url(图片路径)    裁剪尺寸   裁剪过后的显示方式（就上图来说，就是四个黄色菱形的排列方式）</p>
+<p>排列方式有三种round、repeat、stretch分别来看一下是什么效果</p>
+<p>round（平铺）</p>
 <pre><code>.box{border-image:url(&quot;../images/border.png&quot;) 27 round;border-width:27px;width:800px;height:100px;background:#0CC;}
-</code></pre><p>&#x6548;&#x679C;</p>
-<p><img src="/2014/10/05/border-image/2.png" alt=""> </p>
-<p>repeat&#xFF08;&#x91CD;&#x590D;&#xFF09;</p>
+</code></pre><p>效果</p>
+<p><img src="border-image/2.png" alt=""> </p>
+<p>repeat（重复）</p>
 <pre><code>.box{border-image:url(&quot;../images/border.png&quot;) 27 repeat;border-width:27px;width:800px;height:100px;background:#0CC;}
-</code></pre><p>&#x6548;&#x679C;</p>
-<p><img src="/2014/10/05/border-image/3.png" alt=""> </p>
-<p>stretch&#xFF08;&#x62C9;&#x4F38;&#xFF09;</p>
+</code></pre><p>效果</p>
+<p><img src="border-image/3.png" alt=""> </p>
+<p>stretch（拉伸）</p>
 <pre><code>.box{border-image:url(&quot;../images/border.png&quot;) 27 stretch;border-width:27px;width:800px;height:100px;background:#0CC;}
-</code></pre><p>&#x6548;&#x679C;</p>
-<p><img src="/2014/10/05/border-image/4.png" alt=""></p>
-<p>&#x6CE8;&#xFF1A;IE&#x5F00;&#x53D1;&#x8005;&#x5E73;&#x53F0;&#x8FD8;&#x7ED9;&#x51FA;&#x4E86;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;space&#xFF0C;&#x636E;&#x6211;&#x6D4B;&#x8BD5;&#xFF0C;&#x8DDF;repeat&#x6CA1;&#x770B;&#x51FA;&#x6765;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x65B0;&#x53D1;&#x73B0;&#x6B22;&#x8FCE;&#x4EA4;&#x6D41;~</p>
-<p>&#x597D;&#x5427;&#xFF0C;&#x4E09;&#x79CD;&#x5C55;&#x793A;&#x5B8C;&#x4E86;&#xFF0C;&#x76F8;&#x4FE1;&#x7528;&#x8FC7;&#x80CC;&#x666F;&#x56FE;&#x7247;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x8FC7;&#x7535;&#x8111;&#x684C;&#x9762;&#x56FE;&#x7247;&#x7684;&#x4EBA;&#xFF0C;&#x5BF9;&#x5E73;&#x94FA;&#x548C;&#x62C9;&#x4F38;&#x90FD;&#x5F88;&#x719F;&#x6089;&#x5427;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x3002;&#x73B0;&#x5728;&#x8BE5;&#x8BF4;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x4E86;&#x3002;</p>
-<p>&#x77ED;&#x77ED;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x5230;&#x5E95;&#x85CF;&#x6709;&#x591A;&#x5C11;&#x7384;&#x673A;&#x5462;&#xFF1F;&#xFF08;&#x6545;&#x5F04;&#x7384;&#x865A;&#x4E86;&#x54C8;~&#xFF09;</p>
-<p>1&#x3001;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x9519;&#xFF0C;&#x53EF;&#x4E3A;&#x7EDD;&#x5BF9;&#x6216;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;<br>2&#x3001;&#x5927;&#x5BB6;&#x5E94;&#x8BE5;&#x6CE8;&#x610F;&#x5230;&#x88C1;&#x526A;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x7528;&#x4E86;27&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x9AD8;&#x5747;&#x4E3A;81&#xFF0C;&#x4F7F;&#x7528;27&#x80FD;&#x628A;&#x5B83;&#x7684;&#x8FB9;&#x8FDB;&#x884C;&#x4E09;&#x7B49;&#x5206;&#xFF0C;&#x526A;&#x51FA;&#x4E09;&#x4E2A;&#x5B8C;&#x6574;&#x83F1;&#x5F62;&#xFF0C;&#x8BF4;&#x767D;&#x4E86;&#x5C31;&#x662F;&#x597D;&#x770B;&#xFF0C;&#x4F60;&#x60F3;&#x7528;&#x591A;&#x5927;&#x7528;&#x591A;&#x5927;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x5F71;&#x54CD;&#x4F60;&#x6210;&#x529F;&#x7684;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x8981;&#x5728;&#x539F;&#x56FE;&#x5C3A;&#x5BF8;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;0&#x6216;&#x8005;81&#x662F;&#x4EC0;&#x4E48;&#x6548;&#x679C;~&#x53E6;&#x5916;&#xFF0C;&#x5B83;&#x6CA1;&#x5E26;&#x5355;&#x4F4D;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x5B83;&#x9ED8;&#x8BA4;&#x5355;&#x4F4D;&#x5C31;&#x662F;&#x201C;px&#x201D;&#xFF0C;&#x5E26;&#x4E0A;&#x5355;&#x4F4D;&#x53CD;&#x800C;&#x4F1A;&#x9519;&#xFF01;&#xFF01;<br>3&#x3001;&#x4F7F;&#x7528;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x4EE5;&#x53EA;&#x5199;&#x4E00;&#x4E2A;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x4E0A;&#x9762;&#x90A3;&#x6837;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x4E24;&#x4E2A;&#xFF0C;&#x4F46;&#x5207;&#x8BB0;&#xFF0C;&#x4F60;&#x4E0D;&#x80FD;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x7684;&#x8BF4;&#xFF0C;&#x53EF;&#x4E0D;&#x53EF;&#x4EE5;&#x5199;&#x4E09;&#x4E2A;&#x6216;&#x8005;&#x56DB;&#x4E2A;&#x5462;&#xFF1F;&#x4E0D;&#x884C;&#xFF01;&#x4E0D;&#x4EC5;&#x8BF8;&#x5982; round repeat stretch&#x8FD9;&#x6837;&#x7684;&#x4E0D;&#x884C;&#xFF0C;round repeat round&#x548C;round repeat round repeat&#x8FD9;&#x6837;&#x770B;&#x4F3C;&#x5408;&#x7406;&#x7684;&#x4E5F;&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF01;&#xFF01;&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E0D;&#x5199;&#x4E5F;&#x53EF;&#x4EE5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; stretch&#x3002;</p>
-<p>&#x7ED9;&#x51FA;stretch round &#x7ED3;&#x5408;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x63A7;&#x5236;&#x4E0A;&#x4E0B;&#xFF0C;&#x540E;&#x9762;&#x4E00;&#x4E2A;&#x63A7;&#x5236;&#x5DE6;&#x53F3;&#x3002;</p>
-<p><img src="/2014/10/05/border-image/5.png" alt=""></p>
-<p>4&#x3001;&#x8FB9;&#x6846;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x9996;&#x5148;&#x8FD9;&#x4E2A;&#x662F;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x662F;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#x7684;&#xFF0C;&#x53E6;&#x5916;&#xFF0C;&#x8FB9;&#x6846;&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x539F;&#x59CB;&#x56FE;&#x7247;&#x65E0;&#x5173;&#xFF0C;&#x539F;&#x59CB;&#x56FE;&#x7247;&#x53EA;&#x662F;&#x4F60;&#x7528;&#x6765;&#x505A;&#x9009;&#x53D6;&#x7684;&#xFF0C;&#x4F60;&#x6240;&#x8BBE;&#x7F6E;&#x7684;&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;&#x6BD4;&#x9009;&#x53D6;&#x7684;&#x90E8;&#x5206;&#x66F4;&#x5927;&#x6216;&#x8005;&#x66F4;&#x5C0F;&#x90FD;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x6B63;&#x5E38;&#x6570;&#x503C;&#xFF0C;&#x4F60;&#x6240;&#x9009;&#x53D6;&#x7684;&#x90E8;&#x5206;&#x56FE;&#x7247;&#x4F1A;&#x7B49;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;&#x4EE5;&#x6B63;&#x5E38;&#x663E;&#x793A;</p>
-<p>&#x4EE5;&#x4E0A;&#x56DB;&#x70B9;&#xFF0C;&#x4FBF;&#x662F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x57FA;&#x672C;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x70B9;&#x51FA;&#x9519;&#x4F60;&#x90FD;&#x5C06;&#x770B;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x6548;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5728;&#x7EC3;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;&#xFF0C;&#x53E6;&#x5916;&#xFF0C;&#x6CE8;&#x610F;&#x5355;&#x8BCD;&#x7684;&#x62FC;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x4F4E;&#x7EA7;&#x9519;&#x8BEF;&#x4E0D;&#x8981;&#x72AF;&#x3002;</p>
-<p>&#x5176;&#x5B9E;&#xFF0C;&#x4F60;&#x8FD8;&#x662F;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x56F0;&#x60D1;&#x7684;&#xFF0C;&#x4E0D;&#x662F;&#x4E48;</p>
-<h2 id="&#x4E00;&#x3001;repeat&#x548C;round&#x600E;&#x4E48;&#x90A3;&#x4E48;&#x50CF;&#x5462;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;"><a href="#&#x4E00;&#x3001;repeat&#x548C;round&#x600E;&#x4E48;&#x90A3;&#x4E48;&#x50CF;&#x5462;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;" class="headerlink" title="&#x4E00;&#x3001;repeat&#x548C;round&#x600E;&#x4E48;&#x90A3;&#x4E48;&#x50CF;&#x5462;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;"></a>&#x4E00;&#x3001;repeat&#x548C;round&#x600E;&#x4E48;&#x90A3;&#x4E48;&#x50CF;&#x5462;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;</h2><p>&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x54E5;&#x4FE9;&#x662F;&#x5F88;&#x50CF;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#xFF0C;repeat&#x4F3C;&#x4E4E;&#x4E0D;&#x50CF;round&#x90A3;&#x4E48;&#x5B8C;&#x7F8E;&#xFF0C;&#x662F;&#x4F1A;&#x5728;&#x4E24;&#x7AEF;&#x7559;&#x6709;&#x7455;&#x75B5;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x5B83;&#x4EC5;&#x4EC5;&#x627F;&#x62C5;&#x4E86;&#x91CD;&#x590D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x6709;&#x4E2D;&#x95F4;&#x5411;&#x4E24;&#x7AEF;&#x8FDB;&#x884C;&#x91CD;&#x590D;&#xFF0C;&#x800C;round&#x4E0D;&#x4EC5;&#x627F;&#x62C5;&#x4E86;&#x91CD;&#x590D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD8;&#x5E73;&#x8861;&#x4E86;&#x4E00;&#x4E0B;&#x603B;&#x5BBD;&#x5EA6;&#x548C;&#x6240;&#x9009;&#x53D6;&#x90E8;&#x5206;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x8BA9;&#x56FE;&#x7247;&#x521A;&#x521A;&#x597D;&#x80FD;&#x5B8C;&#x6574;&#x7684;&#x5E73;&#x94FA;&#x3002;</p>
-<h2 id="&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x63A7;&#x5236;&#x5927;&#x5C0F;&#xFF0C;&#x63A7;&#x5236;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x5C31;&#x5B8C;&#x4E8B;&#x513F;&#x4E86;&#x5462;&#xFF1F;"><a href="#&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x63A7;&#x5236;&#x5927;&#x5C0F;&#xFF0C;&#x63A7;&#x5236;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x5C31;&#x5B8C;&#x4E8B;&#x513F;&#x4E86;&#x5462;&#xFF1F;" class="headerlink" title="&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x63A7;&#x5236;&#x5927;&#x5C0F;&#xFF0C;&#x63A7;&#x5236;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x5C31;&#x5B8C;&#x4E8B;&#x513F;&#x4E86;&#x5462;&#xFF1F;"></a>&#x4E8C;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x63A7;&#x5236;&#x5927;&#x5C0F;&#xFF0C;&#x63A7;&#x5236;&#x6C34;&#x5E73;&#x3001;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x5C31;&#x5B8C;&#x4E8B;&#x513F;&#x4E86;&#x5462;&#xFF1F;</h2><p> &#x5982;&#x679C;&#x771F;&#x7684;&#x662F;&#x90A3;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x4E5F;&#x6CA1;&#x4EC0;&#x4E48;&#x4E0D;&#x53EF;&#x4EE5;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x80FD;&#x5B8C;&#x6210;&#x66F4;&#x591A;&#x66F4;&#x6709;&#x610F;&#x601D;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;&#x4F7F;&#x7528;&#x597D;&#x8FB9;&#x6846;&#x56FE;&#x7247;&#x9700;&#x8981;&#x505A;&#x597D;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;&#xFF0C;&#x7B2C;&#x4E00;&#x662F;&#x505A;&#x51FA;&#x4E00;&#x5F20;&#x597D;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x7B2C;&#x4E8C;&#x662F;&#x4EE5;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x88C1;&#x526A;&#xFF0C;&#x8FD9;&#x6837;&#x8D4B;&#x4E88;&#x4E86;&#x5B83;&#x66F4;&#x591A;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x597D;&#x5947;&#x5FC3;&#x548C;&#x521B;&#x9020;&#x529B;&#xFF0C;&#x5B83;&#x7684;&#x5F3A;&#x5927;&#x8D85;&#x4E4E;&#x4F60;&#x60F3;&#x8C61;&#xFF01;&#x4E0A;&#x9762;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x56DB;&#x6761;&#x8FB9;&#x548C;&#x56DB;&#x89D2;&#x6362;&#x6210;&#x4EFB;&#x610F;&#x56FE;&#x8C61;&#xFF0C;&#x8FD9;&#x90FD;&#x7531;&#x4F60;&#x6765;&#x51B3;&#x5B9A;&#xFF01;~&#x6BD4;&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;&#x4F60;&#x628A;&#x83F1;&#x5F62;&#x5168;&#x90FD;&#x505A;&#x6210;&#x7EA2;&#x8272;&#x6216;&#x8005;&#x9EC4;&#x8272;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x56DB;&#x8FB9;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x56FE;&#x7247;&#x8FB9;&#x6846;&#x4E86;&#xFF0C;so easy&#xFF01;~</p>
-<p>&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x4E0A;&#x9762;&#x662F;&#x8981;&#x505A;&#x51FA;&#x8FB9;&#x6846;&#x7684;&#x5FC5;&#x5907;&#x4E8B;&#x7269;&#xFF0C;&#x8BE5;&#x732E;&#x4E0A;border-image&#x7684;&#x5B8C;&#x6574;&#x683C;&#x5F0F;&#x4E86;</p>
-<p>border-image: url(&#x201C;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x201D;) &#x88C1;&#x526A;&#x5C3A;&#x5BF8; /&#x8FB9;&#x6846;&#x5BBD;&#x5EA6; /&#x8FB9;&#x6846;&#x56FE;&#x8C61;&#x8D85;&#x51FA;&#x8FB9;&#x6846;&#x7684;&#x91CF; &#x663E;&#x793A;&#x65B9;&#x5F0F;;</p>
-<p>&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x4F60;&#x4F1A;&#x8BF4;&#xFF0C;&#x600E;&#x4E48;&#x6BD4;&#x521A;&#x624D;&#x591A;&#x51FA;&#x4E24;&#x4E2A;&#x5462;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x628A;&#x6240;&#x6709;&#x7684;&#x90FD;&#x7F29;&#x5199;&#x5230;&#x4E00;&#x6761;&#x89C4;&#x5219;&#x91CC;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x6309;&#x7167;&#x683C;&#x5F0F;&#x6765;&#xFF0C;&#x6BD4;&#x5982;&#x201C;/&#x201D;&#x662F;<br>&#x4E0D;&#x80FD;&#x53BB;&#x6389;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x6574;&#x6761;&#x89C4;&#x5219;&#x53C8;&#x4E00;&#x547D;&#x545C;&#x547C;&#x4E86;&#xFF0C;&#x90A3;&#x8FB9;&#x6846;&#x56FE;&#x8C61;&#x8D85;&#x51FA;&#x8FB9;&#x6846;&#x7684;&#x91CF;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x6240;&#x8BBE;&#x5B9A;&#x7684;&#x8FB9;&#x6846;&#x56FE;&#x8C61;&#x662F;&#x5360;&#x636E;&#x4E86;&#x6240;&#x5B9A;<br>&#x4E49;&#x7684;&#x56FA;&#x5B9A;&#x5BBD;&#x5EA6;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;&#x8D85;&#x51FA;&#x4E3A;0&#xFF1B;&#x4E0B;&#x9762;&#x7ED9;&#x51FA;&#x8D85;&#x51FA;5px&#x7684;&#x6837;&#x5B50;&#x3002;</p>
+</code></pre><p>效果</p>
+<p><img src="border-image/4.png" alt=""></p>
+<p>注：IE开发者平台还给出了另一种方式：space，据我测试，跟repeat没看出来有什么区别，你可以试试，如果有新发现欢迎交流~</p>
+<p>好吧，三种展示完了，相信用过背景图片或者设置过电脑桌面图片的人，对平铺和拉伸都很熟悉吧，这个不难理解。现在该说注意事项了。</p>
+<p>短短的一段代码到底藏有多少玄机呢？（故弄玄虚了哈~）</p>
+<p>1、图片路径一定不要错，可为绝对或相对路径<br>2、大家应该注意到裁剪的数值，用了27，这是因为图片的宽高均为81，使用27能把它的边进行三等分，剪出三个完整菱形，说白了就是好看，你想用多大用多大，这个不影响你成功的使用它，当然，要在原图尺寸范围内，你也可以尝试0或者81是什么效果~另外，它没带单位，是的，它默认单位就是“px”，带上单位反而会错！！<br>3、使用显示方式的时候你可以只写一个，就像我上面那样，也可以写两个，但切记，你不能以此类推的说，可不可以写三个或者四个呢？不行！不仅诸如 round repeat stretch这样的不行，round repeat round和round repeat round repeat这样看似合理的也是不行的！！当然，你不写也可以，默认值是 stretch。</p>
+<p>给出stretch round 结合的效果，注意，前面一个控制上下，后面一个控制左右。</p>
+<p><img src="border-image/5.png" alt=""></p>
+<p>4、边框的宽度，首先这个是必须设置的，不然是不会有任何反应的，另外，边框的宽度和原始图片无关，原始图片只是你用来做选取的，你所设置的边框宽度比选取的部分更大或者更小都没有关系，可以是任意的正常数值，你所选取的部分图片会等比例缩放以正常显示</p>
+<p>以上四点，便是需要注意的基本的东西，任何一点出错你都将看不到任何效果，如果你在练习的时候出现问题，可以先检查一下，另外，注意单词的拼写这样的低级错误不要犯。</p>
+<p>其实，你还是会有一些困惑的，不是么</p>
+<h2 id="一、repeat和round怎么那么像呢，有什么区别呢？"><a href="#一、repeat和round怎么那么像呢，有什么区别呢？" class="headerlink" title="一、repeat和round怎么那么像呢，有什么区别呢？"></a>一、repeat和round怎么那么像呢，有什么区别呢？</h2><p>是的，这哥俩是很像，你也可以看出来，repeat似乎不像round那么完美，是会在两端留有瑕疵的，我们可以看做是它仅仅承担了重复的任务，而且是有中间向两端进行重复，而round不仅承担了重复的任务，还平衡了一下总宽度和所选取部分图片的宽度，让图片刚刚好能完整的平铺。</p>
+<h2 id="二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？"><a href="#二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？" class="headerlink" title="二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？"></a>二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？</h2><p> 如果真的是那样的话，也没什么不可以，但是现在这种做法能完成更多更有意思的东西，而且，使用好边框图片需要做好两件事情，第一是做出一张好的图片，第二是以你想要的方式进行裁剪，这样赋予了它更多的灵活性，而且，如果你有足够的好奇心和创造力，它的强大超乎你想象！上面只是一个简单的实例，如果你想，你可以把四条边和四角换成任意图象，这都由你来决定！~比如上例，你把菱形全都做成红色或者黄色，那么就是一个四边完全一致的图片边框了，so easy！~</p>
+<p>说了这么多，上面是要做出边框的必备事物，该献上border-image的完整格式了</p>
+<p>border-image: url(“图片路径”) 裁剪尺寸 /边框宽度 /边框图象超出边框的量 显示方式;</p>
+<p>看到这个你会说，怎么比刚才多出两个呢，是的，这个是把所有的都缩写到一条规则里了，而且要按照格式来，比如“/”是<br>不能去掉的，不然整条规则又一命呜呼了，那边框图象超出边框的量是什么意思呢？我们所设定的边框图象是占据了所定<br>义的固定宽度的空间，默认超出为0；下面给出超出5px的样子。</p>
 <pre><code>.box{border-image:url(&quot;../images/border.png&quot;) 27 /30px /5px stretch round;
-</code></pre><p><img src="/2014/10/05/border-image/6.png" alt=""></p>
-<p>&#x770B;&#x5230;&#x533A;&#x522B;&#x4E86;&#x4E48;&#xFF1F;&#x56DB;&#x8FB9;&#x90FD;&#x8D85;&#x51FA;&#x53BB;&#x4E86;5px&#xFF0C;&#x4F5C;&#x4E3A;&#x5E38;&#x7406;&#xFF0C;&#x50CF;&#x8FD9;&#x79CD;&#x7528;&#x6765;&#x63A7;&#x5236;&#x8DDD;&#x79BB;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x53EF;&#x4EE5;&#x6B63;<br>&#x5C31;&#x53EF;&#x4EE5;&#x8D1F;&#x54AF;&#xFF1F;&#x4E0D;&#x597D;&#x610F;&#x601D;&#xFF0C;&#x8FD9;&#x4E2A;&#x771F;&#x6CA1;&#x6709;&#xFF01;~&#x4F46;&#x662F;&#x5B83;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;&#x4E0A;&#x3001;&#x53F3;&#x3001;&#x4E0B;&#x3001;&#x5DE6;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x3002;</p>
-<p>&#x603B;&#x7ED3;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x7B80;&#x5199;</p>
-<p>border-image: url(&#x201C;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x201D;) &#x88C1;&#x526A;&#x5C3A;&#x5BF8; /&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;;</p>
-<p>&#x8FD9;&#x4E2A;&#x7EC4;&#x5408;&#x5C31;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x4E86;&#x3002;&#x5176;&#x4ED6;&#x7528;&#x6765;&#x9526;&#x4E0A;&#x6DFB;&#x82B1;&#x3002;</p>
-<p>&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x4E0D;&#x77E5;&#x4F60;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x660E;&#x4E86;&#xFF1F;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x6CA1;&#x660E;&#x767D;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x52A8;&#x624B;&#x505A;&#x4E00;&#x4E0B;&#x5427;&#xFF0C;&#x53EA;&#x8981;&#x63D0;&#x5230;&#x7684;&#x90A3;&#x56DB;&#x6761;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x4E0D;&#x51FA;&#x9519;&#xFF0C;&#x57FA;&#x672C;&#x5C31;&#x6CA1;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x53E6;&#x9644;&#x5927;&#x6F20;&#x54E5;&#x6587;&#x7AE0;<a href="http://www.w3cplus.com/content/css3-border-image" target="_blank" rel="external">css3-border-image</a>&#xFF0C;&#x4E2A;&#x4EBA;&#x8BA4;&#x4E3A;&#xFF0C;&#x4F60;&#x5148;&#x80FD;&#x505A;&#x51FA;&#x6765;&#x57FA;&#x672C;&#x7684;&#x6548;&#x679C;&#x518D;&#x770B;&#x6536;&#x83B7;&#x4F1A;&#x66F4;&#x5927;&#xFF0C;&#x8FD8;&#x6709;&#x60CA;&#x559C;&#xFF0C;&#x4E0D;&#x7136;&#x53EF;&#x80FD;&#x5F88;&#x6655;&#x3002;</p>
-<p>IE&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E2D;&#x5FC3;<a href="http://msdn.microsoft.com/library/ie/dn384064.aspx" target="_blank" rel="external">&#x76F8;&#x5173;&#x5185;&#x5BB9;</a></p>
-<p>&#x6B22;&#x8FCE;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x5B66;&#x4E60;&#xFF0C;&#x52A0;&#x5165;&#x6211;&#x7684;&#x4F01;&#x9E45;&#x7FA4;&#x4F60;&#x5C06;&#x5F97;&#x5230;&#x66F4;&#x591A;&#x54E6;&#xFF01;~web&#x524D;&#x7AEF;~&#x7F8E;&#x662F;&#x7F16;&#x51FA;&#x6765;&#x7684;&#xFF1A;152128548</p>
+</code></pre><p><img src="border-image/6.png" alt=""></p>
+<p>看到区别了么？四边都超出去了5px，作为常理，像这种用来控制距离的东西，可以正<br>就可以负咯？不好意思，这个真没有！~但是它可以遵循上、右、下、左的规则，也可以简写。</p>
+<p>总结，如果你想简写</p>
+<p>border-image: url(“图片路径”) 裁剪尺寸 /边框宽度;</p>
+<p>这个组合就是必须的了。其他用来锦上添花。</p>
+<p>说了这么多，不知你是否已经明了？如果还是没明白，那么请动手做一下吧，只要提到的那四条注意事项不出错，基本就没问题了。另附大漠哥文章<a href="http://www.w3cplus.com/content/css3-border-image" target="_blank" rel="external">css3-border-image</a>，个人认为，你先能做出来基本的效果再看收获会更大，还有惊喜，不然可能很晕。</p>
+<p>IE开发人员中心<a href="http://msdn.microsoft.com/library/ie/dn384064.aspx" target="_blank" rel="external">相关内容</a></p>
+<p>欢迎一起交流学习，加入我的企鹅群你将得到更多哦！~web前端~美是编出来的：152128548</p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -348,6 +483,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -362,6 +499,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -370,26 +511,29 @@
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -402,7 +546,7 @@
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -420,6 +564,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -435,34 +580,46 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -484,27 +641,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -513,168 +664,178 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先来说第一点"><span class="nav-number">1.</span> <span class="nav-text">先来说第一点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再说第二点"><span class="nav-number">2.</span> <span class="nav-text">再说第二点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、repeat和round怎么那么像呢，有什么区别呢？"><span class="nav-number">3.</span> <span class="nav-text">一、repeat和round怎么那么像呢，有什么区别呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？"><span class="nav-number">4.</span> <span class="nav-text">二、为什么不能直接选择一个图片，控制大小，控制水平、垂直方向的显示方式就完事儿了呢？</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -695,237 +856,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -933,24 +909,124 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

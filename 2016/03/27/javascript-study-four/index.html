@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="javascript," />
@@ -52,45 +90,71 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="js&amp;#x91CC;&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x548C;&amp;#x5176;&amp;#x4ED6;&amp;#x8BED;&amp;#x8A00;&amp;#x4E0D;&amp;#x540C;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x677E;&amp;#x6563;&amp;#x578B;&amp;#x7684;&amp;#xFF0C;&amp;#x8FD9;&amp;#x51B3;&amp;#x5B9A;&amp;#x4E86;&amp;#x5B83;&amp;#x53E">
+<meta name="description" content="js里的变量和其他语言不同，它是松散型的，这决定了它只是在特定时间保存特定值的一个名字而已，由于不存在数据类型和值之间的绑定，所以，变量的值和类型都可以在脚本的生命周期内改变。
+基本类型和引用类型的值ES变量可能包含两种类型的值：基本类型和引用类型。
+基本类型值指的是简单的数据段
+引用类型值指的可能是多个值构成的对象
+在将一个值赋给变量时，解析器必须确定这个值是基本类型值还是引用类型值，前面我们讨">
 <meta property="og:type" content="article">
 <meta property="og:title" content="征服javascript学习笔记（四）——变量、作用域和内存">
 <meta property="og:url" content="http://yoursite.com/2016/03/27/javascript-study-four/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="js&amp;#x91CC;&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x548C;&amp;#x5176;&amp;#x4ED6;&amp;#x8BED;&amp;#x8A00;&amp;#x4E0D;&amp;#x540C;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x677E;&amp;#x6563;&amp;#x578B;&amp;#x7684;&amp;#xFF0C;&amp;#x8FD9;&amp;#x51B3;&amp;#x5B9A;&amp;#x4E86;&amp;#x5B83;&amp;#x53E">
+<meta property="og:description" content="js里的变量和其他语言不同，它是松散型的，这决定了它只是在特定时间保存特定值的一个名字而已，由于不存在数据类型和值之间的绑定，所以，变量的值和类型都可以在脚本的生命周期内改变。
+基本类型和引用类型的值ES变量可能包含两种类型的值：基本类型和引用类型。
+基本类型值指的是简单的数据段
+引用类型值指的可能是多个值构成的对象
+在将一个值赋给变量时，解析器必须确定这个值是基本类型值还是引用类型值，前面我们讨">
 <meta property="og:updated_time" content="2016-03-27T13:26:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="征服javascript学习笔记（四）——变量、作用域和内存">
-<meta name="twitter:description" content="js&amp;#x91CC;&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x548C;&amp;#x5176;&amp;#x4ED6;&amp;#x8BED;&amp;#x8A00;&amp;#x4E0D;&amp;#x540C;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x677E;&amp;#x6563;&amp;#x578B;&amp;#x7684;&amp;#xFF0C;&amp;#x8FD9;&amp;#x51B3;&amp;#x5B9A;&amp;#x4E86;&amp;#x5B83;&amp;#x53E">
+<meta name="twitter:description" content="js里的变量和其他语言不同，它是松散型的，这决定了它只是在特定时间保存特定值的一个名字而已，由于不存在数据类型和值之间的绑定，所以，变量的值和类型都可以在脚本的生命周期内改变。
+基本类型和引用类型的值ES变量可能包含两种类型的值：基本类型和引用类型。
+基本类型值指的是简单的数据段
+引用类型值指的可能是多个值构成的对象
+在将一个值赋给变量时，解析器必须确定这个值是基本类型值还是引用类型值，前面我们讨">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 征服javascript学习笔记（四）——变量、作用域和内存 | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2016/03/27/javascript-study-four/"/>
+
+
+
+
+
+  <title>征服javascript学习笔记（四）——变量、作用域和内存 | 灵感之见</title>
   
 
 
@@ -99,48 +163,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -148,43 +220,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -199,49 +281,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/27/javascript-study-four/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                征服javascript学习笔记（四）——变量、作用域和内存
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">征服javascript学习笔记（四）——变量、作用域和内存</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-27T00:00:00+08:00" content="2016-03-27">
-              2016-03-27
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-27T00:00:00+08:00">
+                2016-03-27
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/javascript学习笔记/" itemprop="url" rel="index">
                     <span itemprop="name">javascript学习笔记</span>
                   </a>
@@ -249,7 +350,6 @@
 
                 
                 
-
               
             </span>
           
@@ -259,41 +359,48 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>js&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E0D;&#x540C;&#xFF0C;&#x5B83;&#x662F;&#x677E;&#x6563;&#x578B;&#x7684;&#xFF0C;&#x8FD9;&#x51B3;&#x5B9A;&#x4E86;&#x5B83;&#x53EA;&#x662F;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x4FDD;&#x5B58;&#x7279;&#x5B9A;&#x503C;&#x7684;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x800C;&#x5DF2;&#xFF0C;&#x7531;&#x4E8E;&#x4E0D;&#x5B58;&#x5728;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x548C;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x548C;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x811A;&#x672C;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x6539;&#x53D8;&#x3002;</p>
-<h2 id="&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;"><a href="#&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;" class="headerlink" title="&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;"></a>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;</h2><p>ES&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;</p>
-<p><strong>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;</strong>&#x6307;&#x7684;&#x662F;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x6BB5;</p>
-<p><strong>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;</strong>&#x6307;&#x7684;&#x53EF;&#x80FD;&#x662F;&#x591A;&#x4E2A;&#x503C;&#x6784;&#x6210;&#x7684;&#x5BF9;&#x8C61;</p>
-<p>&#x5728;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x8D4B;&#x7ED9;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x5FC5;&#x987B;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x8FD8;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x8FC7;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E0D;&#x540C;&#xFF0C;js&#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5728;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5728;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x9645;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E3A;&#x6B64;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x662F;&#x6309;&#x5F15;&#x7528;&#x8BBF;&#x95EE;&#x7684;&#x3002;</p>
-<p>1&#x3001;&#x52A8;&#x6001;&#x5C5E;&#x6027;</p>
-<p>&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x4F46;&#x503C;&#x5B58;&#x5230;&#x53D8;&#x91CF;&#x4E2D;&#x540E;&#xFF0C;&#x53EF;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x5219;&#x5927;&#x76F8;&#x5F84;&#x5EAD;&#x3002;&#x5BF9;&#x4E8E;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x548C;&#x5220;&#x9664;&#x5176;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x4E0B;</p>
+        <p>js里的变量和其他语言不同，它是松散型的，这决定了它只是在特定时间保存特定值的一个名字而已，由于不存在数据类型和值之间的绑定，所以，变量的值和类型都可以在脚本的生命周期内改变。</p>
+<h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>ES变量可能包含两种类型的值：基本类型和引用类型。</p>
+<p><strong>基本类型值</strong>指的是简单的数据段</p>
+<p><strong>引用类型值</strong>指的可能是多个值构成的对象</p>
+<p>在将一个值赋给变量时，解析器必须确定这个值是基本类型值还是引用类型值，前面我们讨论过的基本类型值，引用类型的值是保存在内存中的对象，与其他语言不同，js不允许直接访问内存中的位置，也就是不能直接操作对象的内存空间，在操作对象时，实际上是在操作对象的引用而不是实际的对象，为此引用类型的值是按引用访问的。</p>
+<p>1、动态属性</p>
+<p>两种类型的变量定义方式是类似的，但值存到变量中后，可执行的操作则大相径庭。对于引用类型的值，我们可以为其添加属性和方法，也可以改变和删除其属性和方法。如下</p>
 <pre><code>var person=new Object();
     person.name=&quot;idea&quot;;
     alert(person.name); //&quot;idea&quot;
-</code></pre><p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x628A;&#x5B83;&#x4FDD;&#x5B58;&#x5728;&#x4E86;&#x53D8;&#x91CF;person&#x4E2D;&#xFF0C;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x4E86;name&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x4E86;&#x8D4B;&#x503C;&#xFF0C;&#x7D27;&#x63A5;&#x7740;&#x901A;&#x8FC7;alert&#xFF08;&#xFF09;&#x51FD;&#x6570;&#x8BBF;&#x95EE;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x4E0D;&#x88AB;&#x9500;&#x6BC1;&#x6216;&#x8005;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E0D;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C06;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x7ED9;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#xFF0C;&#x5C3D;&#x7BA1;&#x8FD9;&#x6837;&#x505A;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x3002;</p>
-<p>2&#x3001;&#x590D;&#x5236;&#x53D8;&#x91CF;&#x503C;</p>
-<p>&#x9664;&#x4E86;&#x4FDD;&#x5B58;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x4ECE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x590D;&#x5236;&#x503C;&#x65F6;&#xFF0C;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x4E5F;&#x4E0D;&#x540C;&#x3002;<br>&#x5982;&#x679C;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x65B0;&#x503C;&#x590D;&#x5236;&#x5230;&#x4E3A;&#x65B0;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;&#x3002;<br>&#x5982;&#x679C;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x6837;&#x4E5F;&#x4F1A;&#x5C06;&#x5176;&#x5B58;&#x50A8;&#x7684;&#x503C;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x65B0;&#x5206;&#x914D;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x526F;&#x672C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x5B58;&#x50A8;&#x5728;&#x5806;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x590D;&#x5236;&#x64CD;&#x4F5C;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x5B9E;&#x9645;&#x4E0A;&#x5C06;&#x5F15;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6539;&#x53D8;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x91CF;&#xFF0C;&#x5C31;&#x4F1A;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x3002;<br>&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
+</code></pre><p>以上代码创建了一个对象，并把它保存在了变量person中，，然后我们为其添加了name属性，并进行了赋值，紧接着通过alert（）函数访问了这个属性，如果对象不被销毁或者这个属性不被删除，则这个属性将一直存在。</p>
+<p>但是我们不能给基本类型的值添加属性，尽管这样做不会导致任何错误。</p>
+<p>2、复制变量值</p>
+<p>除了保存的方式不同，在从一个变量向另一个变量复制值时，两种类型也不同。<br>如果是基本类型，则会创建一个新值，然后把新值复制到为新变量分配的位置上。<br>如果是引用类型，同样也会将其存储的值复制一份到新分配的空间，不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象，因此，改变其中一个量，就会影响另一个变量。<br>如下例：</p>
 <pre><code>var obj1=new Object();
     var obj2=obj1;
     obj1.name=&quot;idea&quot;;
     alert(obj2.name); //&quot;idea&quot;
-</code></pre><p>3&#x3001;&#x4F20;&#x9012;&#x53C2;&#x6570;</p>
-<p>ES&#x4E2D;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#x7684;&#xFF0C;&#x5373;&#x628A;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x7684;&#x503C;&#x590D;&#x5236;&#x5230;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x50CF;&#x628A;&#x503C;&#x4ECE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x590D;&#x5236;&#x53D8;&#x91CF;&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x8BB2;&#x8FC7;&#xFF0C;&#x6709;&#x4E0D;&#x5C11;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x56F0;&#x60D1;&#xFF0C;&#x8BBF;&#x95EE;&#x53D8;&#x91CF;&#x6709;&#x6309;&#x503C;&#x548C;&#x6309;&#x5F15;&#x7528;&#x4E24;&#x79CD;&#xFF0C;&#x800C;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x6309;&#x503C;&#x4F20;&#x9012;&#x3002;&#x4E0B;&#x9762;&#x89E3;&#x60D1;&#xFF1A;<br>&#x5728;&#x4F20;&#x9012;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x590D;&#x5236;&#x7ED9;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x5373;&#x547D;&#x540D;&#x53C2;&#x6570;&#x3002;<br>&#x5728;&#x4F20;&#x9012;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x503C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5730;&#x5740;&#x590D;&#x5236;&#x7ED9;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x53D8;&#x5316;&#x4F1A;&#x53CD;&#x6620;&#x5728;&#x51FD;&#x6570;&#x7684;&#x5916;&#x90E8;&#x3002;</p>
-<p>&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</code></pre><p>3、传递参数</p>
+<p>ES中的所有函数的参数都是按值传递的，即把函数外部的值复制到函数内部的参数，就像把值从一个变量复制到另一个变量一样，所以，复制变量上面已经讲过，有不少人可能会困惑，访问变量有按值和按引用两种，而参数只能按值传递。下面解惑：<br>在传递基本类型的值时，被传递的值会被复制给一个局部变量，即命名参数。<br>在传递引用类型的值时，会把这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反映在函数的外部。</p>
+<p>看下面的例子：</p>
 <pre><code>function addTen(num){
     num+=10;
     return num;
@@ -302,14 +409,14 @@
     var result=addTen(count);
     alert(count);
     alert(result);
-</code></pre><p>&#x8FD9;&#x91CC;&#x7684;&#x51FD;&#x6570;addTen()&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;num&#xFF0C;&#x53C2;&#x6570;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53D8;&#x91CF;count&#x88AB;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#xFF0C;&#x4E8E;&#x662F;20&#x88AB;&#x590D;&#x5236;&#x7ED9;&#x53C2;&#x6570;num&#x4EE5;&#x4FBF;&#x5728;addTen()&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x53C2;&#x6570;num&#x7684;&#x503C;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;10&#xFF1B;&#x4F46;&#x8FD9;&#x4E00;&#x53D8;&#x5316;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x5916;&#x90E8;&#x7684;count&#x53D8;&#x91CF;&#xFF0C;num&#x548C;count&#x4EC5;&#x4EC5;&#x662F;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF0C;&#x5047;&#x5982;num&#x662F;&#x6309;&#x7167;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x7684;&#x8BDD;&#xFF0C;&#x53D8;&#x91CF;count&#x7684;&#x503C;&#x4E5F;&#x4F1A;&#x53D8;&#x6210;30&#xFF0C;&#x4ECE;&#x800C;&#x53CD;&#x6620;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#xFF0C;&#x95EE;&#x9898;&#x5C31;&#x4E0D;&#x600E;&#x4E48;&#x597D;&#x7406;&#x89E3;&#x4E86;&#xFF0C;&#x770B;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</code></pre><p>这里的函数addTen()有一个参数num，参数实际上是函数的局部变量，在调用函数时，变量count被作为参数传递给函数，于是20被复制给参数num以便在addTen()中使用，函数内部，参数num的值被加上了10；但这一变化不会影响到外部的count变量，num和count仅仅是具有相同的值，假如num是按照引用传递的话，变量count的值也会变成30，从而反映函数内部的修改，但如果使用对象，问题就不怎么好理解了，看下面例子：</p>
 <pre><code>function setName(obj){
     obj.name=&quot;idea&quot;;
     }
     var person=new Object();
     setName(person);
     alert(person.name);
-</code></pre><p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5728;&#x4E86;person&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4F20;&#x9012;&#x5230;setName()&#x4E4B;&#x540E;&#x590D;&#x5236;&#x7ED9;&#x4E86;Obj&#x3002;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;obj&#x548C;person&#x5F15;&#x7528;&#x7684;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;**&#x5373;&#x4F7F;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#x7684;&#xFF0C;obj&#x4E5F;&#x4F1A;&#x6309;&#x5F15;&#x7528;&#x6765;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x4E3A;obj&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x540E;&#xFF0C;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x7684;person&#x4E5F;&#x4F1A;&#x6709;&#x6240;&#x53CD;&#x5E94;&#x3002;&#x4F46;&#x6709;&#x4E0D;&#x5C11;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8BA4;&#x4E3A;&#xFF1A;&#x5728;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x4FEE;&#x6539;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x5728;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x53CD;&#x6620;&#x51FA;&#x6765;&#xFF0C;&#x5C31;&#x8BF4;&#x660E;&#x53C2;&#x6570;&#x662F;&#x6309;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x7684;&#xFF0C;&#x4E3A;&#x4E86;&#x8BC1;&#x660E;&#x5176;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#x7684;&#xFF0C;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</code></pre><p>以上代码创建了一个对象，将其保存在了person中，然后这个变量传递到setName()之后复制给了Obj。在函数内部，obj和person引用的是同一个对象，换句话说，**即使这个变量是按值传递的，obj也会按引用来访问同一个对象，于是，函数内部为obj添加属性后，函数外部的person也会有所反应。但有不少开发人员认为：在局部作用域中修改的对象会在全局作用域中反映出来，就说明参数是按引用传递的，为了证明其是按值传递的，看下面的例子：</p>
 <pre><code>function setName(obj){
     obj.name=&quot;idea&quot;;
     obj=new Object();
@@ -318,16 +425,16 @@
     var person=new Object();
     setName(person);
     alert(person.name);//&quot;idea&quot;
-</code></pre><p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x548C;&#x524D;&#x9762;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x662F;&#x5728;&#x51FD;&#x6570;&#x5185;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x884C;&#x4EE3;&#x7801;&#x3002;<br>&#x4EA7;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#x5462;&#xFF0C;&#x65B0;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6539;&#x53D8;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;name&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6309;&#x7167;&#x5F15;&#x7528;&#x6765;&#x4F20;&#x9012;&#x7684;&#xFF0C;&#x90A3;&#x4E48;person&#x7684;name&#x5C5E;&#x6027;&#x5C31;&#x662F;alien&#xFF0C;&#x800C;&#x4E0D;&#x662F;idea&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5F53;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x91CD;&#x5199;obj&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5F15;&#x7528;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x5BF9;&#x8C61;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C40;&#x90E8;&#x5BF9;&#x8C61;&#x4F1A;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x7ACB;&#x5373;&#x9500;&#x6BC1;&#x3002;</p>
-<p>&#x6CE8;&#xFF1A;&#x53EF;&#x4EE5;&#x628A;ES&#x4E2D;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x60F3;&#x8C61;&#x4E3A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;</p>
-<p>4&#x3001;&#x68C0;&#x6D4B;&#x7C7B;&#x578B;</p>
-<p>&#x8981;&#x68C0;&#x6D4B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x524D;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#x7684;typeof&#x64CD;&#x4F5C;&#x7B26;&#x662F;&#x6700;&#x4F73;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x8BF4;&#x5177;&#x4F53;&#x70B9;&#xFF0C;typeof&#x662F;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x503C;&#x3001;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8FD8;&#x662F;undefined&#x7684;&#x6700;&#x4F73;&#x5DE5;&#x5177;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x662F;&#x5BF9;&#x8C61;&#x6216;null&#xFF0C;&#x5219;typeof&#x4F1A;&#x8FD4;&#x56DE;&#x201C;object&#x201D;&#x3002;</p>
-<p>&#x867D;&#x7136;typeof&#x662F;&#x4E2A;&#x6709;&#x529B;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x68C0;&#x6D4B;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x7528;&#x5904;&#x4E0D;&#x5927;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x60F3;&#x77E5;&#x9053;&#x67D0;&#x4E2A;&#x503C;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x60F3;&#x77E5;&#x9053;&#x5B83;&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x6B64;&#xFF0C;ES&#x63D0;&#x4F9B;&#x4E86;instanceof&#x64CD;&#x4F5C;&#x7B26;&#x3002;</p>
-<p>&#x4F8B;&#x5B50;&#x5982;&#x4E0B;&#xFF1A;</p>
+</code></pre><p>这个例子和前面那个例子唯一的区别，是在函数内添加了两行代码。<br>产生了什么作用呢，新建了一个对象，改变了对象的属性name的值，如果是按照引用来传递的，那么person的name属性就是alien，而不是idea。实际上，当在函数内部重写obj时，这个变量引用的就是一个局部对象了，这个局部对象会在函数执行完毕后立即销毁。</p>
+<p>注：可以把ES中函数的参数想象为局部变量。</p>
+<p>4、检测类型</p>
+<p>要检测一个变量是不是基本类型，前面提到过的typeof操作符是最佳的工具，说具体点，typeof是确定一个变量是字符串、数值、布尔值，还是undefined的最佳工具，如果变量的值是对象或null，则typeof会返回“object”。</p>
+<p>虽然typeof是个有力的工具，但是在检测引用类型时，它的用处不大，因为通常我们并不想知道某个值是对象，而是想知道它具体是什么对象，对此，ES提供了instanceof操作符。</p>
+<p>例子如下：</p>
 <pre><code>alert(person instanceof Object);    
-</code></pre><p>&#x5982;&#x679C;&#x53D8;&#x91CF;&#x662F;&#x7ED9;&#x5B9A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;true&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x7528;instanceof&#x68C0;&#x6D4B;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x59CB;&#x7EC8;&#x4F1A;&#x8FD4;&#x56DE;false&#xFF0C;&#x56E0;&#x4E3A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#x3002;</p>
-<h2 id="&#x6267;&#x884C;&#x73AF;&#x5883;&#x548C;&#x4F5C;&#x7528;&#x57DF;"><a href="#&#x6267;&#x884C;&#x73AF;&#x5883;&#x548C;&#x4F5C;&#x7528;&#x57DF;" class="headerlink" title="&#x6267;&#x884C;&#x73AF;&#x5883;&#x548C;&#x4F5C;&#x7528;&#x57DF;"></a>&#x6267;&#x884C;&#x73AF;&#x5883;&#x548C;&#x4F5C;&#x7528;&#x57DF;</h2><p>&#x6267;&#x884C;&#x73AF;&#x5883;&#x662F;js&#x4E2D;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x53D8;&#x91CF;&#x6216;&#x51FD;&#x6570;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x5176;&#x4ED6;&#x6570;&#x636E;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x90FD;&#x6709;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x73AF;&#x5883;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x90FD;&#x4FDD;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x65F6;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x89E3;&#x6790;&#x5668;&#x5728;&#x5904;&#x7406;&#x6570;&#x636E;&#x65F6;&#x4F1A;&#x5728;&#x540E;&#x53F0;&#x4F7F;&#x7528;&#x5B83;&#x3002;<br>&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x662F;&#x6700;&#x5916;&#x56F4;&#x7684;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x6839;&#x636E;ES&#x5B9E;&#x73B0;&#x6240;&#x5728;&#x7684;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x4E0D;&#x540C;&#xFF0C;&#x8868;&#x793A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x5BF9;&#x8C61;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5728;web&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;window&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;window&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x67D0;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8BE5;&#x73AF;&#x5883;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E5F;&#x968F;&#x4E4B;&#x9500;&#x6BC1;&#xFF08;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x76F4;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;&#x65F6;&#x624D;&#x88AB;&#x9500;&#x6BC1;&#xFF09;&#x3002;<br>&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5F53;&#x6267;&#x884C;&#x6D41;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x73AF;&#x5883;&#x5C31;&#x4F1A;&#x88AB;&#x63A8;&#x5165;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x6808;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x6808;&#x5C06;&#x5176;&#x51FD;&#x6570;&#x5F39;&#x51FA;&#xFF0C;&#x628A;&#x63A7;&#x5236;&#x6743;&#x8FD4;&#x56DE;&#x7ED9;&#x4E4B;&#x524D;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#x3002;<br>&#x5F53;&#x4EE3;&#x7801;&#x5728;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x4E2D;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x3002;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x7528;&#x9014;&#xFF0C;&#x662F;&#x4FDD;&#x8BC1;&#x5BF9;&#x6267;&#x884C;&#x73AF;&#x5883;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x6709;&#x5E8F;&#x8BBF;&#x95EE;&#x3002;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x524D;&#x7AEF;&#xFF0C;&#x59CB;&#x7EC8;&#x90FD;&#x662F;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x6240;&#x5728;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;</p>
-<p>&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#x6700;&#x5F00;&#x59CB;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5373;arguments&#x5BF9;&#x8C61;&#xFF08;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x4E2D;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#xFF09;&#xFF0C;&#x3002;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x6765;&#x81EA;&#x5305;&#x542B;&#xFF08;&#x5916;&#x90E8;&#xFF09;&#x73AF;&#x5883;&#xFF0C;&#x518D;&#x4E0B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x5219;&#x6765;&#x81EA;&#x4E0B;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x4E00;&#x76F4;&#x5EF6;&#x7EED;&#x5230;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x59CB;&#x7EC8;&#x90FD;&#x662F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;<br>&#x6807;&#x8BC6;&#x7B26;&#x89E3;&#x6790;&#x662F;&#x6CBF;&#x7740;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x7684;&#x641C;&#x7D22;&#x8FC7;&#x7A0B;&#xFF0C;&#x641C;&#x7D22;&#x8FC7;&#x7A0B;&#x59CB;&#x7EC8;&#x4ECE;&#x94FE;&#x7684;&#x524D;&#x7AEF;&#x5F00;&#x59CB;&#x9010;&#x7EA7;&#x5411;&#x540E;&#x56DE;&#x6EAF;&#xFF0C;&#x76F4;&#x81F3;&#x627E;&#x5230;&#x6807;&#x8BC6;&#x7B26;&#x4E3A;&#x6B62;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x53D1;&#x751F;&#x3002;</p>
+</code></pre><p>如果变量是给定引用类型的实例，那么就会返回true，当然，如果用instanceof检测基本类型，则始终会返回false，因为基本类型不是对象。</p>
+<h2 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h2><p>执行环境是js中最为重要的一个概念，定义了变量或函数有权访问的其他数据，决定了它们各自的行为，每个执行环境都有与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中，我们编写代码时无法访问这个对象，但解析器在处理数据时会在后台使用它。<br>全局执行环境是最外围的一个执行环境，根据ES实现所在的宿主环境不同，表示执行环境的对象也不一样，在web浏览器中，全局执行环境被认为是window对象，因为所有全局变量和函数都是作为window的属性和方法创建的。某个执行环境中的所有代码执行完毕后，该环境被销毁，保存在其中的变量和函数定义也随之销毁（全局执行环境直到应用程序退出时才被销毁）。<br>每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就会被推入一个环境栈中，函数执行后，栈将其函数弹出，把控制权返回给之前的执行环境。<br>当代码在一个环境中执行时，会创建变量对象的一个作用域链。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链的前端，始终都是当前执行的代码所在环境的变量对象。</p>
+<p>活动对象最开始只包含一个变量，即arguments对象（这个对象在全局环境中是不存在的），。作用域链中的下一个变量对象来自包含（外部）环境，再下一个变量对象则来自下一个包含环境，这样，一直延续到全局执行环境，全局执行环境的变量对象始终都是作用域链中的最后一个对象。<br>标识符解析是沿着作用域链一级一级的搜索过程，搜索过程始终从链的前端开始逐级向后回溯，直至找到标识符为止，如果找不到，通常会导致错误发生。</p>
 <pre><code>var color=&quot;blue&quot;;
     function changeColor(){
         if (color===&quot;blue&quot;) {
@@ -338,53 +445,90 @@
     }
     changeColor();
     alert(&quot;Color is now*+color&quot;);
-</code></pre><p>changeColor()&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x548C;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8BBF;&#x95EE;color&#xFF0C;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E2D;&#x627E;&#x5230;&#x5B83;&#x3002;</p>
-<p>&#x6B64;&#x5916;&#xFF0C;&#x5728;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x5728;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x548C;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E92;&#x6362;&#x4F7F;&#x7528;&#x3002;&#x5185;&#x90E8;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x8BBF;&#x95EE;&#x6240;&#x6709;&#x5916;&#x90E8;&#x73AF;&#x5883;&#xFF0C;&#x5916;&#x90E8;&#x73AF;&#x5883;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x5185;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E9B;&#x73AF;&#x5883;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x662F;&#x7EBF;&#x6027;&#x3001;&#x6709;&#x6B21;&#x5E8F;&#x7684;&#x3002;&#x6BCF;&#x4E2A;&#x73AF;&#x5883;&#x90FD;&#x53EF;&#x4EE5;&#x5411;&#x4E0A;&#x641C;&#x7D22;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x4EE5;&#x67E5;&#x8BE2;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x540D;&#xFF1B;&#x4F46;&#x4EFB;&#x4F55;&#x73AF;&#x5883;&#x90FD;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x5411;&#x4E0B;&#x641C;&#x7D22;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x800C;&#x8FDB;&#x5165;&#x6267;&#x884C;&#x73AF;&#x5883;&#x3002;</p>
-<p>1&#x3001;&#x5EF6;&#x957F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;</p>
-<p>&#x867D;&#x7136;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x7C7B;&#x578B;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x2014;&#x2014;&#x5168;&#x5C40;&#x548C;&#x5C40;&#x90E8;&#xFF0C;&#x4F46;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x529E;&#x6CD5;&#x6765;&#x5EF6;&#x957F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x4E9B;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x524D;&#x7AEF;&#x4E34;&#x65F6;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;&#x8BE5;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x540E;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x73B0;&#x8C61;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5F53;&#x6267;&#x884C;&#x6D41;&#x8FDB;&#x5165;&#x4E0B;&#x5217;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x5C31;&#x4F1A;&#x52A0;&#x957F;&#xFF1A;</p>
+</code></pre><p>changeColor()的作用域包含两个对象，它自己的变量对象和全局环境的变量对象，可以在函数内部访问color，就是因为可以在这个作用域链中找到它。</p>
+<p>此外，在局部作用域中定义的变量可以在局部环境中和全局变量互换使用。内部环境可以通过作用域链访问所有外部环境，外部环境不能访问内部环境中的任何变量和函数，这些环境之间的联系是线性、有次序的。每个环境都可以向上搜索作用域链，以查询变量和函数名；但任何环境都不能通过向下搜索作用域链而进入执行环境。</p>
+<p>1、延长作用域链</p>
+<p>虽然执行环境的类型只有两种——全局和局部，但还有其他办法来延长作用域链，因为有些语句可以在作用域链的前端临时增加一个变量对象。该变量对象会在代码执行后被移除，有两种情况下会发生这种现象，具体来说，就是当执行流进入下列任何一个语句时，作用域链就会加长：</p>
 <ul>
-<li>try-catch&#x8BED;&#x53E5;&#x7684;catch&#x5757;</li>
-<li>with&#x8BED;&#x53E5;</li>
+<li>try-catch语句的catch块</li>
+<li>with语句</li>
 </ul>
-<p>&#x8FD9;&#x4E24;&#x4E2A;&#x8BED;&#x53E5;&#x90FD;&#x4F1A;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x524D;&#x7AEF;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;</p>
-<p>&#x5BF9;with&#x8BED;&#x53E5;&#x6765;&#x8BF4;&#xFF0C;&#x4F1A;&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E2D;</p>
-<p>&#x5BF9;catch&#x8BED;&#x53E5;&#x6765;&#x8BF4;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x662F;&#x88AB;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x7684;&#x58F0;&#x660E;</p>
-<p>2&#x3001;&#x6CA1;&#x6709;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</p>
-<p>js&#x6CA1;&#x6709;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7ECF;&#x5E38;&#x4F1A;&#x5BFC;&#x81F4;&#x7406;&#x89E3;&#x4E0A;&#x7684;&#x56F0;&#x60D1;&#xFF0C;</p>
-<p>&#x5728;&#x5176;&#x4ED6;&#x7C7B;C&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x5305;&#x542B;&#x8D77;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x56E0;&#x800C;&#x652F;&#x6301;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x6765;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x3002;&#x5373;&#x5728;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x5B83;&#x4E0D;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x53D8;&#x91CF;&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x3002;</p>
-<p>2.1 &#x58F0;&#x660E;&#x53D8;&#x91CF;</p>
-<p>&#x4F7F;&#x7528;var&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x4F1A;&#x81EA;&#x52A8;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x73AF;&#x5883;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#xFF1B;&#x5728;with&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x73AF;&#x5883;&#x3002;&#x5982;&#x679C;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;&#x6CA1;&#x6709;&#x4F7F;&#x7528;var&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x5230;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x3002;</p>
-<p>&#x5728;&#x7F16;&#x5199;js&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E0D;&#x58F0;&#x660E;&#x800C;&#x76F4;&#x63A5;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x505A;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x610F;&#x5916;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E00;&#x5B9A;&#x5148;&#x58F0;&#x660E;&#x3002;</p>
-<p>2.2 &#x67E5;&#x8BE2;&#x6807;&#x8BC6;&#x7B26;</p>
-<p>&#x5F53;&#x5728;&#x67D0;&#x4E2A;&#x73AF;&#x5883;&#x4E3A;&#x4E86;&#x8BFB;&#x53D6;&#x6216;&#x8005;&#x5199;&#x5165;&#x800C;&#x5F15;&#x7528;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x641C;&#x7D22;&#x6765;&#x786E;&#x5B9A;&#x8BE5;&#x6807;&#x8BC6;&#x7B26;&#x5B9E;&#x9645;&#x4EE3;&#x8868;&#x4EC0;&#x4E48;&#xFF0C;&#x641C;&#x7D22;&#x8FC7;&#x7A0B;&#x4ECE;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x524D;&#x7AEF;&#x5F00;&#x59CB;&#xFF0C;&#x5411;&#x4E0A;&#x9010;&#x7EA7;&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x672A;&#x627E;&#x5230;&#xFF0C;&#x4E00;&#x76F4;&#x641C;&#x7D22;&#x5230;&#x5168;&#x5C40;&#x73AF;&#x5883;&#xFF0C;&#x82E5;&#x8FD8;&#x672A;&#x627E;&#x5230;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x53D8;&#x91CF;&#x672A;&#x58F0;&#x660E;&#x3002;&#x5982;&#x679C;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x5B58;&#x5728;&#x7740;&#x540C;&#x540D;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x4F4D;&#x4E8E;&#x7236;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x3002;</p>
-<p>ps&#xFF1A;&#x53D8;&#x91CF;&#x67E5;&#x8BE2;&#x4E5F;&#x4E0D;&#x662F;&#x6CA1;&#x6709;&#x4EE3;&#x4EF7;&#x7684;&#xFF0C;&#x660E;&#x663E;&#xFF0C;&#x8BBF;&#x95EE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8981;&#x6BD4;&#x8BBF;&#x95EE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x66F4;&#x5FEB;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x7528;&#x5411;&#x4E0A;&#x641C;&#x7D22;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x3002;&#x4F46;&#x968F;&#x7740;js&#x5F15;&#x64CE;&#x7684;&#x9010;&#x6B65;&#x4F18;&#x5316;&#xFF0C;&#x5C06;&#x6765;&#x8FD9;&#x4E2A;&#x5DEE;&#x522B;&#x53EF;&#x80FD;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x4E0D;&#x8BA1;&#x3002;</p>
-<p>3&#x3001;&#x5783;&#x573E;&#x6536;&#x96C6;</p>
-<p>js&#x4E2D;&#x5177;&#x6709;&#x81EA;&#x52A8;&#x5783;&#x573E;&#x6536;&#x96C6;&#x673A;&#x5236;&#xFF0C;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4F1A;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x6240;&#x9700;&#x5185;&#x5B58;&#x7684;&#x5206;&#x914D;&#x548C;&#x65E0;&#x7528;&#x5185;&#x5B58;&#x7684;&#x56DE;&#x6536;&#x5B8C;&#x5168;&#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x52A8;&#x7BA1;&#x7406;&#x3002;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5176;&#x5B9E;&#x4E5F;&#x7B80;&#x5355;&#xFF0C;&#x627E;&#x51FA;&#x90A3;&#x4E9B;&#x4E0D;&#x518D;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x91CA;&#x653E;&#x5176;&#x5185;&#x5B58;&#x3002;&#x4E3A;&#x6B64;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x6309;&#x7167;&#x56FA;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5468;&#x671F;&#x6027;&#x7684;&#x6267;&#x884C;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#x3002;</p>
-<p>&#x5148;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x51FD;&#x6570;&#x4E2D;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x53EA;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#xFF0C;&#x800C;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x4E3A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5728;&#x6808;&#x6216;&#x5806;&#x5185;&#x5B58;&#x4E0A;&#x5206;&#x914D;&#x76F8;&#x5E94;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B58;&#x50A8;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x76F4;&#x81F3;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5C31;&#x6CA1;&#x6709;&#x5B58;&#x5728;&#x7684;&#x5FC5;&#x8981;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x4F9B;&#x5C06;&#x6765;&#x4F7F;&#x7528;&#x3002;&#x4F46;&#x5E76;&#x975E;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x8FD9;&#x4E48;&#x5BB9;&#x6613;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5FC5;&#x987B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8DDF;&#x8E2A;&#xFF0C;&#x5BF9;&#x4E0D;&#x518D;&#x6709;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x6253;&#x4E0A;&#x6807;&#x8BB0;&#x4EE5;&#x5907;&#x5C06;&#x6765;&#x6536;&#x56DE;&#x5B83;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x6807;&#x8BC6;&#x7B56;&#x7565;&#x53EF;&#x80FD;&#x4F1A;&#x56E0;&#x5B9E;&#x73B0;&#x800C;&#x5F02;&#xFF0C;&#x4F46;&#x5177;&#x4F53;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x5B9E;&#x73B0;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x4E2A;&#x7B56;&#x7565;&#x3002;</p>
-<p>3.1 &#x6807;&#x8BB0;&#x6E05;&#x9664;</p>
-<p>&#x662F;js&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x65B9;&#x5F0F;&#xFF0C;&#x5F53;&#x53D8;&#x91CF;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#xFF0C;&#x5C31;&#x5C06;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x6807;&#x8BB0;&#x4E3A;&#x201C;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#x201D;&#x3002;&#x903B;&#x8F91;&#x4E0A;&#x6C38;&#x8FDC;&#x4E0D;&#x80FD;&#x91CA;&#x653E;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x8981;&#x6267;&#x884C;&#x6D41;&#x8FDB;&#x5165;&#x76F8;&#x5E94;&#x73AF;&#x5883;&#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x7528;&#x5230;&#x5B83;&#x4EEC;&#xFF0C;&#x800C;&#x5F53;&#x53D8;&#x91CF;&#x79BB;&#x5F00;&#x73AF;&#x5883;&#x65F6;&#xFF0C;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x201C;&#x79BB;&#x5F00;&#x73AF;&#x5883;&#x201D;&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x65B9;&#x5F0F;&#x6765;&#x6807;&#x8BB0;&#x53D8;&#x91CF;&#xFF0C;&#x8BF4;&#x5230;&#x5E95;&#xFF0C;&#x5982;&#x4F55;&#x6807;&#x8BB0;&#x53D8;&#x91CF;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x91C7;&#x53D6;&#x4EC0;&#x4E48;&#x7B56;&#x7565;&#x3002;</p>
-<p>&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x7ED9;&#x5B58;&#x50A8;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x90FD;&#x52A0;&#x4E0A;&#x6807;&#x8BB0;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x4F1A;&#x53BB;&#x6389;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4EE5;&#x53CA;&#x88AB;&#x73AF;&#x5883;&#x4E2D;&#x53D8;&#x91CF;&#x5F15;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x6807;&#x8BB0;&#xFF0C;&#x800C;&#x5728;&#x6B64;&#x4E4B;&#x540E;&#x518D;&#x88AB;&#x52A0;&#x4E0A;&#x6807;&#x8BB0;&#x7684;&#x53D8;&#x91CF;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x51C6;&#x5907;&#x5220;&#x9664;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x5DF2;&#x7ECF;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x5230;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x4E86;&#xFF0C;&#x6700;&#x540E;&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5B8C;&#x6210;&#x5185;&#x5B58;&#x6E05;&#x9664;&#x5DE5;&#x4F5C;&#xFF0C;&#x9500;&#x6BC1;&#x90A3;&#x4E9B;&#x5E26;&#x6807;&#x8BB0;&#x7684;&#x503C;&#x5E76;&#x56DE;&#x6536;&#x5B83;&#x4EEC;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;</p>
-<p>3.2 &#x5F15;&#x7528;&#x8BA1;&#x6570;</p>
-<p>&#x542B;&#x4E49;&#x662F;&#x8DDF;&#x8E2A;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;&#x503C;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x5F53;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5E76;&#x5C06;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x8D4B;&#x7ED9;&#x8BE5;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x5F15;&#x7528;&#x6B21;&#x6570;&#x662F;1&#xFF0C;&#x5982;&#x679C;&#x540C;&#x4E00;&#x4E2A;&#x503C;&#x53C8;&#x88AB;&#x8D4B;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5F15;&#x7528;&#x6B21;&#x6570;&#x52A0;1&#xFF0C;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x5305;&#x542B;&#x5BF9;&#x8FD9;&#x4E2A;&#x503C;&#x5F15;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x53C8;&#x53D6;&#x5F97;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x5F15;&#x7528;&#x6B21;&#x6570;&#x51CF;1&#xFF0C;&#x5F15;&#x7528;&#x6B21;&#x6570;&#x53D8;&#x6210;0&#xFF0C;&#x8BF4;&#x660E;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x518D;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x56E0;&#x800C;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x56DE;&#x6536;&#x3002;</p>
-<p>3.3 &#x6027;&#x80FD;&#x95EE;&#x9898;</p>
-<p>&#x5783;&#x573E;&#x6536;&#x96C6;&#x662F;&#x5468;&#x671F;&#x6027;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x6570;&#x91CF;&#x5F88;&#x53EF;&#x89C2;&#xFF0C;&#x90A3;&#x4E48;&#x56DE;&#x6536;&#x5DE5;&#x4F5C;&#x91CF;&#x4E5F;&#x662F;&#x5F88;&#x5927;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x786E;&#x5B9A;&#x6536;&#x96C6;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5C31;&#x5F88;&#x91CD;&#x8981;&#x4E86;&#x3002;</p>
-<p>3.4 &#x7BA1;&#x7406;&#x5185;&#x5B58;</p>
-<p>&#x5728;&#x4F7F;&#x7528;&#x5177;&#x5907;&#x5783;&#x573E;&#x6536;&#x96C6;&#x673A;&#x5236;&#x7684;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E00;&#x822C;&#x4E0D;&#x5FC5;&#x64CD;&#x5FC3;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;js&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5206;&#x914D;&#x7ED9;web&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x6570;&#x91CF;&#x901A;&#x5E38;&#x6BD4;&#x5206;&#x914D;&#x7ED9;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5C11;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x8003;&#x8651;&#xFF0C;&#x9632;&#x6B62;&#x8FD0;&#x884C;js&#x7684;&#x7F51;&#x9875;&#x8017;&#x5C3D;&#x5168;&#x90E8;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x800C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x3002;&#x5185;&#x5B58;&#x9650;&#x5236;&#x95EE;&#x9898;&#x4E0D;&#x4EC5;&#x4F1A;&#x5F71;&#x54CD;&#x7ED9;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x4F1A;&#x5F71;&#x54CD;&#x8C03;&#x7528;&#x6808;&#x4EE5;&#x53CA;&#x5728;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x6570;&#x91CF;&#x3002;</p>
-<p>&#x56E0;&#x6B64;&#xFF0C;&#x786E;&#x4FDD;&#x4F7F;&#x7528;&#x6700;&#x5C11;&#x7684;&#x5185;&#x5B58;&#x53EF;&#x4EE5;&#x8BA9;&#x9875;&#x9762;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x800C;&#x4F18;&#x5316;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x4E3A;&#x6267;&#x884C;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x4FDD;&#x5B58;&#x5FC5;&#x8981;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x65E6;&#x6570;&#x636E;&#x4E0D;&#x518D;&#x6709;&#x7528;&#xFF0C;&#x6700;&#x597D;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;null&#x6765;&#x91CA;&#x653E;&#x5176;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x505A;&#x6CD5;&#x53EB;&#x89E3;&#x9664;&#x5F15;&#x7528;&#x3002;</p>
-<p>&#x4E0D;&#x8FC7;&#x89E3;&#x9664;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x5F15;&#x7528;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x81EA;&#x52A8;&#x56DE;&#x6536;&#x8BE5;&#x503C;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5B83;&#x7684;&#x771F;&#x6B63;&#x4F5C;&#x7528;&#x662F;&#x8BA9;&#x503C;&#x8131;&#x79BB;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x4EE5;&#x4FBF;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4E0B;&#x6B21;&#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x5176;&#x56DE;&#x6536;&#x3002;</p>
-<p>&#x597D;&#x4E86;&#xFF0C;&#x5173;&#x4E8E;&#x201C;&#x53D8;&#x91CF;&#x3001;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5185;&#x5B58;&#x201D;&#x5C31;&#x5148;&#x7B80;&#x5355;&#x8BF4;&#x5230;&#x8FD9;&#x513F;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x86EE;&#x591A;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8010;&#x5FC3;&#x7684;&#x54C1;&#x5473;&#x4E00;&#x4E0B;&#x5C31;&#x80FD;&#x6709;&#x4E0D;&#x5C11;&#x6536;&#x83B7;&#x3002;&#x4E0B;&#x6B21;&#x5C31;&#x8BE5;&#x662F;js&#x4E2D;&#x7684;&#x5927;&#x5757;&#x5934;&#x4E4B;&#x4E00;&#x2014;&#x2014;&#x201C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x201D;&#x4E86;&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;~</p>
+<p>这两个语句都会在作用域链的前端添加一个变量对象。</p>
+<p>对with语句来说，会将指定的对象添加到作用域链中</p>
+<p>对catch语句来说，会创建一个新的变量对象，其中包含的是被抛出的错误对象的声明</p>
+<p>2、没有块级作用域</p>
+<p>js没有块级作用域经常会导致理解上的困惑，</p>
+<p>在其他类C语言中，用花括号包含起来的代码块都有自己的作用域，因而支持根据条件来定义变量。即在语句执行完毕后它不会被销毁，而是将变量添加到当前的执行环境中。</p>
+<p>2.1 声明变量</p>
+<p>使用var声明的变量会自动被添加到最接近的环境中，在函数内部，最接近的环境就是函数的局部环境；在with语句中，最接近的就是函数环境。如果初始化变量没有使用var，该变量会自动添加到全局环境。</p>
+<p>在编写js代码的过程中，不声明而直接初始化变量是一个常见的错误做法，可能导致意外，建议一定先声明。</p>
+<p>2.2 查询标识符</p>
+<p>当在某个环境为了读取或者写入而引用一个标识符时，必须通过搜索来确定该标识符实际代表什么，搜索过程从作用域的前端开始，向上逐级查询，如未找到，一直搜索到全局环境，若还未找到，意味着该变量未声明。如果局部环境中存在着同名标识符，就不会使用位于父环境中的标识符。</p>
+<p>ps：变量查询也不是没有代价的，明显，访问局部变量要比访问局部变量更快，因为不用向上搜索作用域链。但随着js引擎的逐步优化，将来这个差别可能可以忽略不计。</p>
+<p>3、垃圾收集</p>
+<p>js中具有自动垃圾收集机制，执行环境会负责管理代码执行过程中使用的内存，所需内存的分配和无用内存的回收完全实现了自动管理。这种机制其实也简单，找出那些不再继续使用的变量，释放其内存。为此垃圾收集器会按照固定的时间间隔周期性的执行这一操作。</p>
+<p>先来分析一下函数中局部变量的生命周期。局部变量只在函数执行过程中存在，而在这个过程中，会为局部变量在栈或堆内存上分配相应空间，以便存储它们的值，然后在函数中使用这些值，直至函数执行结束。此时，局部变量就没有存在的必要了，因此可以释放内存供将来使用。但并非所有情况下都这么容易得出结论，垃圾收集器必须对其进行跟踪，对不再有用的变量打上标记以备将来收回它占用的内存，标识策略可能会因实现而异，但具体到浏览器实现通常有两个策略。</p>
+<p>3.1 标记清除</p>
+<p>是js中最常用的垃圾收集方式，当变量进入环境，就将这个变量标记为“进入环境”。逻辑上永远不能释放进入环境的变量占用的内存，因为只要执行流进入相应环境，就可能用到它们，而当变量离开环境时，将其标记“离开环境”。</p>
+<p>可以使用任何方式来标记变量，说到底，如何标记变量不重要，关键在于采取什么策略。</p>
+<p>垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记，然后，会去掉环境中的变量以及被环境中变量引用的变量的标记，而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了，最后，垃圾收集器完成内存清除工作，销毁那些带标记的值并回收它们所占用的内存空间。</p>
+<p>3.2 引用计数</p>
+<p>含义是跟踪记录每个值被引用的次数，当声明一个变量并将一个引用类型值赋给该变量时，这个值的引用次数是1，如果同一个值又被赋给另一个变量，引用次数加1，相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1，引用次数变成0，说明没有办法再访问这个值，因而就可以进行回收。</p>
+<p>3.3 性能问题</p>
+<p>垃圾收集是周期性运行的，如果为变量分配的内存数量很可观，那么回收工作量也是很大的，这个时候，确定收集的时间间隔就很重要了。</p>
+<p>3.4 管理内存</p>
+<p>在使用具备垃圾收集机制的语言编写程序时，开发人员一般不必操心内存管理的问题，但是js有所不同，其中最主要的问题是，分配给web浏览器的可用内存数量通常比分配给桌面应用程序的少，目的是出于安全考虑，防止运行js的网页耗尽全部系统内存而导致系统崩溃。内存限制问题不仅会影响给变量分配内存，同时还会影响调用栈以及在一个线程中能够同时执行的语句数量。</p>
+<p>因此，确保使用最少的内存可以让页面获得更好的性能，而优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据，一旦数据不再有用，最好通过将其值设置为null来释放其引用，这个做法叫解除引用。</p>
+<p>不过解除一个值的引用并不意味着自动回收该值所占用的内存，它的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收。</p>
+<p>好了，关于“变量、作用域和内存”就先简单说到这儿了，其实也蛮多的，但是耐心的品味一下就能有不少收获。下次就该是js中的大块头之一——“引用类型”了，敬请期待~</p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -396,6 +540,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -410,6 +556,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -418,26 +568,29 @@
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -450,7 +603,7 @@
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -468,6 +621,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -483,34 +637,46 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -532,27 +698,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -561,168 +721,178 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型和引用类型的值"><span class="nav-number">1.</span> <span class="nav-text">基本类型和引用类型的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行环境和作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境和作用域</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -743,237 +913,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -981,24 +966,124 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="javascript," />
@@ -52,45 +90,68 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="&amp;#x5199;&amp;#x5728;&amp;#x524D;&amp;#x9762;&amp;#x5F15;&amp;#x7528;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7AE0;&amp;#x8282;&amp;#x63D0;&amp;#x5230;&amp;#x8FC7;&amp;#xFF0C;ES&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x520">
+<meta name="description" content="写在前面引用类型，前面的章节提到过，ES的变量类型，分为“基本类型”和“引用类型”。那么这里就开始介绍“引用类型”。
+引用类型的值（对象）是引用类型的一个实例，在ES中，引用类型是一种数据结构，用于将数据和功能组织在一起，
+如前所述，对象是某个特定引用类型的实例，新对象是使用new操作符后跟一个构造函数来创建。构造函数本身就是一个函数，只不过该函数是出于创建新对象的目的而定义的，如下：
+var p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="征服javascript学习笔记（五）——引用类型Object和Array">
 <meta property="og:url" content="http://yoursite.com/2016/04/20/javascript-study-five/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="&amp;#x5199;&amp;#x5728;&amp;#x524D;&amp;#x9762;&amp;#x5F15;&amp;#x7528;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7AE0;&amp;#x8282;&amp;#x63D0;&amp;#x5230;&amp;#x8FC7;&amp;#xFF0C;ES&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x520">
+<meta property="og:description" content="写在前面引用类型，前面的章节提到过，ES的变量类型，分为“基本类型”和“引用类型”。那么这里就开始介绍“引用类型”。
+引用类型的值（对象）是引用类型的一个实例，在ES中，引用类型是一种数据结构，用于将数据和功能组织在一起，
+如前所述，对象是某个特定引用类型的实例，新对象是使用new操作符后跟一个构造函数来创建。构造函数本身就是一个函数，只不过该函数是出于创建新对象的目的而定义的，如下：
+var p">
 <meta property="og:updated_time" content="2016-04-20T14:09:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="征服javascript学习笔记（五）——引用类型Object和Array">
-<meta name="twitter:description" content="&amp;#x5199;&amp;#x5728;&amp;#x524D;&amp;#x9762;&amp;#x5F15;&amp;#x7528;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7AE0;&amp;#x8282;&amp;#x63D0;&amp;#x5230;&amp;#x8FC7;&amp;#xFF0C;ES&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x520">
+<meta name="twitter:description" content="写在前面引用类型，前面的章节提到过，ES的变量类型，分为“基本类型”和“引用类型”。那么这里就开始介绍“引用类型”。
+引用类型的值（对象）是引用类型的一个实例，在ES中，引用类型是一种数据结构，用于将数据和功能组织在一起，
+如前所述，对象是某个特定引用类型的实例，新对象是使用new操作符后跟一个构造函数来创建。构造函数本身就是一个函数，只不过该函数是出于创建新对象的目的而定义的，如下：
+var p">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 征服javascript学习笔记（五）——引用类型Object和Array | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2016/04/20/javascript-study-five/"/>
+
+
+
+
+
+  <title>征服javascript学习笔记（五）——引用类型Object和Array | 灵感之见</title>
   
 
 
@@ -99,48 +160,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -148,43 +217,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -199,49 +278,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/20/javascript-study-five/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                征服javascript学习笔记（五）——引用类型Object和Array
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">征服javascript学习笔记（五）——引用类型Object和Array</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T00:00:00+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-20T00:00:00+08:00">
+                2016-04-20
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/javascript学习笔记/" itemprop="url" rel="index">
                     <span itemprop="name">javascript学习笔记</span>
                   </a>
@@ -249,7 +347,6 @@
 
                 
                 
-
               
             </span>
           
@@ -259,152 +356,196 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <h2 id="&#x5199;&#x5728;&#x524D;&#x9762;"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</h2><p>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x524D;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;ES&#x7684;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF0C;&#x5206;&#x4E3A;&#x201C;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x201D;&#x548C;&#x201C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x201D;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x5C31;&#x5F00;&#x59CB;&#x4ECB;&#x7ECD;&#x201C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x201D;&#x3002;</p>
-<p>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF08;&#x5BF9;&#x8C61;&#xFF09;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;ES&#x4E2D;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x4E8E;&#x5C06;&#x6570;&#x636E;&#x548C;&#x529F;&#x80FD;&#x7EC4;&#x7EC7;&#x5728;&#x4E00;&#x8D77;&#xFF0C;</p>
-<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x5BF9;&#x8C61;&#x662F;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x65B0;&#x5BF9;&#x8C61;&#x662F;&#x4F7F;&#x7528;new&#x64CD;&#x4F5C;&#x7B26;&#x540E;&#x8DDF;&#x4E00;&#x4E2A;<strong>&#x6784;&#x9020;&#x51FD;&#x6570;</strong>&#x6765;&#x521B;&#x5EFA;&#x3002;&#x6784;&#x9020;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x8BE5;&#x51FD;&#x6570;&#x662F;&#x51FA;&#x4E8E;&#x521B;&#x5EFA;&#x65B0;&#x5BF9;&#x8C61;&#x7684;&#x76EE;&#x7684;&#x800C;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>引用类型，前面的章节提到过，ES的变量类型，分为“基本类型”和“引用类型”。那么这里就开始介绍“引用类型”。</p>
+<p>引用类型的值（对象）是引用类型的一个实例，在ES中，引用类型是一种数据结构，用于将数据和功能组织在一起，</p>
+<p>如前所述，对象是某个特定引用类型的实例，新对象是使用new操作符后跟一个<strong>构造函数</strong>来创建。构造函数本身就是一个函数，只不过该函数是出于创建新对象的目的而定义的，如下：</p>
 <pre><code>var perspon=new Object();
-</code></pre><h2 id="Object&#x7C7B;&#x578B;"><a href="#Object&#x7C7B;&#x578B;" class="headerlink" title="Object&#x7C7B;&#x578B;"></a>Object&#x7C7B;&#x578B;</h2><p>&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x6240;&#x770B;&#x5230;&#x7684;&#x5927;&#x591A;&#x6570;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x90FD;&#x662F;Object&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;Object&#x4E5F;&#x662F;ES&#x4E2D;&#x4F7F;&#x7528;&#x6700;&#x591A;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x3002;&#x867D;&#x7136;Object&#x7684;&#x5B9E;&#x4F8B;&#x4E0D;&#x5177;&#x5907;&#x591A;&#x5C11;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B58;&#x50A8;&#x548C;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x4EEC;&#x786E;&#x5B9E;&#x662F;&#x975E;&#x5E38;&#x7406;&#x60F3;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
-<p>&#x521B;&#x5EFA;Object&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#xFF1A;</p>
-<p><strong>&#x7B2C;&#x4E00;&#x79CD;</strong></p>
-<p>&#x4F7F;&#x7528;new&#x64CD;&#x4F5C;&#x7B26;&#x540E;&#x8DDF;Object&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+</code></pre><h2 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h2><p>我们平时所看到的大多数引用类型值都是Object类型的实例，而且，Object也是ES中使用最多的一个类型。虽然Object的实例不具备多少功能，但对于在应用程序中存储和传输数据而言，它们确实是非常理想的选择。</p>
+<p>创建Object实例的方式有两种：</p>
+<p><strong>第一种</strong></p>
+<p>使用new操作符后跟Object构造函数，如下所示：</p>
 <pre><code>var person=new Object();
     person.name=&quot;idea&quot;;
     person.age=27;
-</code></pre><p><strong>&#x7B2C;&#x4E8C;&#x79CD;</strong></p>
-<p>&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x662F;&#x5BF9;&#x8C61;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x79CD;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#xFF0C;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x7B80;&#x5316;&#x521B;&#x5EFA;&#x5305;&#x542B;&#x5927;&#x91CF;&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E0A;&#x4F8B;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#xFF1A;</p>
+</code></pre><p><strong>第二种</strong></p>
+<p>使用对象字面量，是对象定义的一种简写形式，目的在于简化创建包含大量属性的对象的过程。比如，上例可以写成下面这样：</p>
 <pre><code>var person={
     name:&quot;idea&quot;,
     age:27
 }
-</code></pre><p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5BF9;&#x8C61;&#xFF0C;&#x5C5E;&#x6027;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#x3002;&#x4F46;&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x63D0;&#x793A;&#x7684;&#x662F;&#xFF0C;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x4E4B;&#x95F4;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x9017;&#x53F7;&#xFF0C;&#x4F46;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x540E;&#x9762;&#x7684;&#x9017;&#x53F7;&#x4E0D;&#x662F;&#x53EF;&#x6709;&#x53EF;&#x65E0;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x4E86;&#xFF0C;&#x4F1A;&#x5728;IE7&#x53CA;&#x66F4;&#x65E9;&#x7248;&#x672C;&#x548C;Opera&#x4E2D;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;</p>
-<p>&#x5C5E;&#x6027;&#x540D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>如上所示，对象，属性，属性值，一目了然。但有一点需要提示的是，多个属性之间需要添加逗号，但最后一个属性后面的逗号不是可有可无，如果加了，会在IE7及更早版本和Opera中导致错误。</p>
+<p>属性名也可以使用字符串，比如：</p>
 <pre><code>var person={
-    &#x201C;name&#x201D;:&quot;idea&quot;,
-    &#x201C;age&#x201D;:27
+    “name”:&quot;idea&quot;,
+    “age”:27
 }
-</code></pre><p>&#x53E6;&#x5916;&#x8FD8;&#x4F1A;&#x51FA;&#x73B0;&#x7559;&#x7A7A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>另外还会出现留空的情况，比如：</p>
 <pre><code>var person={}
-</code></pre><p>&#x5219;&#x5176;&#x53EA;&#x5305;&#x542B;&#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x597D;&#xFF0C;&#x8FD8;&#x7ED9;&#x4EBA;&#x6709;&#x5C01;&#x88C5;&#x6570;&#x636E;&#x7684;&#x611F;&#x89C9;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E9B;&#x5B9E;&#x8DF5;&#x7ECF;&#x9A8C;&#xFF0C;&#x5C31;&#x4F1A;&#x77E5;&#x9053;&#xFF0C;&#x5B57;&#x9762;&#x91CF;&#x4E5F;&#x662F;&#x5411;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x5927;&#x91CF;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x7684;&#x9996;&#x9009;&#x65B9;&#x5F0F;&#x3002;</p>
-<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x65F6;&#x4F7F;&#x7528;&#x90FD;&#x662F;&#x70B9;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x4E0D;&#x8FC7;js&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x8868;&#x793A;&#x6CD5;&#x6765;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x5C06;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x5C5E;&#x6027;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F62;&#x5F0F;&#x653E;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+</code></pre><p>则其只包含默认的属性和方法。</p>
+<p>可以看出对象字面量的方法可读性更好，还给人有封装数据的感觉，实际上，如果你有一些实践经验，就会知道，字面量也是向函数传递大量可选参数的首选方式。</p>
+<p>一般来说，访问对象属性时使用都是点表示法，不过js中也可以使用方括号表示法来访问对象的属性，在使用这种方法时，应该将要访问的属性以字符串的形式放在方括号中，如下所示：</p>
 <pre><code>alert(person[&quot;name&quot;]); // &quot;idea&quot;
-</code></pre><p>&#x4ECE;&#x529F;&#x80FD;&#x4E0A;&#x770B;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x533A;&#x522B;&#xFF0C;&#x4F46;&#x65B9;&#x62EC;&#x53F7;&#x65B9;&#x6CD5;&#x6709;&#x4E2A;&#x4F18;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53D8;&#x91CF;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#xFF1A;</p>
+</code></pre><p>从功能上看，这两种方法没有任何区别，但方括号方法有个优点，可以通过变量访问属性：</p>
 <pre><code>var personName=&quot;name&quot;;
     alert(person[personName]); //&quot;idea&quot;
-</code></pre><p>&#x5982;&#x679C;&#x5C5E;&#x6027;&#x540D;&#x4E2D;&#x5305;&#x542B;&#x4F1A;&#x5BFC;&#x81F4;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x7684;&#x5B57;&#x7B26;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;&#x6216;&#x4FDD;&#x7559;&#x5B57;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>如果属性名中包含会导致语法错误的字符或者使用关键字或保留字，也可以使用方括号表示法，比如：</p>
 <pre><code>person[&quot;first name&quot;]=&quot;idea&quot;;
-</code></pre><p>&#x56E0;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#x4E2D;&#x5305;&#x542B;&#x7A7A;&#x683C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x70B9;&#x8868;&#x793A;&#x6CD5;&#x8BBF;&#x95EE;&#xFF0C;&#x7136;&#x800C;&#x5C5E;&#x6027;&#x540D;&#x4E2D;&#x662F;&#x5141;&#x8BB8;&#x5305;&#x542B;&#x975E;&#x5B57;&#x6BCD;&#x975E;&#x6570;&#x5B57;&#x7684;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x6CD5;&#x8BBF;&#x95EE;&#x3002;</p>
-<p>&#x901A;&#x5E38;&#xFF0C;&#x9664;&#x975E;&#x5FC5;&#x987B;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x70B9;&#x8868;&#x793A;&#x6CD5;&#x3002;</p>
-<h2 id="Array&#x7C7B;&#x578B;"><a href="#Array&#x7C7B;&#x578B;" class="headerlink" title="Array&#x7C7B;&#x578B;"></a>Array&#x7C7B;&#x578B;</h2><p>&#x9664;&#x4E86;Object&#x7C7B;&#x578B;&#xFF0C;Array&#x7C7B;&#x578B;&#x662F;ES&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x800C;&#x4E14;ES&#x4E2D;&#x7684;Array&#x548C;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x5F53;&#x4E2D;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x540C;&#xFF0C;&#x5B83;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E14;&#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x3002;</p>
-<p>&#x521B;&#x5EFA;&#x6570;&#x7EC4;&#x7684;&#x57FA;&#x672C;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#x3002;</p>
-<p><strong>&#x7B2C;&#x4E00;&#x79CD;</strong></p>
+</code></pre><p>因为属性名中包含空格，所以不能使用点表示法访问，然而属性名中是允许包含非字母非数字的，这时候就可以用方括号法访问。</p>
+<p>通常，除非必须，建议使用点表示法。</p>
+<h2 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h2><p>除了Object类型，Array类型是ES中最常用的类型。而且ES中的Array和其他语言当中有很大不同，它的每一项可以保存任何数据类型的数据，而且数组的大小可以动态调整。</p>
+<p>创建数组的基本方式有两种。</p>
+<p><strong>第一种</strong></p>
 <pre><code>var colors=new Array();
-</code></pre><p>&#x82E5;&#x77E5;&#x9053;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#xFF1A;</p>
+</code></pre><p>若知道数组长度，可以这样：</p>
 <pre><code>var colors=new Array(20);
-</code></pre><p>&#x8FD8;&#x53EF;&#x4EE5;&#x628A;&#x6570;&#x7EC4;&#x7684;&#x9879;&#x76F4;&#x63A5;&#x5199;&#x8FDB;&#x53BB;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+</code></pre><p>还可以把数组的项直接写进去，像这样：</p>
 <pre><code>var colors=new Array(&quot;green&quot;,&quot;blue&quot;,&quot;yellow&quot;);
-</code></pre><p>&#x7ED9;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x503C;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x5206;&#x4E3A;&#x6570;&#x503C;&#x548C;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x4E4B;&#x5206;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
-<pre><code>var colors=new Array(3)&#xFF1B;   //&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;3&#x7684;&#x6570;&#x7EC4;
-    var colors=new Array(&quot;green&quot;); //&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E00;&#x9879;&#x503C;&#x4E3A;&#x201C;green&#x201D;&#x7684;&#x6570;&#x7EC4;
-</code></pre><p>&#x53E6;&#x5916;&#xFF0C;&#x53EF;&#x4EE5;&#x7701;&#x7565;new&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>给构造函数传递值也是可以创建一个数组的，不过分为数值和其他类型之分，比如：</p>
+<pre><code>var colors=new Array(3)；   //创建了一个长度为3的数组
+    var colors=new Array(&quot;green&quot;); //创建了一个包含一项值为“green”的数组
+</code></pre><p>另外，可以省略new操作符，比如：</p>
 <pre><code>var colors=Array();
-</code></pre><p><strong>&#x7B2C;&#x4E8C;&#x79CD;</strong></p>
-<p>&#x6570;&#x7EC4;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x76F4;&#x63A5;&#x770B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</code></pre><p><strong>第二种</strong></p>
+<p>数组字面量，直接看例子：</p>
 <pre><code>var numbers=[0,1,2,3,4];
-</code></pre><p>&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;5&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
-<p>&#x521B;&#x5EFA;&#x5B8C;&#x4E86;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x5C31;&#x662F;&#x8BFB;&#x53D6;&#x548C;&#x8BBE;&#x7F6E;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x52A0;&#x4E0A;&#x6570;&#x5B57;&#x7D22;&#x5F15;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x6570;&#x5B57;&#x7D22;&#x5F15;&#x4ECE;0&#x5F00;&#x59CB;&#x3002;</p>
-<p>&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>会创建一个长度为5的数组。</p>
+<p>创建完了，就需要对其进行操作，最基本的就是读取和设置，这时候，需要使用方括号加上数字索引，数组的数字索引从0开始。</p>
+<p>比如：</p>
 <pre><code>var colors=[&quot;red&quot;,&quot;blue&quot;];
-    alert(colors[1]);   //&#x8BFB;&#x53D6;
-    colors[0]=&quot;green&quot;;  //&#x8BBE;&#x7F6E;
-</code></pre><p>&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7D22;&#x5F15;&#x503C;&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#xFF0C;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;undefined&#xFF0C;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x80FD;&#x8FD9;&#x6837;&#x8BFB;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x4EE5;&#x4E0A;&#x6570;&#x7EC4;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;</p>
+    alert(colors[1]);   //读取
+    colors[0]=&quot;green&quot;;  //设置
+</code></pre><p>访问的时候，如果索引值对于数组长度，则会返回undefined，读取的时候不能这样读，但是，设置的时候是可以的，比如，以上数组，可以这样</p>
 <pre><code>colors[2]=&quot;orange&quot;;
-</code></pre><p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6570;&#x7EC4;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x9879;&#x5E76;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x957F;&#x5EA6;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7D27;&#x90BB;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;</p>
+</code></pre><p>这个时候，数组就会创建一项并重新计算长度，当然，不是必须紧邻，还可以</p>
 <pre><code>colors[10]=&quot;orange&quot;;
-</code></pre><p>&#x90A3;&#x4E48;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;11&#x7684;&#x6570;&#x7EC4;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#xFF0C;&#x4E2D;&#x95F4;&#x7684;8&#x4E2A;&#x503C;&#x4E3A;undefined&#x3002;</p>
-<p><strong>&#x68C0;&#x6D4B;&#x6570;&#x7EC4;</strong></p>
-<p>&#x81EA;&#x4ECE;ES3&#x505A;&#x51FA;&#x89C4;&#x5B9A;&#xFF0C;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x786E;&#x5B9A;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x6765;&#x4E66;&#x6B27;&#xFF0C;&#x4F7F;&#x7528;instance&#x64CD;&#x4F5C;&#x7B26;&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x6EE1;&#x610F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+</code></pre><p>那么，它就是一个长度为11的数组了，不过，中间的8个值为undefined。</p>
+<p><strong>检测数组</strong></p>
+<p>自从ES3做出规定，就出现了确定某个对象是不是数组的经典问题，对于一个全局作用域来书欧，使用instance操作符就能得到满意的结果，如下：</p>
 <pre><code>if(value instanceof Array){}
-</code></pre><p>&#x4F46;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x5047;&#x5B9A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x82E5;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x5C31;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;Array&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</p>
-<p>ES5&#x65B0;&#x589E;&#x4E86;Array.isArray()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x76EE;&#x7684;&#x662F;&#x6700;&#x7EC8;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x503C;&#x5230;&#x5E95;&#x662F;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x5B83;&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x521B;&#x5EFA;&#x7684;.&#x5982;&#x4E0B;&#xFF1A;</p>
+</code></pre><p>但问题在于，它假定只有一个全局执行环境，若有多个，就存在两个以上不同版本的Array构造函数。</p>
+<p>ES5新增了Array.isArray()方法，这个方法的目的是最终确定一个值到底是不是数组，而不管它是在哪个全局执行环境中创建的.如下：</p>
 <pre><code>if(Array.isArray(value)){}
-</code></pre><p>&#x4F46;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x4F4E;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002;</p>
-<p><strong>&#x8F6C;&#x6362;&#x65B9;&#x6CD5;</strong></p>
+</code></pre><p>但使用此方法时要注意低版本浏览器的兼容性。</p>
+<p><strong>转换方法</strong></p>
 <p>toLocaleString(),toString(),valueOf()</p>
-<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x4F1A;&#x8FD4;&#x56DE;&#x4EE5;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;&#x4E86;&#x6BCF;&#x4E00;&#x9879;&#x7684;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;&#x8FD8;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x76F4;&#x63A5;alert()&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x7531;&#x4E8E;alert()&#x8981;&#x63A5;&#x6536;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4F1A;&#x5728;&#x540E;&#x53F0;&#x8C03;&#x7528;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x7531;&#x6B64;&#x5F97;&#x5230;&#x548C;toString()&#x65B9;&#x6CD5;&#x76F8;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
-<p>&#x800C;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x7ECF;&#x5E38;&#x4F1A;&#x548C;&#x540E;&#x4E24;&#x79CD;&#x8FD4;&#x56DE;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x4E5F;&#x4E0D;&#x603B;&#x662F;&#x5982;&#x6B64;&#xFF0C;&#x5B83;&#x4F1A;&#x5BF9;&#x6BCF;&#x4E00;&#x9879;&#x8C03;&#x7528;toLocaleString()&#xFF0C;&#x800C;&#x4E0D;&#x662F;toString()&#x3002; </p>
-<p>&#x5F53;&#x7136;&#xFF0C;&#x9664;&#x4E86;&#x8FD9;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x53EF;&#x63A7;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;join(),&#x6BD4;&#x5982;&#x8FD9;&#x6837;&#xFF1A;</p>
+<p>第二个会返回以数组中的每一项用逗号分隔开的字符串，实际上是调用了每一项的toString()方法，第三个返回的还是数组，如果是直接alert()一个数组，由于alert()要接收字符串参数，所以它会在后台调用toString()方法，由此得到和toString()方法相同的结果。</p>
+<p>而第一种方法经常会和后两种返回相同的值，但也不总是如此，它会对每一项调用toLocaleString()，而不是toString()。 </p>
+<p>当然，除了这几种方法，还有一种更加灵活可控的方法，join(),比如这样：</p>
 <pre><code>var colors=[&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;];
     alert(colors.join(&quot;.&quot;));
-</code></pre><p>&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;&#x4EE5;&#x70B9;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<p><strong>&#x6808;&#x65B9;&#x6CD5;</strong></p>
-<p>&#x6808;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B66;&#x8FC7;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x5E94;&#x8BE5;&#x90FD;&#x4E0D;&#x964C;&#x751F;&#xFF0C;&#x5C31;&#x7B97;&#x6CA1;&#x6709;&#x5B66;&#x8FC7;&#xFF0C;&#x4E5F;&#x4F1A;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x61C2;&#xFF0C;&#x56E0;&#x4E3A;&#x5723;&#x540E;&#x4E2D;&#x592A;&#x591A;&#x8FD9;&#x6837;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;LIFO(last in first out),&#x901A;&#x4FD7;&#x8BF4;&#x5C31;&#x662F;&#x540E;&#x8FDB;&#x5148;&#x51FA;&#xFF0C;&#x6808;&#x4E2D;&#x7684;&#x9879;&#x6709;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E14;&#x53EA;&#x53D1;&#x751F;&#x5728;&#x6808;&#x7684;&#x9876;&#x90E8;&#x3002;&#x5BF9;&#x6B64;&#xFF0C;ES&#x4E3A;&#x6570;&#x7EC4;&#x63D0;&#x4F9B;&#x4E86;push()&#x548C;pop()&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B9E;&#x73B0;&#x6808;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
-<p>push()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x628A;&#x5B83;&#x4EEC;&#x9010;&#x4E2A;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x7EC4;&#x672B;&#x5C3E;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4FEE;&#x6539;&#x540E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#xFF0C;pop()&#x65B9;&#x6CD5;&#x5219;&#x4ECE;&#x6570;&#x7EC4;&#x672B;&#x5C3E;&#x79FB;&#x9664;&#x6700;&#x540E;&#x4E00;&#x9879;&#xFF0C;&#x51CF;&#x5C11;&#x6570;&#x7EC4;&#x7684;length&#x503C;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x79FB;&#x9664;&#x7684;&#x9879;&#x3002;</p>
-<p><strong>&#x961F;&#x5217;&#x65B9;&#x6CD5;</strong></p>
-<p>&#x548C;&#x6808;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x961F;&#x5217;&#x662F;FIFO(first in first out),&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF0C;&#x5728;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x9879;&#xFF0C;&#x4ECE;&#x5217;&#x8868;&#x7684;&#x524D;&#x7AEF;&#x79FB;&#x9664;&#xFF0C;&#x56E0;&#x4E3A;&#x7ED9;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x9879;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x73B0;&#x5728;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4ECE;&#x6570;&#x7EC4;&#x524D;&#x7AEF;&#x53D6;&#x5F97;&#x9879;&#x7684;&#x65B9;&#x6CD5;&#x2014;&#x2014;shift()&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x79FB;&#x9664;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#x5E76;&#x8FD4;&#x56DE;&#x8BE5;&#x9879;&#xFF0C;&#x540C;&#x65F6;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x51CF;1&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;ES&#x8FD8;&#x4E3A;&#x6570;&#x7EC4;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;unshift()&#x65B9;&#x6CD5;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x548C;shift()&#x7684;&#x7528;&#x9014;&#x76F8;&#x53CD;&#xFF1A;&#x5B83;&#x80FD;&#x5728;&#x6570;&#x7EC4;&#x524D;&#x7AEF;&#x6DFB;&#x52A0;&#x4EFB;&#x610F;&#x4E2A;&#x9879;&#x5E76;&#x8FD4;&#x56DE;&#x65B0;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;unshift()&#x548C;pop()&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x76F8;&#x53CD;&#x65B9;&#x5411;&#x6765;&#x6A21;&#x62DF;&#x961F;&#x5217;&#xFF0C;&#x5373;&#x524D;&#x7AEF;&#x6DFB;&#x52A0;&#x9879;&#xFF0C;&#x672B;&#x7AEF;&#x79FB;&#x9664;&#x9879;&#x3002;</p>
-<p><strong>&#x91CD;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</strong></p>
-<p>&#x6570;&#x7EC4;&#x4E2D;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6765;&#x91CD;&#x6392;&#x5E8F;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;reverse()&#x548C;sort()&#xFF0C;&#x524D;&#x8005;&#x7528;&#x4E8E;&#x53CD;&#x8F6C;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;sort()&#x65B9;&#x6CD5;&#x6309;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x6570;&#x7EC4;&#x9879;&#xFF0C;&#x5373;&#x6700;&#x5C0F;&#x7684;&#x503C;&#x4F4D;&#x4E8E;&#x6700;&#x524D;&#x9762;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x503C;&#x6392;&#x5728;&#x540E;&#x9762;&#xFF0C;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x6392;&#x5E8F;&#xFF0C;sort()&#x65B9;&#x6CD5;&#x4F1A;&#x8C03;&#x7528;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x9879;&#x7684;toString()&#x8F6C;&#x578B;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x5F97;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4EE5;&#x786E;&#x5B9A;&#x5982;&#x4F55;&#x6392;&#x5E8F;&#xFF0C;&#x5373;&#x4F7F;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x662F;&#x6570;&#x503C;&#xFF0C;sort()&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x7684;&#x4E5F;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<p>&#x5982;&#x4E0B;&#xFF1A;</p>
+</code></pre><p>就会返回以点号隔开的字符串。</p>
+<p><strong>栈方法</strong></p>
+<p>栈的概念，学过计算机的应该都不陌生，就算没有学过，也会比较容易懂，因为圣后中太多这样的例子，LIFO(last in first out),通俗说就是后进先出，栈中的项有插入和删除的操作，且只发生在栈的顶部。对此，ES为数组提供了push()和pop()方法，以便实现栈的行为。</p>
+<p>push()方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度，pop()方法则从数组末尾移除最后一项，减少数组的length值，然后返回移除的项。</p>
+<p><strong>队列方法</strong></p>
+<p>和栈有所不同，队列是FIFO(first in first out),先进先出，在末尾添加项，从列表的前端移除，因为给末尾添加项已经有了方法，所以，现在只需要一个从数组前端取得项的方法——shift()，它能够移除数组中的第一项并返回该项，同时数组长度减1，除此之外，ES还为数组提供了一个unshift()方法，顾名思义，和shift()的用途相反：它能在数组前端添加任意个项并返回新数组的长度。因此，同时使用unshift()和pop()方法，可以从相反方向来模拟队列，即前端添加项，末端移除项。</p>
+<p><strong>重排序方法</strong></p>
+<p>数组中存在两个可以直接来重排序的方法：reverse()和sort()，前者用于反转，默认情况下，sort()方法按升序排列数组项，即最小的值位于最前面，最大的值排在后面，为了实现排序，sort()方法会调用每个数组项的toString()转型方法，然后比较得到的字符串，以确定如何排序，即使数组中的每一项都是数值，sort()方法比较的也是字符串。</p>
+<p>如下：</p>
 <pre><code>var values=[0,1,5,10,15];
     values.sort();
     alert(values); //0,1,10,15,5
-</code></pre><p>&#x53EF;&#x89C1;&#xFF0C;&#x5373;&#x4F7F;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;sort()&#x65B9;&#x6CD5;&#x4E5F;&#x6839;&#x636E;&#x6D4B;&#x8BD5;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7ED3;&#x679C;&#x6539;&#x53D8;&#x539F;&#x6765;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x8FD9;&#x79CD;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4E0D;&#x662F;&#x6700;&#x4F73;&#x65B9;&#x6848;&#xFF0C;&#x56E0;&#x6B64;sort()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x4FBF;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x54EA;&#x4E2A;&#x503C;&#x4F4D;&#x4E8E;&#x54EA;&#x4E2A;&#x503C;&#x7684;&#x524D;&#x9762;&#x3002;</p>
-<p><strong>&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;</strong></p>
-<p>ES&#x4E3A;&#x64CD;&#x4F5C;&#x81EA;&#x5DF1;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x9879;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>concat()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x9879;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x5148;&#x521B;&#x5EFA;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#x6DFB;&#x52A0;&#x5230;&#x8FD9;&#x4E2A;&#x526F;&#x672C;&#x7684;&#x672B;&#x5C3E;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x65B0;&#x6784;&#x5EFA;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5728;&#x6CA1;&#x6709;&#x7ED9;concat()&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4EC5;&#x662F;&#x590D;&#x5236;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x9012;&#x7ED9;concat()&#x65B9;&#x6CD5;&#x7684;&#x662F;&#x4E00;&#x6216;&#x591A;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5219;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#x8FD9;&#x4E9B;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x6DFB;&#x52A0;&#x5230;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4F20;&#x9012;&#x7684;&#x503C;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5C31;&#x4F1A;&#x88AB;&#x7B80;&#x5355;&#x6DFB;&#x52A0;&#x5230;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#x7684;&#x672B;&#x5C3E;&#x3002;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</code></pre><p>可见，即使值的顺序没有问题，但sort()方法也根据测试字符串的结果改变原来的顺序。这种排序方法在很多情况下都不是最佳方案，因此sort()方法可以接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面。</p>
+<p><strong>操作方法</strong></p>
+<p>ES为操作自己已经包含在数组中的项提供了很多方法。</p>
+<p>concat()方法可以基于当前数组中的所有项创建一个新数组。具体来说，这个方法会先创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，最后返回新构建的数组，在没有给concat()方法传递参数的情况下，它仅是复制当前数组，如果传递给concat()方法的是一或多个数组，则该方法会将这些数组中的每一项都添加到结果数组中。如果传递的值不是数组，这些值就会被简单添加到结果数组的末尾。下面例子：</p>
 <pre><code>var colors=[&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;];
     var colors2=colors.concat(&quot;yellow&quot;,[&quot;black&quot;,&quot;brown&quot;]);
     alert(colors2);   //red,green,blue,yellow,black,brown
-</code></pre><p>slice()&#x65B9;&#x6CD5;,&#x5B83;&#x80FD;&#x591F;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x6216;&#x591A;&#x4E2A;&#x9879;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#xFF0C;slice()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x6216;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x8981;&#x8FD4;&#x56DE;&#x9879;&#x7684;&#x8D77;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x3002;&#x5728;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;slice()&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4ECE;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x5230;&#x5F53;&#x524D;&#x6570;&#x636E;&#x672B;&#x5C3E;&#x7684;&#x6240;&#x6709;&#x9879;&#x3002;&#x5982;&#x679C;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x8D77;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x4E4B;&#x95F4;&#x7684;&#x9879;&#x2014;&#x2014;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x7684;&#x9879;&#x3002;&#x6CE8;&#x610F;&#xFF0C;slice()&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#x3002;</p>
-<pre><code>var colors=[&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;,&#x201C;yellow&#x201D;,&quot;purple&quot;];
+</code></pre><p>slice()方法,它能够基于当前数组中的一或多个项创建一个新数组，slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数据末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。注意，slice()方法不会影响原始数组。</p>
+<pre><code>var colors=[&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;,“yellow”,&quot;purple&quot;];
     var colors2=colors.slice(1,4);
     alert(colors2); //green,blue,yellow
-</code></pre><p>&#x5176;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4E3A;&#x8D1F;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8D1F;&#x503C;&#xFF0C;&#x5219;&#x7528;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x52A0;&#x4E0A;&#x8BE5;&#x6570;&#x6765;&#x786E;&#x5B9A;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x5C0F;&#x4E8E;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x6570;&#x7EC4;&#x3002;</p>
-<p>splice()&#x65B9;&#x6CD5;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x662F;&#x6700;&#x5F3A;&#x5927;&#x7684;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x7528;&#x6CD5;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x9014;&#x662F;&#x5411;&#x6570;&#x7EC4;&#x4E2D;&#x90E8;&#x63D2;&#x5165;&#x9879;&#xFF0C;&#x4F46;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x5982;&#x4E0B;3&#x79CD;&#xFF1A;</p>
-<p>1&#x3001;&#x5220;&#x9664;&#xFF0C;&#x53EF;&#x5220;&#x9664;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x9879;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8981;&#x5220;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x5220;&#x9664;&#x7684;&#x9879;&#x6570;&#x3002;<br>2&#x3001;&#x63D2;&#x5165;&#xFF0C;&#x5411;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x9879;&#xFF0C;&#x9700;&#x63D0;&#x4F9B;3&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3001;&#x8981;&#x5220;&#x9664;&#x7684;&#x9879;&#x6570;&#x548C;&#x8981;&#x63D2;&#x5165;&#x7684;&#x9879;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x63D2;&#x5165;&#x591A;&#x4E2A;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x518D;&#x4F20;&#x5165;&#x7B2C;&#x56DB;&#x3001;&#x7B2C;&#x4E94;&#x6216;&#x66F4;&#x591A;&#x7684;&#x9879;&#x3002;<br>3&#x3001;&#x66FF;&#x6362;&#xFF0C;&#x5411;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x9879;&#xFF0C;&#x4E14;&#x540C;&#x65F6;&#x5220;&#x9664;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x9879;&#xFF0C;&#x53EA;&#x9700;&#x6307;&#x5B9A;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3001;&#x8981;&#x5220;&#x9664;&#x7684;&#x9879;&#x6570;&#x548C;&#x8981;&#x63D2;&#x5165;&#x7684;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x9879;&#x3002;&#x63D2;&#x5165;&#x7684;&#x9879;&#x6570;&#x4E0D;&#x5FC5;&#x4E0E;&#x5220;&#x9664;&#x7684;&#x9879;&#x6570;&#x76F8;&#x7B49;&#x3002;</p>
-<p>splice()&#x65B9;&#x6CD5;&#x59CB;&#x7EC8;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x8BE5;&#x6570;&#x7EC4;&#x4E2D;&#x5305;&#x542B;&#x4ECE;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#x4E2D;&#x5220;&#x9664;&#x7684;&#x9879;(&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5220;&#x9664;&#x4EFB;&#x4F55;&#x4E00;&#x9879;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;)&#x3002;</p>
-<p><strong>&#x4F4D;&#x7F6E;&#x65B9;&#x6CD5;</strong></p>
-<p>ES5&#x4E3A;&#x6570;&#x7EC4;&#x5B9E;&#x4F8B;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;&#x65B9;&#x6CD5;&#xFF1A;indexOf()&#x548C;lastIndexOf()&#xFF0C;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8981;&#x67E5;&#x627E;&#x7684;&#x9879;&#x8868;&#x793A;&#x67E5;&#x627E;&#x8D77;&#x70B9;&#x4F4D;&#x7F6E;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;indexOf()&#x65B9;&#x6CD5;&#x4ECE;&#x6570;&#x7EC4;&#x7684;&#x5F00;&#x5934;&#x5F00;&#x59CB;&#x5411;&#x540E;&#x67E5;&#x627E;&#xFF0C;lastIndexOf()&#x65B9;&#x6CD5;&#x5219;&#x4ECE;&#x6570;&#x7EC4;&#x7684;&#x672B;&#x5C3E;&#x5F00;&#x59CB;&#x5411;&#x524D;&#x67E5;&#x627E;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x8FD4;&#x56DE;-1.</p>
-<p><strong>&#x8FED;&#x4EE3;&#x65B9;&#x6CD5;</strong></p>
-<p>ES5&#x4E3A;&#x6570;&#x7EC4;&#x5B9A;&#x4E49;&#x4E86;5&#x4E2A;&#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8981;&#x8FD0;&#x884C;&#x7684;&#x51FD;&#x6570;&#x548C;&#x8FD0;&#x884C;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5BF9;&#x8C61;&#x3002;&#x4F20;&#x5165;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x6570;&#x7EC4;&#x9879;&#x7684;&#x503C;&#xFF0C;&#x8BE5;&#x9879;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x3002;&#x4F5C;&#x7528;&#x5206;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</p>
+</code></pre><p>其参数可以为负，如果是负值，则用数组长度加上该数来确定相应的位置，如果结束位置小于起始位置，则返回空数组。</p>
+<p>splice()方法，此方法是最强大的数组方法，有很多用法，主要用途是向数组中部插入项，但使用这种方法的方式有如下3种：</p>
+<p>1、删除，可删除任意数量的项，只需要指定两个参数，要删的第一项的位置和删除的项数。<br>2、插入，向指定位置插入任意数量的项，需提供3个参数：起始位置、要删除的项数和要插入的项，如果要插入多个项，可以再传入第四、第五或更多的项。<br>3、替换，向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定三个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项数不必与删除的项数相等。</p>
+<p>splice()方法始终都会返回一个数组，该数组中包含从原始数组中删除的项(如果没有删除任何一项，则返回一个空数组)。</p>
+<p><strong>位置方法</strong></p>
+<p>ES5为数组实例添加了两个位置方法：indexOf()和lastIndexOf()，两个方法都接收两个参数：要查找的项表示查找起点位置的索引，其中，indexOf()方法从数组的开头开始向后查找，lastIndexOf()方法则从数组的末尾开始向前查找。如果没有找到，返回-1.</p>
+<p><strong>迭代方法</strong></p>
+<p>ES5为数组定义了5个迭代方法，每个方法都接收两个参数：要运行的函数和运行该函数的作用域对象。传入这些方法中的函数会接收三个参数：数组项的值，该项在数组中的位置和数组对象本身。作用分别如下：</p>
 <p>every()</p>
-<p>&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x8FD4;&#x56DE;true&#xFF0C;&#x5219;&#x8FD4;&#x56DE;true&#x3002;</p>
+<p>对数组中每一项运行给定函数，如果每一项都返回true，则返回true。</p>
 <p>filter()</p>
-<p>&#x5982;&#x5176;&#x540D;&#xFF0C;&#x6709;&#x8FC7;&#x6EE4;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x5BF9;&#x6570;&#x7EC4;&#x6BCF;&#x4E00;&#x9879;&#x6267;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E3A;true&#x7684;&#x9879;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<p>如其名，有过滤的作用，对数组每一项执行给定函数，返回结果为true的项组成的数组。</p>
 <p>forEach()</p>
-<p>&#x5BF9;&#x6570;&#x7EC4;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>对数组每一项运行指定函数，没有返回值。</p>
 <p>map()</p>
-<p>&#x5BF9;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x6BCF;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7ED3;&#x679C;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<p>对每一项运行指定函数，返回每次函数调用结果组成的数组。</p>
 <p>some()</p>
-<p>&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x6709;&#x4EFB;&#x4E00;&#x9879;&#x8FD4;&#x56DE;true&#xFF0C;&#x5219;&#x8FD4;&#x56DE;true</p>
-<p><strong>&#x5F52;&#x5E76;&#x65B9;&#x6CD5;</strong></p>
-<p>ES5&#x65B0;&#x589E;&#x4E86;&#x4E24;&#x4E2A;&#x5F52;&#x5E76;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;reduce()&#x548C;reduceRight()&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x8FED;&#x4EE3;&#x6570;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x9879;&#xFF0C;&#x7136;&#x540E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6700;&#x7EC8;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;reduce()&#x65B9;&#x6CD5;&#x4ECE;&#x7B2C;&#x4E00;&#x9879;&#x5F00;&#x59CB;&#xFF0C;&#x9010;&#x4E2A;&#x904D;&#x5386;&#x5230;&#x6700;&#x540E;&#xFF0C;reduceRight()&#x662F;&#x4ECE;&#x6700;&#x540E;&#x4E00;&#x9879;&#x5F00;&#x59CB;&#xFF0C;&#x5411;&#x524D;&#x904D;&#x5386;&#x5230;&#x7B2C;&#x4E00;&#x9879;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x4E00;&#x4E2A;&#x5728;&#x6BCF;&#x9879;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x548C;&#x4F5C;&#x4E3A;&#x5F52;&#x5E76;&#x57FA;&#x7840;&#x7684;&#x521D;&#x59CB;&#x503C;&#xFF08;&#x53EF;&#x9009;&#x7684;&#xFF09;&#x3002;&#x4F20;&#x7ED9;reduce()&#x548C;reduceRight()&#x7684;&#x51FD;&#x6570;&#x63A5;&#x6536;4&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x3001;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x9879;&#x7684;&#x7D22;&#x5F15;&#x548C;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x4EFB;&#x4F55;&#x503C;&#x90FD;&#x4F1A;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x81EA;&#x52A8;&#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x9879;&#x3002;</p>
-<h2 id="&#x5C0F;&#x7ED3;"><a href="#&#x5C0F;&#x7ED3;" class="headerlink" title="&#x5C0F;&#x7ED3;"></a>&#x5C0F;&#x7ED3;</h2><p>&#x81F3;&#x6B64;&#xFF0C;&#x5BF9;Object&#x7C7B;&#x578B;&#x548C;Array&#x7C7B;&#x578B;&#x6709;&#x4E86;&#x4E2A;&#x7B80;&#x8981;&#x7684;&#x4ECB;&#x7ECD;&#x548C;&#x6982;&#x89C8;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4E2A;&#x521D;&#x6B65;&#x7684;&#x4E86;&#x89E3;&#x3002;&#x8981;&#x638C;&#x63E1;&#x548C;&#x7075;&#x6D3B;&#x8FD0;&#x7528;&#x5B83;&#x4EEC;&#xFF0C;&#x8FD8;&#x9700;&#x66F4;&#x591A;&#x5B9E;&#x8DF5;&#x3002;&#x540E;&#x9762;&#x4F1A;&#x7EE7;&#x7EED;&#x8BA8;&#x8BBA;&#x5176;&#x4ED6;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;&#x4E00;&#x8D77;&#x52A0;&#x6CB9;&#xFF0C;&#x4E00;&#x8D77;&#x8FDB;&#x6B65;&#x5427;~</p>
+<p>每一项运行指定函数，如有任一项返回true，则返回true</p>
+<p><strong>归并方法</strong></p>
+<p>ES5新增了两个归并数组的方法：reduce()和reduceRight()。这两个方法都会迭代数组的所有项，然后构建一个最终返回的值，其中，reduce()方法从第一项开始，逐个遍历到最后，reduceRight()是从最后一项开始，向前遍历到第一项。这两个方法都接收两个参数：一个在每项上调用的函数和作为归并基础的初始值（可选的）。传给reduce()和reduceRight()的函数接收4个参数：前一个值、当前值，项的索引和数组对象。这个函数返回的任何值都会作为第一个参数自动传给下一项。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>至此，对Object类型和Array类型有了个简要的介绍和概览，可以有个初步的了解。要掌握和灵活运用它们，还需更多实践。后面会继续讨论其他引用类型。一起加油，一起进步吧~</p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -416,6 +557,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -430,6 +573,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -438,26 +585,29 @@
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -470,7 +620,7 @@
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -488,6 +638,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -503,34 +654,46 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -552,27 +715,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -581,168 +738,178 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类型"><span class="nav-number">2.</span> <span class="nav-text">Object类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array类型"><span class="nav-number">3.</span> <span class="nav-text">Array类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -763,237 +930,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -1001,24 +983,124 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

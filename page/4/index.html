@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -52,7 +90,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -71,25 +109,39 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+
+
+
+
+
+  <title>灵感之见</title>
   
 
 
@@ -98,50 +150,57 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -149,43 +208,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -196,23 +265,31 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-
-    
-
-    
-    
-
     
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/23/zaoduke-visit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -220,38 +297,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/10/23/zaoduke-visit/" itemprop="url">
-                  前端早读课专访
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/10/23/zaoduke-visit/" itemprop="url">前端早读课专访</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-23T00:00:00+08:00" content="2015-10-23">
-              2015-10-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-23T00:00:00+08:00">
+                2015-10-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/分享交流/" itemprop="url" rel="index">
                     <span itemprop="name">分享交流</span>
                   </a>
@@ -259,7 +340,6 @@
 
                 
                 
-
               
             </span>
           
@@ -269,14 +349,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -285,20 +372,35 @@
       
         
           
-          &#x524D;&#x8A00;&#x8BF4;&#x5230;&#x524D;&#x7AEF;&#x5BFC;&#x822A;&#x7AD9;&#xFF0C;&#x65E9;&#x8BFB;&#x541B;&#x5728;11&#x5E74;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x505A;&#x4E86;&#x4E00;&#x4E2A;ux265.net&#x7684;&#xFF0C;&#x4F46;&#x540E;&#x9762;&#x7531;&#x4E8E;&#x7EF4;&#x62A4;&#x7684;&#x529B;&#x5EA6;&#x539F;&#x56E0;&#xFF0C;&#x6CA1;&#x5728;&#x7EE7;&#x7EED;&#x505A;&#x4E0B;&#x53BB;&#x4E86;&#x3002;
-&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x8981;&#x804A;&#x7684;&#x8FD9;&#x4E2A;&#x4EBA;&#xFF0C;&#x662F;&#x524D;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5728;&#x5FAE;&#x535A;&#x4E0A;&#x88AB;&#x5404;&#x5927;&#x5FAE;&#x535A;&#x5
+          前言说到前端导航站，早读君在11年的时候就做了一个ux265.net的，但后面由于维护的力度原因，没在继续做下去了。
+今天我们要聊的这个人，是前一段时间在微博上被各大微博号推荐的一个前端导航站的负责人灵感_idea，所以我们今天就来让他来分享这个导航站是如何出来的。
+先来认识下这个人：昵称：灵感_idea，现任职于腾讯理财通产品部前端开发组职位：UI开发工程师主要工作：负责理财通日常活动页的UI开发和理财通官网的维护开源项目：醉牛前端网址导航http://f2er.club/
+由来现在是互联网的时代，我相信不管是从业者还是普通的用户，都已经或者正在被它的威力所震撼并且受益。从当年初中的时候老师开玩笑说不用出门就可以购物，到现在成了家常便饭。每个人都曾有过一个“神奇”的想法——“如果能有一个东西能干嘛，就好了”。现在都在一步步的成为现实。为什么要扯这些呢，貌似跟话题无关，其实不然，那个理想中的“东西”，说专业点就是产品。我也曾做过做一款完美的产品然后暴富的美梦，显然目前还力不从心。那么作为前端从业者，我比那些入行时间更短，和平时不太关注行业动态的同行们可能接触的、了解的东西更多，我有什么可以为他们做的吗？于是就开始慢慢的思考。
+思考用加法，做事用减法学习前端一路走来，我跟很多人一样，逛了很多网站，找了很多资料，我想把它们分享出去，于是最简单的方法就是建立了一个QQ群，然后，自己写了个
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/23/zaoduke-visit/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/23/zaoduke-visit/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -308,6 +410,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -315,13 +421,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/17/those-year-i-do-bad/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -329,38 +449,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/10/17/those-year-i-do-bad/" itemprop="url">
-                  那些年我干过的矬事
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/10/17/those-year-i-do-bad/" itemprop="url">那些年我干过的矬事</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-17T00:00:00+08:00" content="2015-10-17">
-              2015-10-17
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-17T00:00:00+08:00">
+                2015-10-17
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/总结/" itemprop="url" rel="index">
                     <span itemprop="name">总结</span>
                   </a>
@@ -368,7 +492,6 @@
 
                 
                 
-
               
             </span>
           
@@ -378,14 +501,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -394,20 +524,35 @@
       
         
           
-          &#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x81EA;&#x5DF1;&#x63ED;&#x81EA;&#x5DF1;&#x7684;&#x77ED;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x88AB;&#x4EBA;&#x6307;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x4EE5;&#x524D;&#x5199;&#x7684;&#x9875;&#x9762;&#x4E0A;&#x9762;&#x4E0D;&#x597D;&#x7684;&#x5B9E;&#x8DF5;&#x65B9;&#x5F0F;&#x3002;&#x89C9;&#x5F97;&#x5E72;&#x8FC7;&#x7684;&#x7C7B;&#x4F3C;&#x7684;&#x4E8B;&#x4E5F;&#x6709;&#x4E00;&#x7BA9;&#x7B50;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x5C0F;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x7ED9;&#x5927;&#x5BB6;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x3002;
-&#x4E00;&#x3001
+          为什么要这个时候自己揭自己的短呢？因为被人指出了一个以前写的页面上面不好的实践方式。觉得干过的类似的事也有一箩筐了，可以小结一下，给大家一个参考。
+一、不跟团队规范一致
+规范是一个人人在喊，但人人都不太容易遵守的一个东西，因为每个人有着自己的习惯，到不同的团队，和不同的人合作，都会有遇到跟自己习惯不同的东西，这个时候就需要共同遵守一个规范或者大家一起制定出一个规范，不管是自己的文件组织、命名，还是代码的书写方式，交互的实现方式等，都要尽量跟团队一致，因为一定是会有团队协作的，这样会减少很多的沟通成本，提高效率，而且既然它成为了一种规范，某种程度上也是比较好的实践方法，无形中可以提高你的专业水平，养成更好的习惯。
+二、习惯使用元素选择器
+这里并不是说不能使用，而是不要过多使用（除了reset），虽然大家都觉得命名是个头疼的问题，但仍然建议给元素命一个语义化的类或者ID名，好处在哪里呢？比如常用的a、span、p这些，很多时候，我们使用它们的位置和数量是不可控的，一旦用了元素选择器，又在里面加入了另外的元素，样式不同，怎么办呢？或者，有时候使用了一个标签之后突然觉得并不合适，想改，怎么办呢？为了达到目的，你可能会去采取子选择器，兄弟选择器，css3的nth-child甚至多嵌套一层增加权重等等，这些当然也可以但经验来讲，这些做法把结构越来越锁死了，哪里都不能动，动一下样式就要重新写，很
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/17/those-year-i-do-bad/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/17/those-year-i-do-bad/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -417,6 +562,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -424,13 +573,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/13/zuiniu-birth/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -438,38 +601,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/09/13/zuiniu-birth/" itemprop="url">
-                  醉牛前端诞生记
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/09/13/zuiniu-birth/" itemprop="url">醉牛前端诞生记</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-13T00:00:00+08:00" content="2015-09-13">
-              2015-09-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T00:00:00+08:00">
+                2015-09-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/总结/" itemprop="url" rel="index">
                     <span itemprop="name">总结</span>
                   </a>
@@ -477,7 +644,6 @@
 
                 
                 
-
               
             </span>
           
@@ -487,14 +653,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -503,19 +676,33 @@
       
         
           
-          &#x8D77;&#x6E90;&#x5927;&#x6982;&#x4E24;&#x5E74;&#x591A;&#x4EE5;&#x524D;&#xFF0C;&#x548C;&#x524D;&#x7AEF;&#x7ED3;&#x7F18;&#xFF0C;&#x505A;&#x6280;&#x672F;&#x8FD9;&#x884C;&#x7684;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x6709;&#x9879;&#x76EE;&#x7EC3;&#x624B;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x4EBA;&#x5E26;&#xFF0C;&#x6700;&#x4E3B;&#x8981;&#x4F9D;&#x7136;&#x9760;&#x81EA;&#x5DF1;&#x3002;&#x73B0;&#x5728;&#x662F;&#x4FE1;&#x606F;&#x65F6;&#x4EE3;&#xFF0C;&#x627E;&#x8D44;&#x6599;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x5F53;&#x65F6;&#x7684;&#x6211;&#x50CF;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x65B0;&#x624B;&#x4E00;&#x6837;
+          起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？
+于是在我出来工作之后不久，就拾起了在校时就建立却好久没顾上打理的QQ群，10个人不到，改名叫“web前端~美是编出来的”，这个名字起初是有人质疑的，觉得有点复杂，也有点奇怪。我为什么没改呢，因为它就是我想传达出来的信息，为什么我会做这个并喜欢上它，就是认为它很有趣，很神奇，像魔法一样能做出具有美感的页面。对，就是这样。群里从0到50的人基本都是我出去发广告拉来的，在我去宣传的过程中，在贴吧里看到有一个提供两本书的帖子下面有超过2000条回帖求书，当时我就震惊了，两本书需求就这么大，我有那么多…这更坚定了我把它们分享出去的想法。后来群里的人越来越多，我就没再刻意的去推广过，只是在群里给大家提供一些力所能及的帮助，比如：上传最新最好的资料，发布一些靠谱的职位信息和好文、教程链接等。
+说了这么多似乎和醉牛前端还是没扯上关系，其实不是，都是有因果的，虽然组了QQ群，虽然分享了那么多资源，甚至我在
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/13/zuiniu-birth/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/09/13/zuiniu-birth/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -525,6 +712,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -532,13 +723,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/08/two-years-fe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -546,38 +751,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/08/08/two-years-fe/" itemprop="url">
-                  两年前端行
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/08/08/two-years-fe/" itemprop="url">两年前端行</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-08T00:00:00+08:00" content="2015-08-08">
-              2015-08-08
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-08T00:00:00+08:00">
+                2015-08-08
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/总结/" itemprop="url" rel="index">
                     <span itemprop="name">总结</span>
                   </a>
@@ -585,7 +794,6 @@
 
                 
                 
-
               
             </span>
           
@@ -595,14 +803,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -611,20 +826,35 @@
       
         
           
-          &#x501F;&#x7740;&#x4E0A;&#x6D77;cssconf&#x4E4B;&#x884C;&#x592D;&#x6298;&#x4E4B;&#x9645;&#xFF0C;&#x6000;&#x7740;&#x9057;&#x61BE;&#xFF0C;&#x770B;&#x7740;&#x201C;&#x76F4;&#x64AD;&#x201D;~&#x5199;&#x4E0B;&#x8FD9;&#x7BC7;&#x6587;&#x5427;&#xFF0C;&#x867D;&#x7136;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;&#x51C6;&#x786E;&#x4E24;&#x5468;&#x5E74;&#x65F6;&#x95F4;&#xFF0C;&#x4E5F;&#x7B97;&#x662F;&#x4E24;&#x5E74;&#x7684;&#x5C0F;&#x7ED3;&#x3002;
-&#x53BB;&#x5E74;&#x4E00;&#x5468;&#x5E74;&#x7684;&#x65F6;&#x5019;&#x5199;&#x8FC7;&#x4E00;&#x7BC7;&#xFF0C;&#x90A3;&#x4E2A;&#x65F6;&#x5019;&#x662F;&#x521A;&#x6362;&#x65B0;&#x5DE5
+          借着上海cssconf之行夭折之际，怀着遗憾，看着“直播”~写下这篇文吧，虽然已经不是准确两周年时间，也算是两年的小结。
+去年一周年的时候写过一篇，那个时候是刚换新工作一个月，而今天是我第三份工作刚刚离职。所以你应该懂了，我想在这个节点上再来进行总结。
+回顾两年时间，一切的事情，都离不开两点：热爱、坚持。
+现在为止待过三家公司，每一家公司对我都有很大影响。
+初来深圳一切都很稚嫩，包括那份初出茅庐的激情，只有一个想法就是先赶紧找到一份工作，因为从离开校园之前我就倔强的拒绝了爸妈的任何给予，很多人说这个时候还没有支撑，先找爸妈要一点是合理的，我没有，不是为了拒绝而拒绝，我是想逼自己一把，同时相信自己能够生存下来。我的每份工作找的时间都没有超过十天，然后，到了一家当时我对它认识很模糊的公司，后来知道是做企业建站，公司地点离深圳中心区很远，地铁一号线坐到尽头都还到不了，团队没几个人，薪水够低，可能大多数毕业生都会接受不了这一切，更何况在深圳这个地方，刚去的时候自己的电脑都没有，但这都不重要，我还什么都不会，网页的技术也只是一点点，我需要的是一次机会。到公司前两天，主管让我硬生生的坐在当时带我的导师后面坐了两天，就只是看他写代码，说实话这对我来说也能接受，因为不会做事，在看的过程中也问了不少问题，但由于中午办公室关门，我没地方休息，有时可能会看着看着打瞌睡。两天过后，主管给我拿了台笔记本，让
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/08/two-years-fe/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/08/08/two-years-fe/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -634,6 +864,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -641,13 +875,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/07/front-end-home-margin-that-thing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -655,38 +903,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/08/07/front-end-home-margin-that-thing/" itemprop="url">
-                  margin那些事儿
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/08/07/front-end-home-margin-that-thing/" itemprop="url">margin那些事儿</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-07T00:00:00+08:00" content="2015-08-07">
-              2015-08-07
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-07T00:00:00+08:00">
+                2015-08-07
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -694,7 +946,6 @@
 
                 
                 
-
               
             </span>
           
@@ -704,14 +955,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -720,19 +978,39 @@
       
         
           
-          Margin&#x662F;&#x4EC0;&#x4E48;&#xFF1F;Margin&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x96BE;&#xFF0C;&#x6211;&#x4E5F;&#x4E0D;&#x60F3;&#x628A;&#x5B83;&#x8BF4;&#x7684;&#x591A;&#x6666;&#x6DA9;&#xFF0C;&#x4F1A;css&#x7684;&#x90FD;&#x77E5;&#x9053;box&#x76D2;&#x6A21;&#x578B;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x76D2;&#x4E0E;&#x76D2;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#xFF0C;&#x4FD7;&#x79F0;&#x5916;&#x8FB9;&#x8DDD;&#xFF0C;&#x4E5F;&#x6709;&#x53EB;&#x5916;&#x8865;&#x767D;&#x7684;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E0D;&#x91CD;&#x8981;&#x3002;&#x662F;&#x7684;&#xFF0C;&#x5B83;&#x5C31;&#x662
+          Margin是什么？Margin这个概念本身并不难，我也不想把它说的多晦涩，会css的都知道box盒模型，它就是盒与盒之间的间距，俗称外边距，也有叫外补白的，这些不重要。是的，它就是这么简单，但是，它又是怎么兴风作浪的呢？
+在刚接触css的时候，有个小师傅告诉我，能用padding的地方就不要用margin，容易出现问题，我当时是谨记在心，以至于后来在挺长一段时间，也不知道会有什么问题。人就习惯于用“有问题”来概括一个还没弄明白也没找到解决方案的问题，当然这是消极的，我们应该面对问题，解决问题。
+会有哪些问题？问题一：外边距叠加
+关于叠加，已经有非常多的人提问，也有过非常多的解答。
+这里不再赘述，但可以大概说一下：
+一言以蔽之：两个或多个毗邻的普通流中的块元素垂直方向上的 margin 会折叠
+有几个关键词：
+块元素：这里可以稍微说一下，大家都知道行级元素跟块元素是有区别的，所以，大家可能经常采用display：inline-block；使其块级化（其他方法这里不谈），然后就对其随意的做各种块级元素才能有的动作不亦乐乎，那么这里就是要说的是，作为行级元素，它可以做到的是border、padding、水平margin，不能做的是width、height和垂直margin，有时候不必盲目的去把它块级化。所以，回正题，这里要是块元素，不然叠加无从谈起。
+两个或多个毗邻：有人可能认为挨着排
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/07/front-end-home-margin-that-thing/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/08/07/front-end-home-margin-that-thing/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -742,6 +1020,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -749,13 +1031,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/22/再谈css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -763,38 +1059,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/06/22/再谈css/" itemprop="url">
-                  再谈css
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/06/22/再谈css/" itemprop="url">再谈css</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-22T00:00:00+08:00" content="2015-06-22">
-              2015-06-22
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-22T00:00:00+08:00">
+                2015-06-22
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -802,7 +1102,6 @@
 
                 
                 
-
               
             </span>
           
@@ -812,14 +1111,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -828,20 +1134,37 @@
       
         
           
-          &#x5148;&#x8BF4;&#x4E24;&#x53E5;&#x95F2;&#x8BDD;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x53EB;&#x518D;&#x8C08;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x4EE5;&#x524D;&#x6709;&#x8C08;&#x8FC7;&#xFF0C;&#x8BF7;&#x770B;&#x8FD9;&#x91CC;&#x521D;&#x8C08;&#x600E;&#x6837;&#x66F4;&#x597D;&#x7684;&#x53BB;&#x89C4;&#x5212;CSS
-&#x65F6;&#x95F4;&#x5DEE;&#x4E0D;&#x591A;&#x662F;&#x4E00;&#x5E74;&#x524D;&#xFF0C;&#x90A3;&#x4E2A;&#x65F6;&#x5019;&#x8FD8;&#x6CA1;&#x6709;&#x6362;&#x5DE5;&#x4F5C;&#xFF0C;&#x516C;&#x53F8;&#x5C31;&#x6211;&#x4E00;&#x4E2A;&#x524D;&#x7AEF;&#xFF0C;&#x8D1F;&#x8D23;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x6
+          先说两句闲话，为什么叫再谈呢？因为以前有谈过，请看这里初谈怎样更好的去规划CSS
+时间差不多是一年前，那个时候还没有换工作，公司就我一个前端，负责一个项目的所有前端相关，当然，说是这样说，我是没有能力去顾及那么多的，自己懂的或者意识到的东西本身就有限，只是通过一整个项目的折腾，总会意识到一些问题，甚至有时候代码写得自己都忍无可忍，有痛就有领悟，自然就能总结出一些东西，就有了那篇初谈。当时写完之后蛮有成就感的，现在看来还是有很多不足，因为是初谈，为照顾一些初学者，包含了多一些基础的东西，一年过去了，前段时间在团队内部也做了一次css的分享，借此机会再谈谈吧，虽然依旧可能有很多不足~
+选择器这是css的永恒话题，也是核心话题。但这里如果罗列出来就没意思了，不如大家去看文档~
+元素、类、id、子选择器、后代选择器、兄弟选择器、属性选择器、伪类选择器、伪元素选择器、群组选择器
+在这一堆选择器中，该如何选择呢？老生常谈的东西咱就不多说了，说说在项目中的有益做法。
+首先要明确的是，为什么要用？它是css和html之间沟通的桥梁。 既然跟html有关，那么就可以谈谈html，又和什么有关呢？和我们要做的页面有关，好的，那就到了视觉稿。我用一个词来形容看视觉稿的感觉——“庖丁解牛”。什么意思呢？
+它可能包含以下部分：顶部、头部、导航、侧边栏、banner区、列表、底部，以及其他大的区块。 至少到这
           ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/22/再谈css/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/06/22/再谈css/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -851,6 +1174,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -858,13 +1185,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/19/front-home-lineheight-and-vertical/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -872,38 +1213,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/06/19/front-home-lineheight-and-vertical/" itemprop="url">
-                  浅析line-height和vertical
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/06/19/front-home-lineheight-and-vertical/" itemprop="url">浅析line-height和vertical</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-19T00:00:00+08:00" content="2015-06-19">
-              2015-06-19
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-19T00:00:00+08:00">
+                2015-06-19
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -911,7 +1256,6 @@
 
                 
                 
-
               
             </span>
           
@@ -921,14 +1265,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -938,20 +1289,46 @@
         
           
           line-height
-&#x901A;&#x5E38;&#x88AB;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x5E72;&#x561B;&#x5462;&#xFF1F;
-&#x6BD4;&#x5982;&#xFF1A;height&#xFF1A;px;line-height:px;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E48;&#xFF1F;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x7528;&#x5B83;&#x6765;&#x5BF9;&#x6587;&#x5B57;&#x8FDB;&#x884C;&#x5C45;&#x4E2D;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5C45;&#x4E2D;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x884C;&#x9AD8;&#x662F;&#x5143;&#x7D20;&#x57FA;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x884C;&#x9AD8;&#x4F1A;&#x51CF;&#x53BB;&#x5B57;&#x4F53;&#x7684;&#x
-          ...
+通常被我们用来干嘛呢？
+比如：height：px;line-height:px;是这样的么？我们常常用它来对文字进行居中。为什么这样就能居中呢？因为行高是元素基线之间的距离，行高会减去字体的高度然后上下平分去建立一个行内框（inline box），如果这个时候高度和行高一致，自然就体现为居中。那么它有什么可研究之处呢？
+比如：有时候设置了line-height却仍然不能将内容居中怎么办？设置了vertical-align：middle;没用是为什么？
+先来概览一下：line-height
+在块级元素，将line-height属性指定的线框元素中的最小高度。
+在非替换行内元素，行高指定用于计算行框的高度值的高度。
+在替换的行内元素，如按钮或其他输入元件，行高没有任何效果。
+这里出现了应该注意的第一点，行高作用的是高度。
+意思是可以不设置height？Yes。我们通常会认为当我们给一个空的容器填充了文字，即使我们没有给容器设置高度，文字也会把容器撑起来，其实不是，它是由和文字相关的一些属性的设置以及line-height：normal来决定的，而且这对块级元素和行内元素的影响不同。
+先给出试验的原始图作为参考
+Code 
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/19/front-home-lineheight-and-vertical/#more" rel="contents">
+每个div设置了20px内边距，为下图的绿色部分，font-size：16px;
+效果 
+
+我们给p设置line-height：0；over
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/06/19/front-home-lineheight-and-vertical/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -961,6 +1338,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -968,13 +1349,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
@@ -982,38 +1377,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/06/12/zindex-zoom-and-the-brothers-home-front/" itemprop="url">
-                  z-index和zoom这哥俩
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/06/12/zindex-zoom-and-the-brothers-home-front/" itemprop="url">z-index和zoom这哥俩</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-12T00:00:00+08:00" content="2015-06-12">
-              2015-06-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-12T00:00:00+08:00">
+                2015-06-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -1021,7 +1420,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1031,14 +1429,21 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1047,20 +1452,59 @@
       
         
           
-          &#x4ECA;&#x5929;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8C08;&#x8FD9;&#x4E2A;&#x5462;&#xFF1F;&#x51FA;&#x4E8E;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4ED4;&#x7684;&#x201C;&#x7AA5;&#x63A2;&#x201D;&#x6B32;&#x5427;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x672C;&#x6765;&#x5C31;&#x662F;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x5F15;&#x8D77;&#x592A;&#x591A;&#x4EBA;&#x6CE8;&#x610F;&#x3002;
-&#x5F53;&#x7136;&#xFF0C;&#x6BCF;&#x4E2A;&#x201C;&#x662F;&#x4EC0;&#x4E48;&#x201D;&#x7684;&#x80CC;&#x540E;&#x90FD;&#x6709
-          ...
+          今天为什么要谈这个呢？出于一个页面仔的“窥探”欲吧，也可能不是，因为这些本来就是需要知道的，只是可能没有引起太多人注意。
+当然，每个“是什么”的背后都有一个“为什么”，很多人都遇到过“设置了z-index却无用“的问题。
+z-index是干嘛的呢？——设置元素在z轴方向的层级。那么怎么用它才是正确滴捏？
+先来看正常情况下
+&lt;div class=&quot;mod&quot;&gt;
+  &lt;h2&gt;z-index&lt;/h2&gt;
+  &lt;div class=&quot;up&quot;&gt;我是上层，哈哈&lt;/div&gt;
+  &lt;div class=&quot;down&quot;&gt;我是底层，呜呜&lt;/div&gt;
+&lt;/div&gt;
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/12/zindex-zoom-and-the-brothers-home-front/#more" rel="contents">
+css
+
+.mod{
+background: #BEFFFC;
+/*position: relative;
+z-index: 0;*/
+}
+up,.down{
+    height: 50px;
+    left: 0;
+    }
+.up{
+    /*position: relative;*/
+    top: 0;
+    background: rgb(123,213,132);
+    /*z-index: 0;*/
+  }
+.down{
+    /*position: relati
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/06/12/zindex-zoom-and-the-brothers-home-front/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1070,11 +1514,14 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
     
-
   </section>
 
   
@@ -1103,40 +1550,53 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1158,27 +1618,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -1187,150 +1641,161 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
+
+      
 
       
 
@@ -1352,72 +1817,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
 
 
 
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
@@ -1425,24 +1870,116 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
   
 
 
 
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

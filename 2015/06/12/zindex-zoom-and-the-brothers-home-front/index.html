@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="CSS," />
@@ -52,59 +90,88 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x4E3A;&amp;#x4EC0;&amp;#x4E48;&amp;#x8981;&amp;#x8C08;&amp;#x8FD9;&amp;#x4E2A;&amp;#x5462;&amp;#xFF1F;&amp;#x51FA;&amp;#x4E8E;&amp;#x4E00;&amp;#x4E2A;&amp;#x9875;&amp;#x9762;&amp;#x4ED4;&amp;#x7684;&amp;#x201C;&amp;#x7AA5;&amp;#x63A2;&amp;#x201D;&amp;#x6B32;&amp;#x5427;">
+<meta name="description" content="今天为什么要谈这个呢？出于一个页面仔的“窥探”欲吧，也可能不是，因为这些本来就是需要知道的，只是可能没有引起太多人注意。
+当然，每个“是什么”的背后都有一个“为什么”，很多人都遇到过“设置了z-index却无用“的问题。
+z-index是干嘛的呢？——设置元素在z轴方向的层级。那么怎么用它才是正确滴捏？
+先来看正常情况下
+&amp;lt;div class=&amp;quot;mod&amp;quot;&amp;gt;
+  &amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="z-index和zoom这哥俩">
 <meta property="og:url" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x4E3A;&amp;#x4EC0;&amp;#x4E48;&amp;#x8981;&amp;#x8C08;&amp;#x8FD9;&amp;#x4E2A;&amp;#x5462;&amp;#xFF1F;&amp;#x51FA;&amp;#x4E8E;&amp;#x4E00;&amp;#x4E2A;&amp;#x9875;&amp;#x9762;&amp;#x4ED4;&amp;#x7684;&amp;#x201C;&amp;#x7AA5;&amp;#x63A2;&amp;#x201D;&amp;#x6B32;&amp;#x5427;">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/4.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/5.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/6.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/6.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/7.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/8.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/9.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/10.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/10.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/11.jpg">
-<meta property="og:image" content="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/12.jpg">
+<meta property="og:description" content="今天为什么要谈这个呢？出于一个页面仔的“窥探”欲吧，也可能不是，因为这些本来就是需要知道的，只是可能没有引起太多人注意。
+当然，每个“是什么”的背后都有一个“为什么”，很多人都遇到过“设置了z-index却无用“的问题。
+z-index是干嘛的呢？——设置元素在z轴方向的层级。那么怎么用它才是正确滴捏？
+先来看正常情况下
+&amp;lt;div class=&amp;quot;mod&amp;quot;&amp;gt;
+  &amp;l">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/1.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/2.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/3.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/4.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/5.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/6.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/6.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/7.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/8.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/9.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/10.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/10.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/11.jpg">
+<meta property="og:image" content="http://yoursite.com/zindex-zoom-and-the-brothers-home-front/12.jpg">
 <meta property="og:updated_time" content="2016-02-24T13:03:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="z-index和zoom这哥俩">
-<meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x4E3A;&amp;#x4EC0;&amp;#x4E48;&amp;#x8981;&amp;#x8C08;&amp;#x8FD9;&amp;#x4E2A;&amp;#x5462;&amp;#xFF1F;&amp;#x51FA;&amp;#x4E8E;&amp;#x4E00;&amp;#x4E2A;&amp;#x9875;&amp;#x9762;&amp;#x4ED4;&amp;#x7684;&amp;#x201C;&amp;#x7AA5;&amp;#x63A2;&amp;#x201D;&amp;#x6B32;&amp;#x5427;">
+<meta name="twitter:description" content="今天为什么要谈这个呢？出于一个页面仔的“窥探”欲吧，也可能不是，因为这些本来就是需要知道的，只是可能没有引起太多人注意。
+当然，每个“是什么”的背后都有一个“为什么”，很多人都遇到过“设置了z-index却无用“的问题。
+z-index是干嘛的呢？——设置元素在z轴方向的层级。那么怎么用它才是正确滴捏？
+先来看正常情况下
+&amp;lt;div class=&amp;quot;mod&amp;quot;&amp;gt;
+  &amp;l">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> z-index和zoom这哥俩 | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/"/>
+
+
+
+
+
+  <title>z-index和zoom这哥俩 | 灵感之见</title>
   
 
 
@@ -113,48 +180,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -162,43 +237,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -213,49 +298,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/12/zindex-zoom-and-the-brothers-home-front/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                z-index和zoom这哥俩
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">z-index和zoom这哥俩</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-12T00:00:00+08:00" content="2015-06-12">
-              2015-06-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-12T00:00:00+08:00">
+                2015-06-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CSS/" itemprop="url" rel="index">
                     <span itemprop="name">CSS</span>
                   </a>
@@ -263,7 +367,6 @@
 
                 
                 
-
               
             </span>
           
@@ -273,28 +376,35 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>&#x4ECA;&#x5929;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8C08;&#x8FD9;&#x4E2A;&#x5462;&#xFF1F;&#x51FA;&#x4E8E;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4ED4;&#x7684;&#x201C;&#x7AA5;&#x63A2;&#x201D;&#x6B32;&#x5427;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x672C;&#x6765;&#x5C31;&#x662F;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x5F15;&#x8D77;&#x592A;&#x591A;&#x4EBA;&#x6CE8;&#x610F;&#x3002;</p>
-<p>&#x5F53;&#x7136;&#xFF0C;&#x6BCF;&#x4E2A;&#x201C;&#x662F;&#x4EC0;&#x4E48;&#x201D;&#x7684;&#x80CC;&#x540E;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x201C;&#x4E3A;&#x4EC0;&#x4E48;&#x201D;&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x9047;&#x5230;&#x8FC7;&#x201C;&#x8BBE;&#x7F6E;&#x4E86;z-index&#x5374;&#x65E0;&#x7528;&#x201C;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<p>z-index&#x662F;&#x5E72;&#x561B;&#x7684;&#x5462;&#xFF1F;&#x2014;&#x2014;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x5728;z&#x8F74;&#x65B9;&#x5411;&#x7684;&#x5C42;&#x7EA7;&#x3002;&#x90A3;&#x4E48;&#x600E;&#x4E48;&#x7528;&#x5B83;&#x624D;&#x662F;&#x6B63;&#x786E;&#x6EF4;&#x634F;&#xFF1F;</p>
-<p>&#x5148;&#x6765;&#x770B;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;</p>
+        <p>今天为什么要谈这个呢？出于一个页面仔的“窥探”欲吧，也可能不是，因为这些本来就是需要知道的，只是可能没有引起太多人注意。</p>
+<p>当然，每个“是什么”的背后都有一个“为什么”，很多人都遇到过“设置了z-index却无用“的问题。</p>
+<p>z-index是干嘛的呢？——设置元素在z轴方向的层级。那么怎么用它才是正确滴捏？</p>
+<p>先来看正常情况下</p>
 <pre><code>&lt;div class=&quot;mod&quot;&gt;
   &lt;h2&gt;z-index&lt;/h2&gt;
-  &lt;div class=&quot;up&quot;&gt;&#x6211;&#x662F;&#x4E0A;&#x5C42;&#xFF0C;&#x54C8;&#x54C8;&lt;/div&gt;
-  &lt;div class=&quot;down&quot;&gt;&#x6211;&#x662F;&#x5E95;&#x5C42;&#xFF0C;&#x545C;&#x545C;&lt;/div&gt;
+  &lt;div class=&quot;up&quot;&gt;我是上层，哈哈&lt;/div&gt;
+  &lt;div class=&quot;down&quot;&gt;我是底层，呜呜&lt;/div&gt;
 &lt;/div&gt;
 
 css
@@ -320,97 +430,134 @@ up,.down{
     background: rgb(102,134,232);
 /*    z-index: 0;
 */  }
-</code></pre><p>&#x5982;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/1.jpg" alt=""></p>
-<p>1&#x3001;&#x6211;&#x4EEC;&#x628A;z-index&#x7684;&#x6CE8;&#x91CA;&#x53BB;&#x6389;</p>
-<p>&#x7EB9;&#x4E1D;&#x4E0D;&#x52A8;</p>
-<p>2&#x3001;&#x628A;up&#x548C;down&#x7684;&#x5B9A;&#x4F4D;&#x52A0;&#x4E0A;</p>
-<p>&#x4F9D;&#x7136;&#x7EB9;&#x4E1D;&#x4E0D;&#x52A8;&#xFF0C;&#x597D;&#x5427;&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E0D;&#x52A8;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x5B83;&#x5C31;&#x4E0D;&#x8BE5;&#x52A8;&#x3002;</p>
-<p>3&#x3001;&#x4E3A;&#x4E86;&#x80FD;&#x770B;&#x51FA;&#x5DEE;&#x522B;&#xFF0C;&#x7236;&#x5BB9;&#x5668;&#x5B9A;&#x4F4D;&#x52A0;&#x4E0A;&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;</p>
-<p>&#x5982;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/2.jpg" alt=""></p>
-<p>&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x4E86;&#xFF0C;&#x89C6;&#x91CE;&#x4E4B;&#x4E2D;&#xFF0C;&#x53EA;&#x5269;&#x4E0B;down&#xFF0C;&#x5230;&#x8FD9;&#x91CC;&#x4E3A;&#x6B62;&#xFF0C;&#x4F3C;&#x4E4E;&#x4E5F;&#x6CA1;&#x8DDF;&#x6211;&#x4EEC;&#x8981;&#x8BF4;&#x7684;&#x626F;&#x4E0A;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x662F;&#x6709;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;&#x5B83;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;z-index:0;&#x90A3;&#x4E48;&#x5B83;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x662F;&#x5728;&#x540C;&#x6837;&#x7684;&#x5C42;&#x7EA7;&#xFF0C;&#x5F53;&#x662F;&#x540C;&#x6837;&#x5C42;&#x7EA7;&#x65F6;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8986;&#x76D6;&#x524D;&#x9762;&#x3002;</p>
-<p>&#x518D;&#x6765;&#x770B;</p>
-<p>4&#x3001;&#x53BB;&#x6389;&#x5B9A;&#x4F4D;&#xFF0C;&#x4F7F;&#x7528;margin&#x8D1F;&#x503C;&#x628A;down&#x62C9;&#x4E0A;&#x53BB;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/3.jpg" alt=""></p>
-<p>&#x8BBE;&#x7F6E;z-index&#xFF0C;up&#x4E3A;2&#xFF0C;down&#x4E3A;1&#xFF0C;&#x7EB9;&#x4E1D;&#x4E0D;&#x52A8;</p>
-<p>&#x6539;&#x4E3A;&#x5B9A;&#x4F4D;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/4.jpg" alt=""></p>
-<p>&#x65E7;&#x666F;&#x91CD;&#x73B0;&#xFF0C;but&#x8FD9;&#x4E2A;&#x65F6;&#x5019;up&#x5728;down&#x4E0A;&#x9762;&#x3002;&#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x6CE8;&#x610F;&#x70B9;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5B9A;&#x4F4D;&#xFF0C;&#x624D;&#x80FD;&#x8BA9;z-index&#x8D77;&#x4F5C;&#x7528;&#xFF01;</p>
-<p>&#x90A3;&#x4E48;&#xFF0C;&#x54EA;&#x79CD;&#x5B9A;&#x4F4D;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x6765;&#x8BD5;&#x8BD5;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#xFF0C;&#x4E3A;&#x4E86;&#x770B;&#x5F97;&#x65B9;&#x4FBF;&#xFF0C;&#x7ED9;down&#x8BBE;&#x7F6E;&#x7EDD;&#x5BF9;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;top&#x503C;&#x3002;&#x5C42;&#x7EA7;&#x4ECD;&#x7136;&#x4E0D;&#x53D8;</p>
-<p>&#x5982;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/5.jpg" alt=""></p>
-<p>&#x5982;&#x6211;&#x4EEC;&#x6240;&#x613F;&#xFF0C;&#x6539;&#x4E00;&#x4E0B;&#x8BD5;&#x8BD5;&#xFF0C;up&#x4E3A;1&#xFF0C;down&#x4E3A;2</p>
-<p>&#x5982;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/6.jpg" alt=""></p>
-<p>&#x54C7;&#x5076;&#xFF0C;&#x6CA1;&#x95EE;&#x9898;</p>
-<p>5&#x3001;&#x90A3;&#x5982;&#x679C;&#x60F3;&#x8DDF;&#x7236;&#x5143;&#x7D20;&#x8C03;&#x8C03;&#x5462;&#xFF1F;</p>
-<p>&#x5982;&#x5143;&#x7D20;&#x8BBE;&#x4E3A;2&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x4E3A;1</p>
-<p>&#x5982;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/6.jpg" alt=""></p>
-<p>&#x554A;&#xFF1F;&#xFF01;&#x6211;&#x771F;&#x7684;&#x6CA1;&#x9A97;&#x4F60;&#xFF0C;&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;&#x6539;&#x4E86;&#xFF0C;&#x53EF;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x597D;&#x5427;&#x96BE;&#x9053;&#x662F;&#x503C;&#x4E0D;&#x591F;&#x5927;&#xFF1F;&#x90A3;&#x518D;&#x6539;&#x6539;&#xFF0C;&#x7236;&#x5143;&#x7D20;&#x6539;&#x6210;10&#xFF0C;&#x8FD8;&#x662F;&#x4E0D;&#x52A8;&#xFF0C;100&#xFF0C;&#x8FD8;&#x662F;&#x4E0D;&#x52A8;&#xFF0C;&#x4F7F;&#x5927;&#x62DB;&#xFF0C;999&#xFF01;&#xFF01;&#x5076;&#xFF0C;&#x8FD8;&#x662F;&#x4E0D;&#x884C;&#xFF0C;&#x8981;&#x5410;&#x8840;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x603B;&#x662F;&#x60F3;&#x4F7F;&#x7528;&#x66B4;&#x529B;&#x624B;&#x6BB5;&#x6765;&#x5C1D;&#x8BD5;&#x4E00;&#x4E9B;&#x9519;&#x8BEF;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5728;&#x8DDF;&#x81EA;&#x5DF1;&#x8FC7;&#x4E0D;&#x53BB;~&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
-<p>&#x56E0;&#x4E3A;&#xFF0C;&#x53EA;&#x8981;&#x4F60;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4F7F;&#x7528;&#x4E86;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;0&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x6C38;&#x8FDC;&#x5728;&#x7236;&#x5143;&#x7D20;&#x4E0A;&#x9762;&#xFF0C;&#x4E0D;&#x7BA1;&#x7236;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E86;&#x591A;&#x4E48;&#x5927;&#x7684;z-index&#x503C;&#xFF0C;&#x4E0D;&#x4FE1;&#xFF1F;&#x90A3;&#x4E48;&#x662F;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x7ED9;z-index&#x8BBE;&#x7F6E;&#x4E3A;0&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;-1&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1F;</p>
-<p>&#x770B;&#x56FE;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/7.jpg" alt=""></p>
-<p>&#x770B;&#x6765;&#x6CA1;&#x6709;&#x60F3;&#x7684;&#x90A3;&#x4E48;&#x7B80;&#x5355;</p>
-<p>&#x53BB;&#x6389;&#x7236;&#x5143;&#x7D20;&#x7684;z-index&#x8BD5;&#x8BD5;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/8.jpg" alt=""></p>
-<p>&#x54C7;&#xFF0C;&#x5B83;&#x4EEC;&#x6D88;&#x5931;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x7236;&#x5143;&#x7D20;&#x7684;z-index&#x503C;&#x662F;&#x591A;&#x5C11;&#x5462;&#xFF1F;&#x501F;&#x52A9;&#x6D4F;&#x89C8;&#x5668;&#x6765;&#x770B;&#x4E00;&#x4E0B;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/9.jpg" alt=""></p>
-<p>&#x597D;&#x7684;&#xFF0C;&#x770B;&#x6765;&#x7236;&#x5143;&#x7D20;&#x8DDF;&#x5B50;&#x5143;&#x7D20;&#x4E0D;&#x73A9;&#x513F;&#x8FD9;&#x4E2A;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0D;&#x4E92;&#x76F8;&#x6500;&#x6BD4;~</p>
-<p>6&#x3001;&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4F1A;&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x5462;&#xFF1F;</p>
-<p>&#x6211;&#x4EEC;&#x7D22;&#x6027;&#x6765;&#x76F4;&#x63A5;&#x7ED9;&#x5B83;&#x4EEC;&#x91CC;&#x9762;&#x76F4;&#x63A5;&#x5957;&#x4E00;&#x5C42;div&#xFF0C;&#x7136;&#x540E;&#x518D;&#x770B;&#x4F1A;&#x662F;&#x5565;&#x60C5;&#x51B5;</p>
-<p>&#x5C1D;&#x8BD5;&#x8BBE;&#x7F6E;up&#x4E3A;2&#xFF0C;down&#x4E3A;1&#xFF0C;up&#x5B50;&#x5143;&#x7D20;&#x4E3A;1&#xFF0C;down&#x5B50;&#x5143;&#x7D20;&#x4E3A;2</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/10.jpg" alt=""></p>
-<p>&#x597D;&#x5427;&#xFF0C;&#x6211;&#x4EEC;&#x53C8;&#x548C;&#x54C8;&#x54C8;&#x89C1;&#x9762;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E86;&#x4EC0;&#x4E48;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x53EA;&#x8981;&#x7236;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E86;&#x66F4;&#x4F4E;&#x7684;z-index&#x503C;&#xFF0C;&#x5219;&#x5B50;&#x5143;&#x7D20;&#x662F;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x7684;&#x3002;</p>
-<p>&#x7136;&#x800C;&#x8FD9;&#x5C31;&#x8FD9;&#x6837;&#x7ED3;&#x675F;&#x4E86;&#x4E48;&#xFF1F;&#x522B;&#x5FD8;&#x4E86;&#x6211;&#x4EEC;&#x521A;&#x624D;&#x6CA1;&#x6709;&#x7ED9;mod&#x8BBE;&#x7F6E;z-index&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;up&#x548C;down&#x662F;&#x4EC0;&#x4E48;&#x8868;&#x73B0;&#xFF1F;</p>
-<p>&#x662F;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5C1D;&#x8BD5;&#x4E0D;&#x7ED9;down&#x8BBE;&#x7F6E;&#x503C;&#xFF0C;&#x800C;&#x53EA;&#x7ED9;&#x5B83;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;z-index&#xFF0C;&#x4E3A;&#x4E86;&#x770B;&#x5F97;&#x66F4;&#x6E05;&#x695A;&#xFF0C;&#x7ED9;down&#x5B9A;&#x4F4D;&#x5230;&#x504F;&#x4E0B;&#x4F4D;&#x7F6E;&#x3002;</p>
-<p>&#x5982;&#x4E0B;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;1</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/10.jpg" alt=""></p>
-<p>&#x8001;&#x670B;&#x53CB;&#x53C8;&#x89C1;&#x9762;&#x4E86;&#x3002;&#x3002;&#x3002;</p>
-<p>&#x8BBE;&#x7F6E;&#x4E3A;2</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/11.jpg" alt=""></p>
-<p>&#x54C7;&#x54C8;&#x54C8;&#xFF0C;down&#x7684;&#x5B50;&#x5143;&#x7D20;&#x5C31;&#x9171;&#x7D2B;&#x5B8C;&#x6210;&#x4E86;&#x5BF9;&#x7236;&#x5143;&#x7D20;&#x548C;up&#x7684;&#x8D85;&#x8D8A;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x540C;&#x65F6;&#x8D85;&#x8D8A;&#x4E86;up&#xFF1F;&#x522B;&#x5FD8;&#x4E86;&#xFF0C;down&#x662F;&#x5728;up&#x4E4B;&#x540E;&#x3002;</p>
-<p>&#x90A3;&#x5982;&#x679C;&#x628A;&#x7236;&#x5143;&#x7D20;&#x7684;z-index&#x6E05;&#x6389;&#xFF0C;&#x53EA;&#x6BD4;&#x8F83;&#x5B50;&#x5143;&#x7D20;&#x5462;&#xFF0C;&#x662F;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x540C;&#x6837;&#x9075;&#x5FAA;&#x7740;&#x201D;&#x540C;&#x7EA7;&#x540E;&#x5728;&#x4E0A;&#xFF0C;&#x8C01;&#x9AD8;&#x8C01;&#x5728;&#x4E0A;&#x201C;&#x7684;&#x539F;&#x5219;&#x3002;</p>
-<p>&#x597D;&#x4E86;&#xFF0C;&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x6765;&#x4E2A;&#x5C0F;&#x7ED3;&#xFF1A;</p>
-<p>1&#x3001;z-index&#x8D77;&#x4F5C;&#x7528;&#x7684;&#x524D;&#x63D0;&#x662F;&#x5B9A;&#x4F4D;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x8BBE;&#x7F6E;z-index&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#xFF0C;&#x66F4;&#x5BB9;&#x6613;&#x5FD8;&#x7684;&#x662F;&#x7236;&#x5B50;&#x5C42;&#x53E0;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
-<p>2&#x3001;&#x5C42;&#x7EA7;&#x503C;&#x7684;&#x6BD4;&#x8F83;&#xFF0C;&#x53EA;&#x5728;&#x540C;&#x7EA7;&#x5143;&#x7D20;&#x6216;&#x8005;&#x540C;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#xFF0C;&#x7236;&#x5B50;&#x4E4B;&#x95F4;&#x4E0D;&#x4F1A;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x6BD4;&#x8F83;&#x3002;</p>
-<p>3&#x3001;&#x53EA;&#x8981;&#x662F;&#x5B50;&#x5143;&#x7D20;&#x6709;&#x7740;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;0&#x7684;z-index&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x5728;&#x7236;&#x5143;&#x7D20;&#x4E4B;&#x4E0A;&#xFF0C;&#x60F3;&#x5728;&#x7236;&#x5143;&#x7D20;&#x4E4B;&#x4E0B;&#xFF0C;&#x5C31;&#x8BBE;&#x7F6E;&#x4E3A;&#x5C0F;&#x4E8E;0&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x7236;&#x5143;&#x7D20;z-index&#x503C;&#x4E3A;auto&#xFF1B;</p>
-<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;z-index&#x7684;&#x503C;&#x4E0D;&#x4F1A;&#x7EE7;&#x627F;&#xFF0C;&#x8FD8;&#x6709;&#x4EBA;&#x8BF4;z-index&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;0&#xFF0C;&#x521A;&#x624D;&#x5927;&#x5BB6;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x4E0D;&#x591F;&#x4E25;&#x8C28;&#x3002;</p>
-<p>z-index&#x5C31;&#x8BF4;&#x5230;&#x8FD9;&#x513F;&#x3002;</p>
-<p>&#x5176;&#x4ED6;&#x53EF;&#x53C2;&#x8003; z-index</p>
-<p>&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x8BF4;&#x8BF4;zoom</p>
-<p>zoom&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x5927;&#x5BB6;&#x7ECF;&#x5E38;&#x770B;&#x5230;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x5BF9;IE&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;&#x3002;&#x5176;&#x5B9E;&#x662F;&#x7528;&#x6765;&#x7F29;&#x653E;&#x7684;&#x3002;</p>
-<p>&#x5F88;&#x591A;&#x6587;&#x7AE0;&#x8BF4;&#x5B83;&#x662F;IE&#x4E13;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x5B9E;&#x672A;&#x5FC5;&#x3002;&#x5728;&#x706B;&#x72D0;&#x548C;chrome&#x4E0B;&#xFF0C;&#x5B83;&#x4F9D;&#x7136;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6211;&#x6CA1;&#x6D4B;&#xFF0C;&#x4E0D;&#x597D;&#x53D1;&#x8868;&#x770B;&#x6CD5;&#x3002;</p>
-<p>&#x8FD9;&#x91CC;&#x662F;&#x6765;&#x81EA;caniuse&#x7684;&#x517C;&#x5BB9;&#x8868;</p>
-<p><img src="/2015/06/12/zindex-zoom-and-the-brothers-home-front/12.jpg" alt=""></p>
-<p>&#x53E6;&#x5916;&#x4E24;&#x70B9;&#x8868;&#x73B0;&#x6BD4;&#x8F83;&#x8BE1;&#x5F02;&#xFF0C;</p>
-<p>1&#x3001;&#x7F29;&#x653E;&#x4E86;&#x9AD8;&#x5EA6;&#xFF0C;&#x5BBD;&#x5EA6;&#x672A;&#x53D8;</p>
-<p>2&#x3001;&#x7F29;&#x653E;&#x53EA;&#x662F;&#x770B;&#x8D77;&#x6765;&#xFF0C;&#x800C;&#x5E76;&#x672A;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x771F;&#x6B63;&#x7684;&#x7F29;&#x653E;</p>
-<p>&#x4E0A;&#x8FF0;&#x4E24;&#x70B9;&#x4E5F;&#x662F;&#x5B83;&#x8DDF;transform&#xFF1A;scale&#x8868;&#x73B0;&#x7684;&#x533A;&#x522B;&#x6240;&#x5728;&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x5BF9;&#x5B83;&#x8BBE;&#x7F6E;&#x6570;&#x503C;&#xFF0C;&#x5982;1&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x5982;200%&#x3002;</p>
-<p>&#x90A3;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5E72;&#x561B;</p>
-<p>&#x89E6;&#x53D1;ie&#x7684;hasLayout&#x5C5E;&#x6027;&#xFF0C;&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x3001;&#x6E05;&#x9664;margin&#x7684;&#x91CD;&#x53E0;&#x3002;</p>
-<p>&#x6709;&#x4EBA;&#x8BF4;css3&#x4E2D;&#x5B83;&#x5C31;&#x4F1A;&#x6CA1;&#x4E86;&#xFF0C;&#x663E;&#x7136;&#x4E0D;&#x662F;&#xFF0C;&#x5B83;&#x8FD8;&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+</code></pre><p>如图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/1.jpg" alt=""></p>
+<p>1、我们把z-index的注释去掉</p>
+<p>纹丝不动</p>
+<p>2、把up和down的定位加上</p>
+<p>依然纹丝不动，好吧是的，这个时候不动是正常的，它就不该动。</p>
+<p>3、为了能看出差别，父容器定位加上，子元素绝对定位</p>
+<p>如图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/2.jpg" alt=""></p>
+<p>第一种情况出现了，视野之中，只剩下down，到这里为止，似乎也没跟我们要说的扯上什么关系，但其实是有关系的，我们给它们设置了z-index:0;那么它们现在就是在同样的层级，当是同样层级时，后面会覆盖前面。</p>
+<p>再来看</p>
+<p>4、去掉定位，使用margin负值把down拉上去</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/3.jpg" alt=""></p>
+<p>设置z-index，up为2，down为1，纹丝不动</p>
+<p>改为定位</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/4.jpg" alt=""></p>
+<p>旧景重现，but这个时候up在down上面。这是第二个注意点，需要使用定位，才能让z-index起作用！</p>
+<p>那么，哪种定位呢？我们来试试一个相对一个绝对，为了看得方便，给down设置绝对，并设置top值。层级仍然不变</p>
+<p>如图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/5.jpg" alt=""></p>
+<p>如我们所愿，改一下试试，up为1，down为2</p>
+<p>如图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/6.jpg" alt=""></p>
+<p>哇偶，没问题</p>
+<p>5、那如果想跟父元素调调呢？</p>
+<p>如元素设为2，子元素设为1</p>
+<p>如图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/6.jpg" alt=""></p>
+<p>啊？！我真的没骗你，代码已经改了，可是为什么是这样，好吧难道是值不够大？那再改改，父元素改成10，还是不动，100，还是不动，使大招，999！！偶，还是不行，要吐血了。我们总是想使用暴力手段来尝试一些错误的东西，实际上是在跟自己过不去~这是为什么呢？</p>
+<p>因为，只要你的子元素使用了大于等于0的值，那么它就永远在父元素上面，不管父元素设置了多么大的z-index值，不信？那么是不是我们给z-index设置为0，子元素设置-1就可以了？</p>
+<p>看图</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/7.jpg" alt=""></p>
+<p>看来没有想的那么简单</p>
+<p>去掉父元素的z-index试试</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/8.jpg" alt=""></p>
+<p>哇，它们消失了，那么这个时候父元素的z-index值是多少呢？借助浏览器来看一下</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/9.jpg" alt=""></p>
+<p>好的，看来父元素跟子元素不玩儿这个，它们不互相攀比~</p>
+<p>6、还有一点，子元素的子元素会是个什么情况呢？</p>
+<p>我们索性来直接给它们里面直接套一层div，然后再看会是啥情况</p>
+<p>尝试设置up为2，down为1，up子元素为1，down子元素为2</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/10.jpg" alt=""></p>
+<p>好吧，我们又和哈哈见面了，可以看出，子元素设置了什么不重要，只要父元素设置了更低的z-index值，则子元素是无能为力的。</p>
+<p>然而这就这样结束了么？别忘了我们刚才没有给mod设置z-index值的时候，up和down是什么表现？</p>
+<p>是的，那么尝试不给down设置值，而只给它的子元素设置z-index，为了看得更清楚，给down定位到偏下位置。</p>
+<p>如下，设置为1</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/10.jpg" alt=""></p>
+<p>老朋友又见面了。。。</p>
+<p>设置为2</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/11.jpg" alt=""></p>
+<p>哇哈哈，down的子元素就酱紫完成了对父元素和up的超越，为什么同时超越了up？别忘了，down是在up之后。</p>
+<p>那如果把父元素的z-index清掉，只比较子元素呢，是的，它们同样遵循着”同级后在上，谁高谁在上“的原则。</p>
+<p>好了，说了这么多，来个小结：</p>
+<p>1、z-index起作用的前提是定位，这一点很重要，很多人设置z-index不起作用就是因为这个，更容易忘的是父子层叠的时候。</p>
+<p>2、层级值的比较，只在同级元素或者同级元素的子元素之间，父子之间不会有这样的比较。</p>
+<p>3、只要是子元素有着大于等于0的z-index值，那么它就在父元素之上，想在父元素之下，就设置为小于0的值，并且父元素z-index值为auto；</p>
+<p>除此之外，还有一点需要注意，z-index的值不会继承，还有人说z-index的默认值是0，刚才大家看到的，不够严谨。</p>
+<p>z-index就说到这儿。</p>
+<p>其他可参考 z-index</p>
+<p>下面简单说说zoom</p>
+<p>zoom这个东西大家经常看到使用，而且是对IE浏览器使用。其实是用来缩放的。</p>
+<p>很多文章说它是IE专有属性，其实未必。在火狐和chrome下，它依然会起作用，其他的我没测，不好发表看法。</p>
+<p>这里是来自caniuse的兼容表</p>
+<p><img src="zindex-zoom-and-the-brothers-home-front/12.jpg" alt=""></p>
+<p>另外两点表现比较诡异，</p>
+<p>1、缩放了高度，宽度未变</p>
+<p>2、缩放只是看起来，而并未对元素进行真正的缩放</p>
+<p>上述两点也是它跟transform：scale表现的区别所在。</p>
+<p>可以对它设置数值，如1，也可以设置百分比，如200%。</p>
+<p>那它可以用来干嘛</p>
+<p>触发ie的hasLayout属性，清除浮动、清除margin的重叠。</p>
+<p>有人说css3中它就会没了，显然不是，它还新增了一些东西，比如：</p>
 <p>zoom-in/zoom-out</p>
-<p>&#x4E0D;&#x8981;&#x8BEF;&#x4F1A;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x4FE9;&#x662F;&#x7528;&#x6765;&#x5E72;&#x561B;&#x7684;&#x5462;&#xFF1F;</p>
-<p>&#x662F;&#x6539;&#x53D8;&#x9F20;&#x6807;&#x7684;&#x5F62;&#x72B6;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x6837;</p>
+<p>不要误会，它们是属性值，而不是属性，它俩是用来干嘛的呢？</p>
+<p>是改变鼠标的形状的，比如这样</p>
 <p>enter image description here</p>
-<p>&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x770B;&#x4E0B;&#x5F20;&#x946B;&#x65ED;&#x7684;&#x4F8B;&#x5B50;CSS3 cursor&#x5C5E;&#x6027;&#x503C;zoom-in/zoom-out</p>
-<p>&#x597D;&#x4E86;&#xFF0C;&#x7531;&#x4E8E;&#x65F6;&#x95F4;&#x7D27;&#x8FEB;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x8981;&#x7ED3;&#x5C3E;&#x4E86;&#x3002;&#x4E0D;&#x77E5;&#x662F;&#x5426;&#x80FD;&#x591F;&#x5BF9;&#x4F60;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x6240;&#x758F;&#x6F0F;&#xFF0C;&#x4E0B;&#x6B21;&#x6709;&#x65F6;&#x95F4;&#x518D;&#x6765;&#x7965;&#x8C08;&#x3002;</p>
-<p>&#x6B22;&#x8FCE;&#x5173;&#x6CE8;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;: &#x524D;&#x7AEF;&#x5468;&#x672B;</p>
-<p>&#x6B22;&#x8FCE;&#x6765;&#x8FD9;&#x91CC;&#x4EA4;&#x6D41;&#xFF1A;152128548</p>
+<p>具体可以看下张鑫旭的例子CSS3 cursor属性值zoom-in/zoom-out</p>
+<p>好了，由于时间紧迫，这篇文要结尾了。不知是否能够对你有所帮助，可能有所疏漏，下次有时间再来祥谈。</p>
+<p>欢迎关注微信公众号: 前端周末</p>
+<p>欢迎来这里交流：152128548</p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -422,6 +569,8 @@ up,.down{
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -436,6 +585,10 @@ up,.down{
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -444,26 +597,29 @@ up,.down{
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -476,7 +632,7 @@ up,.down{
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -494,49 +650,53 @@ up,.down{
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -558,27 +718,21 @@ up,.down{
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -587,168 +741,162 @@ up,.down{
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
+
       
 
     </div>
@@ -769,237 +917,52 @@ up,.down{
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -1007,24 +970,124 @@ up,.down{
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>

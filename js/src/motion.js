@@ -1,3 +1,5 @@
+/* global NexT: true */
+
 $(document).ready(function () {
   NexT.motion = {};
 
@@ -77,15 +79,21 @@ $(document).ready(function () {
 
   var SIDEBAR_WIDTH = '320px';
   var SIDEBAR_DISPLAY_DURATION = 200;
+  var xPos, yPos;
 
   var sidebarToggleMotion = {
     toggleEl: $('.sidebar-toggle'),
+    dimmerEl: $('#sidebar-dimmer'),
     sidebarEl: $('.sidebar'),
     isSidebarVisible: false,
     init: function () {
       this.toggleEl.on('click', this.clickHandler.bind(this));
+      this.dimmerEl.on('click', this.clickHandler.bind(this));
       this.toggleEl.on('mouseenter', this.mouseEnterHandler.bind(this));
       this.toggleEl.on('mouseleave', this.mouseLeaveHandler.bind(this));
+      this.sidebarEl.on('touchstart', this.touchstartHandler.bind(this));
+      this.sidebarEl.on('touchend', this.touchendHandler.bind(this));
+      this.sidebarEl.on('touchmove', function(e){e.preventDefault();});
 
       $(document)
         .on('sidebar.isShowing', function () {
@@ -112,6 +120,17 @@ $(document).ready(function () {
         return;
       }
       sidebarToggleLines.init();
+    },
+    touchstartHandler: function(e) {
+      xPos = e.originalEvent.touches[0].clientX;
+      yPos = e.originalEvent.touches[0].clientY;
+    },
+    touchendHandler: function(e) {
+      var _xPos = e.originalEvent.changedTouches[0].clientX;
+      var _yPos = e.originalEvent.changedTouches[0].clientY;
+      if (_xPos-xPos > 30 && Math.abs(_yPos-yPos) < 20) {
+          this.clickHandler();
+      }
     },
     showSidebar: function () {
       var self = this;
@@ -215,6 +234,10 @@ $(document).ready(function () {
         o: {duration: 200}
       });
 
+      if (CONFIG.motion.async) {
+        integrator.next();
+      }
+
       if (sequence.length > 0) {
         sequence[sequence.length - 1].o.complete = function () {
           integrator.next();
@@ -250,6 +273,11 @@ $(document).ready(function () {
     },
 
     menu: function (integrator) {
+
+      if (CONFIG.motion.async) {
+        integrator.next();
+      }
+
       $('.menu-item').velocity('transition.slideDownIn', {
         display: null,
         duration: 200,
@@ -260,10 +288,22 @@ $(document).ready(function () {
     },
 
     postList: function (integrator) {
-      var $post = $('.post');
-      var hasPost = $post.size() > 0;
+      //var $post = $('.post');
+      var $postBlock = $('.post-block');
+      var $postBlockTransition = CONFIG.motion.transition.post_block;
+      var $postHeader = $('.post-header');
+      var $postHeaderTransition = CONFIG.motion.transition.post_header;
+      var $postBody = $('.post-body');
+      var $postBodyTransition = CONFIG.motion.transition.post_body;
+      var $collHeader = $('.collection-title, .archive-year');
+      var $collHeaderTransition = CONFIG.motion.transition.coll_header;
+      var hasPost = $postBlock.size() > 0;
 
       hasPost ? postMotion() : integrator.next();
+
+      if (CONFIG.motion.async) {
+        integrator.next();
+      }
 
       function postMotion () {
         var postMotionOptions = window.postMotionOptions || {
@@ -274,12 +314,24 @@ $(document).ready(function () {
           integrator.next();
         };
 
-        $post.velocity('transition.slideDownIn', postMotionOptions);
+        //$post.velocity('transition.slideDownIn', postMotionOptions);
+        if (CONFIG.motion.transition.post_block) {
+          $postBlock.velocity('transition.' + $postBlockTransition, postMotionOptions);
+        }
+        if (CONFIG.motion.transition.post_header) {
+          $postHeader.velocity('transition.' + $postHeaderTransition, postMotionOptions);
+        }
+        if (CONFIG.motion.transition.post_body) {
+          $postBody.velocity('transition.' + $postBodyTransition, postMotionOptions);
+        }
+        if (CONFIG.motion.transition.coll_header) {
+          $collHeader.velocity('transition.' + $collHeaderTransition, postMotionOptions);
+        }
       }
     },
 
     sidebar: function (integrator) {
-      if (CONFIG.sidebar === 'always') {
+      if (CONFIG.sidebar.display === 'always') {
         NexT.utils.displaySidebar();
       }
       integrator.next();

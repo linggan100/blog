@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,18 +34,49 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="总结," />
@@ -52,46 +90,60 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="&amp;#x8D77;&amp;#x6E90;&amp;#x5927;&amp;#x6982;&amp;#x4E24;&amp;#x5E74;&amp;#x591A;&amp;#x4EE5;&amp;#x524D;&amp;#xFF0C;&amp;#x548C;&amp;#x524D;&amp;#x7AEF;&amp;#x7ED3;&amp;#x7F18;&amp;#xFF0C;&amp;#x505A;&amp;#x6280;&amp;#x672F;&amp;#x8FD9;&amp;#x884C;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x7BA1;">
+<meta name="description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="醉牛前端诞生记">
 <meta property="og:url" content="http://yoursite.com/2015/09/13/zuiniu-birth/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="&amp;#x8D77;&amp;#x6E90;&amp;#x5927;&amp;#x6982;&amp;#x4E24;&amp;#x5E74;&amp;#x591A;&amp;#x4EE5;&amp;#x524D;&amp;#xFF0C;&amp;#x548C;&amp;#x524D;&amp;#x7AEF;&amp;#x7ED3;&amp;#x7F18;&amp;#xFF0C;&amp;#x505A;&amp;#x6280;&amp;#x672F;&amp;#x8FD9;&amp;#x884C;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x7BA1;">
-<meta property="og:image" content="http://yoursite.com/2015/09/13/zuiniu-birth/1.jpg">
+<meta property="og:description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
+<meta property="og:image" content="http://yoursite.com/zuiniu-birth/1.jpg">
 <meta property="og:updated_time" content="2016-02-24T13:03:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="醉牛前端诞生记">
-<meta name="twitter:description" content="&amp;#x8D77;&amp;#x6E90;&amp;#x5927;&amp;#x6982;&amp;#x4E24;&amp;#x5E74;&amp;#x591A;&amp;#x4EE5;&amp;#x524D;&amp;#xFF0C;&amp;#x548C;&amp;#x524D;&amp;#x7AEF;&amp;#x7ED3;&amp;#x7F18;&amp;#xFF0C;&amp;#x505A;&amp;#x6280;&amp;#x672F;&amp;#x8FD9;&amp;#x884C;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x7BA1;">
+<meta name="twitter:description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 醉牛前端诞生记 | 灵感之见 </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2015/09/13/zuiniu-birth/"/>
+
+
+
+
+
+  <title>醉牛前端诞生记 | 灵感之见</title>
   
 
 
@@ -100,48 +152,56 @@
 
 
 
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">灵感之见</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、前端杂谈</p>
+      
   </div>
-  <p class="site-subtitle">生活琐碎、前端杂谈</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -149,43 +209,53 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
-      
-      
       
     </ul>
   
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -200,49 +270,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/13/zuiniu-birth/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                醉牛前端诞生记
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">醉牛前端诞生记</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-13T00:00:00+08:00" content="2015-09-13">
-              2015-09-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T00:00:00+08:00">
+                2015-09-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/总结/" itemprop="url" rel="index">
                     <span itemprop="name">总结</span>
                   </a>
@@ -250,7 +339,6 @@
 
                 
                 
-
               
             </span>
           
@@ -260,55 +348,99 @@
           
 
           
+          
 
           
+
           
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <h2 id="&#x8D77;&#x6E90;"><a href="#&#x8D77;&#x6E90;" class="headerlink" title="&#x8D77;&#x6E90;"></a>&#x8D77;&#x6E90;</h2><p>&#x5927;&#x6982;&#x4E24;&#x5E74;&#x591A;&#x4EE5;&#x524D;&#xFF0C;&#x548C;&#x524D;&#x7AEF;&#x7ED3;&#x7F18;&#xFF0C;&#x505A;&#x6280;&#x672F;&#x8FD9;&#x884C;&#x7684;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x6709;&#x9879;&#x76EE;&#x7EC3;&#x624B;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x4EBA;&#x5E26;&#xFF0C;&#x6700;&#x4E3B;&#x8981;&#x4F9D;&#x7136;&#x9760;&#x81EA;&#x5DF1;&#x3002;&#x73B0;&#x5728;&#x662F;&#x4FE1;&#x606F;&#x65F6;&#x4EE3;&#xFF0C;&#x627E;&#x8D44;&#x6599;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x5F53;&#x65F6;&#x7684;&#x6211;&#x50CF;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x65B0;&#x624B;&#x4E00;&#x6837;&#xFF0C;&#x5982;&#x9965;&#x4F3C;&#x6E34;&#x7684;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x7740;&#x5404;&#x79CD;&#x6307;&#x5357;&#xFF0C;&#x597D;&#x7684;&#x5B66;&#x4E60;&#x8D44;&#x6599;&#xFF0C;&#x6559;&#x7A0B;&#xFF0C;&#x535A;&#x5BA2;&#xFF0C;word&#x3001;pdf&#x3001;txt&#x3001;video&#xFF0C;&#x4E5F;&#x52A0;&#x5404;&#x79CD;&#x7FA4;&#x6C42;&#x7ECF;&#x3002;&#x9010;&#x6E10;&#x7684;&#x5C31;&#x627E;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x597D;&#x7684;&#x8D44;&#x6599;&#x3002;&#x6211;&#x770B;&#x7740;&#x90A3;&#x4E48;&#x591A;&#x597D;&#x4E1C;&#x897F;&#xFF0C;&#x5FC3;&#x60F3;&#x80AF;&#x5B9A;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5F88;&#x591A;&#x4EBA;&#x5728;&#x627E;&#x4ED6;&#x4EEC;&#xFF0C;&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x8981;&#x8BA9;&#x4ED6;&#x4EEC;&#x8DDF;&#x6211;&#x4E00;&#x6837;&#x5230;&#x5904;&#x627E;&#xFF0C;&#x8D70;&#x90A3;&#x4E48;&#x591A;&#x6CA1;&#x5FC5;&#x8981;&#x7684;&#x8DEF;&#x5462;&#xFF1F;</p>
-<p>&#x4E8E;&#x662F;&#x5728;&#x6211;&#x51FA;&#x6765;&#x5DE5;&#x4F5C;&#x4E4B;&#x540E;&#x4E0D;&#x4E45;&#xFF0C;&#x5C31;&#x62FE;&#x8D77;&#x4E86;&#x5728;&#x6821;&#x65F6;&#x5C31;&#x5EFA;&#x7ACB;&#x5374;&#x597D;&#x4E45;&#x6CA1;&#x987E;&#x4E0A;&#x6253;&#x7406;&#x7684;QQ&#x7FA4;&#xFF0C;10&#x4E2A;&#x4EBA;&#x4E0D;&#x5230;&#xFF0C;&#x6539;&#x540D;&#x53EB;&#x201C;web&#x524D;&#x7AEF;~&#x7F8E;&#x662F;&#x7F16;&#x51FA;&#x6765;&#x7684;&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x8D77;&#x521D;&#x662F;&#x6709;&#x4EBA;&#x8D28;&#x7591;&#x7684;&#xFF0C;&#x89C9;&#x5F97;&#x6709;&#x70B9;&#x590D;&#x6742;&#xFF0C;&#x4E5F;&#x6709;&#x70B9;&#x5947;&#x602A;&#x3002;&#x6211;&#x4E3A;&#x4EC0;&#x4E48;&#x6CA1;&#x6539;&#x5462;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5C31;&#x662F;&#x6211;&#x60F3;&#x4F20;&#x8FBE;&#x51FA;&#x6765;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4F1A;&#x505A;&#x8FD9;&#x4E2A;&#x5E76;&#x559C;&#x6B22;&#x4E0A;&#x5B83;&#xFF0C;&#x5C31;&#x662F;&#x8BA4;&#x4E3A;&#x5B83;&#x5F88;&#x6709;&#x8DA3;&#xFF0C;&#x5F88;&#x795E;&#x5947;&#xFF0C;&#x50CF;&#x9B54;&#x6CD5;&#x4E00;&#x6837;&#x80FD;&#x505A;&#x51FA;&#x5177;&#x6709;&#x7F8E;&#x611F;&#x7684;&#x9875;&#x9762;&#x3002;&#x5BF9;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x3002;&#x7FA4;&#x91CC;&#x4ECE;0&#x5230;50&#x7684;&#x4EBA;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x6211;&#x51FA;&#x53BB;&#x53D1;&#x5E7F;&#x544A;&#x62C9;&#x6765;&#x7684;&#xFF0C;&#x5728;&#x6211;&#x53BB;&#x5BA3;&#x4F20;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5728;&#x8D34;&#x5427;&#x91CC;&#x770B;&#x5230;&#x6709;&#x4E00;&#x4E2A;&#x63D0;&#x4F9B;&#x4E24;&#x672C;&#x4E66;&#x7684;&#x5E16;&#x5B50;&#x4E0B;&#x9762;&#x6709;&#x8D85;&#x8FC7;2000&#x6761;&#x56DE;&#x5E16;&#x6C42;&#x4E66;&#xFF0C;&#x5F53;&#x65F6;&#x6211;&#x5C31;&#x9707;&#x60CA;&#x4E86;&#xFF0C;&#x4E24;&#x672C;&#x4E66;&#x9700;&#x6C42;&#x5C31;&#x8FD9;&#x4E48;&#x5927;&#xFF0C;&#x6211;&#x6709;&#x90A3;&#x4E48;&#x591A;&#x2026;&#x8FD9;&#x66F4;&#x575A;&#x5B9A;&#x4E86;&#x6211;&#x628A;&#x5B83;&#x4EEC;&#x5206;&#x4EAB;&#x51FA;&#x53BB;&#x7684;&#x60F3;&#x6CD5;&#x3002;&#x540E;&#x6765;&#x7FA4;&#x91CC;&#x7684;&#x4EBA;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x6211;&#x5C31;&#x6CA1;&#x518D;&#x523B;&#x610F;&#x7684;&#x53BB;&#x63A8;&#x5E7F;&#x8FC7;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x7FA4;&#x91CC;&#x7ED9;&#x5927;&#x5BB6;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x529B;&#x6240;&#x80FD;&#x53CA;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x4E0A;&#x4F20;&#x6700;&#x65B0;&#x6700;&#x597D;&#x7684;&#x8D44;&#x6599;&#xFF0C;&#x53D1;&#x5E03;&#x4E00;&#x4E9B;&#x9760;&#x8C31;&#x7684;&#x804C;&#x4F4D;&#x4FE1;&#x606F;&#x548C;&#x597D;&#x6587;&#x3001;&#x6559;&#x7A0B;&#x94FE;&#x63A5;&#x7B49;&#x3002;</p>
-<p>&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#x4F3C;&#x4E4E;&#x548C;&#x9189;&#x725B;&#x524D;&#x7AEF;&#x8FD8;&#x662F;&#x6CA1;&#x626F;&#x4E0A;&#x5173;&#x7CFB;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x662F;&#xFF0C;&#x90FD;&#x662F;&#x6709;&#x56E0;&#x679C;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x7EC4;&#x4E86;QQ&#x7FA4;&#xFF0C;&#x867D;&#x7136;&#x5206;&#x4EAB;&#x4E86;&#x90A3;&#x4E48;&#x591A;&#x8D44;&#x6E90;&#xFF0C;&#x751A;&#x81F3;&#x6211;&#x5728;&#x5404;&#x4E2A;&#x793E;&#x533A;&#x90FD;&#x5F00;&#x4E86;&#x4E13;&#x680F;&#xFF0C;&#x4E5F;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x4F46;&#x9010;&#x6E10;&#x7684;&#x4F1A;&#x89C9;&#x5F97;&#x4ECD;&#x7136;&#x6709;&#x4E9B;&#x65E0;&#x529B;&#x611F;&#xFF0C;&#x56E0;&#x4E3A;&#x4E92;&#x8054;&#x7F51;&#x5F88;&#x5927;&#xFF0C;&#x4FE1;&#x606F;&#x5F88;&#x591A;&#xFF0C;&#x9700;&#x8981;&#x5E2E;&#x52A9;&#x7684;&#x4EBA;&#x5F88;&#x591A;&#xFF0C;&#x800C;&#x5B83;&#x4EEC;&#x90FD;&#x592A;&#x6709;&#x9650;&#x4E86;&#xFF0C;&#x8C01;&#x4E5F;&#x4E0D;&#x80FD;&#x4E00;&#x5BF9;&#x4E00;&#x624B;&#x628A;&#x624B;&#xFF0C;&#x6216;&#x8005;24&#x5C0F;&#x65F6;&#x5168;&#x5929;&#x5019;&#x53BB;&#x63D0;&#x4F9B;&#x5E2E;&#x52A9;&#x3001;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#xFF08;&#x867D;&#x7136;&#x4E5F;&#x6CA1;&#x4EBA;&#x6709;&#x4E49;&#x52A1;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x8C01;&#x8BA9;&#x6211;&#x90A3;&#x4E48;&#x7231;&#x63D0;&#x522B;&#x4EBA;&#x64CD;&#x5FC3;&#x5462;~&#xFF09;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6548;&#x7387;&#x5F88;&#x4F4E;&#xFF0C;&#x590D;&#x7528;&#x7387;&#x6781;&#x4F4E;&#xFF0C;&#x6210;&#x672C;&#x5F88;&#x9AD8;&#x3002;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#x53EF;&#x80FD;&#x8FD9;&#x6B21;&#x4F60;&#x627E;&#x5230;&#x4E86;&#xFF0C;&#x770B;&#x8FC7;&#x4E86;&#xFF0C;&#x4E0B;&#x6B21;&#x53C8;&#x627E;&#x4E0D;&#x5230;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x90FD;&#x4E0D;&#x662F;&#x673A;&#x5668;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x628A;&#x6240;&#x6709;&#x4E1C;&#x897F;&#x8BB0;&#x8111;&#x5B50;&#x91CC;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x4EBA;&#x90FD;&#x4F1A;&#x52A8;&#x624B;&#x53BB;&#x505A;&#x4E00;&#x4E2A;&#x6574;&#x7406;&#x548C;&#x7EC4;&#x7EC7;&#xFF08;&#x771F;&#x7684;&#x633A;&#x7E41;&#x7410;&#xFF09;&#x3002;&#x4E8E;&#x662F;&#x540E;&#x6765;&#x60F3;&#x505A;&#x4E00;&#x4E2A;&#x5B66;&#x4E60;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x8FD8;&#x60F3;&#x5230;&#x505A;&#x51E0;&#x4E2A;W&#x4F5C;&#x4E3A;&#x4E3B;&#x5E72;&#xFF0C;what&#x3001;why&#x3001;how&#xFF0C;&#x662F;&#x4EC0;&#x4E48;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x3001;&#x600E;&#x4E48;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x5176;&#x4ED6;&#x5206;&#x7C7B;&#xFF0C;&#x60F3;&#x60F3;&#x771F;&#x7684;&#x633A;&#x8D5E;&#x3002;&#x8BF4;&#x5E72;&#x5C31;&#x5E72;&#x5457;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x53C8;&#x5230;&#x7FA4;&#x91CC;&#x53BB;&#x53D1;&#x5E7F;&#x544A;&#x62C9;&#x4EBA;&#x4E86;&#xFF0C;&#x62C9;&#x4E86;&#x603B;&#x5171;&#x5341;&#x51E0;&#x4E2A;&#x4EBA;&#xFF0C;&#x8FD8;&#x5206;&#x6210;&#x4E86;&#x8BBE;&#x8BA1;&#x548C;&#x5F00;&#x53D1;&#x7EC4;&#xFF0C;&#x8DDF;&#x4ED6;&#x4EEC;&#x8BF4;&#x4E86;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x60F3;&#x505A;&#x6210;&#x4EC0;&#x4E48;&#x6837;&#xFF0C;&#x8FD8;&#x5411;&#x4ED6;&#x4EEC;&#x4FDD;&#x8BC1;&#x4E86;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E0D;&#x4F1A;&#x6B7B;&#xFF0C;&#x6211;&#x8D81;&#x7740;&#x5468;&#x672B;&#x628A;&#x9879;&#x76EE;&#x7B56;&#x5212;&#x4E66;&#x90FD;&#x5199;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E5F;&#x63D0;&#x4E86;&#x4E0D;&#x5C11;&#x770B;&#x6CD5;&#x548C;&#x610F;&#x89C1;&#x3002;&#x8BF4;&#x5230;&#x73B0;&#x5728;&#x4F60;&#x53EF;&#x80FD;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x662F;&#x9189;&#x725B;&#x524D;&#x7AEF;&#x5417;&#xFF1F;&#x4E0D;&#x50CF;&#x554A;&#x3002;&#x662F;&#x7684;&#xFF0C;&#x6211;&#x4FDD;&#x8BC1;&#x4E86;&#x5B83;&#x4E0D;&#x4F1A;&#x6B7B;&#xFF0C;&#x53EF;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5B83;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#x505A;&#xFF0C;&#x539F;&#x56E0;&#x6211;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x53D1;&#x9189;&#x725B;&#x524D;&#x7AEF;&#x4E0A;&#x7EBF;&#x516C;&#x544A;&#x7684;&#x90A3;&#x6761;&#x5FAE;&#x535A;&#x91CC;&#x6709;&#x8BF4;&#x5230;&#x201C;&#x60F3;&#x6CD5;&#x592A;&#x591A;&#x3001;&#x592A;&#x5927;&#xFF0C;&#x6267;&#x884C;&#x5F88;&#x4E0D;&#x591F;&#x201D;&#x3002;</p>
-<h2 id="&#x539F;&#x578B;&#x600E;&#x4E48;&#x6765;&#x7684;"><a href="#&#x539F;&#x578B;&#x600E;&#x4E48;&#x6765;&#x7684;" class="headerlink" title="&#x539F;&#x578B;&#x600E;&#x4E48;&#x6765;&#x7684;"></a>&#x539F;&#x578B;&#x600E;&#x4E48;&#x6765;&#x7684;</h2><p>&#x5728;&#x5F88;&#x591A;&#x6B21;&#x601D;&#x8003;&#x548C;&#x5426;&#x5B9A;&#x4E4B;&#x524D;&#x7684;&#x60F3;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x5C31;&#x60F3;&#xFF0C;&#x592A;&#x5927;&#x6216;&#x8005;&#x592A;&#x590D;&#x6742;&#x7684;&#x4E1C;&#x897F;&#x6682;&#x65F6;&#x505A;&#x4E0D;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x505A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
-<p>&#x6211;&#x4EEC;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7F51;&#x5740;&#x6536;&#x85CF;&#x5939;&#xFF0C;&#x6211;&#x770B;&#x8FC7;&#x6700;&#x6050;&#x6016;&#x7684;&#x628A;&#x6574;&#x4E2A;&#x7535;&#x8111;&#x5C4F;&#x5E55;&#x90FD;&#x94FA;&#x6EE1;&#x4E86;&#xFF0C;&#x90FD;&#x662F;title&#xFF0C;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#xFF0C;&#x4E0D;&#x65AD;&#x5F80;&#x91CC;&#x9762;&#x52A0;&#x7684;&#x8BDD;&#xFF0C;&#x90FD;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x5206;&#x7C7B;&#xFF0C;&#x524D;&#x63D0;&#x90A3;&#x662F;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x7535;&#x8111;&#xFF0C;&#x6362;&#x4E86;&#x7535;&#x8111;&#x53EF;&#x80FD;&#x5C31;&#x4E22;&#x4E86;&#xFF08;&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053;&#x5BFC;&#x51FA;&#x6216;&#x5FD8;&#x8BB0;&#x5BFC;&#x51FA;&#xFF09;&#x3002;&#x6B63;&#x662F;&#x6211;&#x81EA;&#x5DF1;&#x4E3A;&#x5176;&#x6240;&#x7D2F;&#xFF0C;&#x5C31;&#x53C8;&#x60F3;&#x4E86;&#x5176;&#x4ED6;&#x7684;&#x5BF9;&#x7B56;&#x3002;&#x90A3;&#x5C31;&#x662F;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x5410;&#x69FD;&#x5374;&#x4E00;&#x76F4;&#x5728;&#x7528;&#x7740;&#x7684;&#x767E;&#x5EA6;&#xFF0C;&#x5FD8;&#x4E86;&#x4ECE;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8D77;&#xFF0C;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x4E0D;&#x518D;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6846;&#xFF0C;&#x800C;&#x662F;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x5BFC;&#x822A;&#xFF0C;&#x5148;&#x7ED9;&#x5927;&#x5BB6;&#x770B;&#x5F20;&#x56FE;&#xFF0C;&#x6211;&#x81EA;&#x5DF1;&#x5728;&#x7528;&#x7684;&#xFF08;&#x5DF2;&#x7ECF;&#x662F;&#x4E0D;&#x5B8C;&#x5168;&#x7248;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x52A0;&#x5728;&#x4E86;&#x7AD9;&#x4E0A;&#xFF09;</p>
-<p><img src="/2015/09/13/zuiniu-birth/1.jpg" alt=""></p>
-<p>&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BFC;&#x822A;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6DFB;&#x52A0;&#x5206;&#x7C7B;&#x3001;&#x7F51;&#x5740;&#x548C;&#x63CF;&#x8FF0;&#x3002;</p>
-<p>&#x7528;&#x4E86;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E4B;&#x540E;&#x5206;&#x7C7B;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x89C9;&#x5F97;&#x53EF;&#x6536;&#x85CF;&#x7684;&#x4E1C;&#x897F;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x3002;&#x6211;&#x4FDD;&#x8BC1;&#x4E86;&#x4E0D;&#x6B7B;&#x7684;&#x90A3;&#x4E2A;&#x9879;&#x76EE;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x5FD8;&#xFF0C;&#x65E2;&#x7136;&#x90A3;&#x6837;&#x7684;&#x505A;&#x4E0D;&#x4E86;&#xFF0C;&#x6211;&#x53C8;&#x5B9E;&#x5728;&#x4E0D;&#x60F3;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;&#xFF0C;&#x90A3;&#x5C31;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x60F3;&#x6CD5;&#x201C;&#x7B80;&#x5355;&#x3001;&#x518D;&#x7B80;&#x5355;&#x201D;&#xFF0C;&#x4E0D;&#x8981;&#x628A;&#x4E00;&#x4EF6;&#x4E8B;&#x60F3;&#x592A;&#x590D;&#x6742;&#xFF0C;&#x4E5F;&#x4E0D;&#x8981;&#x90A3;&#x4E5F;&#x60F3;&#x505A;&#x8FD9;&#x4E5F;&#x60F3;&#x505A;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5230;&#x6700;&#x540E;&#x4F60;&#x628A;&#x81EA;&#x5DF1;&#x201C;&#x60F3;&#x201D;&#x6B7B;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5C31;&#x4E0D;&#x8D2A;&#x5FC3;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x6B6A;&#x74DC;&#x88C2;&#x67A3;&#x8FD8;&#x662F;&#x70C2;&#x846B;&#x82A6;&#xFF0C;&#x5148;&#x505A;&#x51FA;&#x6765;&#x4E00;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x6CA1;&#x505A;&#x51FA;&#x6765;&#x7684;&#x518D;&#x6F02;&#x4EAE;&#x4E5F;&#x662F;&#x7A7A;&#x8C08;&#x3002;</p>
-<p>&#x90A3;&#x4E48;&#x505A;&#x4EC0;&#x4E48;&#x5185;&#x5BB9;&#x5462;&#xFF1F;&#x6559;&#x7A0B;&#x80AF;&#x5B9A;&#x4E0D;&#x884C;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x4E00;&#x70B9;&#xFF0C;&#x6211;&#x4E5F;&#x6CA1;&#x6559;&#x7A0B;&#x8D44;&#x6E90;&#x554A;~&#x624B;&#x518C;&#xFF1F;&#x6709;&#x4EBA;&#x505A;&#x5F97;&#x633A;&#x597D;&#x4E86;&#x3002;&#x53C8;&#x60F3;&#x60F3;&#x81EA;&#x5DF1;&#x5728;&#x5DE5;&#x4F5C;&#x548C;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x4E2D;&#x627E;&#x5230;&#x8FC7;&#x3001;&#x7528;&#x5230;&#x8FC7;&#x54EA;&#x4E9B;&#x4E1C;&#x897F;&#xFF1F;&#x54EA;&#x4E9B;&#x5F88;&#x597D;&#x3001;&#x5F88;&#x5E38;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5E73;&#x53F0;&#x628A;&#x5B83;&#x4EEC;&#x6C47;&#x96C6;&#x5230;&#x4E00;&#x8D77;&#x7ED9;&#x5927;&#x5BB6;&#x5462;&#xFF1F;&#x6709;&#x4E9B;&#x65B9;&#x9762;&#x662F;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x60F3;&#x5230;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x535A;&#x5BA2;/&#x793E;&#x533A;&#x3001;&#x624B;&#x518C;/&#x5DE5;&#x5177;&#x548C;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x548C;&#x5E93;&#x3001;&#x4E66;&#x7C4D;&#x3001;&#x6559;&#x7A0B;&#x3002;&#x4E8E;&#x662F;&#x6211;&#x5C31;&#x5F00;&#x59CB;&#x5E72;&#x4E86;&#x3002;</p>
-<h2 id="&#x600E;&#x4E48;&#x751F;&#x51FA;&#x6765;&#x7684;"><a href="#&#x600E;&#x4E48;&#x751F;&#x51FA;&#x6765;&#x7684;" class="headerlink" title="&#x600E;&#x4E48;&#x751F;&#x51FA;&#x6765;&#x7684;"></a>&#x600E;&#x4E48;&#x751F;&#x51FA;&#x6765;&#x7684;</h2><p>&#x53C2;&#x7167;&#x81EA;&#x5DF1;&#x5728;&#x4F7F;&#x7528;&#x767E;&#x5EA6;&#x5BFC;&#x822A;&#x7684;&#x4E00;&#x4E9B;&#x7ECF;&#x9A8C;&#x5C31;&#x5F00;&#x59CB;&#x505A;&#x4E86;&#x8D77;&#x6765;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x7684;UI&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x73B0;&#x5728;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x5C31;&#x4E0D;&#x7ED9;&#x5927;&#x5BB6;&#x770B;&#x4E86;~&#x505A;&#x5F97;&#x8FC7;&#x7A0B;&#x4E2D;&#x5176;&#x5B9E;&#x53C8;&#x6709;&#x4E86;&#x65B0;&#x7684;&#x4E00;&#x8F6E;&#x68B3;&#x7406;&#xFF0C;&#x54EA;&#x4E9B;&#x4E1C;&#x897F;&#x5E94;&#x8BE5;&#x5206;&#x5230;&#x54EA;&#x4E00;&#x7C7B;&#xFF0C;&#x54EA;&#x4E9B;&#x5E94;&#x8BE5;&#x518D;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x7EC6;&#x5206;&#xFF0C;&#x54EA;&#x4E9B;&#x5E94;&#x8BE5;&#x518D;&#x52A0;&#x8FDB;&#x6765;&#x3002;&#x597D;&#x7684;&#xFF0C;&#x8DDF;&#x7740;&#x81EA;&#x5DF1;&#x7684;&#x611F;&#x89C9;&#x6298;&#x817E;&#x4E86;&#x51E0;&#x5929;&#x4E4B;&#x540E;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x6837;&#x5B50;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x5C31;&#x5728;github&#x4E0A;&#x9762;&#x65B0;&#x5EFA;&#x4E86;&#x9879;&#x76EE;&#x53EB;notebook&#xFF08;&#x624B;&#x518C;&#xFF09;&#xFF0C;&#x5C31;&#x662F;&#x60F3;&#x5B83;&#x50CF;&#x4E00;&#x4E2A;&#x624B;&#x518C;&#x4E00;&#x6837;&#x65B9;&#x4FBF;&#xFF0C;&#x5927;&#x5BB6;&#x60F3;&#x7528;&#x9A6C;&#x4E0A;&#x62FF;&#x6765;&#x7528;&#x3002;&#x4E0A;&#x4F20;&#x4E86;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x7ED3;&#x5408;gh-pages&#xFF0C;&#x5C31;&#x51FA;&#x6765;&#x4E86;&#x6700;&#x521D;&#x7684;&#x6837;&#x5B50;&#x3002;</p>
-<h2 id="&#x7834;&#x8327;&#x5230;1-0&#x7248;&#x672C;"><a href="#&#x7834;&#x8327;&#x5230;1-0&#x7248;&#x672C;" class="headerlink" title="&#x7834;&#x8327;&#x5230;1.0&#x7248;&#x672C;"></a>&#x7834;&#x8327;&#x5230;1.0&#x7248;&#x672C;</h2><p>&#x6700;&#x521D;&#x7684;&#x6837;&#x5B50;&#x51FA;&#x6765;&#x540E;&#xFF0C;&#x80AF;&#x5B9A;&#x60F3;&#x627E;&#x540C;&#x884C;&#x670B;&#x53CB;&#x770B;&#x770B;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x81EA;&#x5DF1;&#x4E5F;&#x4E0D;&#x662F;&#x592A;&#x6EE1;&#x610F;&#xFF0C;&#x5185;&#x5BB9;&#x4E0D;&#x591F;&#xFF0C;&#x5916;&#x89C2;&#x4E5F;&#x6709;&#x4E9B;&#x522B;&#x626D;&#xFF0C;&#x5728;&#x542C;&#x53D6;&#x4E86;&#x4E00;&#x4E9B;&#x5EFA;&#x8BAE;&#x4E4B;&#x540E;&#xFF0C;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x8F6E;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x8131;&#x80CE;&#x6362;&#x9AA8;&#x7684;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x4E00;&#x70B9;&#x539F;&#x5148;&#x7684;&#x6837;&#x5B50;&#x4E86;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53C2;&#x8003;&#x4E86;&#x5176;&#x4ED6;&#x7684;&#x7F51;&#x7AD9;&#x3002;</p>
-<p>&#x53EA;&#x4ECE;&#x6837;&#x5B50;&#x4E0A;&#x53BB;&#x6539;&#x80AF;&#x5B9A;&#x4E0D;&#x591F;&#xFF0C;&#x8FD8;&#x6709;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
-<p><strong>&#x53EB;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
-<p>&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x662F;&#x5FEB;&#x8981;&#x4E0A;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#x624D;&#x60F3;&#x8D77;&#x6765;&#x7684;&#xFF0C;&#x5F53;&#x65F6;&#x53EA;&#x7528;&#x4E86;&#x82F1;&#x6587;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5C31;&#x662F;&#x73B0;&#x5728;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4E2D;&#x6587;&#x540D;&#x8FD8;&#x6CA1;&#x52A0;&#x4E0A;&#xFF0C;&#x201C;&#x9189;&#x725B;&#x524D;&#x7AEF;&#x201D;&#x662F;&#x65E9;&#x524D;&#x66FE;&#x7ECF;&#x51FA;&#x73B0;&#x8FC7;&#x8111;&#x6D77;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53C8;&#x60F3;&#x8D77;&#x5B83;&#x6765;&#xFF0C;&#x4E5F;&#x6CA1;&#x522B;&#x7684;&#x66F4;&#x597D;&#x7684;&#x60F3;&#x6CD5;&#xFF08;&#x53D6;&#x540D;&#x5B57;&#x5411;&#x6765;&#x90FD;&#x662F;&#x5934;&#x75BC;&#x7684;&#x4E8B;&#x60C5;~&#xFF09;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x7528;&#x5B83;&#x4E86;&#xFF0C;&#x8DDF;&#x201C;&#x6700;&#x725B;&#x201D;&#x540C;&#x97F3;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5C31;&#x662F;&#x4E2A;&#x8BF4;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x4E5F;&#x5229;&#x4E8E;&#x4F20;&#x64AD;&#x628A;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x6700;&#x725B;&#x8FD9;&#x56DE;&#x4E8B;&#x3002;</p>
-<p><strong>&#x7F51;&#x7AD9;&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#x5462;&#xFF1F;</strong></p>
-<p>&#x6211;&#x8981;&#x628A;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x76EE;&#x7684;&#x4EE5;&#x6700;&#x76F4;&#x63A5;&#x660E;&#x4E86;&#x7684;&#x65B9;&#x5F0F;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x53F3;&#x4E0A;&#x89D2;&#x90A3;&#x4E24;&#x884C;&#x5B57;&#x201C;&#x505A;&#x4E13;&#x4E1A;&#x7684;&#x524D;&#x7AEF;&#x5E73;&#x53F0;&#xFF0C;&#x63D0;&#x4F9B;&#x4F60;&#x9700;&#x8981;&#x7684;&#x4E1C;&#x897F; &#x89E3;&#x653E;&#x4F60;&#x7684;&#x6536;&#x85CF;&#x5939;&#xFF0C;&#x8BA9;&#x5B83;&#x4EEC;&#x53EA;&#x505A;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x4E8B;&#x60C5;&#x201D;</p>
+        <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？</p>
+<p>于是在我出来工作之后不久，就拾起了在校时就建立却好久没顾上打理的QQ群，10个人不到，改名叫“web前端~美是编出来的”，这个名字起初是有人质疑的，觉得有点复杂，也有点奇怪。我为什么没改呢，因为它就是我想传达出来的信息，为什么我会做这个并喜欢上它，就是认为它很有趣，很神奇，像魔法一样能做出具有美感的页面。对，就是这样。群里从0到50的人基本都是我出去发广告拉来的，在我去宣传的过程中，在贴吧里看到有一个提供两本书的帖子下面有超过2000条回帖求书，当时我就震惊了，两本书需求就这么大，我有那么多…这更坚定了我把它们分享出去的想法。后来群里的人越来越多，我就没再刻意的去推广过，只是在群里给大家提供一些力所能及的帮助，比如：上传最新最好的资料，发布一些靠谱的职位信息和好文、教程链接等。</p>
+<p>说了这么多似乎和醉牛前端还是没扯上关系，其实不是，都是有因果的，虽然组了QQ群，虽然分享了那么多资源，甚至我在各个社区都开了专栏，也写自己的博客，但逐渐的会觉得仍然有些无力感，因为互联网很大，信息很多，需要帮助的人很多，而它们都太有限了，谁也不能一对一手把手，或者24小时全天候去提供帮助、解决问题。（虽然也没人有义务这么做，谁让我那么爱提别人操心呢~）。所以，效率很低，复用率极低，成本很高。很多东西可能这次你找到了，看过了，下次又找不到了，大家都不是机器，不可能把所有东西记脑子里，也不是所有人都会动手去做一个整理和组织（真的挺繁琐）。于是后来想做一个学习的平台，还想到做几个W作为主干，what、why、how，是什么、为什么、怎么用，然后再进行其他分类，想想真的挺赞。说干就干呗，于是我又到群里去发广告拉人了，拉了总共十几个人，还分成了设计和开发组，跟他们说了要做什么，想做成什么样，还向他们保证了这个项目不会死，我趁着周末把项目策划书都写出来了，他们也提了不少看法和意见。说到现在你可能有疑问，那么它就是醉牛前端吗？不像啊。是的，我保证了它不会死，可到目前为止它还是没有开始做，原因我在第一次发醉牛前端上线公告的那条微博里有说到“想法太多、太大，执行很不够”。</p>
+<h2 id="原型怎么来的"><a href="#原型怎么来的" class="headerlink" title="原型怎么来的"></a>原型怎么来的</h2><p>在很多次思考和否定之前的想法之后，我就想，太大或者太复杂的东西暂时做不了，那么可以做什么呢？</p>
+<p>我们很多人都有自己的网址收藏夹，我看过最恐怖的把整个电脑屏幕都铺满了，都是title，随着时间的推移，不断往里面加的话，都会变得很多，而且没有分类，前提那是你自己的电脑，换了电脑可能就丢了（如果不知道导出或忘记导出）。正是我自己为其所累，就又想了其他的对策。那就是很多人都吐槽却一直在用着的百度，忘了从什么时候起，百度首页不再只是简单的一个搜索框，而是有了一个导航，先给大家看张图，我自己在用的（已经是不完全版，更多的加在了站上）</p>
+<p><img src="zuiniu-birth/1.jpg" alt=""></p>
+<p>是的，这个导航你可以自定义的添加分类、网址和描述。</p>
+<p>用了一段时间之后分类越来越多，觉得可收藏的东西越来越多。我保证了不死的那个项目其实一直没有忘，既然那样的做不了，我又实在不想什么都不做，那就把自己的想法“简单、再简单”，不要把一件事想太复杂，也不要那也想做这也想做，你会发现到最后你把自己“想”死了。所以，就不贪心，不管是歪瓜裂枣还是烂葫芦，先做出来一个东西，没做出来的再漂亮也是空谈。</p>
+<p>那么做什么内容呢？教程肯定不行，最基本一点，我也没教程资源啊~手册？有人做得挺好了。又想想自己在工作和学习过程中找到过、用到过哪些东西？哪些很好、很常用的东西？为什么不提供一个平台把它们汇集到一起给大家呢？有些方面是很容易就想到的，比如博客/社区、手册/工具和一些常用的组件和库、书籍、教程。于是我就开始干了。</p>
+<h2 id="怎么生出来的"><a href="#怎么生出来的" class="headerlink" title="怎么生出来的"></a>怎么生出来的</h2><p>参照自己在使用百度导航的一些经验就开始做了起来，最开始的UI肯定不是现在的样子，就不给大家看了~做得过程中其实又有了新的一轮梳理，哪些东西应该分到哪一类，哪些应该再进一步的细分，哪些应该再加进来。好的，跟着自己的感觉折腾了几天之后，最开始的样子出来了，就在github上面新建了项目叫notebook（手册），就是想它像一个手册一样方便，大家想用马上拿来用。上传了文件，然后结合gh-pages，就出来了最初的样子。</p>
+<h2 id="破茧到1-0版本"><a href="#破茧到1-0版本" class="headerlink" title="破茧到1.0版本"></a>破茧到1.0版本</h2><p>最初的样子出来后，肯定想找同行朋友看看，因为我自己也不是太满意，内容不够，外观也有些别扭，在听取了一些建议之后，开始第一轮的优化，可以说是脱胎换骨的，找不到一点原先的样子了，当然，也参考了其他的网站。</p>
+<p>只从样子上去改肯定不够，还有几个问题：</p>
+<p><strong>叫什么？</strong></p>
+<p>这个其实是快要上线的时候才想起来的，当时只用了英文的名字，就是现在的域名，中文名还没加上，“醉牛前端”是早前曾经出现过脑海的名字，又想起它来，也没别的更好的想法（取名字向来都是头疼的事情~），于是就用它了，跟“最牛”同音，当然，就是个说法，可能也利于传播把，但没有最牛这回事。</p>
+<p><strong>网站是干什么的呢？</strong></p>
+<p>我要把最主要的目的以最直接明了的方式告诉大家，于是，就出现了右上角那两行字“做专业的前端平台，提供你需要的东西 解放你的收藏夹，让它们只做最主要的事情”</p>
 <p><strong>Logo</strong></p>
-<p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x53EA;&#x6709;&#x989C;&#x8272;&#x548C;&#x6587;&#x5B57;&#xFF0C;&#x663E;&#x7136;&#x6709;&#x4E9B;&#x5355;&#x8C03;&#xFF0C;&#x8D77;&#x7801;logo&#x662F;&#x5E94;&#x8BE5;&#x6709;&#x7684;&#xFF0C;&#x53EF;&#x662F;&#xFF0C;&#x54EA;&#x91CC;&#x6709;&#x73B0;&#x6210;&#x7684;&#x9002;&#x5408;&#x7F51;&#x7AD9;&#x7684;logo&#x5462;&#xFF1F;&#x4E8E;&#x662F;&#x6211;&#x5F00;&#x59CB;&#x4E86;&#x65B0;&#x4E00;&#x8F6E;&#x7684;&#x5BFB;&#x627E;&#xFF0C;&#x770B;&#x7740;&#x56FE;&#x6807;&#x627E;&#x611F;&#x89C9;&#xFF0C;&#x627E;&#x4E86;&#x51E0;&#x4E2A;&#x7AD9;&#xFF0C;&#x4E5F;&#x770B;&#x4E86;&#x5F88;&#x591A;&#x56FE;&#x6807;&#xFF0C;&#x770B;&#x7740;&#x770B;&#x7740;&#xFF0C;&#x5C31;&#x770B;&#x5230;&#x4E86;&#x6709;&#x4E00;&#x4E2A;&#x5F88;&#x591A;&#x5C0F;&#x4EBA;&#x7684;&#x56FE;&#x6807;&#x96C6;&#xFF0C;&#x89C9;&#x5F97;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x505A;&#x7ED9;&#x524D;&#x7AEF;&#x4EBA;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x4E9B;&#x6CA1;&#x6709;&#x8EAB;&#x4EFD;&#x7684;&#x5C0F;&#x4EBA;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5BD3;&#x610F;&#xFF0C;&#x4EE3;&#x8868;&#x6574;&#x4E2A;&#x524D;&#x7AEF;&#x7FA4;&#x4F53;&#xFF0C;&#x4F46;&#x9009;&#x54EA;&#x4E2A;&#x90FD;&#x4E0D;&#x5408;&#x9002;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x60F3;&#x9009;&#x51E0;&#x4E2A;&#xFF0C;&#x51E0;&#x4E2A;&#x5462;&#xFF1F;logo&#x4E0D;&#x80FD;&#x592A;&#x5927;&#xFF0C;&#x4E09;&#x4EBA;&#x6210;&#x7FA4;&#xFF0C;&#x90A3;&#x5C31;&#x4E09;&#x4E2A;&#x5427;&#xFF0C;&#x6311;&#x4EC0;&#x4E48;&#x989C;&#x8272;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x53C8;&#x60F3;&#x5230;&#x4E86;&#x524D;&#x7AEF;&#x6700;&#x5E38;&#x7528;&#x5230;&#x7684;&#x4E09;&#x539F;&#x8272;&#x201C;RGB&#x201D;,&#x201C;&#x7EA2;&#x3001;&#x7EFF;&#x3001;&#x84DD;&#x201D;&#xFF0C;&#x597D;&#x7684;&#xFF01;&#x5C31;&#x8FD9;&#x4E48;&#x6109;&#x5FEB;&#x7684;&#x51B3;&#x5B9A;&#x4E86;&#x3002;&#x90A3;&#x9009;&#x62E9;&#x4E86;&#x5B83;&#x4EEC;&#x4E09;&#x4E2A;&#xFF0C;&#x4EE5;&#x600E;&#x6837;&#x7684;&#x5F62;&#x5F0F;&#x5448;&#x73B0;&#x51FA;&#x6765;&#xFF1F;&#x6700;&#x521D;&#x7684;&#x60F3;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x4E0A;&#x9762;&#xFF0C;&#x4E24;&#x4E2A;&#x5728;&#x4E0B;&#x9762;&#xFF0C;&#x5C31;&#x662F;&#x73B0;&#x5728;&#x5927;&#x5BB6;&#x770B;&#x5230;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x5C31;&#x7528;ps&#x7EC4;&#x5408;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x653E;&#x4E86;&#x4E0A;&#x53BB;&#xFF0C;&#x4F46;&#x662F;&#x2026;&#x6211;&#x8FD8;&#x662F;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x5C31;&#x8FD9;&#x6837;&#x800C;&#x5DF2;&#x5417;&#xFF1F;&#x8FD9;&#x91CC;&#x5176;&#x5B9E;&#x662F;&#x53D7;&#x5230;&#x9B3C;&#x54E5;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4ED6;&#x535A;&#x5BA2;&#x5934;&#x90E8;&#x7684;&#x201C;css&#x201D;&#x56FE;&#xFF0C;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x662F;&#x6709;&#x52A8;&#x6548;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4E5F;&#x60F3;&#x505A;&#xFF0C;&#x663E;&#x7136;&#x4E00;&#x5F20;&#x56FE;&#x505A;&#x52A8;&#x6548;&#x4F1A;&#x53D7;&#x5230;&#x9650;&#x5236;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;logo1.0&#x5E9F;&#x5F03;&#xFF0C;&#x4E09;&#x4E2A;&#x56FE;&#x6807;&#x5355;&#x72EC;&#x653E;&#x4E0A;&#x53BB;&#xFF0C;&#x5C31;&#x6709;&#x4E86;&#x73B0;&#x5728;&#x7684;logo&#xFF0C;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x5374;&#x589E;&#x6DFB;&#x4E86;&#x4E00;&#x70B9;&#x70B9;&#x8DA3;&#x5473;&#x6027;&#x3002;&#xFF08;&#x4E0D;&#x8981;&#x544A;&#x8BC9;&#x6211;&#x5F88;&#x591A;&#x4EBA;&#x5728;&#x770B;&#x5230;&#x8FD9;&#x7BC7;&#x6587;&#x7684;&#x65F6;&#x5019;&#x624D;&#x77E5;&#x9053;logo&#x4F1A;&#x52A8;&#x554A;&#xFF1F;~&#xFF09;</p>
-<p><strong>&#x57DF;&#x540D;</strong></p>
-<p>&#x65E2;&#x7136;&#x662F;&#x7F51;&#x7AD9;&#xFF0C;&#x5C31;&#x8981;&#x6709;&#x4E2A;&#x72EC;&#x7ACB;&#x57DF;&#x540D;&#xFF0C;&#x624D;&#x50CF;&#x6A21;&#x50CF;&#x6837;&#xFF0C;&#x7528;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x8BD5;&#x8FC7;f2er-club.com&#xFF0C;&#x8C8C;&#x4F3C;&#x5DF2;&#x7ECF;&#x88AB;&#x7528;&#x8FC7;&#xFF0C;f2er.com&#xFF0C;&#x5475;&#x5475;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x88AB;&#x7528;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x6211;&#x5C31;&#x8BD5;&#x63A2;&#x6027;&#x7684;&#x6253;&#x5F00;&#x4E86;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x770B;&#x5230;&#x4E86;.club&#xFF0C;&#x7136;&#x540E;&#x5C1D;&#x8BD5;&#x4E86;&#x4E00;&#x4E9B;f2er.club&#xFF0C;&#x6B27;&#x8036;&#xFF0C;perfect&#xFF01;~&#x867D;&#x7136;&#x51FA;&#x6765;&#x4E4B;&#x540E;&#x4E5F;&#x6709;&#x4EBA;&#x8868;&#x793A;&#x8FC7;&#x8D28;&#x7591;&#xFF0C;&#x4F46;&#x6211;&#x76F8;&#x4FE1;&#x5B83;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x88AB;f2er&#x4EEC;&#x63A5;&#x53D7;&#x7684;&#xFF0C;&#x662F;&#x5427;&#xFF1F;</p>
-<p><strong>&#x7528;&#x6237;&#x4F53;&#x9A8C;</strong></p>
-<p>&#x7F51;&#x7AD9;&#x505A;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x7ED9;&#x4EBA;&#x7528;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x6211;&#x8BA4;&#x4E3A;&#x5B83;&#x662F;&#x4E2A;&#x201C;&#x5185;&#x5BB9;&#x201D;&#x4E3A;&#x4E3B;&#x7684;&#x7AD9;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x53EA;&#x662F;&#x5185;&#x5BB9;&#x505A;&#x597D;&#x4F53;&#x9A8C;&#x4E0D;&#x597D;&#xFF0C;&#x5C82;&#x4E0D;&#x662F;&#x5F88;&#x4E0D;&#x642D;&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x4ECE;&#x80CC;&#x666F;&#x3001;&#x8FB9;&#x6846;&#x7EBF;&#x6761;&#x3001;&#x8FB9;&#x8DDD;&#x5230;&#x533A;&#x57DF;&#x52A8;&#x6548;&#x3001;&#x5230;&#x70B9;&#x51FB;&#x5BFC;&#x822A;&#x4E0D;&#x80FD;&#x8FD4;&#x56DE;&#x9876;&#x90E8;&#xFF0C;&#x5230;&#x8003;&#x8651;&#x5230;&#x54EA;&#x4E2A;&#x4F7F;&#x7528;&#x7684;&#x9891;&#x7387;&#x5E94;&#x8BE5;&#x662F;&#x6700;&#x9AD8;&#x7684;&#x6765;&#x8C03;&#x6574;&#x4FA7;&#x8FB9;&#x5BFC;&#x822A;&#x7684;&#x6392;&#x5E8F;&#x3001;&#x5230;&#x5927;&#x5C4F;&#x5E55;&#x4E0B;&#x5185;&#x5BB9;&#x4E0D;&#x591F;&#x4E0D;&#x80FD;&#x6491;&#x6EE1;&#x5C4F;&#x5E55;&#x4E0B;&#x90E8;&#x5927;&#x5757;&#x7559;&#x767D;&#xFF0C;&#x5230;&#x79FB;&#x52A8;&#x7AEF;&#x9002;&#x914D;&#x3002;&#x6709;&#x4E9B;&#x662F;&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x5C31;&#x505A;&#x4E86;&#x7684;&#xFF0C;&#x6709;&#x4E9B;&#x662F;&#x4E0A;&#x7EBF;&#x540E;&#x542C;&#x53D6;&#x540C;&#x884C;&#x7684;&#x610F;&#x89C1;&#x8FDB;&#x884C;&#x7684;&#x4FEE;&#x6539;&#x3002; &#x5F53;&#x7136;&#xFF0C;&#x6CA1;&#x6709;&#x6700;&#x597D;&#x53EA;&#x6709;&#x66F4;&#x597D;&#xFF0C;&#x5B83;&#x8FD8;&#x4F1A;&#x53D8;&#x5F97;&#x66F4;&#x597D;&#x3002;</p>
-<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x7F51;&#x7AD9;&#x4E0A;&#x7EBF;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x540C;&#x884C;&#x4EEC;&#x7684;&#x597D;&#x8BC4;&#xFF0C;&#x5F88;&#x662F;&#x6B23;&#x6170;&#xFF0C;&#x867D;&#x7136;&#x5B83;&#x5C31;&#x53EA;&#x662F;link&#x7684;&#x5927;&#x6C47;&#x96C6;&#xFF0C;&#x6709;&#x4EBA;&#x8BF4;&#x6211;&#x80AF;&#x5B9A;&#x82B1;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x5FC3;&#x601D;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x6211;&#x4E0D;&#x5426;&#x8BA4;&#xFF0C;&#x4E0D;&#x82B1;&#x5FC3;&#x601D;&#x771F;&#x7684;&#x4E0D;&#x884C;&#xFF0C;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x3001;&#x5404;&#x4E2A;&#x89D2;&#x843D;&#xFF0C;&#x4E00;&#x4E2A;&#x4E2A;&#x7684;&#x53BB;&#x627E;&#xFF0C;&#x5206;&#x7C7B;&#x3001;&#x5F04;&#x597D;&#x4E86;&#x4E4B;&#x540E;&#x94FE;&#x63A5;&#x518D;&#x68C0;&#x67E5;&#xFF0C;&#x65AD;&#x65AD;&#x7EED;&#x7EED;&#x505A;&#x4E86;&#x4E24;&#x4E2A;&#x591A;&#x6708;&#xFF0C;&#x751A;&#x81F3;&#x6211;&#x90FD;&#x5F88;&#x591A;&#x6B21;&#x51E0;&#x4E4E;&#x505A;&#x4E0D;&#x4E0B;&#x53BB;&#x8981;&#x653E;&#x5F03;&#xFF0C;&#x56E0;&#x4E3A;&#x4E5F;&#x8981;&#x505A;&#x522B;&#x7684;&#x4E8B;&#xFF0C;&#x4E5F;&#x8981;&#x5B66;&#x4E60;&#xFF0C;&#x5DEE;&#x70B9;&#x5C31;&#x6401;&#x4E0B;&#x4E86;&#x3002;&#x4F46;&#x53C8;&#x4E0D;&#x7518;&#x5FC3;&#xFF0C;&#x4E3A;&#x4E86;&#x903C;&#x81EA;&#x5DF1;&#xFF0C;&#x5728;1.0&#x8FD8;&#x6CA1;&#x51FA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x5C31;&#x628A;&#x57DF;&#x540D;&#x6CE8;&#x518C;&#x4E0B;&#x6765;&#x4E86;&#xFF0C;&#x6297;&#x6218;&#x7EAA;&#x5FF5;&#x65E5;&#x7684;&#x5047;&#x671F;&#x4E09;&#x5929;&#xFF0C;&#x96C6;&#x4E2D;&#x7CBE;&#x529B;&#x5F04;&#x4E86;&#x4E24;&#x5929;&#x534A;&#xFF0C;&#x867D;&#x7136;&#x5047;&#x671F;&#x4E5F;&#x6CA1;&#x600E;&#x4E48;&#x4F11;&#x606F;&#xFF0C;&#x6CA1;&#x51FA;&#x53BB;&#x73A9;&#x513F;&#xFF0C;&#x89C9;&#x5F97;&#x8FD8;&#x662F;&#x86EE;&#x6709;&#x610F;&#x4E49;&#x3002;&#x5B83;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x4E00;&#x70B9;&#x6280;&#x672F;&#x96BE;&#x5EA6;&#xFF0C;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x505A;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x4E1C;&#x897F;&#x51FA;&#x6765;&#x7ED9;&#x5927;&#x5BB6;&#xFF0C;&#x4E5F;&#x662F;&#x7ED9;&#x81EA;&#x5DF1;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x4FBF;&#x5229;&#x3002;&#x6211;&#x76F8;&#x4FE1;&#x5B83;~</p>
-<p>Tips&#xFF1A;&#x7F51;&#x7AD9;&#x4F1A;&#x4E0D;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x5FAE;&#x535A;&#x4E0A;&#x9762;&#x53D1;&#x6D88;&#x606F;&#x901A;&#x77E5;&#x5927;&#x5BB6;&#xFF0C;&#x5927;&#x5BB6;&#x6709;&#x5EFA;&#x8BAE;&#x6216;&#x60F3;&#x6CD5;&#xFF0C;&#x6700;&#x597D;&#x662F;github&#x4E0A;&#x9762;&#x63D0;issue&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;github&#x8D26;&#x53F7;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x65B9;&#x4FBF;&#xFF0C;&#x90A3;&#x4E48;<a href="http://weibo.com/ideazhao" target="_blank" rel="external">&#x5FAE;&#x535A;</a>&#x7559;&#x8A00;&#x4E5F;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x5FAE;&#x535A;&#x4E5F;&#x4E0D;&#x73A9;&#x513F;&#xFF0C;&#x53EF;&#x4EE5;&#x90AE;&#x4EF6;&#xFF1A;420750281@qq.com&#x6216;&#x8005;Q&#x6211;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;Q&#x2026;</p>
+<p>作为一个网站，只有颜色和文字，显然有些单调，起码logo是应该有的，可是，哪里有现成的适合网站的logo呢？于是我开始了新一轮的寻找，看着图标找感觉，找了几个站，也看了很多图标，看着看着，就看到了有一个很多小人的图标集，觉得，既然是做给前端人的，那么，这些没有身份的小人应该能够有一定的寓意，代表整个前端群体，但选哪个都不合适，于是，想选几个，几个呢？logo不能太大，三人成群，那就三个吧，挑什么颜色的呢？我又想到了前端最常用到的三原色“RGB”,“红、绿、蓝”，好的！就这么愉快的决定了。那选择了它们三个，以怎样的形式呈现出来？最初的想法是一个在上面，两个在下面，就是现在大家看到的样子，就用ps组合了一下，放了上去，但是…我还是不满足，就这样而已吗？这里其实是受到鬼哥的影响，他博客头部的“css”图，鼠标悬停是有动效的，所以，我也想做，显然一张图做动效会受到限制，所以，logo1.0废弃，三个图标单独放上去，就有了现在的logo，不复杂，却增添了一点点趣味性。（不要告诉我很多人在看到这篇文的时候才知道logo会动啊？~）</p>
+<p><strong>域名</strong></p>
+<p>既然是网站，就要有个独立域名，才像模像样，用什么呢？试过f2er-club.com，貌似已经被用过，f2er.com，呵呵，当然也被用，然后，我就试探性的打开了后缀列表，看到了.club，然后尝试了一些f2er.club，欧耶，perfect！~虽然出来之后也有人表示过质疑，但我相信它还是比较容易被f2er们接受的，是吧？</p>
+<p><strong>用户体验</strong></p>
+<p>网站做出来了，就是给人用的，虽然我认为它是个“内容”为主的站，但如果只是内容做好体验不好，岂不是很不搭，于是，从背景、边框线条、边距到区域动效、到点击导航不能返回顶部，到考虑到哪个使用的频率应该是最高的来调整侧边导航的排序、到大屏幕下内容不够不能撑满屏幕下部大块留白，到移动端适配。有些是上线之前就做了的，有些是上线后听取同行的意见进行的修改。 当然，没有最好只有更好，它还会变得更好。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>网站上线后，得到了同行们的好评，很是欣慰，虽然它就只是link的大汇集，有人说我肯定花了很多的心思，这一点我不否认，不花心思真的不行，各种方法、各个角落，一个个的去找，分类、弄好了之后链接再检查，断断续续做了两个多月，甚至我都很多次几乎做不下去要放弃，因为也要做别的事，也要学习，差点就搁下了。但又不甘心，为了逼自己，在1.0还没出的时候，我就把域名注册下来了，抗战纪念日的假期三天，集中精力弄了两天半，虽然假期也没怎么休息，没出去玩儿，觉得还是蛮有意义。它本身没有一点技术难度，就是为了做一个这样的东西出来给大家，也是给自己，提供一些便利。我相信它~</p>
+<p>Tips：网站会不定期更新内容，我会在微博上面发消息通知大家，大家有建议或想法，最好是github上面提issue，当然，如果你没有github账号，或者不方便，那么<a href="http://weibo.com/ideazhao" target="_blank" rel="external">微博</a>留言也行，如果微博也不玩儿，可以邮件：420750281@qq.com或者Q我，如果没有Q…</p>
 
       
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/总结/" rel="tag">#总结</a>
+            <a href="/tags/总结/" rel="tag"># 总结</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -320,6 +452,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -334,6 +468,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -342,26 +480,29 @@
       
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
 </div>
 <script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
-
       
     </div>
   </div>
@@ -374,7 +515,7 @@
           
   <div class="comments" id="comments">
     
-            <div id="uyan_frame"></div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -392,6 +533,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -407,34 +549,46 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/idea.png"
-               alt="灵感_idea" />
-          <p class="site-author-name" itemprop="name">灵感_idea</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
+
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">63</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+
           
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -456,27 +610,21 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
                   
-                    <i class="fa fa-globe"></i> zhihu
-                  
-                </a>
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
               </span>
             
           
@@ -485,168 +633,178 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">优质博客</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.cssforest.org/" target="_blank">cssforest</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://evanyou.me/" target="_blank">尤小右</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhangxinxu.com/" target="_blank">张鑫旭</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://yuguo.us/" target="_blank">余果</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/fouber/blog" target="_blank">前端农民工</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yisibl/blog/issues" target="_blank">一丝</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://jiongks.name/" target="_blank">勾三股四</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://cly84920.blog.163.com/" target="_blank">真阿当</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.doyoe.com/" target="_blank">doyoe</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cssmagic.net/" target="_blank">CSS魔法</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.toobug.net/" target="_blank">Toobug</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/yexiaochai" target="_blank">叶小钗</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/jikey/" target="_blank">豪情</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.f2er.net/" target="_blank">情封</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://imququ.com/" target="_blank">屈光宇</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://luopq.com/" target="_blank">luopq</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.w3cplus.com/" target="_blank">W3cplus</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://peunzhang.cnblogs.com/" target="_blank">白树</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.xuanfengge.com/" target="_blank">轩枫阁</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.caihong.cc/" target="_blank">练小习</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://kezhen.info/" target="_blank">kevin</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yanhaijing.com/" target="_blank">颜海镜</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://xuexb.com/" target="_blank">前端小武</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://yujiangshui.com/" target="_blank">于江水</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/tugenhua0707/" target="_blank">龙恩</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.dang-jian.com/" target="_blank">党建</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://tiye.me/" target="_blank">题叶</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://zhangwenli.com/" target="_blank">羡辙</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.ido321.com/" target="_blank">会飞的Pikachu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.fefork.com/" target="_blank">聂微东</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://xiaoqiang730730.github.io" target="_blank">前端-小强</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://f2er.club/" target="_blank">醉牛前端导航</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.cssforest.org/" title="cssforest" target="_blank">cssforest</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://evanyou.me/" title="尤小右" target="_blank">尤小右</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yuguo.us/" title="余果" target="_blank">余果</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/yisibl/blog/issues" title="一丝" target="_blank">一丝</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cly84920.blog.163.com/" title="真阿当" target="_blank">真阿当</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.toobug.net/" title="Toobug" target="_blank">Toobug</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai" title="叶小钗" target="_blank">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/jikey/" title="豪情" target="_blank">豪情</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.f2er.net/" title="情封" target="_blank">情封</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com/" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://kezhen.info/" title="kevin" target="_blank">kevin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/tugenhua0707/" title="龙恩" target="_blank">龙恩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tiye.me/" title="题叶" target="_blank">题叶</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaoqiang730730.github.io" title="前端-小强" target="_blank">前端-小强</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型怎么来的"><span class="nav-number">2.</span> <span class="nav-text">原型怎么来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么生出来的"><span class="nav-number">3.</span> <span class="nav-text">怎么生出来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破茧到1-0版本"><span class="nav-number">4.</span> <span class="nav-text">破茧到1.0版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -667,237 +825,52 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
+  
 </div>
 
 
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
 
-
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
@@ -905,24 +878,124 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
 
     
-      
-    
-
-   
-        <!-- UY BEGIN -->
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-        <!-- UY END -->
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
     
   
 
+
+
+
+
   
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
+
   
 
+  
+
+  
+
+  
 
 </body>
 </html>
