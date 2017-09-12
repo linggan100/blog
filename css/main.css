@@ -1804,7 +1804,7 @@ pre .javascript .function {
   position: relative;
   padding: 20px 10px;
   color: #999;
-  text-align: center;
+  text-align: left;
 }
 .sidebar-toggle {
   position: fixed;
@@ -1931,7 +1931,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7f52ff;
+  background: #178fff;
 }
 .links-of-blogroll {
   font-size: 13px;
