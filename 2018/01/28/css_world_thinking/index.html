@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="读后感," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="灵感之见" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="​说到本书的作者，前端圈里没见过他的人有很多，但没读过他文章的人很少，他就是很多前端同行眼中的，张老师，张大神——张鑫旭（以下简称“张”）
+前一段时间，去参加“前端体验大会”，有一位张的同事作为分享嘉宾，当他在现场说张要出新书的时候，台下观众无不感到惊喜，那该是一本怎样的书？
+《CSS世界》，书名很霸气，甚至比之前那本被“魔法哥”称为十年来最好的《CSS揭秘》更胜一筹，但这本又与那本不同，它更接地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="张鑫旭和他的《CSS世界》">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/css_world_thinking/index.html">
+<meta property="og:site_name" content="灵感之见">
+<meta property="og:description" content="​说到本书的作者，前端圈里没见过他的人有很多，但没读过他文章的人很少，他就是很多前端同行眼中的，张老师，张大神——张鑫旭（以下简称“张”）
+前一段时间，去参加“前端体验大会”，有一位张的同事作为分享嘉宾，当他在现场说张要出新书的时候，台下观众无不感到惊喜，那该是一本怎样的书？
+《CSS世界》，书名很霸气，甚至比之前那本被“魔法哥”称为十年来最好的《CSS揭秘》更胜一筹，但这本又与那本不同，它更接地">
+<meta property="og:updated_time" content="2018-01-28T08:53:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="张鑫旭和他的《CSS世界》">
+<meta name="twitter:description" content="​说到本书的作者，前端圈里没见过他的人有很多，但没读过他文章的人很少，他就是很多前端同行眼中的，张老师，张大神——张鑫旭（以下简称“张”）
+前一段时间，去参加“前端体验大会”，有一位张的同事作为分享嘉宾，当他在现场说张要出新书的时候，台下观众无不感到惊喜，那该是一本怎样的书？
+《CSS世界》，书名很霸气，甚至比之前那本被“魔法哥”称为十年来最好的《CSS揭秘》更胜一筹，但这本又与那本不同，它更接地">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/28/css_world_thinking/"/>
+
+
+
+
+
+  <title>张鑫旭和他的《CSS世界》 | 灵感之见</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">灵感之见</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活琐碎、职业杂谈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/css_world_thinking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="灵感_idea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/idea.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灵感之见">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">张鑫旭和他的《CSS世界》</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T00:00:00+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读后感/" itemprop="url" rel="index">
+                    <span itemprop="name">读后感</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/28/css_world_thinking/" class="leancloud_visitors" data-flag-title="张鑫旭和他的《CSS世界》">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>​说到本书的作者，前端圈里没见过他的人有很多，但没读过他文章的人很少，他就是很多前端同行眼中的，张老师，张大神——张鑫旭（以下简称“张”）</p>
+<p>前一段时间，去参加“前端体验大会”，有一位张的同事作为分享嘉宾，当他在现场说张要出新书的时候，台下观众无不感到惊喜，那该是一本怎样的书？</p>
+<p>《CSS世界》，书名很霸气，甚至比之前那本被“魔法哥”称为十年来最好的《CSS揭秘》更胜一筹，但这本又与那本不同，它更接地气，没有《揭秘》那么多炫酷的技巧，却能让你发现很多比炫酷更实用的东西，或者，利用好它自身的本领，不需要技巧就是最好的技巧。</p>
+<p>为什么张这么受欢迎？还要从他的博客说起。</p>
+<p>首先一点，张的博客SEO做得很好，当然，或许是因为他的文章太多了，而他研究过的课题，也正是很多人要的，百度很容易搜到，所以，他每篇文章的点击量都很高，另外，不少人会收藏他的博客，不定期去看看，再加上微博推广，多种因素加在一起，张的博客流量，可能要赶上百万级用户的内容平台了，着实厉害。</p>
+<p>那么，这些只是“果”，“因”是什么？</p>
+<p>大家都知道，在这个信息爆炸的时代，标题不够吸引人，就很难有读者，但如果仅仅是标题党，只会让读者短暂停留，很快便会离开。</p>
+<p>张没有那样做，他不需要用标题吸引人，该是什么就是什么，但当你跟着他的文字和示例一句句、一段段读下去的时候，就不难发现：</p>
+<p>1、你要解决的难题，他已经解决了；</p>
+<p>2、不仅解决了，还考虑周全，包括兼容性、问题和优缺点；</p>
+<p>3、方法巧妙，你闻所未闻；</p>
+<p>4、就算你知道，也玩儿过demo，但你没能把它和实际场景相联系，而他做到了；</p>
+<p>5、让你惊讶的是，他用的就是你自认为已经熟知的方法，但是，看了他的思路之后，你才恍然大悟，原来并不是你所认为的“如此而已”，而是大有学问。</p>
+<p>所以，无论是从张创作的文章数量也好，还是质量也好，在整个前端圈，少有人能与之媲美，久而久之，便形成了其鲜明的个人品牌和影响力，被大家所熟知。</p>
+<p>说了这么多，貌似都在夸赞张，并没提到《CSS世界》？非也。</p>
+<p>张博客文章的特点，也正是这本书的特点，你会发现它并没有涉及CSS3的内容，而是止于CSS2.1版本，但这并不影响他的精彩度和质量。</p>
+<p>比如：书中说，当使用了vertical－align，却没能做到居中，怎么办？</p>
+<p>很多人会选择使用margin或者relative定位来解决，这两种方法有什么好处呢？简单粗暴，可控性强，能快速解决问题，但实际上是逃避了问题，它为什么没有居中，怎样才是更科学有效的方法？书中给出了他的一些思考和尝试。</p>
+<p>这本书既不是纯理论，也不是纯实践，是从理论联系实践，实践回溯理论。它不是按照死板的属性或字母顺序，也不是简单的罗列和解释，是有一个独立的介绍逻辑，张用他自己的风格介绍了“流、盒模型、内联元素、层叠、文本处理和元素装饰”等等，帮你一步步地理解CSS世界当中的那些点，怎么连成线，又如何相互联系，相互破坏，相互成就。</p>
+<p>虽然，书中还有一些显得“偏门”的属性和技巧，但更值得关注的，显然是那些实用的大多数，在吸收知识点的同时，学习其思想和方法，比如：</p>
+<p>1、利用页面元素本身的流动性做内容适应</p>
+<p>2、利用无依赖的绝对定位设置元素位置并减少其他未知影响</p>
+<p>3、利用层级的自然特性设置元素之间的层级关系，而不是依赖z-index</p>
+<p>以及大家都会遇到的：</p>
+<p>图片下方空隙问题、主容器右下方返回顶部按钮问题、模拟表单占位符问题、表格的表头固定内部不动的问题等等。</p>
+<p>不当拿来主义，不止知其然，更知其所以然，这就是张所具备的、刨根问底的钻研精神，这种精神使得张对CSS的认知走到了很多人的前面。用书中的一句话说：“只要了解透彻，说不定就可以变废为宝，化腐朽为神奇”。</p>
+<p>当然，这本书并不会涵盖你需要知道的所有知识和场景，也不能超越标准，更不能真正代替你解决问题，就像作者最后说的那样——“这本书热衷于挖掘CSS属性的潜力”，能帮你解开很多疑惑，也能激励你一起去挖掘CSS的宝藏。</p>
+<p>就在这篇文章完成之前没几天，传来一个好消息，《CSS世界》发行两周之后，已经迅速登上几大电商新书类榜首，且数次加印，我把它称为“一名IT人的胜利”。</p>
+<p>每个行业都需要有这样的人存在，也都需要更多优质的输出。</p>
+<p>记得《战狼2》在取得票房佳绩之初，就有这么一篇文章——《这个世界正在狠狠奖励认真的人》。</p>
+<p>张如是，他没有频繁地出现在大众面前，也没有加入什么社交群体，但就是有非常多的人知道他，了解他，喜欢他。</p>
+<p>如果你想知道，怎样提升自己的技术，怎样成为一名优秀的前端，或许你能从他身上找到答案。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/idea-weekend.jpg" alt="灵感_idea wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注我的公众号“灵感周末”,每个周末推送优质好文！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>给加个蛋呗</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读后感/" rel="tag"># 读后感</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/21/standard_thinking/" rel="next" title="纠结的“标准”观">
+                <i class="fa fa-chevron-left"></i> 纠结的“标准”观
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/idea.png"
+              alt="灵感_idea" />
+          
+            <p class="site-author-name" itemprop="name">灵感_idea</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/ideazhao" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              优质博客
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiongks.name/" title="勾三股四" target="_blank">勾三股四</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.doyoe.com/" title="doyoe" target="_blank">doyoe</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://imququ.com/" title="屈光宇" target="_blank">屈光宇</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.barretlee.com/" title="小胡子哥" target="_blank">小胡子哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://luopq.com/" title="luopq" target="_blank">luopq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.caihong.cc/" title="练小习" target="_blank">练小习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://xuexb.com/" title="前端小武" target="_blank">前端小武</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yujiangshui.com/" title="于江水" target="_blank">于江水</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhangwenli.com/" title="羡辙" target="_blank">羡辙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ido321.com/" title="会飞的Pikachu" target="_blank">会飞的Pikachu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">灵感_idea</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+  
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("imqziUaD6qvyz98nSsAwbcIA-gzGzoHsz", "ROD9EUJOw1UKbJd7qa8AVSMI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
