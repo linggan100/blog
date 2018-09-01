@@ -127,7 +127,7 @@
 
 他一边听我说一边微微点头，好像是懂了，可我连自己说的是什么都不确定（捂脸），他没有笑出声来就算很nice了。
 那次过后，我决定把没弄清楚的给好好学习下，就是这篇文的由来，算个">
-<meta property="og:updated_time" content="2018-09-01T08:18:36.397Z">
+<meta property="og:updated_time" content="2018-09-01T08:36:38.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拨开JS事件的迷雾（一）">
 <meta name="twitter:description" content="由来当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。
@@ -460,7 +460,7 @@ btn.click=null;
         alert(&quot;你点到我了！&quot;);
     },false);
 &lt;/script&gt;
-</code></pre><p>是不是发现了什么？它们之间只有一处不同，便是事件处理程序的绑定方法——<strong>addEventListener</strong>。</p>
+</code></pre><p>是不是发现了什么？它们之间只有一处不同，便是事件处理程序的绑定方法——<strong>addEventListener</strong>。用法如下：</p>
 <pre><code>addEventListener(&quot;事件名&quot;,事件处理程序,布尔值)
 </code></pre><p>前面两个很直观，布尔值是什么意思？其实它决定了事件处理程序什么时候调用，为true时，是捕获阶段，false时是冒泡阶段。多数情况下都会在冒泡阶段调用，这样能最大限度兼容浏览器。</p>
 <p>使用DOM2级方法的主要好处，是可以添加多个事件处理程序。比如：</p>
@@ -474,8 +474,8 @@ btn.addEventListener(&quot;click&quot;,function(){
 </code></pre><p>它们会依次按顺序执行。</p>
 <p>既然有添加，当然要有移除，移除事件的方法就是<strong>removeEventListener()</strong>。和添加时传入的参数相同，这意味着，添加的匿名函数将无法移除。</p>
 <p><strong>兼容？</strong></p>
-<p>我们聊很多技术的时候都会做这样的区分：现代浏览器、老版浏览器。因为这是事物发展的必然规律，事件相关也不例外，那么除了上面提到的还有什么不同呢？IE。</p>
-<p>IE的方法是：</p>
+<p>我们聊很多技术的时候都会做这样的区分：现代浏览器、老版浏览器。这是事物发展的必然规律，事件相关也不例外，那么除了上面提到的还有什么不同呢？IE。</p>
+<p>IE的添加和删除方法分别是：</p>
 <pre><code>attachEvent()和detachEvent()
 </code></pre><p>它同样需要有“事件名”和处理函数两个参数，但跟addEventListener()的区别是：</p>
 <p>一、事件名称需要加“on”，比如“onclick”；<br>二、第三个布尔值不再需要，IE8及更早版本只支持事件冒泡；<br>三、仍可添加多个处理程序，但触发顺序相反。</p>
@@ -505,9 +505,10 @@ btn.addEventListener(&quot;click&quot;,function(){
 <p>怎么使用它呢？就像这样</p>
 <pre><code>EventUtil.addHandler(btn,&quot;click&quot;,handler);
 EventUtil.removeHandler(btn,&quot;click&quot;,handler);
-</code></pre><p>至此，JS事件的添加方法以及怎样做兼容就大概介绍完了，虽然只是事件的一个方面，却也已有不少内容。</p>
-<p>我们学习的每一种知识，从总体看都是很庞杂的，但再庞杂的东西，都是由这些小点组成，把它的要点和脉络抽出来，个个击破，学习过程就会显得轻松愉快，最终绘成一张大的版图。</p>
-<p>我们下一篇继续。</p>
+</code></pre><p>##小结</p>
+<p>至此，JS事件的添加方法以及怎样做兼容就大概介绍完了，虽然只是事件的一个方面，也已有不少内容。</p>
+<p>在现今JS框架满天飞的时代，从JQ到较近的React、Vue，我们似乎很少需要再手动书写原生方法，它们本身封装的方法替我们省去了很多重复繁杂的劳动，但去了解和学习这些知识仍是有好处的，JS总体的知识点可谓相当庞杂，但再庞杂的东西都是由小的点组成，把它的要点和脉络抽出，进行个个击破，学习的过程就会显得轻松愉快，最终绘成一张大的版图。</p>
+<p>我们下篇继续。</p>
 
       
     </div>
