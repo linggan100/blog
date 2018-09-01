@@ -127,7 +127,7 @@
 
 我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了。
 那次过后，我决定把没弄清楚的给好好">
-<meta property="og:updated_time" content="2018-09-01T09:36:01.286Z">
+<meta property="og:updated_time" content="2018-09-01T09:39:11.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拨开JS事件的迷雾（一）">
 <meta name="twitter:description" content="由来当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。
@@ -480,9 +480,9 @@ btn.addEventListener(&quot;click&quot;,function(){
 <pre><code>attachEvent() 和 detachEvent()
 </code></pre><p>同样需要有“事件名”和处理函数两个参数，但跟addEventListener()的区别是：</p>
 <ul>
-<li>事件名称需要加“on”，比如“onclick”；</li>
-<li>没了第三个布尔值，IE8及更早版本只支持事件冒泡；</li>
-<li>仍可添加多个处理程序，但触发顺序相反。</li>
+<li><strong>事件名称需要加“on”，比如“onclick”；</strong></li>
+<li><strong>没了第三个布尔值，IE8及更早版本只支持事件冒泡；</strong></li>
+<li><strong>仍可添加多个处理程序，但触发顺序相反。</strong></li>
 </ul>
 <p>还有一点需要注意，DOM0和DOM2级的方法，其作用域都是在其所依附的元素当中，attachEvent()则是全局，即如果像之前一样使用this.id，访问到的就不是button元素，而是window，就得不到正确的结果。</p>
 <p>那么，跨浏览器添加事件怎么写呢？这类代码通常具有通用性，所以可以将它封装成一个对象以备多人多项目复用，代码如下：</p>
