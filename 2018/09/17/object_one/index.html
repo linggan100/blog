@@ -111,31 +111,22 @@
 
 
 
-<meta name="description" content="怎么实现？当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。
-
-行内onclick啊，bind啊，还有那个什么Event啊…
-
-我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了。
-那次过后，我决定把没弄清楚的">
+<meta name="description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
+《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
+对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拨开JS事件的迷雾（一）">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/js_event/index.html">
+<meta property="og:title" content="JS“对象”破冰之旅（一）">
+<meta property="og:url" content="http://yoursite.com/2018/09/17/object_one/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="怎么实现？当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。
-
-行内onclick啊，bind啊，还有那个什么Event啊…
-
-我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了。
-那次过后，我决定把没弄清楚的">
-<meta property="og:updated_time" content="2018-09-02T10:12:52.181Z">
+<meta property="og:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
+《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
+对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
+<meta property="og:updated_time" content="2018-09-17T15:37:39.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拨开JS事件的迷雾（一）">
-<meta name="twitter:description" content="怎么实现？当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。
-
-行内onclick啊，bind啊，还有那个什么Event啊…
-
-我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了。
-那次过后，我决定把没弄清楚的">
+<meta name="twitter:title" content="JS“对象”破冰之旅（一）">
+<meta name="twitter:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
+《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
+对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
 
 
 
@@ -165,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/31/js_event/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/17/object_one/"/>
 
 
 
 
 
-  <title>拨开JS事件的迷雾（一） | 灵感之见</title>
+  <title>JS“对象”破冰之旅（一） | 灵感之见</title>
   
 
 
@@ -308,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/js_event/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/object_one/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="灵感_idea">
@@ -325,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">拨开JS事件的迷雾（一）</h1>
+          <h1 class="post-title" itemprop="name headline">JS“对象”破冰之旅（一）</h1>
         
 
         <div class="post-meta">
@@ -337,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T00:00:00+08:00">
-                2018-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T00:00:00+08:00">
+                2018-09-17
               </time>
             
 
@@ -377,7 +368,7 @@
 
           
           
-             <span id="/2018/08/31/js_event/" class="leancloud_visitors" data-flag-title="拨开JS事件的迷雾（一）">
+             <span id="/2018/09/17/object_one/" class="leancloud_visitors" data-flag-title="JS“对象”破冰之旅（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,11 +403,77 @@
       
 
       
-        <h2 id="怎么实现？"><a href="#怎么实现？" class="headerlink" title="怎么实现？"></a>怎么实现？</h2><p>当我还很菜的时候（好像就是现在~），参加过一次面试，面试官问我，给一个元素绑定事件有几种方法，虽然我JS不熟，但觉得，没吃过猪肉还没见过猪跑吗？张口就来。</p>
+        <p>“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。</p>
+<p>《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。</p>
+<h2 id="对象是什么"><a href="#对象是什么" class="headerlink" title="对象是什么"></a>对象是什么</h2><p>面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有相同属性和方法的对象。</p>
+<p>但偏偏…ES中没有“类”的概念，不过它有一个跟“类”相似的东东，叫做<strong>引用类型</strong>。</p>
+<p>每个对象，都是基于一个“引用类型”创建的，我们常说，先创建一个对象，再创建一个此对象的实例，那么，其实“对象”就是某个引用类型的实例，那引用类型是什么？</p>
+<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>简单地说，JS中的数据类型分为两种：一是<strong>基本类型</strong>，二就是<strong>引用类型</strong>。</p>
+<p>基本类型有：Number，String，Boolean，Null，Undefined </p>
+<p>引用类型则有：Object，Array，Date，RegExp，Function</p>
+<p>基本类型很好理解，就像我们将课程分为语文、数学一样，但引用类型怎么理解？</p>
+<p>其实引用类型就是一种将<strong>功能</strong>和<strong>数据</strong>组织在一起的数据结构，即，<strong>有什么</strong>，<strong>能干什么</strong>。</p>
+<p>说半天，我们来创建一个Object的实例：</p>
+<pre><code>var person = new Object();
+</code></pre><p>就像HTML中写标签我们随手就可以写个div，新建对象我们可以像这样使用Object，它是ES中使用最多的一个类型，虽然它不具备多少功能，但是用来存储和传输数据也是不错。</p>
+<p>当然，空的对象似乎没什么用处，我们可以给对象赋予一些<strong>属性</strong>或者<strong>方法</strong>，就像这样：</p>
+<pre><code>person.firstname = &quot;Bill&quot;;
+person.lastname = &quot;Gates&quot;;
+person.age = 56;
+person.run = function(){
+    return &quot;I can run!&quot;;
+}
+</code></pre><p>这里为对象person添加了属性“name、age”和方法“run”。也就是前面说的“有什么”和”能干什么“，这是一种很常规的创建对象实例的方式。</p>
+<p>还有另外一种也很常见，就是<strong>对象字面量</strong>，比如刚才的person实例可以写成这样：</p>
+<pre><code>var person = {
+    firstname:&quot;bill&quot;,
+    lastname=&quot;Gates&quot;,
+    age:56,
+    run:function(){
+        return &quot;I can run!&quot;
+    }
+}
+</code></pre><p>（有个细节，这里的属性之间是用逗号分隔的，但最后一个属性后面没有加，这是因为IE7及更早的浏览器和Opera中会报错，但这个错误，现在已经不重要了，低版本浏览器几乎全部退出历史舞台。）</p>
+<p>这种写法给人的感觉就是，简洁明了，更像是个封装数据的一个独立单元，因此得到很多开发者的喜爱。</p>
+<p>那么，可以想见，既然可以这样创建Object，那么其他几种是否也可以？答案是肯定的。比如：</p>
+<pre><code>var classmate = new Array(100); //一个长度为100的数组
+var now = new Date();  // 一个日期对象
+var sum = function(sum1,sum2){  //一个加法函数对象
+    return sum1+sum2;
+}
+</code></pre><p>这几种，属于JS的<strong>内置对象</strong>，也就是说，无需定义，它本身就具备，而且有很多的原生属性和方法供使用。</p>
+<p>到这，你可能有疑问了，既然说JS中所有东西都是对象，那么，基本类型呢，它们可是跟引用类型划清了界限的，怎么又跟对象扯上关系呢？</p>
+<p>##基本包装类型</p>
+<p>其实，为了便于开发者操作基本类型的数据，ES提供了一种叫做“基本包装类型”的东西，即“Number、String、Boolean”，它<strong>同时具备引用类型和基本类型的部分特征</strong>，比如我们可以像这样定义一个字符串：</p>
+<pre><code>var s1 = &quot;some text&quot;;
+</code></pre><p>就相当于这样写：</p>
+<pre><code>var s1 = new String(&quot;some text&quot;);
+</code></pre><p>（但为了和引用类型相区分，一般不提倡这样显式的定义，除非有必要）</p>
+<p>基本类型本身应该是没有方法的，这样以来，它就像特技加身了一样有了很多方法来操作，像字符串的concat()、slice()、substr()等，我们后续聊字符串再详述，”Number”和“Boolean“同理。所以，应该能够理解，为什么说它们也在对象的管辖范围内。</p>
+<p>但基本包装类型和引用类型还是有区别的，主要是对象的<strong>生存期</strong>。</p>
+<p>使用new操作符创建的引用类型实例，在执行流离开当前作用域之前都是<strong>一直在内存中</strong>的，而自动创建的基本包装类型对象，<strong>只存在于一行代码执行的时候，然后立即被销毁</strong>，这意味着，我们不能在运行时为基本类型添加属性和方法。</p>
+<p>好，到这里差不多结束了，可是…我们好像漏了几个很重要的东东，前方有雾，小心走路~</p>
+<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>在前面的文章中我们说过，JS中，有些东西，你根本就没看到哪里有定义或者创建，它就已经存在了，比如单体内置对象，它不依赖于宿主环境，不需要开发者显式创建，就已经实例化。</p>
+<p>两个单体内置对象：Global和Math。</p>
+<p>Global：</p>
+<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是来负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的ParseInt()、parseFloat()等。</p>
+<p>ES中没有给出直接访问Global对象的方法，但浏览器将它作为window对象的一部分加以实现，因此，在全局作用域中声明的所有变量和函数，就都成为window对象的属性，比如：</p>
+<pre><code>var name = “tom”；
+ function sayName(){
+     alert(window.name);
+ }
+ window.sayName(); //&quot;tom&quot;
+</code></pre><p>window对象除了扮演Global对象的角色，它还有很多别的任务，后续单聊。</p>
+<p>Math：</p>
+<p>可以这么说，不论哪个领域的问题，最终都能归结为数学的问题，甚至有这样的名言：数学方法渗透并支配着一切自然科学的理论分支。它愈来愈成为衡量科学成就的主要标志。 —— 冯纽曼</p>
+<p>所以，作为一个极为重要的工具，JS当中当然不能缺少数学方法。</p>
+<p>随便举几个例子：取整、随机数、最大/最小值、绝对值。</p>
+<p>怎么样，是不是非常有用，同样，这里只简要引见，不再赘述。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文试图简明扼要、通俗易懂地介绍对象，从何而来，有什么特点，有哪些分类，有什么用途，不知是否达到本意，只是对象的知识点实在太过繁多，且有些地方极抽象，即使概括来说，一篇文也是不够的，有待后续我们接着聊吧！~</p>
 <blockquote>
 <p>行内onclick啊，bind啊，还有那个什么Event啊…</p>
 </blockquote>
-<p>我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了。</p>
+<p>我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了</p>
 <p>那次过后，我决定把没弄清楚的给好好学习下，就是这篇文的由来，算个总结，也给仍一团糊涂的朋友一点帮助。</p>
 <p>既然是拨开“迷雾”，就不再主动制造障碍，像历史、深层次原理、某种事件类型的细节等就不再罗列，以免增加理解和记忆负担，内容较基础，高手可绕道~</p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件，即发生了某种行为，日常浏览网页的时候，不论是用户操作，还是开发者主动控制，都会有很多事件发生，比如：加载、点击、滚动、触摸等。所以它牵扯到几个方面因素：</p>
@@ -559,8 +616,8 @@ EventUtil.removeHandler(btn,&quot;click&quot;,handler);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/25/position_up_method/" rel="next" title="职级晋升究竟难在哪？">
-                <i class="fa fa-chevron-left"></i> 职级晋升究竟难在哪？
+              <a href="/2018/09/05/js_event_type/" rel="next" title="拨开JS事件的迷雾（二）">
+                <i class="fa fa-chevron-left"></i> 拨开JS事件的迷雾（二）
               </a>
             
           </div>
@@ -568,10 +625,6 @@ EventUtil.removeHandler(btn,&quot;click&quot;,handler);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/js_event_type/" rel="prev" title="拨开JS事件的迷雾（二）">
-                拨开JS事件的迷雾（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -809,7 +862,7 @@ EventUtil.removeHandler(btn,&quot;click&quot;,handler);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么实现？"><span class="nav-number">1.</span> <span class="nav-text">怎么实现？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">2.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定"><span class="nav-number">3.</span> <span class="nav-text">绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象是什么"><span class="nav-number">1.</span> <span class="nav-text">对象是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">3.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定"><span class="nav-number">6.</span> <span class="nav-text">绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
