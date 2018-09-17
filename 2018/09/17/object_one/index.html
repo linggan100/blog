@@ -121,7 +121,7 @@
 <meta property="og:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
 《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
 对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
-<meta property="og:updated_time" content="2018-09-17T15:37:39.601Z">
+<meta property="og:updated_time" content="2018-09-17T15:53:15.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS“对象”破冰之旅（一）">
 <meta name="twitter:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
@@ -427,36 +427,38 @@ person.run = function(){
 <p>还有另外一种也很常见，就是<strong>对象字面量</strong>，比如刚才的person实例可以写成这样：</p>
 <pre><code>var person = {
     firstname:&quot;bill&quot;,
-    lastname=&quot;Gates&quot;,
+    lastname:&quot;Gates&quot;,
     age:56,
     run:function(){
         return &quot;I can run!&quot;
     }
 }
-</code></pre><p>（有个细节，这里的属性之间是用逗号分隔的，但最后一个属性后面没有加，这是因为IE7及更早的浏览器和Opera中会报错，但这个错误，现在已经不重要了，低版本浏览器几乎全部退出历史舞台。）</p>
-<p>这种写法给人的感觉就是，简洁明了，更像是个封装数据的一个独立单元，因此得到很多开发者的喜爱。</p>
-<p>那么，可以想见，既然可以这样创建Object，那么其他几种是否也可以？答案是肯定的。比如：</p>
-<pre><code>var classmate = new Array(100); //一个长度为100的数组
-var now = new Date();  // 一个日期对象
-var sum = function(sum1,sum2){  //一个加法函数对象
+</code></pre><p>（有个细节，这里的属性之间是用逗号分隔的，但最后一个属性后面没有加，这是因为IE7及更早的浏览器和Opera中会报错，但这个错误，现在已经不重要了，低版本浏览器几乎已经全部退出历史舞台）</p>
+<p>这种写法给人的感觉就是，简洁明了，更像是以个封装数据的独立单元，因此得到很多开发者的喜爱。</p>
+<p>那么，可以想见，既然可以这样创建Object，其他几种是否也可以？答案是肯定的。比如：</p>
+<pre><code>//一个长度为100的数组
+var classmate = new Array(100); 
+// 一个日期对象
+var now = new Date();  
+//一个加法函数对象
+var sum = function(sum1,sum2){  
     return sum1+sum2;
 }
 </code></pre><p>这几种，属于JS的<strong>内置对象</strong>，也就是说，无需定义，它本身就具备，而且有很多的原生属性和方法供使用。</p>
-<p>到这，你可能有疑问了，既然说JS中所有东西都是对象，那么，基本类型呢，它们可是跟引用类型划清了界限的，怎么又跟对象扯上关系呢？</p>
-<p>##基本包装类型</p>
-<p>其实，为了便于开发者操作基本类型的数据，ES提供了一种叫做“基本包装类型”的东西，即“Number、String、Boolean”，它<strong>同时具备引用类型和基本类型的部分特征</strong>，比如我们可以像这样定义一个字符串：</p>
+<p>到这，你可能有疑问了，既然说JS中所有东西都是对象，那么，基本类型呢，它们可是跟引用类型划清了界限的，怎么跟对象扯上关系呢？</p>
+<h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><p>其实，为了便于开发者操作基本类型的数据，ES提供了一种叫做“基本包装类型”的东西，即“Number、String、Boolean”，它<strong>同时具备引用类型和基本类型的部分特征</strong>，比如我们可以像这样定义一个字符串：</p>
 <pre><code>var s1 = &quot;some text&quot;;
-</code></pre><p>就相当于这样写：</p>
+</code></pre><p>就相当于这样：</p>
 <pre><code>var s1 = new String(&quot;some text&quot;);
-</code></pre><p>（但为了和引用类型相区分，一般不提倡这样显式的定义，除非有必要）</p>
-<p>基本类型本身应该是没有方法的，这样以来，它就像特技加身了一样有了很多方法来操作，像字符串的concat()、slice()、substr()等，我们后续聊字符串再详述，”Number”和“Boolean“同理。所以，应该能够理解，为什么说它们也在对象的管辖范围内。</p>
+</code></pre><p>（但为了和引用类型相区分，一般不提倡显式定义，除非有必要）</p>
+<p>基本类型本身应该是没有方法的，这样以来，它就像特技加身一样有了很多方法来操作，像字符串的concat()、slice()、substr()等，我们后续聊字符串再详述，”Number”和“Boolean“同理。所以，应该能够理解，为什么说它们也在对象的管辖范围内。</p>
 <p>但基本包装类型和引用类型还是有区别的，主要是对象的<strong>生存期</strong>。</p>
 <p>使用new操作符创建的引用类型实例，在执行流离开当前作用域之前都是<strong>一直在内存中</strong>的，而自动创建的基本包装类型对象，<strong>只存在于一行代码执行的时候，然后立即被销毁</strong>，这意味着，我们不能在运行时为基本类型添加属性和方法。</p>
 <p>好，到这里差不多结束了，可是…我们好像漏了几个很重要的东东，前方有雾，小心走路~</p>
-<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>在前面的文章中我们说过，JS中，有些东西，你根本就没看到哪里有定义或者创建，它就已经存在了，比如单体内置对象，它不依赖于宿主环境，不需要开发者显式创建，就已经实例化。</p>
+<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>在前面的文章中我们说过，JS中，有些东西，你根本没看到哪里有定义或者创建，它就已经存在了，比如单体内置对象，它不依赖于宿主环境，不需要开发者显式创建，就已经实例化。</p>
 <p>两个单体内置对象：Global和Math。</p>
-<p>Global：</p>
-<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是来负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的ParseInt()、parseFloat()等。</p>
+<p><strong>Global</strong>：</p>
+<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的ParseInt()、parseFloat()等。</p>
 <p>ES中没有给出直接访问Global对象的方法，但浏览器将它作为window对象的一部分加以实现，因此，在全局作用域中声明的所有变量和函数，就都成为window对象的属性，比如：</p>
 <pre><code>var name = “tom”；
  function sayName(){
@@ -464,96 +466,12 @@ var sum = function(sum1,sum2){  //一个加法函数对象
  }
  window.sayName(); //&quot;tom&quot;
 </code></pre><p>window对象除了扮演Global对象的角色，它还有很多别的任务，后续单聊。</p>
-<p>Math：</p>
+<p><strong>Math</strong>：</p>
 <p>可以这么说，不论哪个领域的问题，最终都能归结为数学的问题，甚至有这样的名言：数学方法渗透并支配着一切自然科学的理论分支。它愈来愈成为衡量科学成就的主要标志。 —— 冯纽曼</p>
 <p>所以，作为一个极为重要的工具，JS当中当然不能缺少数学方法。</p>
 <p>随便举几个例子：取整、随机数、最大/最小值、绝对值。</p>
 <p>怎么样，是不是非常有用，同样，这里只简要引见，不再赘述。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文试图简明扼要、通俗易懂地介绍对象，从何而来，有什么特点，有哪些分类，有什么用途，不知是否达到本意，只是对象的知识点实在太过繁多，且有些地方极抽象，即使概括来说，一篇文也是不够的，有待后续我们接着聊吧！~</p>
-<blockquote>
-<p>行内onclick啊，bind啊，还有那个什么Event啊…</p>
-</blockquote>
-<p>我努力在脑海中搜索见过的“猪”，他一边听一边微微点头，好像是懂了，可我自己都不确定自己说的是什么（捂脸），他没有笑出声来就算很nice了</p>
-<p>那次过后，我决定把没弄清楚的给好好学习下，就是这篇文的由来，算个总结，也给仍一团糊涂的朋友一点帮助。</p>
-<p>既然是拨开“迷雾”，就不再主动制造障碍，像历史、深层次原理、某种事件类型的细节等就不再罗列，以免增加理解和记忆负担，内容较基础，高手可绕道~</p>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件，即发生了某种行为，日常浏览网页的时候，不论是用户操作，还是开发者主动控制，都会有很多事件发生，比如：加载、点击、滚动、触摸等。所以它牵扯到几个方面因素：</p>
-<p>在哪里发生——<strong>绑定</strong><br>在何时发生——<strong>监听</strong><br>发生了什么——<strong>类型</strong><br>发生的过程——<strong>流程</strong></p>
-<h2 id="绑定"><a href="#绑定" class="headerlink" title="绑定"></a>绑定</h2><p>俗话说，在哪里跌倒，就从哪里爬起来，先聊绑定。</p>
-<p>直接上码：</p>
-<pre><code>&lt;button onclick=&quot;alert(你点到我了!)&quot;&gt;&lt;/button&gt;
-</code></pre><p>这行代码给button绑定了一个click事件，弹出“你点到我了！”，这是最直接的方式，也是我们最初接触的方式，但显然这种结构和行为混在一起的方式是不太好的，来一点优化。</p>
-<p>继续上码：</p>
-<pre><code>&lt;button onclick=&quot;tips()&quot;&gt;&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    function tips(){
-        alert(&quot;你点到我了！&quot;);
-    }
-&lt;/script&gt;
-</code></pre><p>有了什么变化？我们把所要执行的事件内容提了出来，单独封装，这样以来，当执行内容较多时，不会让HTML显得很杂乱，而且可复用，易维护，还能怎样优化？</p>
-<p>以上两种方式，都需要HTML的参与，即结构和行为相耦合，下面介绍不动HTML的DOM事件处理程序。</p>
-<p><strong>一、DOM0级事件</strong></p>
-<p>接着上码：</p>
-<pre><code>//添加
-
-&lt;button id=“btn”&gt;&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    var btn=document.getElementById(&quot;btn&quot;);
-    btn.onclick=function(){
-        alert(&quot;你点到我了！&quot;);
-    }
-&lt;/script&gt;
-
-//删除
-
-btn.onclick=null;
-</code></pre><p>这里是将一个函数赋值给一个事件处理程序的属性，这种方法，是DOM0级事件处理程序，出现的时间较早。</p>
-<p>它的优点是：<strong>简单、跨浏览器</strong>，当使用更高级的方式而浏览器不支持的时候，可以回退到这种方式。</p>
-<p><strong>二、DOM2级事件</strong></p>
-<p>你没看错，不是没有DOM1级，而是DOM1级没有定义事件处理相关的东西，所以这里直接跳到2级。</p>
-<p>So，我们来看看DOM2级的标准之下，上面的代码怎么写：</p>
-<pre><code>&lt;button id=“btn”&gt;&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    var btn=document.getElementById(&quot;btn&quot;);
-    btn.addEventListener(&quot;click&quot;,function(){
-        alert(&quot;你点到我了！&quot;);
-    },false);
-&lt;/script&gt;
-</code></pre><p>发现了什么？它们之间只有一处不同，即事件处理程序的绑定方法——<strong>addEventListener</strong>。其标准用法如下：</p>
-<pre><code>addEventListener(&quot;事件名&quot;,事件处理程序,布尔值)
-</code></pre><p>前面两个很直观，但第三个布尔值是什么意思？其实它决定了事件处理程序什么时候调用，true是捕获阶段，false是冒泡阶段。多数情况下都会在冒泡阶段调用，这样能最大限度兼容浏览器，至于捕获和冒泡是什么以及有什么用处，后续单独聊。</p>
-<p>使用DOM2级方法的主要好处，是可以添加多个事件处理程序。比如：</p>
-<pre><code>btn.addEventListener(&quot;click&quot;,function(){
-        alert(this.id);
-},false);
-
-btn.addEventListener(&quot;click&quot;,function(){
-    alert(&quot;你点到我了！&quot;);
-},false);
-</code></pre><p>它们会依次按顺序执行。</p>
-<p>既然有添加，当然要有移除，移除事件的方法就是<strong>removeEventListener()</strong>。和添加时传入的参数相同，这意味着，这种方法添加的匿名函数将无法移除。</p>
-<p><strong>兼容？</strong></p>
-<p>我们聊很多技术的时候都会做这样的区分：现代浏览器、老版浏览器。这是事物发展的必然规律，事件也不例外，那么除了上面提到的还有什么不同？——IE。</p>
-<p>大家知道，IE通常都是特立独行的，它<strong>添加</strong>和<strong>删除</strong>事件处理程序的方法分别是：</p>
-<pre><code>attachEvent() 和 detachEvent()
-</code></pre><p>同样需要有“事件名”和处理函数两个参数，但跟addEventListener()的区别是：</p>
-<ul>
-<li><strong>事件名称需要加“on”，比如“onclick”；</strong></li>
-<li><strong>没了第三个布尔值，IE8及更早版本只支持事件冒泡；</strong></li>
-<li><strong>仍可添加多个处理程序，但触发顺序相反。</strong></li>
-</ul>
-<p>还有一点需要注意，DOM0和DOM2级的方法，其作用域都是在其所依附的元素当中，attachEvent()则是全局，即如果像之前一样使用this.id，访问到的就不是button元素，而是window，就得不到正确的结果。</p>
-<p>那么，跨浏览器添加事件怎么写呢？这类代码通常具有通用性，所以可以将它封装成一个对象以备多人多项目复用，代码如下：</p>
-<div class="output_wrapper" id="output_wrapper_id" style="font-size: 16px; color: rgb(62, 62, 62); line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"><pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="hljs lua" style="margin: 0px 2px; line-height: 15px; font-size: 11px; font-weight: normal; word-spacing: -3px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; overflow-x: auto; background: black; color: rgb(234, 234, 234); padding: 0.5em; display: block !important; white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important;">var&nbsp;EventUtil={<br>&nbsp;&nbsp;&nbsp;&nbsp;addHandler:<span class="hljs-function" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; word-wrap: inherit !important; word-break: inherit !important;"><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">function</span><span class="hljs-params" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">(element,type,handler)</span></span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">if</span>(element.addEventListener){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.addEventListener(<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>,handler,<span class="hljs-literal" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">false</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">if</span>(element.attachEvent){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.attachEvent(<span class="hljs-string" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(185, 202, 74); word-wrap: inherit !important; word-break: inherit !important;">“on”</span>+&nbsp;<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>,handler);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element[<span class="hljs-string" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(185, 202, 74); word-wrap: inherit !important; word-break: inherit !important;">“on”</span>&nbsp;+&nbsp;<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>]=handler;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;removeHandler:<span class="hljs-function" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; word-wrap: inherit !important; word-break: inherit !important;"><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">function</span><span class="hljs-params" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">(element,type,handler)</span></span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">if</span>(element.removeEventListener){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.removeEventListener(<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>,handler,<span class="hljs-literal" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">false</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">if</span>(element.detachEvent){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.detachEvent(<span class="hljs-string" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(185, 202, 74); word-wrap: inherit !important; word-break: inherit !important;">“on”</span>+&nbsp;<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>,handler);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(195, 151, 216); word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element[<span class="hljs-string" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(185, 202, 74); word-wrap: inherit !important; word-break: inherit !important;">“on”</span>&nbsp;+&nbsp;<span class="hljs-built_in" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(231, 140, 69); word-wrap: inherit !important; word-break: inherit !important;">type</span>]=null;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br></code></pre></div>
-
-
-<p>可明显看出，其使用了条件判断来检测浏览器是否具备那个方法，如果有，就用，没有，向更古老和通用的方法回溯。</p>
-<p>怎么使用它呢？就像这样</p>
-<pre><code>EventUtil.addHandler(btn,&quot;click&quot;,handler);
-EventUtil.removeHandler(btn,&quot;click&quot;,handler);
-</code></pre><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>至此，JS事件的添加方法以及怎样做兼容就大概介绍完了，这只是事件的一个方面，也已有不少内容。</p>
-<p>在现今JS框架满天飞的时代，从较早的JQ到较近的React、Vue，我们似乎很少需要再手动书写原生方法，它们本身封装的方法替我们省去了很多重复繁杂的劳动，但去了解和学习这些知识仍是有好处的。</p>
-<p>JS总体的知识点可谓相当庞杂，但再庞杂的东西都是由小的点组成，把它的要点和脉络抽出，进行个个击破，学习的过程就会显得轻松愉快，最终绘成一张大的版图。</p>
-<p>欲知后事如何，我们下回继续。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文试图简明扼要、通俗易懂地介绍对象，从何而来，有什么特点，有哪些分类，有什么用途，不知是否达到本意，只是对象的知识点实在太过繁多，且有些地方极抽象，即使概括来说，一篇文也是不够的，有待后续接着聊，回见！~</p>
 
       
     </div>
@@ -862,7 +780,7 @@ EventUtil.removeHandler(btn,&quot;click&quot;,handler);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象是什么"><span class="nav-number">1.</span> <span class="nav-text">对象是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">3.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定"><span class="nav-number">6.</span> <span class="nav-text">绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象是什么"><span class="nav-number">1.</span> <span class="nav-text">对象是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本包装类型"><span class="nav-number">3.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">4.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
