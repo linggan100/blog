@@ -121,7 +121,7 @@
 <meta property="og:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
 《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
 对象面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有">
-<meta property="og:updated_time" content="2018-09-17T15:56:30.667Z">
+<meta property="og:updated_time" content="2018-09-17T16:03:50.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS“对象”破冰之旅（一）">
 <meta name="twitter:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
@@ -458,7 +458,7 @@ var sum = function(sum1,sum2){
 <h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>在前面的文章中我们说过，JS中，有些东西，你根本没看到哪里有定义或者创建，它就已经存在了，比如单体内置对象，它不依赖于宿主环境，不需要开发者显式创建，就已经实例化。</p>
 <p>两个单体内置对象：Global和Math。</p>
 <p><strong>Global</strong>：</p>
-<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的ParseInt()、parseFloat()等。</p>
+<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的parseInt()、parseFloat()等。</p>
 <p>ES中没有给出直接访问Global对象的方法，但浏览器将它作为window对象的一部分加以实现，因此，在全局作用域中声明的所有变量和函数，就都成为window对象的属性，比如：</p>
 <pre><code>var name = “tom”；
  function sayName(){
