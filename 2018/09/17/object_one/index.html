@@ -113,20 +113,20 @@
 
 <meta name="description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
 《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
-对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
+对象面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS“对象”破冰之旅（一）">
 <meta property="og:url" content="http://yoursite.com/2018/09/17/object_one/index.html">
 <meta property="og:site_name" content="灵感之见">
 <meta property="og:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
 《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
-对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
-<meta property="og:updated_time" content="2018-09-17T15:53:15.341Z">
+对象面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有">
+<meta property="og:updated_time" content="2018-09-17T15:56:30.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS“对象”破冰之旅（一）">
 <meta name="twitter:description" content="“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。
 《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。
-对象是什么面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多">
+对象面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有">
 
 
 
@@ -405,7 +405,7 @@
       
         <p>“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。</p>
 <p>《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。</p>
-<h2 id="对象是什么"><a href="#对象是什么" class="headerlink" title="对象是什么"></a>对象是什么</h2><p>面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有相同属性和方法的对象。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有相同属性和方法的对象。</p>
 <p>但偏偏…ES中没有“类”的概念，不过它有一个跟“类”相似的东东，叫做<strong>引用类型</strong>。</p>
 <p>每个对象，都是基于一个“引用类型”创建的，我们常说，先创建一个对象，再创建一个此对象的实例，那么，其实“对象”就是某个引用类型的实例，那引用类型是什么？</p>
 <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>简单地说，JS中的数据类型分为两种：一是<strong>基本类型</strong>，二就是<strong>引用类型</strong>。</p>
@@ -780,7 +780,7 @@ var sum = function(sum1,sum2){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象是什么"><span class="nav-number">1.</span> <span class="nav-text">对象是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本包装类型"><span class="nav-number">3.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">4.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本包装类型"><span class="nav-number">3.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">4.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
