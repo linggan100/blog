@@ -1,403 +1,142 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-  
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="总结," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="灵感之见" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="醉牛前端诞生记">
-<meta property="og:url" content="http://yoursite.com/2015/09/13/zuiniu-birth/index.html">
-<meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
-<meta property="og:image" content="http://yoursite.com/zuiniu-birth/1.jpg">
-<meta property="og:updated_time" content="2016-02-24T13:03:22.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="醉牛前端诞生记">
-<meta name="twitter:description" content="起源大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: 'undefined',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2015/09/13/zuiniu-birth/"/>
-
-
-
-
-
-  <title>醉牛前端诞生记 | 灵感之见</title>
-  
-
-
-
-
-
-
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        醉牛前端诞生记 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">灵感之见</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description">生活琐碎、职业杂谈</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
+<div class="site-nav-toggle" id="site-nav-toggle">
     <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
     </button>
-  </div>
 </div>
 
-<nav class="site-nav">
-  
+<div class="index-about">
+    <i> 生活琐碎、职业杂谈 </i>
+</div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+<div class="index-container">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/13/zuiniu-birth/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="灵感_idea">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/idea.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="灵感之见">
-    </span>
-
-    
-      <header class="post-header">
-
+    <div class="index-left">
         
-        
-          <h2 class="post-title" itemprop="name headline">醉牛前端诞生记</h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T00:00:00+08:00">
-                2015-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2015/09/13/zuiniu-birth/" class="leancloud_visitors" data-flag-title="醉牛前端诞生记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
         </div>
-      </header>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起源"><span class="toc-text">起源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型怎么来的"><span class="toc-text">原型怎么来的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么生出来的"><span class="toc-text">怎么生出来的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#破茧到1-0版本"><span class="toc-text">破茧到1.0版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
 
-      
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 生活琐碎、职业杂谈 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        醉牛前端诞生记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2015-09-13 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#总结" title="总结">总结</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
         <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>大概两年多以前，和前端结缘，做技术这行的，不管是有项目练手，还是有人带，最主要依然靠自己。现在是信息时代，找资料很方便，当时的我像现在很多新手一样，如饥似渴的在网上找着各种指南，好的学习资料，教程，博客，word、pdf、txt、video，也加各种群求经。逐渐的就找到了很多好的资料。我看着那么多好东西，心想肯定还有其他很多人在找他们，那么为什么还要让他们跟我一样到处找，走那么多没必要的路呢？</p>
 <p>于是在我出来工作之后不久，就拾起了在校时就建立却好久没顾上打理的QQ群，10个人不到，改名叫“web前端~美是编出来的”，这个名字起初是有人质疑的，觉得有点复杂，也有点奇怪。我为什么没改呢，因为它就是我想传达出来的信息，为什么我会做这个并喜欢上它，就是认为它很有趣，很神奇，像魔法一样能做出具有美感的页面。对，就是这样。群里从0到50的人基本都是我出去发广告拉来的，在我去宣传的过程中，在贴吧里看到有一个提供两本书的帖子下面有超过2000条回帖求书，当时我就震惊了，两本书需求就这么大，我有那么多…这更坚定了我把它们分享出去的想法。后来群里的人越来越多，我就没再刻意的去推广过，只是在群里给大家提供一些力所能及的帮助，比如：上传最新最好的资料，发布一些靠谱的职位信息和好文、教程链接等。</p>
 <p>说了这么多似乎和醉牛前端还是没扯上关系，其实不是，都是有因果的，虽然组了QQ群，虽然分享了那么多资源，甚至我在各个社区都开了专栏，也写自己的博客，但逐渐的会觉得仍然有些无力感，因为互联网很大，信息很多，需要帮助的人很多，而它们都太有限了，谁也不能一对一手把手，或者24小时全天候去提供帮助、解决问题。（虽然也没人有义务这么做，谁让我那么爱提别人操心呢~）。所以，效率很低，复用率极低，成本很高。很多东西可能这次你找到了，看过了，下次又找不到了，大家都不是机器，不可能把所有东西记脑子里，也不是所有人都会动手去做一个整理和组织（真的挺繁琐）。于是后来想做一个学习的平台，还想到做几个W作为主干，what、why、how，是什么、为什么、怎么用，然后再进行其他分类，想想真的挺赞。说干就干呗，于是我又到群里去发广告拉人了，拉了总共十几个人，还分成了设计和开发组，跟他们说了要做什么，想做成什么样，还向他们保证了这个项目不会死，我趁着周末把项目策划书都写出来了，他们也提了不少看法和意见。说到现在你可能有疑问，那么它就是醉牛前端吗？不像啊。是的，我保证了它不会死，可到目前为止它还是没有开始做，原因我在第一次发醉牛前端上线公告的那条微博里有说到“想法太多、太大，执行很不够”。</p>
@@ -423,653 +162,73 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>网站上线后，得到了同行们的好评，很是欣慰，虽然它就只是link的大汇集，有人说我肯定花了很多的心思，这一点我不否认，不花心思真的不行，各种方法、各个角落，一个个的去找，分类、弄好了之后链接再检查，断断续续做了两个多月，甚至我都很多次几乎做不下去要放弃，因为也要做别的事，也要学习，差点就搁下了。但又不甘心，为了逼自己，在1.0还没出的时候，我就把域名注册下来了，抗战纪念日的假期三天，集中精力弄了两天半，虽然假期也没怎么休息，没出去玩儿，觉得还是蛮有意义。它本身没有一点技术难度，就是为了做一个这样的东西出来给大家，也是给自己，提供一些便利。我相信它~</p>
 <p>Tips：网站会不定期更新内容，我会在微博上面发消息通知大家，大家有建议或想法，最好是github上面提issue，当然，如果你没有github账号，或者不方便，那么<a href="http://weibo.com/ideazhao" target="_blank" rel="external">微博</a>留言也行，如果微博也不玩儿，可以邮件：420750281@qq.com或者Q我，如果没有Q…</p>
 
-      
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-    
-    
-    
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
-    
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/idea-weekend.jpg" alt="灵感_idea wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎关注我的公众号“灵感周末”,每个周末推送优质好文！</div>
+        <div id="lv-container">
+        </div>
+
+    </div>
 </div>
 
-      </div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>给加个蛋呗</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechat-pay.jpg" alt="灵感_idea 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/总结/" rel="tag"><i class="fa fa-tag"></i> 总结</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/08/08/two-years-fe/" rel="next" title="两年前端行">
-                <i class="fa fa-chevron-left"></i> 两年前端行
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/10/17/those-year-i-do-bad/" rel="prev" title="那些年我干过的矬事">
-                那些年我干过的矬事 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
     </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="uyan_frame"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <img class="site-author-image" itemprop="image"
-              src="/images/idea.png"
-              alt="灵感_idea" />
-          
-            <p class="site-author-name" itemprop="name">灵感_idea</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">95</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://www.jianshu.com/u/a0dcda2e6e99" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-heartbeat"></i>简书</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/ideazhao" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>微博</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/linggan100" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>GitHub</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/ideazhao" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>知乎</a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              优质博客
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://f2er.club/" title="醉牛前端导航" target="_blank">醉牛前端导航</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://lisongfeng.cn/" title="李松峰" target="_blank">李松峰</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://yuguo.us/weblog/" title="余果" target="_blank">余果</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://github.com/fouber/blog" title="前端农民工" target="_blank">前端农民工</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.cssmagic.net/" title="CSS魔法" target="_blank">CSS魔法</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.w3cplus.com/" title="W3cplus" target="_blank">W3cplus</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.cnblogs.com/coco1s/" title="cocoqiao" target="_blank">cocoqiao</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://imququ.com/" title="屈屈" target="_blank">屈屈</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://peunzhang.cnblogs.com/" title="白树" target="_blank">白树</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://yanhaijing.com/" title="颜海镜" target="_blank">颜海镜</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.dang-jian.com/" title="党建" target="_blank">党建</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.fefork.com/" title="聂微东" target="_blank">聂微东</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型怎么来的"><span class="nav-number">2.</span> <span class="nav-text">原型怎么来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么生出来的"><span class="nav-number">3.</span> <span class="nav-text">怎么生出来的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破茧到1-0版本"><span class="nav-number">4.</span> <span class="nav-text">破茧到1.0版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">灵感_idea</span>
-  
 </div>
 
 
-    
-
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
 
         
-      </div>
-    </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
         
-      </div>
+
+        
+
+    </ul>
     
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
 
-  </div>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
-
-  
-  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-    
-
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143573"></script>
-      <!-- UY END -->
-    
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("imqziUaD6qvyz98nSsAwbcIA-gzGzoHsz", "ROD9EUJOw1UKbJd7qa8AVSMI");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-
-  
-
-  
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
 </html>
