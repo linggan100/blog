@@ -78,7 +78,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|STFangsong:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -113,23 +113,26 @@
 
 <meta name="description" content="JS这门语言，曾被不少开发者视为玩乐的语言，没有厚度和技术含量的语言，但发展到现在，想必没有人敢再这么说，它能做的事越来越多，所以，这门语言看似知识结构简单，但却在代码的行与行之间藏着很多细节和玄机。
 “对象”在JS中是个很有意思的东西，它随处可见，说简单可以很简单，但也可以复杂到让人头皮发麻。
-#简单如何简单？
-var person = new Object();这样就可以创建一个名为“pers">
+简单如何简单？
+var person = new Object();
+这样就可以创建一个名为“pers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="纵观JS对象的“简”与“繁”（上）">
 <meta property="og:url" content="http://yoursite.com/2019/01/22/object_deepsee_one/index.html">
 <meta property="og:site_name" content="灵感之见">
 <meta property="og:description" content="JS这门语言，曾被不少开发者视为玩乐的语言，没有厚度和技术含量的语言，但发展到现在，想必没有人敢再这么说，它能做的事越来越多，所以，这门语言看似知识结构简单，但却在代码的行与行之间藏着很多细节和玄机。
 “对象”在JS中是个很有意思的东西，它随处可见，说简单可以很简单，但也可以复杂到让人头皮发麻。
-#简单如何简单？
-var person = new Object();这样就可以创建一个名为“pers">
-<meta property="og:updated_time" content="2019-03-10T02:16:50.471Z">
+简单如何简单？
+var person = new Object();
+这样就可以创建一个名为“pers">
+<meta property="og:updated_time" content="2019-03-10T02:35:53.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="纵观JS对象的“简”与“繁”（上）">
 <meta name="twitter:description" content="JS这门语言，曾被不少开发者视为玩乐的语言，没有厚度和技术含量的语言，但发展到现在，想必没有人敢再这么说，它能做的事越来越多，所以，这门语言看似知识结构简单，但却在代码的行与行之间藏着很多细节和玄机。
 “对象”在JS中是个很有意思的东西，它随处可见，说简单可以很简单，但也可以复杂到让人头皮发麻。
-#简单如何简单？
-var person = new Object();这样就可以创建一个名为“pers">
+简单如何简单？
+var person = new Object();
+这样就可以创建一个名为“pers">
 
 
 
@@ -200,7 +203,7 @@ var person = new Object();这样就可以创建一个名为“pers">
       </a>
     </div>
       
-        <p class="site-subtitle">生活琐碎、职业杂谈</p>
+        <h1 class="site-subtitle" itemprop="description">生活琐碎、职业杂谈</h1>
       
   </div>
 
@@ -319,7 +322,7 @@ var person = new Object();这样就可以创建一个名为“pers">
 
         
         
-          <h1 class="post-title" itemprop="name headline">纵观JS对象的“简”与“繁”（上）</h1>
+          <h2 class="post-title" itemprop="name headline">纵观JS对象的“简”与“繁”（上）</h2>
         
 
         <div class="post-meta">
@@ -408,52 +411,134 @@ var person = new Object();这样就可以创建一个名为“pers">
       
         <p>JS这门语言，曾被不少开发者视为玩乐的语言，没有厚度和技术含量的语言，但发展到现在，想必没有人敢再这么说，它能做的事越来越多，所以，这门语言看似知识结构简单，但却在代码的行与行之间藏着很多细节和玄机。</p>
 <p>“对象”在JS中是个很有意思的东西，它随处可见，说简单可以很简单，但也可以复杂到让人头皮发麻。</p>
-<p>#简单<br>如何简单？</p>
-<p>var person = new Object();<br>这样就可以创建一个名为“person”的对象。</p>
+<h1 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h1><p>如何简单？</p>
+<pre><code>var person = new Object();
+</code></pre><p>这样就可以创建一个名为“person”的对象。</p>
 <p>但事实上，没有人会在意它的简单，因为简单的东西往往承担不了重任。</p>
 <p>所以，我们可以从另一个角度去理解它的复杂，就是强大——每一种形式，每一个特性，都为了解决更多问题而生。</p>
-<p>复杂<br>像上面那样，我们可以轻松创建一个对象，进一步，为其添加一些属性和方法：</p>
-<p>person.name = “idea”;<br>person.age = 18;<br>person.run = function(){<br>   alert(“I can run!”);<br>}<br>但其实这里我们就会发现需要写很多的“person”，代码不够简洁。</p>
+<h1 id="复杂"><a href="#复杂" class="headerlink" title="复杂"></a>复杂</h1><p>像上面那样，我们可以轻松创建一个对象，进一步，为其添加一些属性和方法：</p>
+<pre><code>person.name = &quot;idea&quot;;
+person.age = 18;
+person.run = function(){
+    alert(&quot;I can run!&quot;);
+}
+</code></pre><p>但其实这里我们就会发现需要写很多的“person”，代码不够简洁。</p>
 <p>可以进行如下改进，也就是另外一种写法——“对象字面量”：</p>
-<p>对象字面量<br>var person = {<br>       name : “idea”;<br>       age : 18;<br>       run : function(){<br>         alert(“I can run!”);<br>      }<br>}<br>它有两个优点：简化代码、凸显封装性。</p>
+<h2 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h2><pre><code>var person = {
+    name : &quot;idea&quot;;
+    age : 18;
+    run : function(){
+        alert(&quot;I can run!&quot;);
+    }
+}
+</code></pre><p>它有两个优点：<strong>简化代码、凸显封装性</strong>。</p>
 <p>如果你对js不熟，但对css预处理还算熟悉，这就像是less或者sass的嵌套。（后面更深入的东西我还会拿css类比，以帮助理解。</p>
 <p>由此，我们可以像这样创建对象：</p>
-<p>var person1 = {<br>       name : “tom”;<br>       age : 18;<br>       run : function(){<br>         alert(“I can run!”);<br>      }<br>}<br>var person2 = {<br>       name : “lili”;<br>       age : 16;<br>       run : function(){<br>         alert(“I can run!”);<br>      }<br>}<br>…<br>但其实我们好像又发现一点不那么好的地方，这样以来，我们每创建一个新的实例，都要写这么一大块的代码，显然是冗余的，于是，有人发动脑筋，想了一种办法——“工厂模式”。</p>
-<p>工厂模式<br>对于工厂模式，可以这么理解，我们需要制作100个同类的产品，但不需要为每件产品都弄一个模子，而是一个模子可以反复用，生产很多很多产品。</p>
+<pre><code>var person1 = {
+    name : &quot;tom&quot;;
+    age : 18;
+    run : function(){
+        alert(&quot;I can run!&quot;);
+    }
+} 
+var person2 = {
+    name : &quot;lili&quot;;
+    age : 16;
+    run : function(){
+        alert(&quot;I can run!&quot;);
+    }
+} 
+...
+</code></pre><p>但其实我们好像又发现一点不那么好的地方，这样以来，我们每创建一个新的实例，都要写这么一大块的代码，显然是冗余的，于是，有人发动脑筋，想了一种办法——“工厂模式”。</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>对于工厂模式，可以这么理解，我们需要制作100个同类的产品，但不需要为每件产品都弄一个模子，而是一个模子可以反复用，生产很多很多产品。</p>
 <p>代码就像这样：</p>
-<p>function createPerson(name, age, job){<br>    var o = new object();<br>    o.name = name;<br>    o.age = age;<br>    o.job = job;<br>    o.sayName = function(){<br>        alert(this.name);<br>    }<br>    return o;<br>}</p>
-<p>var person1 = createPerson(“tom”,18,”teacher”);<br>var person2 = createPerson(“lili”,16,”doctor”);<br>这段代码的亮点在最后，我们可以只用一行代码就创建一个对象，并赋予其属性值。</p>
+<pre><code>function createPerson(name, age, job){
+    var o = new object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    }
+    return o;
+}
+
+var person1 = createPerson(&quot;tom&quot;,18,&quot;teacher&quot;);
+var person2 = createPerson(&quot;lili&quot;,16,&quot;doctor&quot;);
+</code></pre><p>这段代码的亮点在最后，我们可以只用一行代码就创建一个对象，并赋予其属性值。</p>
 <p>看起来很不错，但它存在一个难以觉察的不足——我们好像无法获知这个对象的类型。</p>
 <p>这么说其实并不准确，每个对象都有其类型，大不了是Object，但这个结果给不了我们更有价值的东西。所以，要引荐出一个对象世界里的重要角色——“构造函数”。</p>
-<p>构造函数<br>先看代码：</p>
-<p>function Person(name, age, job){<br> this.name = name;<br> this.age = age;<br> this.job = job;<br> this.sayName = function(){<br> alert(this.name);<br> }<br>};</p>
-<p>var person1 = new Person(“tom”,18,”teacher”);<br>var person2 = new Person(“lili”,16,”doctor”);<br>从面上看，这段代码跟上面那段有这么几点不同：</p>
-<p>没有显式创建对象<br>属性和方法直接给了this<br>没有返回<br>创建新实例的时候，使用了“new”关键字<br>名称首字母大写</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>先看代码：</p>
+<pre><code>function Person(name, age, job){
+this.name = name;
+this.age = age;
+this.job = job;
+this.sayName = function(){
+    alert(this.name);
+    }
+};
+
+var person1 = new Person(&quot;tom&quot;,18,&quot;teacher&quot;);
+var person2 = new Person(&quot;lili&quot;,16,&quot;doctor&quot;);
+</code></pre><p>从面上看，这段代码跟上面那段有这么几点不同：</p>
+<ul>
+<li>没有显式创建对象</li>
+<li>属性和方法直接给了this</li>
+<li>没有返回</li>
+<li>创建新实例的时候，使用了“new”关键字</li>
+<li>名称首字母大写</li>
+</ul>
 <p>为什么说它重要，上面我们只是创建了一个自定义的构造函数，其实js当中有很多内置的构造函数，我们会无数次地使用，比如Array、Date、String等等。</p>
 <p>构造函数和普通函数有什么不同？好像只是首字母大写？</p>
 <p>这么说也没错，它可以当做普通函数使用，就像这样：</p>
-<p>Person(“tom”,18,“teacher”)；<br>但当它被这样使用了之后，就是作为构造函数：</p>
-<p>var person1 = new Person(“tom”,18,”teacher”);<br>会经历完全不同的过程。</p>
+<pre><code>Person(“tom”,18,“teacher”)；
+</code></pre><p>但当它被这样使用了之后，就是作为构造函数：</p>
+<pre><code>var person1 = new Person(&quot;tom&quot;,18,&quot;teacher&quot;);
+</code></pre><p>会经历完全不同的过程。</p>
 <p>构造函数看起来很好用，但它还有需要改进的地方吗？往下看。</p>
 <p>上面那段代码里，有这么一行：</p>
-<p>this.sayName = function(){  alert(this.name);  }<br>它会为新创建的实例新建一个sayName方法，别忘了，方法是赋予对象的函数，函数本身也是对象，所以，person1和person2是两个不同的对象实例，同样，它们的sayName方法也不同（虽然看起来是一个样子）。</p>
+<pre><code>this.sayName = function(){  
+    alert(this.name);  
+}
+</code></pre><p>它会为新创建的实例新建一个sayName方法，别忘了，方法是赋予对象的函数，函数本身也是对象，所以，person1和person2是两个不同的对象实例，同样，它们的sayName方法也不同（虽然看起来是一个样子）。</p>
 <p>这样以来，name、age和job都共用了，完成同样任务的方法却没有共用，每一个新的实例都会创建一次，显然，这不是最理想的，有办法解决吗？</p>
 <p>我们可以做这样的尝试：</p>
-<p>function Person(name,age,job){<br> this.name = name;<br> this.age = age;<br> this.job = job;<br> this.sayName = sayName;<br>};</p>
-<p>function sayName(){<br>   alert(this.name);<br>}</p>
-<p>var person1 = new Person(“tom”,18,”teacher”);<br>var person2 = new Person(“lili”,16,”doctor”);<br>和之前的区别就在于，我们把sayName方法提到了函数体的外面，意味着，它是个全局的函数，而不属于某一个。</p>
+<pre><code>function Person(name,age,job){
+this.name = name;
+this.age = age;
+this.job = job;
+    this.sayName = sayName;
+};
+
+function sayName(){
+    alert(this.name);
+}
+
+var person1 = new Person(&quot;tom&quot;,18,&quot;teacher&quot;);
+var person2 = new Person(&quot;lili&quot;,16,&quot;doctor&quot;);
+</code></pre><p>和之前的区别就在于，我们把sayName方法提到了函数体的外面，意味着，它是个全局的函数，而不属于某一个。</p>
 <p>这个时候，你会发现一个有趣的现象，如果你写下这么一行代码：</p>
-<p>alert(person1.sayName() == person2.sayName());<br>它会弹出三个值：”tom、lili、true”。</p>
+<pre><code>alert(person1.sayName() == person2.sayName());
+</code></pre><p>它会弹出三个值：”tom、lili、true”。</p>
 <p>首先是里面两个分别执行，然后是外层，这说明，它们俩共用了同一个，不需要担心多余创建的那个函数实例。</p>
 <p>终于皆大欢喜！</p>
 <p>可是…慢着，好像哪里不对？</p>
 <p>你可能记得，说对象字面量的时候，我们提到了封装性，你会发现，这里的sayName方法在函数体的外部，如果有很多个，就会有很多个方法散落在外部，这感觉很糟，这不是我们要的，so，必须找到一个办法解决它，就像上面做的那样。</p>
-<p>原型模式<br>我们终于迎来了这个重磅的概念，关于这个概念，往往让人觉得是复杂的，抽象的，高深莫测的，其实并不，让我们来看看它具体的表现：</p>
-<p>function Person(){</p>
-<p>}<br> Person.prototype.name = “alien”;<br> Person.prototype.age = “23”;<br> Person.prototype.job = “teacher”;<br> Person.prototype.sayName = function(){<br> alert(this.name);<br>    };</p>
-<p> var person1 = new Person();</p>
-<p> var person2 = new Person();</p>
-<p>我们创建一个函数，但里面什么都没有。</p>
+<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>我们终于迎来了这个重磅的概念，关于这个概念，往往让人觉得是复杂的，抽象的，高深莫测的，其实并不，让我们来看看它具体的表现：</p>
+<pre><code>function Person(){
+
+}
+Person.prototype.name = &quot;alien&quot;;
+Person.prototype.age = &quot;23&quot;;
+Person.prototype.job = &quot;teacher&quot;;
+Person.prototype.sayName = function(){
+    alert(this.name);
+};
+
+var person1 = new Person();
+
+var person2 = new Person();
+</code></pre><p>我们创建一个函数，但里面什么都没有。</p>
 <p>接下来用到了“prototype”，其实每个函数都有一个prototype属性，这个属性是一个指针，所谓指针，就是建立A和B相关联的一个中介，prototype指向一个对象，这个对象，可以为我们提供所有同一类型实例能够共享的属性和方法，听起来是不是很熟悉？——它能为我们带来前面提到的所有。</p>
 <p>但这么说似乎仍然不好理解，所以，你应该对CSS很熟悉，prototype，就相当于为所有可能的子元素，提供了一个父元素，这个父元素的所有属性，都能为子元素所共享，同时，它也不限制子元素的行为。</p>
 <p>即，person1和person2具备Person.prototype所指对象的所有属性和方法，并且能够对其进行覆盖或者添加自身特有的新属性和方法。</p>
@@ -522,8 +607,8 @@ var person = new Object();这样就可以创建一个名为“pers">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/17/object_two/" rel="next" title="JS“对象”破冰之旅（二）">
-                <i class="fa fa-chevron-left"></i> JS“对象”破冰之旅（二）
+              <a href="/2018/09/17/nginx_search/" rel="next" title="JS“对象”破冰之旅（一）">
+                <i class="fa fa-chevron-left"></i> JS“对象”破冰之旅（一）
               </a>
             
           </div>
@@ -531,6 +616,10 @@ var person = new Object();这样就可以创建一个名为“pers">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/20/workandlife_one/" rel="prev" title="长亭外，悬崖边（一）">
+                长亭外，悬崖边（一） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -584,8 +673,17 @@ var person = new Object();这样就可以创建一个名为“pers">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -593,7 +691,7 @@ var person = new Object();这样就可以创建一个名为“pers">
               alt="灵感_idea" />
           
             <p class="site-author-name" itemprop="name">灵感_idea</p>
-            <p class="site-description motion-element" itemprop="description">生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
 
         <nav class="site-state motion-element">
@@ -603,7 +701,7 @@ var person = new Object();这样就可以创建一个名为“pers">
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -625,7 +723,7 @@ var person = new Object();这样就可以创建一个名为“pers">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -750,6 +848,22 @@ var person = new Object();这样就可以创建一个名为“pers">
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单"><span class="nav-number">1.</span> <span class="nav-text">简单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂"><span class="nav-number">2.</span> <span class="nav-text">复杂</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象字面量"><span class="nav-number">2.1.</span> <span class="nav-text">对象字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">2.2.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">2.3.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型模式"><span class="nav-number">2.4.</span> <span class="nav-text">原型模式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -840,9 +954,6 @@ var person = new Object();这样就可以创建一个名为“pers">
 
 
 
-  
-  
-
 
 
 
@@ -868,12 +979,6 @@ var person = new Object();这样就可以创建一个名为“pers">
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
 
 
   
