@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="学习、javascript," />
+  <meta name="keywords" content="成长、思考," />
 
 
 
@@ -111,25 +111,25 @@
 
 
 
-<meta name="description" content="上一篇文，我们简要介绍了一下“对象”，比较全面，但比较浅显，如果只是抱着它，可能并做不了什么事，也写不出足够好的代码，所以我们需要继续深入~
-创建对象前面我们提到创建对象的两种最直观、最简单的方法，即使用new操作符和对象字面量，其实实际运用当中，这两种方法在使用同一个接口创建很多对象的时候会产生大量重复代码，为解决这个问题，人们开始运用一种模式。
-工厂模式
-访问“没有对象？new一个~”。前端圈">
+<meta name="description" content="最近有位前辈问我，你现在的瓶颈在哪里？
+我本想说一些高层次的东西，以显得我没白混，但实际上我想不出来，干脆实话实说，我的瓶颈就是技术菜。
+你可能觉得是玩笑，但这是真的，我自己也不想承认，按理说，我身在大公司，又工作了好几年，于情于理，都不应该“菜”。
+没错，我当然想学习和掌握更多技能，不管你说什么我都听得懂，不管什么文章我都看得懂，还能评头论足，但现在却是相反，很多东西我还停留在“知道”和“了解”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS“对象”破冰之旅（一）">
-<meta property="og:url" content="http://yoursite.com/2018/09/17/nginx_search/index.html">
+<meta property="og:title" content="作为一名技工，是什么让我陷入“学不动”的境地？">
+<meta property="og:url" content="http://yoursite.com/2019/03/01/hard_study_thinking/index.html">
 <meta property="og:site_name" content="灵感之见">
-<meta property="og:description" content="上一篇文，我们简要介绍了一下“对象”，比较全面，但比较浅显，如果只是抱着它，可能并做不了什么事，也写不出足够好的代码，所以我们需要继续深入~
-创建对象前面我们提到创建对象的两种最直观、最简单的方法，即使用new操作符和对象字面量，其实实际运用当中，这两种方法在使用同一个接口创建很多对象的时候会产生大量重复代码，为解决这个问题，人们开始运用一种模式。
-工厂模式
-访问“没有对象？new一个~”。前端圈">
-<meta property="og:updated_time" content="2018-09-24T08:32:07.797Z">
+<meta property="og:description" content="最近有位前辈问我，你现在的瓶颈在哪里？
+我本想说一些高层次的东西，以显得我没白混，但实际上我想不出来，干脆实话实说，我的瓶颈就是技术菜。
+你可能觉得是玩笑，但这是真的，我自己也不想承认，按理说，我身在大公司，又工作了好几年，于情于理，都不应该“菜”。
+没错，我当然想学习和掌握更多技能，不管你说什么我都听得懂，不管什么文章我都看得懂，还能评头论足，但现在却是相反，很多东西我还停留在“知道”和“了解”">
+<meta property="og:updated_time" content="2019-03-10T03:07:55.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS“对象”破冰之旅（一）">
-<meta name="twitter:description" content="上一篇文，我们简要介绍了一下“对象”，比较全面，但比较浅显，如果只是抱着它，可能并做不了什么事，也写不出足够好的代码，所以我们需要继续深入~
-创建对象前面我们提到创建对象的两种最直观、最简单的方法，即使用new操作符和对象字面量，其实实际运用当中，这两种方法在使用同一个接口创建很多对象的时候会产生大量重复代码，为解决这个问题，人们开始运用一种模式。
-工厂模式
-访问“没有对象？new一个~”。前端圈">
+<meta name="twitter:title" content="作为一名技工，是什么让我陷入“学不动”的境地？">
+<meta name="twitter:description" content="最近有位前辈问我，你现在的瓶颈在哪里？
+我本想说一些高层次的东西，以显得我没白混，但实际上我想不出来，干脆实话实说，我的瓶颈就是技术菜。
+你可能觉得是玩笑，但这是真的，我自己也不想承认，按理说，我身在大公司，又工作了好几年，于情于理，都不应该“菜”。
+没错，我当然想学习和掌握更多技能，不管你说什么我都听得懂，不管什么文章我都看得懂，还能评头论足，但现在却是相反，很多东西我还停留在“知道”和“了解”">
 
 
 
@@ -159,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/17/nginx_search/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/01/hard_study_thinking/"/>
 
 
 
 
 
-  <title>JS“对象”破冰之旅（一） | 灵感之见</title>
+  <title>作为一名技工，是什么让我陷入“学不动”的境地？ | 灵感之见</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/nginx_search/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/hard_study_thinking/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="灵感_idea">
@@ -319,7 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JS“对象”破冰之旅（一）</h2>
+          <h2 class="post-title" itemprop="name headline">作为一名技工，是什么让我陷入“学不动”的境地？</h2>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T00:00:00+08:00">
-                2018-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-01T00:00:00+08:00">
+                2019-03-01
               </time>
             
 
@@ -371,7 +371,7 @@
 
           
           
-             <span id="/2018/09/17/nginx_search/" class="leancloud_visitors" data-flag-title="JS“对象”破冰之旅（一）">
+             <span id="/2019/03/01/hard_study_thinking/" class="leancloud_visitors" data-flag-title="作为一名技工，是什么让我陷入“学不动”的境地？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -406,78 +406,28 @@
       
 
       
-        <p>上一篇文，我们简要介绍了一下“对象”，比较全面，但比较浅显，如果只是抱着它，可能并做不了什么事，也写不出足够好的代码，所以我们需要继续深入~</p>
-<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>前面我们提到创建对象的两种最直观、最简单的方法，即使用new操作符和对象字面量，其实实际运用当中，这两种方法在使用同一个接口创建很多对象的时候会产生大量重复代码，为解决这个问题，人们开始运用一种模式。</p>
-<p><strong>工厂模式</strong></p>
-<h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><p>“没有对象？new一个~”。前端圈儿的人应该都知道这句话。这个“对象”即是我们要讨论的对象。</p>
-<p>《高程》的前言是这样形容JS的——JavaScript是一种非常松散的面向对象语言。这句话的分量之重，即使你可能还不明白，也应该能预见到，JS中很多东西都生长在“对象”这个土壤之上，至于长什么样，咱往下看。</p>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>面向对象编程，又称OOP，拥有此特性的语言，通常都有“类”的概念，通过类，可以创建任意多个具有相同属性和方法的对象。</p>
-<p>但偏偏…ES中没有“类”的概念，不过它有一个跟“类”相似的东东，叫做<strong>引用类型</strong>。</p>
-<p>每个对象，都是基于一个“引用类型”创建的，我们常说，先创建一个对象，再创建一个此对象的实例，那么，其实“对象”就是某个引用类型的实例，那引用类型是什么？</p>
-<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>简单地说，JS中的数据类型分为两种：一是<strong>基本类型</strong>，二就是<strong>引用类型</strong>。</p>
-<p>基本类型有：Number，String，Boolean，Null，Undefined </p>
-<p>引用类型则有：Object，Array，Date，RegExp，Function</p>
-<p>基本类型很好理解，就像我们将课程分为语文、数学一样，但引用类型怎么理解？</p>
-<p>其实引用类型就是一种将<strong>功能</strong>和<strong>数据</strong>组织在一起的数据结构，即，<strong>有什么</strong>，<strong>能干什么</strong>。</p>
-<p>说半天，我们来创建一个Object的实例：</p>
-<pre><code>var person = new Object();
-</code></pre><p>就像HTML中写标签我们随手就可以写个div，新建对象我们可以像这样使用Object，它是ES中使用最多的一个类型，虽然它不具备多少功能，但是用来存储和传输数据也是不错。</p>
-<p>当然，空的对象似乎没什么用处，我们可以给对象赋予一些<strong>属性</strong>或者<strong>方法</strong>，就像这样：</p>
-<pre><code>person.firstname = &quot;Bill&quot;;
-person.lastname = &quot;Gates&quot;;
-person.age = 56;
-person.run = function(){
-    return &quot;I can run!&quot;;
-}
-</code></pre><p>这里为对象person添加了属性“name、age”和方法“run”。也就是前面说的“有什么”和“能干什么”，这是一种很常规的创建对象实例的方式。</p>
-<p>还有另外一种也很常见，就是<strong>对象字面量</strong>，比如刚才的person实例可以写成这样：</p>
-<pre><code>var person = {
-    firstname:&quot;bill&quot;,
-    lastname:&quot;Gates&quot;,
-    age:56,
-    run:function(){
-        return &quot;I can run!&quot;
-    }
-}
-</code></pre><p>（有个细节，这里的属性之间是用逗号分隔的，但最后一个属性后面没有加，这是因为IE7及更早的浏览器和Opera中会报错，但这个错误，现在已经不重要了，低版本浏览器几乎已经全部退出历史舞台）</p>
-<p>这种写法给人的感觉就是，简洁明了，更像是一个封装数据的独立单元，因此得到很多开发者的喜爱。</p>
-<p>那么，可以想见，既然可以这样创建Object，其他几种是否也可以？答案是肯定的。比如：</p>
-<pre><code>//一个长度为100的数组
-var classmate = new Array(100); 
-// 一个日期对象
-var now = new Date();  
-//一个加法函数对象
-var sum = function(sum1,sum2){  
-    return sum1+sum2;
-}
-</code></pre><p>这几种，属于JS的<strong>内置对象</strong>，也就是说，无需定义，它本身就具备，而且有很多的原生属性和方法供使用。</p>
-<p>到这，你可能有疑问了，既然说JS中所有东西都是对象，那么，基本类型呢，它们可是跟引用类型划清了界限的，怎么跟对象扯上关系呢？</p>
-<h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><p>其实，为了便于开发者操作基本类型的数据，ES提供了一种叫做“基本包装类型”的东西，即“Number、String、Boolean”，它<strong>同时具备引用类型和基本类型的部分特征</strong>，比如我们可以像这样定义一个字符串：</p>
-<pre><code>var s1 = &quot;some text&quot;;
-</code></pre><p>就相当于这样：</p>
-<pre><code>var s1 = new String(&quot;some text&quot;);
-</code></pre><p>（但为了和引用类型相区分，一般不提倡显式定义，除非有必要）</p>
-<p>基本类型本身应该是没有方法的，这样以来，它就像特技加身一样有了很多方法来操作，像字符串的concat()、slice()、substr()等，我们后续聊字符串再详述，”Number”和“Boolean“同理。所以，应该能够理解，为什么说它们也在对象的管辖范围内。</p>
-<p>但基本包装类型和引用类型还是有区别的，主要是对象的<strong>生存期</strong>。</p>
-<p>使用new操作符创建的引用类型实例，在执行流离开当前作用域之前都是<strong>一直在内存中</strong>的，而自动创建的基本包装类型对象，<strong>只存在于一行代码执行的时候，然后立即被销毁</strong>，这意味着，我们不能在运行时为基本类型添加属性和方法。</p>
-<p>好，到这里差不多结束了，可是…我们好像漏了几个很重要的东东，前方有雾，小心走路~</p>
-<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>在前面的文章中我们说过，JS中，有些东西，你根本没看到哪里有定义或者创建，它就已经存在了，比如单体内置对象，它不依赖于宿主环境，不需要开发者显式创建，就已经实例化。</p>
-<p>两个单体内置对象：Global和Math。</p>
-<p><strong>Global</strong>：</p>
-<p>开发过程中，我们常见的一种保障性做法叫“兜底”，那么Global对象就是负责为JS兜底的，有任何不属于其他对象的属性或方法，最终都会是它的属性或方法，比如常见的parseInt()、parseFloat()等。</p>
-<p>ES中没有给出直接访问Global对象的方法，但浏览器将它作为window对象的一部分加以实现，因此，在全局作用域中声明的所有变量和函数，就都成为window对象的属性，比如：</p>
-<pre><code>var name = “tom”；
- function sayName(){
-     alert(window.name);
- }
- window.sayName(); //&quot;tom&quot;
-</code></pre><p>window对象除了扮演Global对象的角色，它还有很多别的任务，后续单聊。</p>
-<p><strong>Math</strong>：</p>
-<p>可以这么说，不论哪个领域的问题，最终都能归结为数学的问题，甚至有这样的名言：数学方法渗透并支配着一切自然科学的理论分支。它愈来愈成为衡量科学成就的主要标志。 —— 冯纽曼</p>
-<p>所以，作为一个极为重要的工具，JS当中当然不能缺少数学方法。</p>
-<p>随便举几个例子：取整、随机数、最大/最小值、绝对值。</p>
-<p>怎么样，是不是非常有用，同样，这里只简要引见，不再赘述。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文试图简明扼要、通俗易懂地介绍对象，从何而来，有什么特点，有哪些分类，有什么用途，不知是否达到本意，只是对象的知识点实在太过繁多，且有些地方极抽象，即使概括来说，一篇文也是不够的，有待后续接着聊，回见！~</p>
+        <p>最近有位前辈问我，你现在的瓶颈在哪里？</p>
+<p>我本想说一些高层次的东西，以显得我没白混，但实际上我想不出来，干脆实话实说，我的瓶颈就是技术菜。</p>
+<p>你可能觉得是玩笑，但这是真的，我自己也不想承认，按理说，我身在大公司，又工作了好几年，于情于理，都不应该“菜”。</p>
+<p>没错，我当然想学习和掌握更多技能，不管你说什么我都听得懂，不管什么文章我都看得懂，还能评头论足，但现在却是相反，很多东西我还停留在“知道”和“了解”层面。</p>
+<p>更为尴尬的是，据我说知，很多同行都这样，那么就算是某一部分人的通病。</p>
+<p>为什么？不努力？不，我们买过很多书，看过很多网站或者视频教程，也玩过一些demo，但到头来，你让我做出个像样的东西，sorry，你问我技术原理，sorry，你让我解释XXX怎么实现，还是sorry…</p>
+<p>why？举个小例子，就能寻到一些问题的蛛丝马迹。</p>
+<p>我曾经半开玩笑地跟一个自认为技术过硬的同事说：嗨，你当我师傅，教我技术怎样？（遇到自己不想克服的困难的时候，我们本能地有这样的举动，希望有人手把手，一步步地教）</p>
+<p>他：这要怎么教，自己看书敲代码啊。</p>
+<p>我：我该从哪开始，什么方法比较好呢？</p>
+<p>他：先写点有意思的东西，比如，写个贪吃蛇。</p>
+<p>我没说话，但我的内心独白是：写小游戏？那么low？能用到什么厉害的技术？项目中用得到？</p>
+<p>我才不愿出力不讨好。</p>
+<p>于是，我又抱着那些所谓经典书籍啃，我宁愿相信大家都说好的东西，也不去做一件看不到结果的事。</p>
+<p>结果就是，着实难啃……那些字，那些符号，看一次，忘一次，它们就像从我眼皮子底下飘一趟过去，难理解，又枯燥，很久都读不完。</p>
+<p>讲真，编程是一项极重实践的门类，它不是政治历史，背得好，记得住，就能答题拿高分。</p>
+<p>所以，这里需要明白一个问题：</p>
+<p>通常我们认为学习应该是这样的，先把一个概念搞懂了，再去做跟这个概念相关的东西就应该没问题，或者先把一整套东西都弄懂了，再去做什么都没问题。</p>
+<p>一句话概括就是：先理论，后实践。通俗一点说，就是“先动脑，后动手”。</p>
+<p>看似很合理，但其实学习从来不是一条直线从起点走到终点的，也没有明显的先后顺序，而是曲折向前的。</p>
+<p>常有人说，要对一门知识或者技术有系统性认识和掌握，这在一定程度上是对学习方法的一种误导，刚开始学习的时候，不能抱着“这样学习够不够系统”的想法，知识本身是成体系的，但实际需求和学习的过程是零散的，我们应该边学习，边实践，遇到问题再学习，然后结合着去理解，所以，正确的路线是——学习、实践、查漏补缺。在我们把这个漏快补完了之后，将所学和实践得来的感悟，都串起来，自然而然就达到了“系统”。</p>
+<p>做技术这行，注定要面对不断推陈出新，相应地，学习也是必然的，每个人前进的路上都会有一些血泪史，以上这些，算是我自己的一点教训，希望能帮助大家找到共同的问题点，一起努力进步！~</p>
 
       
     </div>
@@ -527,7 +477,7 @@ var sum = function(sum1,sum2){
       
         <div class="post-tags">
           
-            <a href="/tags/学习、javascript/" rel="tag"><i class="fa fa-tag"></i> 学习、javascript</a>
+            <a href="/tags/成长、思考/" rel="tag"><i class="fa fa-tag"></i> 成长、思考</a>
           
         </div>
       
@@ -540,8 +490,8 @@ var sum = function(sum1,sum2){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/17/object_two/" rel="next" title="JS“对象”破冰之旅（二）">
-                <i class="fa fa-chevron-left"></i> JS“对象”破冰之旅（二）
+              <a href="/2019/02/20/workandlife_one/" rel="next" title="长亭外，悬崖边（一）">
+                <i class="fa fa-chevron-left"></i> 长亭外，悬崖边（一）
               </a>
             
           </div>
@@ -550,8 +500,8 @@ var sum = function(sum1,sum2){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/22/object_deepsee_one/" rel="prev" title="纵观JS对象的“简”与“繁”（上）">
-                纵观JS对象的“简”与“繁”（上） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/02/object_deepsee_two/" rel="prev" title="纵观JS对象的“简”与“繁”（下）">
+                纵观JS对象的“简”与“繁”（下） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,17 +556,8 @@ var sum = function(sum1,sum2){
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -634,7 +575,7 @@ var sum = function(sum1,sum2){
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">96</span>
+                <span class="site-state-item-count">95</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -780,22 +721,6 @@ var sum = function(sum1,sum2){
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问"><span class="nav-number">2.</span> <span class="nav-text">访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">3.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用类型"><span class="nav-number">4.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本包装类型"><span class="nav-number">5.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单体内置对象"><span class="nav-number">6.</span> <span class="nav-text">单体内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
