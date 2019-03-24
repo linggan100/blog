@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        静态页面模块化探究 - 灵感之见 | Idea&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 学习让人快乐，而分享加倍 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        静态页面模块化探究
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-24 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#学习、模块化、gulp" title="学习、模块化、gulp">学习、模块化、gulp</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>常关注的都知道，我有个站点叫”醉牛前端“，刚发出来的时候就有人说开发方式简陋，手工维护静态页面，不便于多人协作。</p>
+<p>我就是受害者本人，所有东西都堆在一个页面当中，查看和维护都很费力，所以，可不可以分拆模块呢？</p>
+<p>工作当中我们是这样做的：</p>
+<pre><code>&lt;!-- #include = &quot;./file.shtml&quot; --&gt;
+</code></pre><p>但是，懂的人能看出来，这不是静态页，后缀是‘shtml’，平时我们开发也是要在本地撘个apache才能正常访问，那可不可以不要服务器呢？</p>
+<p>答案是可以，不得不说程序员的伟大（除了我~）</p>
+<p>我们可以使用其他工具，比如：gulp插件。</p>
+<p>一、<strong>gulp-content-includer</strong></p>
+<p>关于安装不再赘述，自行查阅很快搞定，只需要来了解，这个插件怎么使用</p>
+<p><strong>gulpfile</strong></p>
+<pre><code>var gulp = require(&apos;gulp&apos;);
+    var contentIncluder = require(&apos;gulp-content-includer&apos;);
+    var rename = require(&apos;gulp-rename&apos;);
+
+    gulp.task(&apos;default&apos;, function() {
+        gulp.src(&quot;test_src.html&quot;)
+            .pipe(contentIncluder({
+                includerReg:/&lt;!\-\-include\s+&quot;([^&quot;]+)&quot;\-\-&gt;/g
+            }))
+            .pipe(rename(&apos;index_test.html&apos;))
+            .pipe(gulp.dest(&apos;./&apos;));
+    });
+</code></pre><p><strong>test_src</strong></p>
+<pre><code>&lt;article class=&quot;mainarea item&quot;&gt;
+    &lt;!-- 手册 --&gt;
+    &lt;!--include &quot;./mod/handbook.html&quot;--&gt;
+    &lt;!-- 工具 --&gt;
+    &lt;!--include &quot;./mod/tools.html&quot;--&gt;
+    &lt;!-- 代码在线演示 --&gt;
+    &lt;!--include &quot;./mod/code_online.html&quot;--&gt;
+&lt;/article&gt;
+</code></pre><p><strong>index_test</strong>作为最终生成文件（代码过多就不贴出来了）。</p>
+<ul>
+<li>一个目标文件</li>
+<li>一个正则匹配设定include的格式</li>
+<li>一个输出文件</li>
+</ul>
+<p>如果你的页面要求不多，只需要这样，可以直接把这段代码拿过去用，无痛接入。</p>
+<p>项目地址：<a href="https://github.com/hellopao/gulp_plugin/tree/master/gulp-content-includer" target="_blank" rel="external">gulp-content-includer</a></p>
+<p>当然，既是插件，肯定不止这一种选择，再看另一个。</p>
+<p>二、<strong>gulp-file-include</strong></p>
+<p><strong>gulpfile</strong></p>
+<pre><code>var gulp = require(&apos;gulp&apos;),
+    fileinclude = require(&apos;gulp-file-include&apos;);
+
+gulp.task(&apos;fileinclude&apos;, function() {
+    gulp.src([&apos;./src/*.html&apos;])//主文件
+        .pipe(fileinclude({
+            prefix: &apos;@@&apos;,//变量前缀 @@include
+            basepath: &apos;./src/_include&apos;,//引用文件路径
+            indent:true//保留文件的缩进
+        }))
+        .pipe(gulp.dest(&apos;./dist&apos;));//输出文件路径
+});
+</code></pre><p>乍一看，差不多，但从上面的代码细节看，更易用，且供选择的功能也更多，这里没有完全列出，它还能处理导航条（选中态）、面包屑等网页常见元素的功能。</p>
+<p>贴一段导航条示例代码瞅瞅：</p>
+<p><strong>index</strong></p>
+<pre><code>@@include(&apos;./navbar.html&apos;,{
+    &quot;index&quot;: &quot;active&quot;
+})
+</code></pre><p><strong>navbar</strong></p>
+<pre><code>&lt;ul class=&quot;navbar&quot;&gt;
+    &lt;li @@if (context.index===&apos;active&apos; ) { class=&quot;active&quot; }&gt;
+        &lt;a href=&quot;index.html&quot;&gt;首页&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li @@if (context.about===&apos;active&apos; ) { class=&quot;active&quot; }&gt;
+        &lt;a href=&quot;about.html&quot;&gt;关于&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li @@if (context.contact===&apos;active&apos; ) { class=&quot;active&quot; }&gt;
+        &lt;a href=&quot;contact.html&quot;&gt;联系我们&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>编译结果：</p>
+<pre><code>&lt;ul class=&quot;navbar&quot;&gt;
+    &lt;li  class=&quot;active&quot; &gt;
+        &lt;a href=&quot;index.html&quot;&gt;首页&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li &gt;
+        &lt;a href=&quot;about.html&quot;&gt;关于&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li &gt;
+        &lt;a href=&quot;contact.html&quot;&gt;联系我们&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>以上只作为简介，更多功能可参考官方文档深入研究。</p>
+<p>项目地址：<a href="https://www.npmjs.com/package/gulp-file-include" target="_blank" rel="external">gulp-file-include</a></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>对于静态页面的模块化，可能多数人是不需要的，因为要么团队本身搭建有服务器，要么是个人开发的一个需要后台支持的项目，也有服务器，但知道有这么个可用的东西是有益的，需要的时候能派上用场，如果你有类似的经历和更好的解决方案，欢迎交流。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
