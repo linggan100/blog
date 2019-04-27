@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        小程序由浅入深（一） - 灵感之见 | Idea&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 学习让人快乐，而分享加倍 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#是什么"><span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遛一遛"><span class="toc-text">遛一遛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、json配置"><span class="toc-text">一、json配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网页三剑客"><span class="toc-text">网页三剑客</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        小程序由浅入深（一）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-04-16 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#学习、小程序" title="学习、小程序">学习、小程序</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>小程序登场已两年有余，它出现之后曾经有过非常多文章解读和赞美，随之而来的，网页开发领域又多出一项需求——小程序开发。那么小程序究竟是什么样子，能做什么，以及怎么做呢？这篇文章开始，我们来逐渐深入地了解。</p>
+<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>小程序，从名字能反应出第一个特点，体量小，相比那些动辄几百M甚至几G的应用来说，它会小很多。</p>
+<p>当然还有另外一个特点，是不需要下载安装，它是依托于某个平台的，比如现在存在的“微信、百度、支付宝”等，那些原本是独立应用的，变成了这些应用里面的网页一般，用的时候打开，不用的时候关掉。</p>
+<p>虽然这么说，它跟普通的网页开发又有着区别，比如：运行环境、运行机制等，这就导致有些东西的使用方法发生了改变，甚至不可用，具体后面会看到。</p>
+<h1 id="遛一遛"><a href="#遛一遛" class="headerlink" title="遛一遛"></a>遛一遛</h1><p>一些程序上的东西就不多说了，来直接看看一个小程序有哪些内容以及分别代表什么。</p>
+<h2 id="一、json配置"><a href="#一、json配置" class="headerlink" title="一、json配置"></a>一、json配置</h2><p><strong>app.json</strong></p>
+<p>能看出来，这应该是整个app的全局配置，哪些属于全局呢？</p>
+<p>比如，项目有哪些文件,界面框架的UI,底部tab等。看代码</p>
+<pre><code>{
+&quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/contact/contact&quot;,
+    &quot;pages/logs/logs&quot;
+],
+&quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#000&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;lingganzhijian&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;white&quot;
+},
+&quot;tabBar&quot;: {
+    &quot;list&quot;: [
+    {
+        &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+        &quot;text&quot;: &quot;首页&quot;
+    },
+    {
+        &quot;pagePath&quot;: &quot;pages/contact/contact&quot;,
+        &quot;text&quot;: &quot;contact&quot;
+    }
+    ]
+}
+}
+</code></pre><p>这样，项目的整体框架算是“撘”好了，有哪些页面文件，窗体的表现，底部导航的内容配置，有一个小惊喜就是，小程序的页面可以像app那样去定制自己的title区域了。</p>
+<p>但这只是一个很简单的开始，想把页面丰富起来，需要我们往里填充内容。</p>
+<h2 id="网页三剑客"><a href="#网页三剑客" class="headerlink" title="网页三剑客"></a>网页三剑客</h2><p>小程序也是程序，类似网页，那就也有三剑客供使用，只是名称和写法有不同，这里以微信小程序为例，它们是：<br>js、wxml、wxss，对应的就是js、html和css。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
