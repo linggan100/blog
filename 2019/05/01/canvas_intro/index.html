@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Canvas的绚烂起点 - 灵感之见 | Idea&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 学习让人快乐，而分享加倍 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas是什么"><span class="toc-text">Canvas是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭好舞台"><span class="toc-text">搭好舞台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绘制的几要素"><span class="toc-text">绘制的几要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本和图片"><span class="toc-text">文本和图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Canvas的绚烂起点
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-05-01 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Canvas、学习" title="Canvas、学习">Canvas、学习</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>很多人知道canvas，但不一定都熟悉或者经常使用，作为一种专项工具，如果业务不是跟图像或者图表强相关，的确不常用，但对它的学习和了解还是必要的，这篇文章我们就一起来入个门。</p>
+<h2 id="Canvas是什么"><a href="#Canvas是什么" class="headerlink" title="Canvas是什么"></a>Canvas是什么</h2><p>可以理解为，它提供了一块画布，在它所掌控的区域，可以运用各种方法绘制图形、文本，或者制作动画、处理图像，等等。</p>
+<p>通常我们能够看到一些炫酷的动画，很多都是canvas做出来的，但是需要各种元素和技巧综合使用，不是一蹴而就的，我们先从基础看起。</p>
+<h2 id="搭好舞台"><a href="#搭好舞台" class="headerlink" title="搭好舞台"></a>搭好舞台</h2><pre><code>var canvas = document.getElementById(&quot;canvas&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+
+&lt;canvas id=&quot;canvas&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;&lt;/canvas&gt;
+</code></pre><p>三行代码，完成舞台搭建。</p>
+<h2 id="绘制的几要素"><a href="#绘制的几要素" class="headerlink" title="绘制的几要素"></a>绘制的几要素</h2><p><strong>位置</strong>：从哪里开始</p>
+<p><strong>路径</strong>：图形的轨迹</p>
+<p><strong>轮廓</strong>：绘制空心图形</p>
+<p><strong>填充</strong>：绘制实心区域</p>
+<p>用代码来表达就是：</p>
+<p><strong>画笔位置</strong>——moveTo(x, y)</p>
+<p>将画笔移动到指定的坐标x、y。</p>
+<p><strong>直线</strong>——lineTo(x, y)</p>
+<p>绘制一条从当前位置到指定位置的直线。</p>
+<p><strong>圆弧</strong>——arc(x, y, radius, startAngle, endAngle, anticlockwise)</p>
+<p>画一个以（x,y）为圆心、以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</p>
+<p><strong>矩形</strong>——rect(x, y, width, height)</p>
+<p>绘制一个左上角坐标为（x,y），宽高为width以及height的矩形。</p>
+<p>几个基本的图形就是这样了，还有一种比较复杂的是贝塞尔曲线。</p>
+<p><strong>二次贝塞尔</strong>——quadraticCurveTo(cp1x, cp1y, x, y)</p>
+<p><strong>三次贝塞尔</strong>——bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</p>
+<p>什么是较复杂的图形呢？比如：气泡、心形，或者其他不是很常规的形状，如使用上面的方法就较难实现，贝塞尔曲线更能胜任。</p>
+<p>那其实除了这些，canvas还有两个动作要做，就是<strong>开始</strong>和<strong>结束</strong>绘制的指令，分别是：</p>
+<p><strong>beginPath()</strong> 和 <strong>closePath()</strong></p>
+<p>放在路径绘制的开端和末尾，就像这样：</p>
+<pre><code>ctx.beginPath();
+ctx.moveTo(125,125);
+ctx.lineTo(125,45);
+ctx.lineTo(45,125);
+ctx.closePath();
+</code></pre><p>（如果路径本身就是闭合的，可以省去closePath，但一般建议保留）</p>
+<p>完成这些之后，就可以进行下一步，绘制轮廓，或者填充区域，当然，可以两者都做：</p>
+<pre><code>ctx.stroke();  //轮廓
+ctx.fill();   //填充
+</code></pre><p>除了这两个操作，还有其他的操作，比如设置色值、线宽、是否旋转等，后面做丰富示例时我们再一一介绍。</p>
+<p>完整示例如下：</p>
+<pre><code>var canvas = document.getElementById(&quot;canvas&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.beginPath();
+ctx.moveTo(125,125);
+ctx.lineTo(125,45);
+ctx.lineTo(45,125);
+ctx.closePath();
+ctx.stroke();//轮廓
+
+ctx.beginPath();
+ctx.arc(200, 200, 40, 0, 36, false);
+ctx.closePath();
+ctx.fillStyle=&quot;rgb(2,100,30)&quot;;//填充颜色
+ctx.fill();//填充
+</code></pre><p><img src="/img/canvas_intro/canvas_01.png" alt=""><br><img src="/img/canvas_intro/canvas_02.png" alt=""></p>
+<p>这只是一个很简单的效果，我们也看到了路径之后其他设置项的出现，就是填充颜色，这只是其中之一，但这里暂时不详述，我们先看看，除了图形，canvas还能做什么？</p>
+<h2 id="文本和图片"><a href="#文本和图片" class="headerlink" title="文本和图片"></a>文本和图片</h2><p>文本很好实现，直接上代码：</p>
+<pre><code>ctx.font = &quot;48px serif&quot;; //字号、字体类型
+ctx.fillText(&quot;Hello world&quot;, 10, 300); // 文字内容和位置
+</code></pre><p>但其实文字也是有两种效果的，填充和轮廓，上面这种是填充：</p>
+<p><img src="/img/canvas_intro/canvas_03.png" alt=""></p>
+<p>如果把第二行代码换成：</p>
+<pre><code>ctx.strokeText(&quot;Hello world&quot;, 10, 50);
+</code></pre><p>就是轮廓了</p>
+<p><img src="/img/canvas_intro/canvas_04.png" alt=""></p>
+<p>除此之外，还有一些对齐方式和文本方向的设置，先略去。</p>
+<p>来看看图片</p>
+<p>图片分为两块，处理图片和绘制图片。</p>
+<p>获取同页面内的图片不再赘述，跟通常的dom操作一样，看看创建图片的方法：</p>
+<pre><code>var img = new Image();   // 创建一个&lt;img&gt;元素
+img.src = &apos;myImage.png&apos;; // 设置图片源地址
+</code></pre><p>获取或者创建了图像，怎么把它绘制到canvas里去呢？</p>
+<p><strong>drawImage(image, x, y)</strong></p>
+<p>其中 image 是 image 或者 canvas 对象，x 和 y 是其在目标 canvas 里的起始坐标。</p>
+<p>比如我们可以把上面的代码写成这样：</p>
+<pre><code>var ctx = document.getElementById(&apos;canvas&apos;).getContext(&apos;2d&apos;);
+    var img = new Image();
+    img.onload = function(){
+    ctx.drawImage(img,0,0);
+    }
+    img.src = &apos;/img/canvas_intro/canvas_01.png&apos;;
+</code></pre><p>上面这段代码，我把当前页面的三角形拿了过来，就是跟前面那个效果一样的了</p>
+<p><img src="/img/canvas_intro/canvas_01.png" alt=""></p>
+<p>这里只是把图像放入我们的工作区，如果想在这个区域画别的图形亦可，代码接着往下写就好了，有时候这可以为我们节省成本，比如，稍复杂一点的图像作为背景，简单的图形作为前景画出。</p>
+<p>那其实这个方法也不止这么简单，它有两个变种</p>
+<p><strong>缩放</strong></p>
+<p><strong>drawImage(image, x, y, width, height)</strong></p>
+<p>即指定图像大小，也就是可以根据需要进行缩放。</p>
+<p><strong>裁切</strong></p>
+<p><strong>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)</strong></p>
+<p>一长串参数看着有点头皮发麻，但就因为这样，才能让我们去操作细节，它是用来裁切图像的。</p>
+<p>前面四个用来处理图片源的剪切起始位置和大小，就跟我们平时截图一个道理，后面的参数，是将裁切后的图像，放置在画布的什么位置，以及那个区域的大小。如下所示：</p>
+<p><img src="/img/canvas_intro/canvas_slice.jpg" alt=""></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这篇文从零开始介绍了canvas的工具箱里有哪些工具，虽然尚不完整，作为开端，已经够多，先到这，更多功能我们下篇再聊~</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
