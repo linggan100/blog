@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最常用——box-shadow"><span class="toc-text">最常用——box-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#次常用——text-shadow"><span class="toc-text">次常用——text-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drop-shadow-拯救不开心"><span class="toc-text">drop-shadow,拯救不开心</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最常用——box-shadow"><span class="toc-text">最常用——box-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#次常用——text-shadow"><span class="toc-text">次常用——text-shadow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#drop-shadow，拯救不开心"><span class="toc-text">drop-shadow，拯救不开心</span></a></li></ol>
 </div>
     
 </div>
@@ -137,8 +137,8 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <p>说到页面效果，阴影是很小的元素，人们很少提及它。</p>
-<p>当然，面试的时候，还是有人会问你:<strong>扩展半径</strong>和<strong>模糊半径</strong>。</p>
+        <p>说到页面效果，阴影是很小的元素，很少被提及。</p>
+<p>当然，面试的时候，还是有人会问你：<strong>扩展半径</strong>和<strong>模糊半径</strong>。</p>
 <p>在设计师的眼里，也还是会纠结：范围太大、颜色太重之类的问题。</p>
 <p>我们简单列一下。</p>
 <h2 id="最常用——box-shadow"><a href="#最常用——box-shadow" class="headerlink" title="最常用——box-shadow"></a>最常用——box-shadow</h2><p>box-shadow说来很简单。</p>
@@ -171,12 +171,12 @@
 <pre><code>box-shadow: 0px 55px 0px 0px rgba(0, 0, 0, .7);
 </code></pre><p>盒子背后的秘密被暴露了出来，</p>
 <p><img src="/img/drop-shadow/shadow-back.png" alt=""></p>
-<p>哇偶，原来它只是在我们盒子的背后绘制了一个一模一样的盒子：</p>
+<p>哇偶，原来它只是在我们盒子的背后绘制了一个一模一样的形状：</p>
 <ul>
 <li>改变模糊半径，它会从边缘到中心逐渐变模糊</li>
 <li>改变扩展半径，会改变它的大小</li>
 </ul>
-<p>看到这里，你应该明白了什么，从上图可看出，阴影的初始大小，跟元素完全吻合，那么，给予它一个单边的偏移值，再给它负的扩展半径，它就能成为一个——三边都躲在元素背后，只有一边露出来的单边阴影~</p>
+<p>看到这里，你应该明白了什么，从上图可看出，阴影的初始大小跟元素完全吻合，那么，给予它一个单边的偏移值，再给它负的扩展半径，它就能成为一个——三边都躲在元素背后，只有一边露出来的单边阴影~</p>
 <p><img src="/img/drop-shadow/single-test.png" alt=""></p>
 <p>(发现长得有点像U盘，哈哈)</p>
 <p>你一定想尝试，模糊半径负值会怎样？嗯，它没了…</p>
@@ -201,15 +201,15 @@
 </code></pre><p><img src="/img/drop-shadow/3d-shadow.png" alt=""></p>
 <p><strong>火焰</strong></p>
 <pre><code>text-shadow: 0 0 20px #fefcc9,
-                 10px -10px 30px #feec85,
-                 -20px -20px 40px #ffae34,
-                 20px -30px 35px #ec760c,
-                 -20px -40px 40px #cd4606,
-                 0 -50px 65px #973716,
-                 10px -70px 70px #451b0e;
+             10px -10px 30px #feec85,
+             -20px -20px 40px #ffae34,
+             20px -30px 35px #ec760c,
+             -20px -40px 40px #cd4606,
+             0 -50px 65px #973716,
+             10px -70px 70px #451b0e;
 </code></pre><p><img src="/img/drop-shadow/huoyan-shadow.png" alt=""></p>
 <p>你可能会说，这样的场景很少，不实用。我同意，但<strong>创意并不一定很常用，还可以体现可能性</strong>。</p>
-<h2 id="drop-shadow-拯救不开心"><a href="#drop-shadow-拯救不开心" class="headerlink" title="drop-shadow,拯救不开心"></a>drop-shadow,拯救不开心</h2><p>主角终于登场，怎么叫不开心？常规方法突然不适用，一筹莫展的时候。</p>
+<h2 id="drop-shadow，拯救不开心"><a href="#drop-shadow，拯救不开心" class="headerlink" title="drop-shadow，拯救不开心"></a>drop-shadow，拯救不开心</h2><p>主角终于登场，怎么叫不开心？常规方法突然不适用，一筹莫展的时候。</p>
 <p>先来看一个之前分享过的效果——渐变字体。</p>
 <p>代码：</p>
 <pre><code>background: linear-gradient(to bottom, #f44e30 0%,#29db35 100%); 
@@ -230,7 +230,7 @@
 <pre><code>text-shadow: 0 10px 0px rgba(0,0,0,.9);
 </code></pre><p>我们看到似曾相识的一幕</p>
 <p><img src="/img/drop-shadow/text-shadow-true.png" alt=""></p>
-<p>跟box-shadow类似，text-shadow在字体本身的位置上，绘制了一个一样形状的图层，只不过，这里有个层级的问题，正常情况下，阴影在字体前，而当我们把字体填充色设置为transparent，用它来裁剪背景时，它就盖到了背景之上，这样就得不到我们想要的效果。</p>
+<p>跟box-shadow类似，text-shadow在字体本身的位置上，绘制了一个一样形状的图层，只不过，这里有个层级的问题，正常情况下，阴影在字体后，而当我们把字体填充色设置为transparent，用它来裁剪背景时，阴影就盖到了背景之上，这样就得不到我们想要的效果。</p>
 <p>所以，无解？</p>
 <p>有个人不答应——drop-shadow</p>
 <p>试一下，将代码改成</p>
@@ -253,8 +253,8 @@
 <blockquote>
 <p>box-shadow会应用到元素矩形的边框盒子，而drop-shadow()滤镜会应用到元素透明的轮廓。应用范围包括阿尔法透明度，保持阴影与轮廓吻合，或者给通过clip-path剪切的元素添加阴影。</p>
 </blockquote>
-<p>慢慢体会这句话，对于上面发生的一切，你可能就豁然开朗了。</p>
-<p>当然，你不要犯我犯过的错，不能点到为止，你需要明白的是，它不只能解决这个问题，而是能够应对这一类问题，适用于几乎所有不规则形状的投影，至于还有什么，相信你会遇到的~</p>
+<p>慢慢体会，对于上面发生的一切，你可能就豁然开朗了。</p>
+<p>当然，你不要犯我犯过的错，不能点到为止，你需要明白的是，它不止能解决这个问题，而是能够应对这一类问题，适用于几乎所有不规则形状的投影，相信你会遇到的~</p>
 <p>除此之外，它还有另一个优势，大家知道，box-shadow的渲染比较耗浏览器的性能，特别是在有动画的时候，drop-shadow很好地缓解了这个问题，所以，它十分值得被你选用。</p>
 <p>那么drop-shadow是不是可以替代box-shadow呢？可惜并不能。相比box-shadow，它少了两项技能：</p>
 <p>1、扩展半径，它的效果总会是模糊的，无法绘制出box-shadow那种实线<br>2、无法应用多重阴影</p>
