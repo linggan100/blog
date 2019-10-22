@@ -354,8 +354,9 @@ body {
   margin-bottom: 5px;
   color: #101010;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
   transition: color 0.4s;
+  font-family: Arial, "Microsoft YaHei", serif;
 }
 .post-preview .post-info a h3:hover {
   color: #4990E2;
@@ -588,7 +589,8 @@ body {
   margin-bottom: 5px;
   color: #101010;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
+  font-family: Arial, "Microsoft YaHei", serif;
 }
 .post-container .post-meta {
   text-align: center;
@@ -644,9 +646,10 @@ body {
   line-height: 30px;
   text-indent: 2em;
   letter-spacing: 1px;
+  font-family: Arial, "Microsoft YaHei", serif;
 }
 .post-content p img {
-  width: 80%;
+  width: 50%;
 }
 .post-content ul,
 .post-content ol {
@@ -670,9 +673,11 @@ body {
 .post-content pre {
   text-indent: 0;
   padding: 10px;
+  background: #0b3046e3;
+  border-radius: 3px;
 }
 .post-content pre code {
-  color: #4c64ca;
+  color: #e4e4c6eb;
   line-height: 175%;
 }
 .post-content h1 {
