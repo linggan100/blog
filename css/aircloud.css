@@ -624,12 +624,11 @@ body {
   border-collapse: collapse;
 }
 .post-content blockquote {
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
-  margin-left: 2em;
-  margin-right: 2em;
-  padding-left: 0;
-  padding-right: 0;
+  border-left: 4px solid #7878c1;
+  background: #eeefe9;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 3px;
 }
 .post-content blockquote p {
   margin-top: 10px;
@@ -643,7 +642,7 @@ body {
 .post-content p {
   color: #404040;
   font-size: 14px;
-  line-height: 30px;
+  line-height: 1.3;
   text-indent: 2em;
   letter-spacing: 1px;
   font-family: Arial, "Microsoft YaHei", serif;
