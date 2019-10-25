@@ -640,12 +640,13 @@ body {
   color: #4990E2;
 }
 .post-content p {
-  color: #404040;
-  font-size: 14px;
-  line-height: 1.3;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.8;
   text-indent: 2em;
   letter-spacing: 1px;
-  font-family: Arial, "Microsoft YaHei", serif;
+  font-weight: 300;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
 }
 .post-content p img {
   width: 50%;
@@ -657,7 +658,7 @@ body {
 .post-content ul li,
 .post-content ol li {
   list-style: none;
-  color: #404040;
+  color: #000;
   font-size: 14px;
   line-height: 30px;
   text-indent: 2em;
@@ -680,32 +681,34 @@ body {
   line-height: 175%;
 }
 .post-content h1 {
-  color: #333333;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .post-content h2 {
-  color: #333333;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  color: #000000;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-left: 6px solid #61ad94;
+  padding: 3px 0 3px 10px;
 }
 .post-content h3 {
-  color: #333333;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .post-content h4 {
-  color: #333333;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .post-content h5 {
-  color: #333333;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .post-content h6 {
-  color: #333333;
+  color: #000000;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -718,7 +721,7 @@ body {
 .post-content li p {
   display: inline;
 }
-.index-about {
+.site-slogan {
   text-align: center;
   width: 100%;
   margin-top: 45px;
@@ -726,13 +729,13 @@ body {
   opacity: 0;
   animation: showBlock 1.6s forwards;
 }
-.index-about i {
+.site-slogan i {
   font-size: 15px;
-  font-family: "italic" !important;
+  font-family: cursive !important;
   font-weight: 300;
   color: #444444;
 }
-.index-about-mobile {
+.site-slogan-mobile {
   display: none;
 }
 .index-container {
@@ -744,6 +747,7 @@ body {
   display: flex;
   flex-direction: row;
   background-color: white;
+  padding-top: 5%;
 }
 .index-container .index-left {
   width: 240px;
@@ -787,19 +791,19 @@ body {
     max-width: 100%;
     flex: 1;
   }
-  .index-about {
+  .site-slogan {
     display: none;
   }
-  .index-about-mobile {
+  .site-slogan-mobile {
     display: block;
     text-align: center;
     width: 100%;
     margin-top: 0;
     margin-bottom: 40px;
   }
-  .index-about-mobile i {
+  .site-slogan-mobile i {
     font-size: 15px;
-    font-family: "italic" !important;
+    font-family: cursive !important;
     font-weight: 300;
     color: #444444;
   }
@@ -823,14 +827,14 @@ body {
   box-shadow: none;
   outline: none;
   border-radius: 6px;
-  width: 60px;
-  height: 24px;
+  width: 70px;
+  height: 34px;
   text-align: center;
   color: white;
-  background-color: orange;
+  background-color: #d9534f;
 }
 .donate-container .donate-button button:active {
-  background-color: darkorange;
+  background-color: #c9302c;
 }
 .donate-container .donate-img-container {
   display: flex;
@@ -939,7 +943,7 @@ code {
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #555;
+  color: #c14f4f;
   background: #eee;
   border-radius: 3px;
   font-size: 13px;
