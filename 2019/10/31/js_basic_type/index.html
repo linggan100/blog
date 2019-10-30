@@ -164,8 +164,8 @@ typeof [] // &quot;object&quot;
 <p>那么问题来了，想知道是不是数组怎么办？？</p>
 <h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>instanceof登场了，它是作为一种java的运算符被引进的，能够弥补typeof有时无法返回确切类型的缺陷，比如：</p>
 <pre><code>var oStringObject = new String(&quot;hello world&quot;); 
-console.log(typeof oStringObject);//object
-console.log(oStringObject instanceof String);// true
+typeof oStringObject;//object
+oStringObject instanceof String;// true
 </code></pre><p>当然，我们所提的数组它也能做到</p>
 <pre><code>var _array = [1,2,3];
 typeof _array; // object
@@ -200,7 +200,7 @@ toString.call(null); // [object Null]
 </code></pre><p>至此，检测类型的方法简单介绍完了，来看转换。</p>
 <h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>转换意味着变化，这个变化是运行时发生的，也是JavaScript语言的特点之一——<strong>动态类型</strong>。</p>
 <p>某种程度上，它因为动态类型被吐槽，可能导致数据“失控”或者bug难以定位，所以近两年TypeScript挺身而出，本文不讨论。</p>
-<p>类型转换通常体现在“数值、字符串、布尔值”这三种原始类型上。</p>
+<p>类型转换通常体现在“<strong>数值、字符串、布尔值</strong>”这三种原始类型上。</p>
 <h3 id="显式转换"><a href="#显式转换" class="headerlink" title="显式转换"></a>显式转换</h3><p>主要使用<code>Number()</code>、<code>String()</code>和<code>Boolean()</code>三个函数。</p>
 <ul>
 <li><strong>Number()</strong></li>
@@ -218,7 +218,7 @@ null
 “123abc”、undefined——NaN
 &quot;&quot;、null、false——0
 true——1
-</code></pre><p>除此之外，还有两个方法可以进行数值转换，但只对字符串有效，它们是<code>parseInt()</code>、<code>parseFloat()</code>，顾名思义，将字符串转换为整型或者浮点型数字，相比之下，它们的要求比<code>Number()</code>更宽松。</p>
+</code></pre><p>除此之外，还有两个方法可以进行数值转换，但<strong>只对字符串有效</strong>，它们是<code>parseInt()</code>、<code>parseFloat()</code>，顾名思义，将字符串转换为整型或者浮点型数字，相比之下，它们的要求比<code>Number()</code>更宽松。</p>
 <p>比如：“123abc”，会转换成 123，但也是有规则的，它不会跳跃着识别，<strong>首次碰到非数字字符后</strong>，就停止转换，如：“123abc456”，会转换成“123”，而“abc123”则是NaN。</p>
 <p><code>Number()</code>方法的参数是对象时，将返回NaN，除非是包含单个数值的数组，Number([3])会转换为3。</p>
 <ul>
@@ -249,13 +249,13 @@ Boolean(&apos;&apos;) // false
 </code></pre><p>true和false这两个布尔值不会发生变化。</p>
 <pre><code>Boolean(true) // true
 Boolean(false) // false
-</code></pre><p>对象也不再搞特殊化，但是所有对象，包括空对象和false对应的布尔对象new Boolean(false)，转换结果均为true。</p>
+</code></pre><p>对象也老实返回布尔值，但依然特殊——<strong>所有对象，包括空对象和false对应的布尔对象new Boolean(false)，转换结果均为true</strong>。</p>
 <pre><code>Boolean({}) // true
 Boolean([]) // true
 Boolean(new Boolean(false)) // true
-</code></pre><p>至此，你可以这么理解：<strong>凡是具备正常值（0除外）和对象的布尔转换都是true，其他为false</strong>。</p>
-<h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p>相对于显式转换，隐式转换在JS代码中也是随处可见。</p>
-<p>遇到以下三种情况时，JavaScript 会自动转换数据类型，用户不可见。</p>
+</code></pre><p>至此，你可以这么理解：<strong>具备正常值（0除外）的变量类型和对象的布尔转换都是true，其他为false</strong>。</p>
+<h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p>隐式转换在JS代码中也是随处可见，我们可能不会写很多显示转换，隐式转换却在自动执行着。</p>
+<p>遇到以下三种情况时，JavaScript 会自动转换数据类型。</p>
 <ul>
 <li><p>不同类型的数据运算</p>
 </li>
@@ -265,11 +265,11 @@ Boolean(new Boolean(false)) // true
 </li>
 </ul>
 <p>自动转换的规则是：<strong>预期什么类型的值，就调用该类型的转换函数</strong>。</p>
-<p>下面稍作具体介绍。</p>
+<p>有点玄乎，下面具体介绍。</p>
 <ul>
 <li><strong>自动转换为布尔值</strong></li>
 </ul>
-<p>预期为布尔值的地方，系统内部会自动调用Boolean函数将其转换。</p>
+<p>预期为布尔值的地方，系统内部会自动调用Boolean函数将其转换，比如很常用的条件判断语句。</p>
 <pre><code>if ( !undefined &amp;&amp; !null &amp;&amp; !0 &amp;&amp; !NaN &amp;&amp; !&apos;&apos;) {
     console.log(&apos;true&apos;);
 } // true
@@ -283,7 +283,7 @@ expression ? true : false
 <li><strong>自动转换为字符串</strong></li>
 </ul>
 <p>JavaScript 遇到预期为字符串的地方，就会将非字符串的值自动转为字符串。具体规则是，先将复合类型的值转为原始类型的值，再将原始类型的值转为字符串。</p>
-<p>字符串的自动转换，主要发生在字符串的<strong>加法</strong>运算时。当一个值为字符串，另一个值为非字符串，则后者转为字符串。</p>
+<p>字符串的自动转换，主要发生在<strong>加法</strong>运算时。当一个值为字符串，另一个值为非字符串，则后者转为字符串。</p>
 <pre><code>&apos;5&apos; + 1 // &apos;51&apos;
 &apos;5&apos; + true // &quot;5true&quot;
 &apos;5&apos; + false // &quot;5false&quot;
@@ -298,7 +298,7 @@ expression ? true : false
 width: &apos;100&apos;
 };
 obj.width + 20 // &quot;10020&quot;
-</code></pre><p>上面代码中，开发者可能期望返回120，但是由于自动转换，实际上返回了一个字符10020。</p>
+</code></pre><p>开发者可能期望返回120，但是由于自动转换，实际上返回了一个字符10020。</p>
 <ul>
 <li><strong>自动转换为数值</strong></li>
 </ul>
