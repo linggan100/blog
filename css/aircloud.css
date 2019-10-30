@@ -624,8 +624,8 @@ body {
   border-collapse: collapse;
 }
 .post-content blockquote {
-  border-left: 4px solid #7878c1;
-  background: #eeefe9;
+  border-left: 4px solid rgba(68, 150, 48, 0.8);
+  background: rgba(238, 239, 233, 0.6);
   margin: 10px 0;
   padding: 10px 20px;
   border-radius: 3px;
@@ -653,7 +653,7 @@ body {
 }
 .post-content ul,
 .post-content ol {
-  padding-left: 2em;
+  padding-left: 0;
 }
 .post-content ul li,
 .post-content ol li {
@@ -724,7 +724,7 @@ body {
 .site-slogan {
   text-align: center;
   width: 100%;
-  margin-top: 45px;
+  margin-top: 25px;
   margin-bottom: 40px;
   opacity: 0;
   animation: showBlock 1.6s forwards;
@@ -813,6 +813,10 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
+}
+.donate-container .i-pencil {
+  width: 70px;
 }
 .donate-container .donate-button {
   margin-bottom: 10px;
