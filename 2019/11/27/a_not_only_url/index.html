@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        &lt;a&gt;=链接？你错了 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-text">URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#accessKey（快捷键）"><span class="toc-text">accessKey（快捷键）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#download（下载）"><span class="toc-text">download（下载）</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        &lt;a&gt;=链接？你错了
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-11-27</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>通常情况，我们知道一个写了<code>&lt;a&gt;</code>标签的地方应该是个链接，点击会产生跳转的动作，当然，我们也可以不使用<code>&lt;a&gt;</code>，用脚本完成同样的功能。但<code>&lt;a&gt;</code>的用途仅限于此吗？</p>
+<p>当然不是，其实你可能已经体验过它们，只是没有深究过它怎样具备了那样的能力，本文我们就来窥探一番。</p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>先看最常见的，示例如下：</p>
+<pre><code>&lt;a id=&quot;test&quot; href=&quot;http://ideazhao:passwd@example.com:8081/index.html?order=1#detail&quot;&gt;test&lt;/a&gt;
+</code></pre><p>这样的url你可能很熟悉，我们通过Location对象的属性提取细节。</p>
+<pre><code>var a = document.getElementById(&apos;test&apos;);
+a.hash // &quot;#detail&quot;
+a.hostname // &quot;example.com
+a.password // &quot;passwd&quot;
+a.pathname // &quot;/index.html&quot;
+a.port // &quot;8081&quot;
+a.search // &quot;?order=1&quot;
+a.username // &quot;ideazhao&quot;
+</code></pre><p>这些能力，你可能不知道，也或许不知道，但没关系，现在你知道了。</p>
+<h2 id="accessKey（快捷键）"><a href="#accessKey（快捷键）" class="headerlink" title="accessKey（快捷键）"></a>accessKey（快捷键）</h2><p>我们每天都在使用快捷键，但你想过可以用js代码去设置我们想要的快捷键来完成跳转么？还是上面的示例。</p>
+<pre><code>var a = document.getElementById(&apos;test&apos;);
+a.accessKey = &apos;g&apos;;
+</code></pre><p>如果你忍不住试了一下会发现，怎么摁“g”都没有反应，是的，快捷键跟所使用的浏览器或者系统是相关的，像我们使用的其他快捷键一样，通常需要配合ctrl或者alt等功能键一起才会生效，mac中的chrome浏览器就是“Control + Alt + key”，具体规则可参考此链接 ——<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey" target="_blank" rel="external">accesskey</a></p>
+<p>你可能有个疑问，既然是属性，可否直接在标签上设置呢？答案是可以，像这样</p>
+<pre><code>&lt;a href=&quot;https://www.baidu.com/&quot; accessKey=&apos;g&apos;&gt;跳转百度&lt;/a&gt;
+</code></pre><p>也是生效的。</p>
+<h2 id="download（下载）"><a href="#download（下载）" class="headerlink" title="download（下载）"></a>download（下载）</h2><p>download属性表示当前链接不是用来浏览，而是用来下载的。它的值是一个字符串，即用户下载得到的文件名。</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
