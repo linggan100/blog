@@ -624,15 +624,15 @@ body {
   border-collapse: collapse;
 }
 .post-content blockquote {
-  border-left: 4px solid rgba(68, 150, 48, 0.8);
-  background: rgba(238, 239, 233, 0.6);
+  border-left: 4px solid rgba(68, 150, 48, 0.4);
+  background: rgba(238, 239, 233, 0.4);
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 3px 10px 3px 20px;
   border-radius: 3px;
 }
 .post-content blockquote p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #666666;
 }
 .post-content a {
@@ -935,7 +935,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
@@ -1084,6 +1084,7 @@ pre .coffeescript .title {
 pre .keyword,
 pre .javascript .function {
   color: #8959a8;
+  margin-right: 5px;
 }
 .footer {
   width: 100%;

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        【JS-tips】引用类型——地址 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【JS-tips】引用类型——地址
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-10</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#学习、javascript" title="学习、javascript">学习、javascript</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>说“引用类型”，因为它有个弯儿不好理解——什么是引用？</p>
+<p>JS数据类型分两种：基本类型和引用类型。</p>
+<p>当我们定义变量的时候，实际是在计算机的内存中为数据分配一份存储空间。</p>
+<p>表面上看：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<p>我们将数字3赋给了变量a，将数组[3]给了变量b，二者并无区别。</p>
+<p>多一个操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line"><span class="keyword">var</span> d = b;</span><br></pre></td></tr></table></figure>
+<p>打印如下</p>
+<blockquote>
+<p>c：3<br>d: [1,2,3]</p>
+</blockquote>
+<p>来一点改变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">5</span>;</span><br><span class="line">d[<span class="number">1</span>] = [<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<p>再看打印结果</p>
+<blockquote>
+<p>c：5<br>a：3<br>d: [1,5,3]<br>b：[1,5,3]</p>
+</blockquote>
+<p>到此我们可以发现不同之处。</p>
+<p><strong>基本类型赋值前后的变化互不影响，而引用类型产生了影响</strong>。</p>
+<p>发生了什么？</p>
+<p>基本类型在做赋值的时候，是找了一个新的存储空间，把自身的<strong>值</strong>复制一份出去，然后两者相互独立，改一方不影响另外一方。</p>
+<p>引用类型则不同，它是把存储值的<strong>地址</strong>放在了另外一个空间里，不论哪个地址的内容改了，就都会发生改变。打个比方，就像两人拿了同一个保险箱的钥匙，不论谁从那个箱子放东西、取东西，另外一人打开箱子都会看到变化。</p>
+<p>那么引用类型有哪些？</p>
+<p>常规对象：Object、Array、Date、RegExp、Function</p>
+<p>基本包装类：Boolean、Number、String</p>
+<p>单体内置对象：Global、Math</p>
+<p>可以看出，种类很多，而且JS是一门基于对象的语言，对象恰恰是引用类型的值，当我们创建了一个对象，就可以有一系列丰富的特性和操作，譬如：</p>
+<ul>
+<li>属性，用于存取值</li>
+<li>方法，用于执行特定操作</li>
+<li>原型链，可以继承或者共享以上两者</li>
+</ul>
+<p>更为方便的是，javaScript语言本身已经提供了颇为丰富的操作方法，在使用引用类型时，可以不定义就直接使用，这里不做深究，聊具体对象的时候再详述。</p>
+<p>有这么几点需要说一下：</p>
+<ul>
+<li><p>引用类型看似并列关系，但所有类型都从Object继承了基本的行为——toString、valueOf等，且它们沿原型链向上追溯最终是到Object，可以理解为，Object是个基对象，其他类型添加了各自独有的属性或者方法做了扩展。</p>
+</li>
+<li><p>函数是Function类型的实例，所以它也是对象，也有方法。</p>
+</li>
+<li><p>每个包装类都可以对应到同名的基本类型，在读取基本类型的时候就会创建对应的对象，从而方便操作，但<strong>在操作的执行语句执行完之后，便立即销毁</strong>。</p>
+</li>
+</ul>
+<p>意思是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">a.name = <span class="string">"number"</span>;</span><br></pre></td></tr></table></figure>
+<p>当执行到第二条语句的时候，会自动创建一个Number()对象，然后把”number“赋给对象的name属性，但是这条语句执行完之后马上就销毁，所以并不能继续访问或者操作a.name。</p>
+<ul>
+<li>在所有代码执行之前，就已经存在两个对象，Global和Math，你可能对Global感到陌生，但一定对window不陌生，它就是web浏览器所定义的，用来承担Global角色的对象。</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>”巧妇难为无米之炊“，基本类型是一门语言的基石，他们用于存储、计算、输出，但引用类型的存在才真正使JavaScript变得灵活和强大起来，理解和掌握它们就尤为重要，本文只是一篇小tips，后面我们继续探讨。</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
