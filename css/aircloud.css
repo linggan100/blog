@@ -659,9 +659,9 @@ body {
 .post-content ol li {
   list-style: none;
   color: #000;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 30px;
-  text-indent: 2em;
+  text-indent: 1em;
   letter-spacing: 1px;
   margin-bottom: 5px;
   margin-top: 5px;
