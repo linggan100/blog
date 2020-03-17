@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        【算法和数据结构】—栈 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈是什么"><span class="toc-text">栈是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栈的实现"><span class="toc-text">栈的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#试一试"><span class="toc-text">试一试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栈的应用"><span class="toc-text">栈的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数设计"><span class="toc-text">函数设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【算法和数据结构】—栈
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-17</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#JavaScript、算法" title="JavaScript、算法">JavaScript、算法</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>上一篇我们说了”列表”，是个相对简单的结构，如果数据存储的顺序不重要，也不必对数据进行查找，列表就很合适，但如果有特定的要求，“列表”就显得简陋了，本文开始，介绍一些更高级的结构。</p>
+<h2 id="栈是什么"><a href="#栈是什么" class="headerlink" title="栈是什么"></a>栈是什么</h2><p>关于“栈”有个经典的比喻，就是“放盘子”，我们平时在家吃饭洗盘子，都是先放最底下一个，然后一个一个往上摞，拿盘子也是从上面拿，即“存、取”都是从最上面进行操作，即“LIFO(last in first out)”,这样的操作就很快，也方便实现。</p>
+<p>在讲JS的时候，不会很经常地提及“栈”这个东西，但它却默默地在背后发挥作用，比如：表达式求值、处理函数调用等。</p>
+<h2 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h2><p>存储数据的底层结构这里还是选择“数组”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.dataStore = [],  <span class="comment">//  初始化一个空栈</span></span><br><span class="line">  <span class="keyword">this</span>.top = <span class="number">0</span>,  <span class="comment">//  记录栈顶位置，有元素加入则发生变化</span></span><br><span class="line">  <span class="keyword">this</span>.push = push,   <span class="comment">//  入栈</span></span><br><span class="line">  <span class="keyword">this</span>.pop = pop,   <span class="comment">//  出栈</span></span><br><span class="line">  <span class="keyword">this</span>.getTop = getTop    <span class="comment">//  获取栈顶元素</span></span><br><span class="line">  <span class="keyword">this</span>.length = length    <span class="comment">//  获取元素个数</span></span><br><span class="line">  <span class="keyword">this</span>.clear = clear    <span class="comment">//  清空栈</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><code>push()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">ele</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.dataStore[<span class="keyword">this</span>.top++] = ele;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里特别注意 top++ 的位置，放在了后面，这样新入栈的元素就放在了top代表的当前位置，然后top指向下一个位置。</p>
+<p><code>pop()</code></p>
+<p>pop方法和push相反。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params">ele</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.dataStore[--<span class="keyword">this</span>.top];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接将长度减1，便将栈顶元素剔除了</p>
+<p><code>getTop()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTop</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.dataStore[<span class="keyword">this</span>.top-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>length()</code></p>
+<p>有时需要获取长度，知道有多少元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">length</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>clear()</code></p>
+<p>清空栈</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clear</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">delete</span> <span class="keyword">this</span>.dataStore;</span><br><span class="line">  <span class="keyword">this</span>.top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">this</span>.dataStore = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="试一试"><a href="#试一试" class="headerlink" title="试一试"></a>试一试</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plates = <span class="keyword">new</span> Stack();</span><br><span class="line">plates.push(<span class="string">"瓷的"</span>);</span><br><span class="line">plates.push(<span class="string">"红的"</span>);</span><br><span class="line">plates.push(<span class="string">"我的"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"个数:"</span>+ plates.length());  <span class="comment">//  个数:3</span></span><br><span class="line"><span class="built_in">console</span>.log(plates.getTop());  <span class="comment">// “我的”</span></span><br><span class="line"><span class="built_in">console</span>.log(plates.clear());</span><br></pre></td></tr></table></figure>
+<p>demo顺利运行，得到我们想要的结果。</p>
+<h2 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h2><p>那么栈可以应用在哪类需求里？</p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>“栈”经常被用于实现编程语言，递归便是其中一种，我们尝试实现。</p>
+<p>递归有很多典型使用场景，有一种叫“<strong>阶乘</strong>”。</p>
+<p>可以是这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> n*factorial(n-<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用“栈”就是这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fact</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s = <span class="keyword">new</span> Stack();</span><br><span class="line">  <span class="keyword">while</span>(n&gt;<span class="number">1</span>)&#123;</span><br><span class="line">    s.push(n--);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(s.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">    result*=s.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们来试一下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fact(<span class="number">5</span>);  <span class="comment">// 120</span></span><br></pre></td></tr></table></figure>
+<p>OK。</p>
+<p>虽然从代码量来看，第二种反而更多，不如前面简洁，但这只是一个很简单的例子，而且二者算法不同，栈仍然有着它更加强大的用途。</p>
+<h3 id="函数设计"><a href="#函数设计" class="headerlink" title="函数设计"></a>函数设计</h3><p>我们知道，函数的定义就是为了封装一个可复用的代码块。那么在重复应用的时候，参数是怎样传入的呢？<br>函数内一般都会定义局部变量，而不是单使用全局变量，那么局部变量存在哪里合适，而且能够在各种情况下都不发生冲突？</p>
+<p>“栈”就可以解决这些问题，函数调用的时候，将参数和变量都压到一个栈中，这样避免产生太多的空间占用，也可以利用栈指针的偏移来完成存取，只要对应的函数栈指针是不同的，就不会发生冲突。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>关于“栈”的介绍到此告一段落，为便于理解，并没有很高深的东西，但不代表它不强大，相反，如果能够在合适的场景加以利用，就会帮到大忙，大家在实践中共同摸索吧~</p>
+<p>这篇内容同样比较简单，但我们就是要由简到繁，由浅入深嘛，下篇见！~</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
