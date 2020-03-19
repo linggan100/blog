@@ -85,7 +85,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为何存在"><span class="toc-text">为何存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从对象谈起"><span class="toc-text">从对象谈起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类比理解"><span class="toc-text">类比理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测和设定"><span class="toc-text">检测和设定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#检测"><span class="toc-text">检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定"><span class="toc-text">指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享"><span class="toc-text">共享</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为何存在"><span class="toc-text">为何存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从对象谈起"><span class="toc-text">从对象谈起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类比理解"><span class="toc-text">类比理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查、设定"><span class="toc-text">检查、设定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#检查"><span class="toc-text">检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定"><span class="toc-text">指定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享"><span class="toc-text">共享</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
 </div>
     
 </div>
@@ -138,10 +138,10 @@
 <p>对原型的理解固然很重要，但它算不上最难，甚至称不上“难点”，仅仅是一个必须懂的东西而已，不信？听我一一道来。</p>
 <h2 id="为何存在"><a href="#为何存在" class="headerlink" title="为何存在"></a>为何存在</h2><p>首先你应该已经知道，JavaScript当中，几乎所有数据类型都能当做对象来用，为什么是“当做”，而不是“是”？因为像“数字、字符串”这些，它本来就不是对象（跟显式定义的对象相比），但如果你要像对象那样使用，比如：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line">num.toString(); <span class="comment">// "123"</span></span><br></pre></td></tr></table></figure>
-<p>它也能顺利进行，而且示例的这种用法极其常见，为什么？</p>
+<p>它也能顺利进行，而且示例的这种用法极为常见，为什么？</p>
 <p>这里经历了这么一个过程：</p>
 <ul>
-<li>内置包装类临时构造了一个Number()对象实例（执行完立即销毁）</li>
+<li>内置包装类临时构造了一个Number()对象实例</li>
 <li>Number()实例具有继承自Object()的方法toString()</li>
 </ul>
 <p>本次代码执行就由继承而来的toString()来完成。</p>
@@ -173,7 +173,7 @@
 <p>obj1——&gt;Origin——&gt;Object</p>
 </blockquote>
 <p>到此，虽然示例很简单，你应该明白了什么。</p>
-<h2 id="类比理解"><a href="#类比理解" class="headerlink" title="类比理解"></a>类比理解</h2><p>如果你还没懂（甚至上面提到的东西不知所云），也完全没关系，因为单纯搞懂原型链是怎么回事并不必要懂JS，<strong>优秀的思想和模式都是通用的</strong>。</p>
+<h2 id="类比理解"><a href="#类比理解" class="headerlink" title="类比理解"></a>类比理解</h2><p>如果还没懂（甚至上面提到的东西不知所云），也完全没关系，因为单纯搞懂原型链是怎么回事并不必要懂JS，<strong>优秀的思想和模式都是通用的</strong>。</p>
 <p>我们拿另一项Web技术CSS来做个类比。</p>
 <ul>
 <li>Object，相当于我们页面啥都还没写的时候，body所具备的样式；</li>
@@ -181,21 +181,21 @@
 <li>构造函数，就是“啥也没有”的div、p、span之类；</li>
 </ul>
 <p>当你直接写个div在页面上，再填几个文字进去，它同样有颜色和大小，但是你可以在div上定义新的规则将其覆盖，这就类似于对象属性的继承和覆盖。</p>
-<p>当你写个标题或者表单元素，它们会比上面的文字多一些特殊的自有样式，这就类似于String或者Array对象，它们除了继承自Object，还具备特有的属性和方法，当然，你也可以自定义把它们覆盖掉。</p>
+<p>当你写个标题或者表单元素，它们会比上面的文字多一些特殊的自有样式，这就类似于String或者Array对象，它们除了继承自Object，还具备特有的属性和方法，当然，你也可以自定义把它们覆盖掉（但通常不建议这么做）。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里的链就是  p——&gt;div——&gt;body</p>
 </blockquote>
 <p>看到这里，是不是舒服多了？来加个餐。</p>
-<h2 id="检测和设定"><a href="#检测和设定" class="headerlink" title="检测和设定"></a>检测和设定</h2><p>搞懂了”原型链“，顺带分享几个”检测“和”设定“原型的方法。</p>
-<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p><code>constructor</code></p>
+<h2 id="检查、设定"><a href="#检查、设定" class="headerlink" title="检查、设定"></a>检查、设定</h2><p>搞懂了”原型链“，顺带分享几个”检查“和”设定“原型的方法。</p>
+<h3 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h3><p><code>constructor</code></p>
 <p>  这是个不常被提到，但还挺管用的属性。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">date.constructor</span><br></pre></td></tr></table></figure>
 <p>如果只是这么写会有问题，它会把整个函数体返回，我们取其名字即可：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date.constructor.name <span class="comment">//  Date</span></span><br></pre></td></tr></table></figure>
-<p>但是，constructor并非不可修改，你可以给 Prototype 链中的任意对象添加一个名为 constructor 的属性或者对其进行修改，所以它引用的目标可能跟想象的有出入，不推荐使用。</p>
+<p>但是，constructor并非不可修改，你可以给 Prototype 链中的任意对象添加名为constructor的属性或者对其进行修改，所以它引用的目标可能跟想象的有出入，不推荐使用。</p>
 <p><code>instanceof</code></p>
-<p>这个方法更常用来判断数据类型，但它也可以用来判断某对象是否在另一个实例的原型链上，它返回一个布尔值，比如上例</p>
+<p>这个方法常用来判断数据类型，但它也可以用来判断某对象是否在另一个实例的原型链上，返回布尔值，比如上例</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date <span class="keyword">instanceof</span> <span class="built_in">Date</span>  <span class="comment">//  true</span></span><br></pre></td></tr></table></figure>
 <p>自定义构造函数同样适用</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> liming = <span class="keyword">new</span> Person();</span><br><span class="line">liming <span class="keyword">instanceof</span> Person;  <span class="comment">//  true</span></span><br></pre></td></tr></table></figure>
@@ -206,10 +206,10 @@
 <p>  <code>isPrototypeOf()</code></p>
 <p>  这种方法较新，也更直观和方便，在浏览器支持的情况下，可以优先选择。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.isPrototypeOf(date); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>知道了检测方法，再看指定。</p>
+<p>知道了检查方法，再看指定。</p>
 <h3 id="指定"><a href="#指定" class="headerlink" title="指定"></a>指定</h3><p>聊两个点：</p>
-<p>一，把某对象指定为另一个对象的原型<br>二，原型上定义属性/方法</p>
-<p>指定的目的是“继承”，因为并非所有的对象创建完毕之后就不再改变了，也或者我们需要它继承另外一个对象不一样的东西，这时候就需要变换/指定其他原型，我猜你会想到这么个方法</p>
+<p>一，把某对象指定为另一个对象的原型<br>二，在原型上定义属性/方法</p>
+<p>指定的目的是“继承”，因为并非所有的对象创建完毕之后就不再改变了，也或者我们需要它继承另外一个对象不一样的东西，这时候就要变换/指定其他原型，我猜你会想到这么个方法。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.prototype = b.prototype;</span><br></pre></td></tr></table></figure>
 <p>这个方法可以让a引用b，但它的机制可能不是你想要的，当你执行类似 a.prototype.myMethod = … 的赋值语句时也会修改到 b.prototype 对象本身。</p>
 <p>所以，想要创建一个更加稳妥的关联对象，要使用如下方法</p>
