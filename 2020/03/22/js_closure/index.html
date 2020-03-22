@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        【JS启示记】—闭包 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数就是闭包？"><span class="toc-text">函数就是闭包？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还有么？"><span class="toc-text">还有么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#它在哪儿？"><span class="toc-text">它在哪儿？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更大的用处"><span class="toc-text">更大的用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【JS启示记】—闭包
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-22</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#学习、JavaScript" title="学习、JavaScript">学习、JavaScript</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>“闭包”，可以排进JavaScript最难理解概念的前三，连那些正在从事“前端”职业的人，可能都没懂。</p>
+<p>这么说不是吓唬人，它并不难，但它的名字本身就有点不友好，“闭”什么？“包”什么？“闭什么包”？（此处自行脑补马某梅~）</p>
+<p>技术圈儿里从不缺少这类一部分人很懂，一部分人很不懂的晦涩概念。</p>
+<p>所以，在此先把名字的意思重塑一下，<strong>闭包 == 封闭 + 包裹</strong>。</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p><strong>“闭包”就是一种突破数据访问能力的方法</strong>。</p>
+<p>那么本身的访问机制是怎样的呢？</p>
+<p>我们知道，JavaScript的作用域，分全局和局部，局部其实也可称为“块级”。</p>
+<p>“块”即一对大括号包含的代码块。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不论是循环，还是条件判断语句，都在此范畴，但是在ES6之前，这样的包裹没有起到限制作用域的效果，所以，JavaSctipt的局部作用域通常由“函数”构成。</p>
+<p>变量定义在全局，就全局可访问，甚至修改，但定义在局部，只在局部可用，外部不可访问。</p>
+<h2 id="函数就是闭包？"><a href="#函数就是闭包？" class="headerlink" title="函数就是闭包？"></a>函数就是闭包？</h2><p>相信很多人曾为搞懂“闭包”看过不少资料，看着看着，就会看到这句话“函数就是闭包”。</p>
+<p>这句话简直是雪上加霜，为理解“闭包”增添了新一层迷雾。</p>
+<p>别怕，我们来段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log( a );</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> inner; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> global = outer();</span><br><span class="line">global(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>得嘞，这就是闭包达成的效果~</p>
+<p>我特意使用了方便理解的命名方式，这段代码的特点是：</p>
+<ul>
+<li>全局作用域定义了一个函数 outer</li>
+<li>outer 内部嵌套定义函数 inner</li>
+<li>inner 访问了 outer 的变量a</li>
+<li>outer 执行结果返回 inner</li>
+<li>返回的结果赋给了另一个全局变量 global</li>
+</ul>
+<p>于是，效果就是，<strong>global 成功访问了 outer 的所管辖区域的变量</strong>。</p>
+<p>这一路看下来是不是觉得挺正常的？可是，它本来无法访问的呀~</p>
+<p>先来看一句话：</p>
+<blockquote>
+<p>JavaScript的函数可以嵌套在其他函数中定义，这样它们就可以访问它们被定义时所处的作用域中的任何变量。这意味着JavaScript函数构成了一个闭包（closure），它给JavaScript带来了非常强劲的编程能力。</p>
+</blockquote>
+<p>这句话来自《JavaScript权威指南》函数章节的引言，有两个重点：</p>
+<p>一、函数<strong>构成</strong>闭包<br>二、可访问它被<strong>定义</strong>时所处的作用域</p>
+<p>所以，函数并不是闭包，而是闭包形成的土壤，上例中的global只是作为一种引用标识符，调用的还是内部的inner。</p>
+<p>可访问的，不是函数被调用时的作用域，而是定义时，这么一说，似乎一切都合理了。</p>
+<p>或许你有一种常识——垃圾回收机制，不再使用的内存空间会被释放掉。当函数在被调用、代码执行之后，其内部作用域就被销毁了，闭包的神奇之处就是消除这种机制所造成的影响。</p>
+<p>到这儿，我们回头再看看“封闭+包裹”是什么意思，“闭”就是局部作用域，而“包”是作用域的嵌套。</p>
+<h2 id="还有么？"><a href="#还有么？" class="headerlink" title="还有么？"></a>还有么？</h2><p>它只有一种形式吗？答案是否定的，不然它就没那么多用处了。</p>
+<p><strong>只要是传递了一个函数类型的值，不论形式，当函数在别处调用，都可以看到闭包的形成。</strong></p>
+<p>比如这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log( a ); <span class="comment">// 2</span></span><br><span class="line">  &#125;</span><br><span class="line">  another( inner ); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">another</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  fn(); <span class="comment">// 妈妈快看，这是闭包!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码中，anothier 是 outer之外的一个函数，但因为它传递了一个outer内部的函数 innner，继而能够访问到 outer 中定义的a。</p>
+<p>再看：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">      <span class="built_in">console</span>.log( a );</span><br><span class="line">    &#125;</span><br><span class="line">    fn = inner; <span class="comment">// 将 inner 分配给全局变量 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">another</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fn(); <span class="comment">// 妈妈快看，这也是闭包!</span></span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br><span class="line">another(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>这种像是前面两者的结合体，先定义了全局变量fn，在函数内部将inner赋给了fn，然后在another里调用fn()。</p>
+<p>以上几段代码，形式不同，但原理一致。</p>
+<h2 id="它在哪儿？"><a href="#它在哪儿？" class="headerlink" title="它在哪儿？"></a>它在哪儿？</h2><p>到这儿大家可能已经懂了什么是闭包，但上面的讲述只是为了方便理解，实际项目中，它不会那么乖巧、坦诚的暴露给你，它可能隐藏在成百上千行的代码中，所以到底哪些地方用了闭包？或者说它有什么用？</p>
+<p><strong>示例一</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wait</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">  &#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">wait(<span class="string">"你好, 闭包!"</span>);</span><br></pre></td></tr></table></figure>
+<p>我们写了个wait函数，其中设置了定时器，定时器内有个timer函数，然后调用wait函数，并传参。</p>
+<p>wait函数是马上执行的，但timer在1000毫秒之后才执行，这时候wait的作用域应该是已经被销毁了，但是依然可以正常输出”你好, 闭包!”。</p>
+<p><strong>示例二</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clickBtn</span>(<span class="params">name, selector</span>) </span>&#123;</span><br><span class="line">    $( selector ).click(<span class="function"><span class="keyword">function</span> <span class="title">listen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log( name );</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">clickBtn( <span class="string">"name"</span>, <span class="string">"selector"</span> );</span><br></pre></td></tr></table></figure>
+<p>这段代码可看出，我们给某按钮设置了负责点击行为的函数，在函数内部绑定了事件监听器，这样以来，也出现了作用域的嵌套，形成了闭包。</p>
+<p>以上两个示例均使用了“回调”，这是一种很常见的闭包形成方式，定时器、事件监听器、Ajax请求等都存在这种情况。</p>
+<p><strong>“坑”</strong></p>
+<p>这个坑大概所有人都掉过，就是循环。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123; </span><br><span class="line">  setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log( i );</span><br><span class="line">  &#125;, i*<span class="number">1000</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码目的很明显，从1开始，每隔一秒输出一个数字，每次递增1，正确的结果是1，2，3，4，5。</p>
+<p>试着运行它就会发现“诡异”的现象，它居然输出了5次6？5次好理解，6是什么？！</p>
+<p>这就要追究到js的任务运行机制，在循环体中，遇到定时器、事件监听器或其他类似执行体的时候，会先执行循环，将i从头到尾存储到一个栈当中，而里面的函数并不会在i值变化的时候马上执行，会依次进入任务队列，for循环结束后，队列中的函数才进入主线程执行，所以，这里i执行完最后一次迭代就是6，且被5个定时器输出了5次。</p>
+<p>怎么解决？较为常用的一种办法是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123; </span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123;</span><br><span class="line">      setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="built_in">console</span>.log( j );</span><br><span class="line">    &#125;, j*<span class="number">1000</span> );</span><br><span class="line">  &#125;)( i );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们加了个立即执行的匿名函数，这就为每次迭代创建了一个闭包环境，即使里面的函数体依然会等待执行，但正确的值已经被每个独立的作用域保存起来，执行的时候就能输出预期的结果。</p>
+<p>慢着，这么做不就是为了得到一个封闭的作用域吗？既然如此，干脆这样咯：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123; </span><br><span class="line">  setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log( i );</span><br><span class="line">  &#125;, i*<span class="number">1000</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ES6的出现给了我们更干净的处理方式，终于不用动歪脑筋了~</p>
+<h2 id="更大的用处"><a href="#更大的用处" class="headerlink" title="更大的用处"></a>更大的用处</h2><p>闭包的一项本领是什么？——<strong>局部作用域中的变量，跟外界相互独立，但可通过调用内部定义的函数访问</strong>。</p>
+<p>而这正是模块化所需要具备的：</p>
+<ul>
+<li>隐藏私有数据</li>
+<li>暴露共有方法</li>
+</ul>
+<p>所以，我们可以这么写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Module</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> something = <span class="string">"模块私有数据"</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(something);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    doSomething: doSomething,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = Module();</span><br><span class="line">foo.doSomething(); <span class="comment">// 模块私有数据</span></span><br></pre></td></tr></table></figure>
+<p>是不是很熟悉？也感受到了闭包的无处不在和强大？</p>
+<p>当然，模块化有多种形式，本文点到为止，后面单独介绍。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>对于“闭包”，我们需要了解：</p>
+<ul>
+<li>它是什么</li>
+<li>表现形式</li>
+<li>应用场景</li>
+</ul>
+<p>懂不懂“闭包”似乎成为工程师们的一道坎，相信读罢此文，你已经豁然开朗，如有问题，欢迎交流~</p>
+<p>下篇见！</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
