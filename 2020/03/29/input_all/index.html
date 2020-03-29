@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        你总问input多少种 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#表现"><span class="toc-text">表现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#手动输入"><span class="toc-text">手动输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击选择"><span class="toc-text">点击选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能性"><span class="toc-text">功能性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按钮"><span class="toc-text">按钮</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        你总问input多少种
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-29</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#学习，HTML" title="学习，HTML">学习，HTML</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>第一次听到这个问题，是一位前辈分享他面试别人的题目，乍一听，这么没营养的也问？</p>
+<p>或许他只是随便一说，我却记住了，因为转念一想，好像真说不全，text、submit、checkbox、radio…还有啥来着？</p>
+<p>常见的需求：</p>
+<ul>
+<li>登录/注册</li>
+<li>输入金额</li>
+<li>填写个人资料</li>
+</ul>
+<p>除此之外，其他场景貌似不多，但就算这些，也不是每款产品都需要，再加上HTML5加入的新成员，更加难以捉摸。</p>
+<p>本篇文章我们就一起回顾一下，当然，鉴于其本身内容较多，我们只看那些较“实用”的。</p>
+<h2 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h2><p>为更好区分和记忆，可分为如下几类。</p>
+<h3 id="手动输入"><a href="#手动输入" class="headerlink" title="手动输入"></a>手动输入</h3><p>input本意就是输入，所以，它肯定存在一个 text （文本）类型.</p>
+<p>但是，虽然都是文本，也有不同形式的特定需求。</p>
+<p><code>text</code>:文字</p>
+<p><code>number</code>:数字</p>
+<p><code>password</code>:密码</p>
+<p><code>tel</code>:电话号码</p>
+<p><code>email</code>:邮箱地址</p>
+<p><code>search</code>:搜索框</p>
+<p><code>url</code>:链接</p>
+<p>以上几种，从输入框的表面来看，只有数字是不同的，可以使用箭头操作。</p>
+<p>更多细节：</p>
+<ul>
+<li><p>number类型可以设置最大和最小值，且可以设置数字变化的幅度（step）</p>
+  <input type="number" min="10" max="20" step="2">
+</li>
+<li><p>密码的输入不可见</p>
+</li>
+<li><p>号码、url和邮箱类型，输入框获得焦点后，会弹出更利于输入的键盘种类，比如：纯数字，或者带有@、.com等符号。</p>
+</li>
+<li><p>跟搜索框相关的，一个是联想列表 datalist，每输入一个字，就会出现相关的搜索列表或者热搜词（当然，这些需要js和数据作为支撑），更强大的是，一边输入，一边直接出现相关的搜索结果。</p>
+</li>
+<li><p>它们中的大多数，看起来没有明显区分，但在浏览器实现层面，如果你使用了某个类型，而格式又不相符的时候，可能会有错误提示。</p>
+</li>
+</ul>
+<h3 id="点击选择"><a href="#点击选择" class="headerlink" title="点击选择"></a>点击选择</h3><p><code>radio</code>:单选<br><code>checkbox</code>:复选<br><code>time</code>:时间<br><code>date</code>:日期<br><code>month</code>:月份<br><code>week</code>:周<br><code>color</code>:颜色<br><code>range</code>:范围、界限</p>
+<p>这里需要注意的是，日期和时间，以及月份、周之间有什么区别呢？</p>
+<ul>
+<li>时间，几点几分</li>
+<li>日期，某年某月某天</li>
+<li>月，某年某月</li>
+<li>周，某年第几周</li>
+</ul>
+<p>它们都是指代某个时间点，但由于粒度不同，可以分别适配特定的场景，而不用再对数据进行额外的处理，当然，需要的话，也可以组合使用。</p>
+<h3 id="功能性"><a href="#功能性" class="headerlink" title="功能性"></a>功能性</h3><p><code>file</code>：上传文件。</p>
+<p><code>image</code>：可以把图片当做表单元素（按钮）来使用。</p>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p><code>button</code>:按钮<br><code>submit</code>:提交<br><code>reset</code>:重置</p>
+<p>三者看起来都是按钮的样子，且提交和重置按钮会自带文案，button则需要增加value才可以。</p>
+<p>从用处看，提交按钮是用来提交整个表单，而重置是将表单重置为默认值，一般来说，这是一个带有风险的操作，需谨慎使用。</p>
+<p>而button类型就是单纯地按钮，没有默认操作，需要JS绑定事件进行操作。</p>
+<p>还有一种，并非由用户输入，就是<code>hidden</code>类型，它可用于那种并不需要在页面展示，但仍用得到的数据。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>HTML的属性是个易忽视的点，大家习惯于用CSS实现样式，用JS来实现交互甚至数据传输，却忽视了HTML本身也可以做一些事情，譬如，笔者就曾被<code>editable</code>属性给惊呆了，所以，本文我们来看看，关于表单，有哪些能发挥重要作用的属性。</p>
+<p><code>disabled</code>:字面意思，我们定义类名时也常用，就是禁用。</p>
+<p><code>checked</code>:首次加载即被选中。</p>
+<p><code>readonly</code>:只读，不可更改。</p>
+<p><code>placeholder</code>:可输入内容的提示。</p>
+<p><code>autocomplete</code>:自动补全，一个增强体验的属性，很多时候可减少输入。</p>
+<p><code>autofocus</code>:自动获取焦点，在打开页面之后，帮助用户直接获取某表单的焦点进行输入。</p>
+<p><code>pattern</code>:规定输入字段的正则匹配模式。</p>
+<p><code>required</code>:必填项。</p>
+<p><code>novalidate</code>:提交表单时不验证。</p>
+<p>它们当中，有些不需要被设定某种值的属性是不需要写属性值的，比如：checked、required、readonly等。具体用法和效果，还请读者自行试验了~</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>我相信，你可能真的没想到，小小input居然有这么多种，就像曾经有人问我，我说”反正就是很多“，这么说也没错，但肯定是不会加分的，所以，本文简单汇总一下，就算温习了。</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
