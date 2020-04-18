@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Webpack上手指北 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化"><span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Webpack的理由"><span class="toc-text">使用Webpack的理由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置与方法"><span class="toc-text">配置与方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用loader"><span class="toc-text">常用loader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用插件"><span class="toc-text">常用插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Webpack上手指北
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-04-18</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Webpack" title="Webpack">Webpack</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#总结" title="总结">总结</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>近几年，打包构建工具层出不穷，前有Grunt、Gulp，后有Webpack、Rollup等，它们各有优势，均受到部分开发者的欢迎，本文聊聊Webpack的使用。</p>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>不论是新工具还是新技术，都是为了解决问题而存在，那么构建工具解决什么问题呢？</p>
+<p>众所周知，最初的网页十分简单，没有多少交互，代码量也少，但随着技术的发展，JavaScript已经不仅仅用来实现简单的表单提交等功能，引入多个js文件到页面中成为常态，但这种做法有很多缺点：</p>
+<p>1）需要手动维护文件的加载顺序。且多个js之间通常有依赖关系，难以清晰分辨谁依赖了谁。</p>
+<p>2）每一个<code>&lt;script&gt;</code>标签都需要向服务器发送请求，过多的请求会严重拖慢渲染速度。</p>
+<p>3）每个<code>&lt;script&gt;</code>标签都暴露在全局作用域，如果没有任何处理而直接在代码中进行变量或函数声明，就会造成全局污染。</p>
+<p>模块化解决了这些问题：</p>
+<ul>
+<li><p>通过分离模块，导入和导出，可以清晰地看到模块间的依赖关系。</p>
+</li>
+<li><p>借助工具进行打包，页面中只需要加载合并后的资源文件，减少了网络开销。</p>
+</li>
+<li><p>模块之间作用域隔离，彼此不会有命名冲突。</p>
+</li>
+</ul>
+<h2 id="使用Webpack的理由"><a href="#使用Webpack的理由" class="headerlink" title="使用Webpack的理由"></a>使用Webpack的理由</h2><p>打包工具众多，为什么选择Webpack？Webpack具备以下几点优势。</p>
+<p>1）默认支持多种模块标准，包括AMD、CommonJS，以及最新的ES6模块。这对于某些同时使用多种模块标准的工程非常有用，Webpack会帮我们处理好不同类型模块之间的依赖关系。</p>
+<p>2）完备的代码分割解决方案。可以分割打包后的资源，首屏只加载必要的部分，不重要的放到后面动态加载。这对于体积较大的应用尤为重要，可有效减小资源体积，提升首页渲染速度。</p>
+<p>3）可以处理各种类型的资源。除JavaScript以外，还可以处理样式、模板、图片等，而开发者需要做的仅仅是导入它们。比如你可以从JavaScript文件导入一个CSS或者PNG，而这一切最终都可以由下面讲到的loader来处理。</p>
+<p>4）庞大的社区支持。除了Webpack核心库以外，还有无数开发者为它编写周边插件和工具，大多数的需求你都可以找到现有解决方案。</p>
+<h2 id="配置与方法"><a href="#配置与方法" class="headerlink" title="配置与方法"></a>配置与方法</h2><p>看看怎么使用。</p>
+<p>依赖Node，这几乎是前端开发的标配，不多说。</p>
+<p>学习一种东西的时候最怕看到各种陌生概念，这里先捋一捋。</p>
+<p>为了便于理解，按照工作流程的阶段：</p>
+<p><code>entry</code>:流程的入口，告诉webpack从哪个文件开始打包，方式包括：字符串、对象、函数等。</p>
+<p><strong>字符串写法</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./entry/file.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+<p><strong>对象写法</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span> <span class="comment">//第三方库入口</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>多页面</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</span><br><span class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</span><br><span class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至于函数的方式，可以有逻辑处理的发挥空间，最终返回的还是字符串或者对象。</p>
+<p><code>chunk</code>:字面意思是代码块，存在依赖关系的模块在打包时被封装为一个chunk<br><code>bundle</code>:由chunk得到的打包产物</p>
+<p>所以三者的关系如图：</p>
+<p><img src="/img/webpack_use/chunk.jpg" alt=""></p>
+<blockquote>
+<p>先消除一个可能的误解，并非是一个entry项对应一个chunk，对应一个bundle，都可能是多个，后面会再说。</p>
+</blockquote>
+<p><code>output</code>:设置输出路径和文件</p>
+<p><strong>单入口</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'/public/assets'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+<p><strong>多入口</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    about: <span class="string">'./src/about.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].js'</span>,</span><br><span class="line">    path: __dirname + <span class="string">'/dist'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里就遇到了上面提到的”多对多“的关系。</p>
+<p>其中filename是输出资源文件名，不仅可以是名称，还可以是相对路径，而且目录不存在也没关系，会自动创建。</p>
+<p>可以看到，filename 使用了<code>[name]</code>，这是因为多个文件需要生成多个对应的文件，<code>[name]</code>类似模板语言，意图是根据入口文件动态生成文件名，以确保唯一性。</p>
+<p>当然，<code>[name]</code>只是模板变量之一，还有可以控制客户端缓存的<code>[hash]</code>、<code>[chunkhash]</code>等，可以精确地让相应文件在客户端得到更新。就像这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">  filename:<span class="string">'[name]@[hash].js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>loader</code>:字面意思是装载器，可以理解为”预处理器“，Webpack本身只认识JavaScript，对其他类型，比如：样式、图片等，必须预定义一个或多个loader对其进行转译，所以loader赋予webpack处理不同资源的能力，丰富了扩展性。</p>
+<p>用法示例如下：</p>
+<p>首先说明，loader不是webpack自带的，需要安装，比如我们处理样式。</p>
+<blockquote>
+<p>npm install –save-dev css-loader style-loader</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]     </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，loader的套路很简单：</p>
+<p>1) 文件类型<br>2) 对应loader</p>
+<p>需要说明的是：</p>
+<p>1) css-loader 本身仅处理样式的加载，并不负责将样式插入页面，所以通常配合 style-loader 一起使用，预处理器同样。<br>2) use数组当中的loader顺序是有讲究的，它是从后往前进行处理，搞错了顺序同样无法达到想要的效果。</p>
+<p><code>plugin</code>: loader是做某些类型文件的模块转换工作，相比之下，plugin是用来完成一些loader职责之外的任务，更多，更丰富，也增强了webpack的能力。</p>
+<p>用法如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;template: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>它的可配置项有很多，这里不再列举，只要知道它是一个具有 apply 属性的 JavaScript ，可以携带参数，所以要向plugin属性传入 new 实例。</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>说到这儿，你可能觉得都是零散的概念，它们应该放在哪儿？</p>
+<p>有一种”最佳实践“叫配置分离，即配置文件单独放在一个文件当中，node有package.json，webpack也有，我们上面提到的所有，都应该写在一个叫<code>webpack.config.js</code>的文件当中。譬如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span>,  <span class="comment">//模式，分为 development 和 production</span></span><br><span class="line">  entry: <span class="string">'./index.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'index.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]     </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;template: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最基本的配置就是这样了，实际开发中，可能会加入更多逻辑和工具，代码量会大大增加，但使用方法类似。</p>
+<p><a href="https://www.webpackjs.com/configuration/" target="_blank" rel="external">更多配置</a></p>
+<h2 id="常用loader"><a href="#常用loader" class="headerlink" title="常用loader"></a>常用loader</h2><p>说到这儿，你可能会问，我知道webpack拿loader作为工具，但有哪些工具可用呢？下面介绍几个：</p>
+<ul>
+<li>babel-loader</li>
+</ul>
+<p>用途大家都很熟，把ES6+代码编译为ES5，可以让大家在浏览器支持度不是很充分的情况下用新方法编码。</p>
+<p>推荐安装：<code>babel-loader @babel/core @babel/preset-env</code></p>
+<ul>
+<li>ts-loader</li>
+</ul>
+<p>用于连接Webpack和Typescript。</p>
+<ul>
+<li>html-loader</li>
+</ul>
+<p>前面说过，Webpack只认识js，这个loader用于将HTML文件转化为字符串并格式化，通过js加载。</p>
+<ul>
+<li>file-loader</li>
+</ul>
+<p>打包文件类型资源，返回publicPath。<br>对publicPath稍作解释，前面我们看到过path，它是资源打包路径，而publicPath是资源引用路径，即页面当中做引用的静态文件（图片等）。</p>
+<ul>
+<li>vue-loader</li>
+</ul>
+<p>这个应该很多人在用，处理vue组件，除此之外，可能还要安装vue-template-compiler以及前面提到的样式处理loader等。</p>
+<p><a href="https://www.webpackjs.com/loaders/" target="_blank" rel="external">更多loader</a></p>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><ul>
+<li>html-webpack-plugin</li>
+</ul>
+<p>自动生成html文件，并且引用相关的 assets 文件。</p>
+<ul>
+<li>mini-css-extract-plugin</li>
+</ul>
+<p>分离CSS，将CSS提取到单独的文件中，支持CSS和sourceMap的按需加载。</p>
+<ul>
+<li>uglifyjs-webpack-plugin</li>
+</ul>
+<p>对js进行压缩混淆。</p>
+<ul>
+<li>Hot Module Replacement</li>
+</ul>
+<p>浏览器自动更新，实时预览修改效果</p>
+<ul>
+<li>CommonsChunkPlugin/SplitChunks</li>
+</ul>
+<p>把多个chunk中的公共部分提取出来，减少重复打包，缩小资源提及，可以更有效利用客户端缓存。</p>
+<p><a href="https://www.webpackjs.com/plugins/" target="_blank" rel="external">更多插件</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>文章已经有点长，但仍有很多东西没有讲到，没有深入，旨在跟大家分享webpack的用途以及大致用法，更详细内容及工具可移步<a href="https://www.webpackjs.com/" target="_blank" rel="external">官网</a>查看。</p>
+<p>但对于建立初步的认识应该足够，剩下的，各公司或者业务的特点都不一样，大家可根据具体情况进行定制，总之，工具是为我所用的，是为开发者提供便利的，而不是拦路虎，应该学会并掌握它。</p>
+<p>下篇见！~</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
