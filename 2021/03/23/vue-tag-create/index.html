@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Vue标签生成组件 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需要实现的功能："><span class="toc-text">需要实现的功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目前实现的功能："><span class="toc-text">目前实现的功能：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Vue标签生成组件
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-23</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#开源" title="开源">开源</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>今天为大家带来一个基于Vue的标签生成组件。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>文章类页面一般都需要有标签来归类和检索，就会在编辑文章时需要创建标签的功能，标签是一个个独立的文字块。</p>
+<h3 id="需要实现的功能："><a href="#需要实现的功能：" class="headerlink" title="需要实现的功能："></a>需要实现的功能：</h3><ul>
+<li>输入框</li>
+<li>某种特定的操作触发生成标签</li>
+<li>校验输入的内容是否符合标准</li>
+<li>判断标签总字数是否超出</li>
+<li>删除标签</li>
+</ul>
+<p>本文的主角便是实现这样一个功能的Vue组件——<strong>vue_tag_create</strong>。</p>
+<p>其实笔者遇到这样一个需求的时候，找过组件库，但并不完全符合要求，也找过有没有现成的包，同样体验不好，文档也不完善，索性自己写。</p>
+<h3 id="目前实现的功能："><a href="#目前实现的功能：" class="headerlink" title="目前实现的功能："></a>目前实现的功能：</h3><ul>
+<li>特殊字符校验</li>
+<li>超出字数校验</li>
+<li>添加标签</li>
+<li>删除标签</li>
+<li>“删除图标”自定义</li>
+<li>“占位文字”自定义</li>
+<li>错误提示布局选择</li>
+</ul>
+<p>使用示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> vue_tag_create -S</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> vue-tag-<span class="keyword">create</span> <span class="keyword">from</span> <span class="string">"vue_tag_create"</span></span><br><span class="line"></span><br><span class="line">&lt;vue-tag-<span class="keyword">create</span> </span><br><span class="line">  :<span class="keyword">limit</span>=<span class="string">'20'</span> </span><br><span class="line">  :inline=<span class="string">"true"</span> </span><br><span class="line">  :iconClass=<span class="string">"iconClass"</span> </span><br><span class="line">  :placeholder=<span class="string">"placeholder"</span>&gt;</span><br><span class="line">&lt;/vue-tag-<span class="keyword">create</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注：目前已可用，不必安装多余依赖，Vue3版本未验证，应该也可以。</p>
+<p>但是，还需要更多来自开发者的反馈，继续优化之后方可正式投入使用，更多功能和更好的体验等你来一起定义，欢迎<a href="https://github.com/linggan100/npm_package/tree/master/vue_tag_create" target="_blank" rel="external">vue_tag_create</a>提issue。</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
