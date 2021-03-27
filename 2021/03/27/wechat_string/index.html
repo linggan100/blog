@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="生活随笔、前端乱炖、情感沟通、职业交流、旅行笔记">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        【轻聊前端】&quot;字符串&quot;江湖 - 灵感之见
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css" type="text/css">
+    <link rel="stylesheet" href="/css/gitment.css" type="text/css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/idea.png" />
+        </div>
+        <div class="name">
+            <i>灵感_idea</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-text">String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则匹配"><span class="toc-text">正则匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="site-slogan-mobile">
+            <i> 学习让人快乐，而分享加倍 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【轻聊前端】&quot;字符串&quot;江湖
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-27</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#分享" title="分享">分享</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>现今各种框架、工具‘横行’，到处在讲原理和源码，更有跨端技术需要我们去探索，但如果基本功不好，学什么都是事倍功半，效果很不好，花费时间的同时打击自信心。此篇文章，为我所计划的【轻聊前端】系列第（六）篇，旨在系统地、逻辑性地把原生JavaScript知识分享给大家，帮助各位较为轻松地理清知识体系，更好地理解和记忆，我尽力而为，望不负期待。</p>
+</blockquote>
+<p>“所有信息都是用字符串表示的。”</p>
+<p>前面的文章里，我们说变量使得程序成为程序，那么也可以说，不论虚拟世界还是现实世界，其中传输的信息都是用字符串表示的，故而，字符串的使用及处理很重要。</p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>字符串，即JavaScript中的String类型，可以用“”或者‘’来直接定义，也可以使用String方法定义。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">str</span> = <span class="string">"我是字符串"</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="built_in">String</span>(<span class="string">"我也是字符串"</span>)</span><br></pre></td></tr></table></figure>
+<p>使用场景很多：</p>
+<ul>
+<li><p>文件类型：当判断一个文件是否属于我们要求用户上传的文件类型时，可以在获取到文件的MIME值之后，去检查是否包含我们要求的类型字符串，比如“image、video”等。</p>
+</li>
+<li><p>输入格式：当需要用户输入一个手机号，或者邮箱时，检查格式是否合规。</p>
+</li>
+<li><p>拼接字符串：很多时候，展示的信息后端不是整个返回的，而是多个结果组合，就需要拼接。</p>
+</li>
+<li><p>索引：查询字符在字符串中的位置，或者进一步判断某字符串是否以特定字符开头或结尾。</p>
+</li>
+<li><p>截取：有时后端返回数据过长，没必要展示全部，比如时间，后端返回完整的“年-月-日 时：分：秒”，前端仅展示“年-月-日”。</p>
+</li>
+</ul>
+<p>等等，这些我们接下来都会介绍，当然，会更多。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>字符串的常用属性只有一个——length，用来检测字符长度，比如我们经常会限制用户输入“名称、描述”的长度，一是出于通常情况考虑，二是内容过长会影响页面展示，就可以检测输入字符串长度然后给提示。（现在这块内容不用专门做，原生或者组件库会支持）</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><strong>获取字符</strong></p>
+<p>第一种方法：charAt()</p>
+<p>参数是字符所在的索引位。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">str</span>.charAt(<span class="number">4</span>)   <span class="comment">//"o"</span></span><br></pre></td></tr></table></figure>
+<p>第二种方法：中括号</p>
+<p>同样是用索引</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">str</span>[<span class="number">4</span>]   <span class="comment">//"o"</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符串比较</strong></p>
+<p>前面在讲数字的时候已经提及字符串的比较，因为数字也是字符的一种，当它们以字符串类型出现时，采用的就是字符串的规则。</p>
+<p>当然，运算符是一样的，只是会比较它们的ASCII码。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span> &gt; <span class="string">'b'</span>  <span class="comment">//false</span></span><br><span class="line"><span class="string">'11'</span> &gt; <span class="string">'2'</span> <span class="comment">//false</span></span><br><span class="line"><span class="string">'a'</span> &gt; <span class="string">'A'</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>哟，貌似又一个奇怪的东西混进来，第三个表达式‘a’&gt;’A’是成立的，不都是a？但其实也不奇怪，每个字符都有自己的ASCII码值，值不同，就有大小之分，哪怕是同一个字母的大小写，这样的话，在某些可忽略大小写的情况，就可以使用下面的方法先转换后比较。</p>
+<p><strong>大小写转换</strong></p>
+<p>toLowerCase()/toUpperCase()</p>
+<p>通过方法名即可看出，Lower是转换成小写，Upper是转换成大写。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"heLLo World"</span>;</span><br><span class="line"><span class="built_in">str</span>.toLowerCase();  <span class="comment">//"hello world"</span></span><br><span class="line"><span class="built_in">str</span>.toUpperCase();  <span class="comment">//"HELLO WORLD"</span></span><br></pre></td></tr></table></figure>
+<p>但你可能又要问了，我怎么知道它输的是不是字母，就直接转？如果不是字母转个什么劲儿，有没有办法判断呢？</p>
+<p><strong>查编码</strong></p>
+<p>前面说了，字符串比较的是ASCII码，要比较，首先要有，既然有，是不是可以通过字符的ASCII范围来判断呢？</p>
+<p>charCodeAt()</p>
+<p>稍微一查即可知道：A-Z的ASCII码范围是“65-90”，a-z的ASCII码范围是“97-122”。</p>
+<p>那么，只需要用输入的字符码和它们进行比较便知。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"h"</span>.charCodeAt();</span><br><span class="line">(<span class="built_in">str</span> &gt;= <span class="number">65</span> &amp;&amp; <span class="built_in">str</span> &lt;= <span class="number">90</span>) || (<span class="built_in">str</span> &gt;= <span class="number">97</span> &amp;&amp; <span class="built_in">str</span> &lt;= <span class="number">122</span>)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>既然字母可以判断，我们的母语中文是否可行？当然。</p>
+<p>字母有范围，汉字也有范围，汉字的编码都大于255，只需要检测字符串中字符是否有大于255的即可。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"灵"</span>.charCodeAt();</span><br><span class="line"><span class="built_in">str</span> &gt; <span class="number">255</span>   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>同理，数字也可，这里不再赘述。</p>
+<p>好，上面说了怎样检测是不是“字母、文字”，那如果用户啥也没输，啪啪敲几个空格呢？通常情况下空格是没有实际意义的，不需要输入，有办法知道么，知道了又怎么办？</p>
+<p><strong>是否存在</strong></p>
+<p>indexOf()/includes()</p>
+<p>当我们需要检测一个字符串中是否包含某个特定字符，可以使用这两个方法。</p>
+<p>indexOf()返回字符索引，includes()返回布尔值。我们就来检测一下空格。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="keyword">str</span>.indexOf(<span class="string">' '</span>);  <span class="comment">//5</span></span><br><span class="line"><span class="keyword">str</span>.includes(<span class="string">' '</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//检测不存在的字符</span></span><br><span class="line"><span class="keyword">str</span>.indexOf(<span class="string">'p'</span>);  <span class="comment">//-1</span></span><br><span class="line"><span class="keyword">str</span>.includes(<span class="string">'p'</span>); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>可以看出indexOf检测存在的字符会返回正确索引，不存在的返回-1，includes返回true/false。</p>
+<p>indexOf()还有一个兄弟方法，lastIndexOf()，返回字符串中某个字符最后一次出现的索引值，也说明了indexOf()返回的是字符第一次出现时的索引，中间的它们不管。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">str</span> = <span class="string">"hello world w abc w"</span>;</span><br><span class="line"><span class="keyword">str</span>.indexOf(<span class="string">'w'</span>); <span class="comment">//6</span></span><br><span class="line"><span class="keyword">str</span>.lastIndexOf(<span class="string">'w'</span>); <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
+<p>看到这些方法，是否想到上面提到的检测文件类型？通常文件的MIME类型是“image/png”形式，只需要检测“image”即可判断图片类型。</p>
+<p>好，这个方法让我们知道了有没有空格，然后怎么办？</p>
+<p><strong>替换</strong></p>
+<p>replace(“原字符”,“要用的字符”)</p>
+<p>字符串为我们提供了使用现有字符串替换原字符串的能力，如果不需要空格，用“”把它替换掉不就可以了？</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let <span class="keyword">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="keyword">str</span>.replace(<span class="string">' '</span>,<span class="string">''</span>);  <span class="comment">//"helloworld"</span></span><br></pre></td></tr></table></figure>
+<p>这感觉类似我们用编辑器或者用word时的全局替换功能，只不过是用JavaScript代码实现，在有些时候很实用，不需要找到某个位置的字符去改变，可以直接替换。</p>
+<p>但是，去除空格只是replace能够处理的情况之一，还有专门去除空格的方法。</p>
+<p><strong>去除空格</strong></p>
+<p>trim()/trimStart()/trimEnd()</p>
+<p>字符串本身具备几个去除空格的方法。<br>trim()常用来为用户输入的数据去除两端的空格。</p>
+<p>比如：</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"  hello world  "</span>;</span><br><span class="line"><span class="built_in">str</span>.trim();  <span class="comment">//"hello world"</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，字符串两边的空格被去除，但中间的没有。</p>
+<p>这个方法在一些老旧浏览器里不支持，可以回退到上面说的replace()方法进行兼容。</p>
+<p>而另两个Start和End则分别是从“左侧”或“右侧”去除空格。</p>
+<p>现在，为提高用户输入数据的合理性，trim相关方法预处理几乎成了标配。</p>
+<p>这里遇到了“左侧”和“右侧”的概念，那字符串中有没有判断最左侧或者最右侧是不是某字符的方法呢？必须。</p>
+<p><strong>以什么字符开头/结尾</strong></p>
+<p>startsWith()/endsWith()</p>
+<p>这两个方法很好理解，看字面意思便知，一个是开头，一个是结尾，直接看效果。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"深圳市aaa.png"</span>;</span><br><span class="line"><span class="built_in">str</span>.startsWith(<span class="string">"深圳市"</span>);   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">str</span>.endsWith(<span class="string">".png"</span>);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>看到这里，是不是觉得，我们判断文件类型的时候也可以用这个方法？理论上有可行性，但有两点不足：</p>
+<ul>
+<li>很多图片的文件路径都不是文件类型结尾，可能会加时间戳之类的东西，就不准了。</li>
+<li>每种文件类型都有很多扩展，如果要求很松，就要写很多映射，还可能变动，健壮性和维护性都比较差。</li>
+</ul>
+<p>所以还是根据具体场景选择更适合的方法为好。</p>
+<p><strong>头部/尾部填充</strong></p>
+<p>既然有了查询首尾的能力，也应该具备添加首尾的能力。</p>
+<p>padStart()/padEnd()</p>
+<p>在当前字符串首部或尾部填充指定的字符串， 直到达到指定的长度。</p>
+<p>有什么可能的使用场景呢，可以通过其特点观察，指定字符串就不说了，指定长度，什么时候需要指定长度？</p>
+<p>有固定位数的时候——电话号码、身份证号，邮政编码等。</p>
+<p>当我们需要给其中的某些位填上“<em>”号使其不可见，就可以先将字符串裁剪，然后在其中一个的首部或尾部填充上足够的“</em>”，达到应有的位数，然后再拼接起来即可。</p>
+<p>除此之外，还可以用另一个方法做到同样的事——repeat()。</p>
+<p>可以将指定字符串重复一定次数，即将上面的字符串截取过后，得出需要填充的位数，给repeat处理完进行拼接，也可。</p>
+<p>这里只是简单说一下可能的使用场景，实际当中或许很少用，也或许有更好的方法和更适合的场景。</p>
+<p>好，我又偷偷地引入了两类新方法——裁剪、拼接。</p>
+<p><strong>字符串裁剪</strong></p>
+<p>这是很重要也很常用的方法之一。</p>
+<p>它有几小种：</p>
+<ul>
+<li>slice()——截取位置区间。</li>
+<li>substr()——截取指定数量。</li>
+<li>substring()——返回指定下标之间的字符。</li>
+</ul>
+<p>slice()方法接收一个必选参数和一个可选参数。看示例：</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">str</span>.slice(<span class="number">5</span>);  <span class="comment">// " world"</span></span><br><span class="line"><span class="built_in">str</span>.slice(<span class="number">5</span>,<span class="number">7</span>);  <span class="comment">//" w"</span></span><br></pre></td></tr></table></figure>
+<p>如果只传一个参数，则截取参数位置到末尾的部分，传了两个，则是两参数位置之间的部分。值得注意的一点是，它支持传负值。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="function"><span class="title">slice</span><span class="params">(-<span class="number">6</span>)</span></span>  <span class="comment">// " world"</span></span><br></pre></td></tr></table></figure>
+<p>和传5的时候结果一样，可以这么记，如果传正的，就从前面数，负值从末尾开始数，截取的长度就是前后的差值。当然，需要同正同负。比如(3,5)、(-6,-2)，正着截长度为2，反着截长度为4。</p>
+<p>substr()方法从指定位置上截取指定数量的字符。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">str</span>.substr(<span class="number">5</span>);  <span class="comment">// " world"</span></span><br><span class="line"><span class="built_in">str</span>.substr(<span class="number">5</span>,<span class="number">2</span>);  <span class="comment">//" w"</span></span><br></pre></td></tr></table></figure>
+<p>可以看出，如果没有指定位数参数，它和slice()方法的效果是一样的，而指定了位数参数之后，就不同了。</p>
+<p>它跟slice还有一点不同是，因为是指定位数，就可以不同正负了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substr(-<span class="number">2</span>,<span class="number">2</span>);  <span class="comment">// "ld"</span></span><br></pre></td></tr></table></figure>
+<p>substring()方法乍一看和slice()方法干的是同一件事，有什么不同？</p>
+<ul>
+<li>截取算法</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = <span class="string">"hello world"</span>;</span><br><span class="line">str.slice(<span class="number">5</span>,<span class="number">2</span>);  <span class="comment">//""</span></span><br><span class="line">str.substring(<span class="number">5</span>,<span class="number">2</span>);  <span class="comment">//" w"</span></span><br></pre></td></tr></table></figure>
+<p>可以看出，slice方法的截取有计算顺序，当位置参数为正，从后往前截不会得到结果，同理，位置参数为负时，从前往后不会有结果。</p>
+<p>而substring纯粹返回两个下标之间的字符，无关截取顺序。</p>
+<ul>
+<li>位置算法</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let str = <span class="string">"hello world"</span>;</span><br><span class="line">str.slice(-<span class="number">2</span>,<span class="number">3</span>);  <span class="comment">//""</span></span><br><span class="line">str.slice(<span class="number">3</span>,<span class="number">20</span>);  <span class="comment">//"lo world"</span></span><br><span class="line"></span><br><span class="line">str.substring(-<span class="number">2</span>,<span class="number">3</span>);  <span class="comment">//"hel"</span></span><br><span class="line">str.substring(<span class="number">3</span>,<span class="number">20</span>);  <span class="comment">//"lo world"</span></span><br></pre></td></tr></table></figure>
+<p>可以看出，slice在位置为负时会从末尾向前计数，从而无法得到结果，substring不会反向计数，而是会当做从头开始来返回字符串。当位数超出字符串长度时二者的结果是相同的。</p>
+<p>通过以上讨论，字符串操作在某种程度上有类似效果，日常不会全都用到，需要时选择一种更适合的就好。</p>
+<p><strong>字符串拼接</strong></p>
+<p>终于来到最常见需求之一的字符串拼接了。</p>
+<p>首先想到的应该是“+”运算符，这个前面已经提过，最便利，有多少加多少，但字符串有自己的连接方法——concat()。</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let <span class="built_in">str</span> = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">str</span>.<span class="built_in">concat</span>(<span class="string">'lily'</span>,<span class="string">'and'</span>,<span class="string">'lucy'</span>);  <span class="comment">//"hellolilyandlucy"</span></span><br></pre></td></tr></table></figure>
+<p>虽然如此，多数时候还是推荐使用“+”运算符。</p>
+<p>但是，在使用较长字符串，且需要连接变量时，用另一种方法会更好——<strong>模板字符串</strong>。</p>
+<p>模板字符串是ES6之后新加入的方式。以前我们会这样写：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">'Tom'</span>;</span><br><span class="line"><span class="keyword">let</span> age = <span class="number">10</span>; </span><br><span class="line"><span class="keyword">let</span> <span class="keyword">intro</span> = <span class="string">"我的名字叫"</span> + name + <span class="string">','</span> + <span class="string">'我今年'</span> + age + <span class="string">'岁了'</span>;</span><br></pre></td></tr></table></figure>
+<p>模板字符串将字符串用反引号进行包裹，且可以解析变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> intro = <span class="string">`我的名字叫<span class="subst">$&#123;name&#125;</span>,我今年<span class="subst">$&#123;age&#125;</span>岁了`</span>;</span><br></pre></td></tr></table></figure>
+<p>相比之前有几个优点：</p>
+<ul>
+<li>书写更简洁，不需要特别注意使用加号和引号，出错概率低。</li>
+<li>空格和缩进都会保留在输出中，以前的方法需要拼接相应字符。</li>
+<li>可以在${}中使用JavaScript表达式进行计算，比如${a/b}。</li>
+</ul>
+<p><strong>转换为数组</strong></p>
+<p>split()</p>
+<p>这个方法是字符串操作中的另一个常见用法，为什么，因为很多时候，我们在页面上输入的，或者从后端拿到的数据，都会是字符串形式。</p>
+<p>像“1，3，5，6，7”或者“张三，李四，王五”</p>
+<p>如果仅仅作为文本来展示问题不大，但如果需要进行其他的处理，比如：排序、过滤、列表渲染等，字符串的能力就捉襟见肘了，而把它们转换成数组，再用数组相关的能力，就很容易了。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr = <span class="string">'1,3,5,6,7'</span>;</span><br><span class="line">numStr.<span class="built_in">split</span>(<span class="string">','</span>);  // [<span class="string">"1"</span>, <span class="string">"3"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>, <span class="string">"7"</span>]  </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numStr = <span class="string">'1-3-5-6-7'</span>;</span><br><span class="line">numStr.<span class="built_in">split</span>(<span class="string">'-'</span>);  // [<span class="string">"1"</span>, <span class="string">"3"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>, <span class="string">"7"</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>对象字符串化</strong></p>
+<p>前面讲运算符和类型的时候，说过对象也是可以转换为字符串的，什么方法呢？toString？valueOf?</p>
+<p>可以看一下：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a:<span class="string">'b'</span></span><br><span class="line">&#125;</span><br><span class="line">obj.toString()  //<span class="string">"[object Object]"</span></span><br><span class="line">obj.valueOf()  //&#123;a:<span class="string">'b'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>看起来toString完不成这个任务，valueOf凑效了，但是</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof obj.<span class="function"><span class="title">valueOf</span><span class="params">()</span></span>  <span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
+<p>它并不是字符串，仍是对象，那怎么把对象真的转换成字符串呢？</p>
+<p>JSON.stringify()</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.<span class="function"><span class="title">stringify</span><span class="params">(obj)</span></span>  <span class="comment">//"&#123;"a":"b"&#125;"</span></span><br></pre></td></tr></table></figure>
+<p>这样就真正转换为字符串类型了。</p>
+<p>除此之外，数组也是类似的。</p>
+<p>这经常发生在需要深拷贝一个对象，或者给后端发送请求时将对象转换为JSON串的情况。</p>
+<h2 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h2><p>replace()/match()/search()</p>
+<p>前面讲了很多字符串的查找、替换和裁剪操作，但在某些时候，简单的操作，或者固定的值无法满足复杂的条件，就需要用到另一个重要武器——正则。</p>
+<p>正则表达式是一种字符规则，可以用少量的书写规则匹配一大类字符的组合情况，以助更高效地解决问题。</p>
+<p>replace()示例：</p>
+<p>replace()方法上面已经用过，只是用一个字符串替换另一个字符串，但它也可以用正则来匹配替换，实现更强大的功能。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> reg</span> = /apples/gi;</span><br><span class="line"><span class="variable"><span class="keyword">var</span> str</span> = <span class="string">"Apples are round, and apples are juicy."</span>;</span><br><span class="line"><span class="variable"><span class="keyword">var</span> newstr</span> = str.replace(reg, <span class="string">"oranges"</span>);   <span class="comment">// oranges are round, and oranges are juicy.</span></span><br></pre></td></tr></table></figure>
+<p>以上代码，表示以不区分大小写的情况全局将“apples”替换为“oranges”。这里只是个简单示例，更为强大的效果，需要运用更多正则的匹配技巧，不展开。</p>
+<p>match()示例：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">str</span> = <span class="string">"123Abc"</span>;</span><br><span class="line"><span class="keyword">let</span> reg = /[A-Z]/g;</span><br><span class="line"><span class="keyword">str</span>.<span class="keyword">match</span>(reg);  <span class="comment">//["A"]</span></span><br></pre></td></tr></table></figure>
+<p>match()方法返回一个数组，而且是返回能够和正则表达式匹配的部分。这就比去检查字符的类型再输出指定位置的字符要便利得多。</p>
+<p>search()示例：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"123AbB"</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /[A-Z]/<span class="keyword">g</span>;</span><br><span class="line">str.<span class="keyword">search</span>(<span class="keyword">reg</span>)  <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>search()方法返回符合条件的第一个字符的索引，从功能上，和indexOf()方法很像，但它是用规则进行匹配，覆盖范围更大，适合检查某一类字符。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到此，关于“字符串”的讨论可以告一段落。</p>
+<p>相比“数字游戏”，“字符串”江湖的丰富程度不遑多让，甚至更复杂多样，也能看出字符串在编程领域有多重要，使用的场景多么繁多，这可能也是开发者为其准备更多处理工具的原因。</p>
+<p>内容略多，可慢慢消化，并在不断地使用过程中逐渐熟练吧~</p>
+<p>下篇见！</p>
+
+        
+            <div class="donate-container">
+    <div>
+        <img src="/img/pencil.jpg" alt="" class="i-pencil">
+    </div>
+    <div class="site-slogan">
+        <i> 学习让人快乐，而分享加倍 </i>
+    </div>
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/wechat-pay.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js" type="text/javascript"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
