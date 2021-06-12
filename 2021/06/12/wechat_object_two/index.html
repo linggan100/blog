@@ -85,7 +85,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象是什么"><span class="toc-text">对象是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象"><span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更好的创建与继承"><span class="toc-text">更好的创建与继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言内置"><span class="toc-text">语言内置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象、封装"><span class="toc-text">抽象、封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class的细节"><span class="toc-text">class的细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性的细节"><span class="toc-text">属性的细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可计算属性"><span class="toc-text">可计算属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作干涉"><span class="toc-text">操作干涉</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代理和反射"><span class="toc-text">代理和反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的操作"><span class="toc-text">对象的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
 </div>
     
 </div>
@@ -134,130 +134,134 @@
     </div>
     <div class="post-content no-indent">
         <blockquote>
-<p>现今各种框架、工具‘横行’，到处在讲原理和源码，更有跨端技术需要我们去探索，但如果基本功不好，学什么都是事倍功半，效果很不好，花费时间的同时打击自信心。此篇文章，为我所计划的【轻聊前端】系列第（七）篇，旨在系统地、逻辑性地把原生JavaScript知识分享给大家，帮助各位较为轻松地理清知识体系，更好地理解和记忆，我尽力而为，望不负期待。</p>
+<p>现今各种框架、工具‘横行’，到处在讲原理和源码，更有跨端技术需要我们去探索，但如果基本功不好，学什么都是事倍功半，效果很不好，花费时间的同时打击自信心。此篇文章，为我所计划的【轻聊前端】系列第（八）篇，旨在系统地、逻辑性地把原生JavaScript知识分享给大家，帮助各位较为轻松地理清知识体系，更好地理解和记忆，我尽力而为，望不负期待。</p>
 </blockquote>
-<p>“一切”都是对象，那对象有什么，又能做什么？</p>
-<p>有些话题总是经久不衰，比如：原型链、this、深/浅拷贝，这些都跟对象有关，而对象的故事远不止于此，我们就来适当聊一聊。</p>
-<h2 id="对象是什么"><a href="#对象是什么" class="headerlink" title="对象是什么"></a>对象是什么</h2><p>它是一组属性和方法的集合，属性——“有什么”，方法——“能干什么”。</p>
-<p>使用场景大致分为两种：</p>
-<p><strong>语言层次</strong>，JavaScript的运行依赖对象系统，其中的每一种数据类型同时是一类对象，有着自己的属性和方法，供编写程序时使用。</p>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">str</span>.length  <span class="comment">//11</span></span><br><span class="line"><span class="built_in">str</span>.substr(<span class="number">0</span>,<span class="number">5</span>) <span class="comment">//"hello"</span></span><br></pre></td></tr></table></figure>
-<p><strong>业务层次</strong>：根据业务类型不同，我们可以从具体需求中抽象出多个角色，每种角色都可以封装成一个对象，有自己的属性和方法。</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> teacher = &#123;</span><br><span class="line">    name:<span class="string">"莉莉"</span>,</span><br><span class="line">    age:<span class="number">30</span>,</span><br><span class="line">    work:<span class="string">"老师"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>对象需要创建才能用，创建对象的方式有多种，接下来我们逐一介绍，讲一下前世今生。</p>
+<p>上一篇我们讲如何创建对象，但不是有了对象就万事大吉，对象无处不在，要懂得如何爱她，不对，使用它~</p>
+<p>对象本身无须创建，JavaScript就有对象，它们是面向对象编程的基石。</p>
+<p>重点是有了对象之后，能做什么？简列如下：</p>
 <ul>
-<li>本尊</li>
+<li>通过不需定义的，从Object或宿主对象继承而来的方法，操作自定义的对象/值</li>
+<li>使用自定义对象封装从业务层面抽象出来的角色</li>
+<li>利用对象特性形成解决某问题的“设计模式”</li>
+<li>从语言层面改变对象的表现和行为<br>等等</li>
 </ul>
-<p>聊类型的时候，我们就见过对象的本尊——Object。使用new运算符就可以创建一个对象，创建之后可以为其添加属性和方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">'idea'</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.work = <span class="string">'搬砖'</span>;</span><br><span class="line">person.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我会跑"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有了对象，就能在需要的时候使用它们，比如，前端请求后端传递过来的数据通常是对象形式，就可以取到它的属性值放到页面上展示，当然，前端可以创建对象来存储某种意义上的个体，进行传递或者其他操作。</p>
-<p>但这种创建形式不够简洁，写了很多重复的对象名称，一种更加直观也更常用的方法，叫”对象字面量“：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="string">name :</span><span class="string">'idea'</span>,</span><br><span class="line">    <span class="string">age :</span><span class="number">18</span>,</span><br><span class="line">    <span class="string">work :</span><span class="string">'搬砖'</span>,</span><br><span class="line">    run()&#123;</span><br><span class="line">        console.log(<span class="string">"我会跑"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>书写简洁对工程师的开发体验也是重要的，所以，这种写法在开发中很常见。</p>
-<p>单这么看的话，对象就是个容器，不复杂，但是，这两种方法都有一个缺点：<strong>创建具有同样接口的多个对象需要重复编写很多代码。换句话说，只能一个个地生创建，没有实现封装、复用、继承</strong>。</p>
-<h2 id="更好的创建与继承"><a href="#更好的创建与继承" class="headerlink" title="更好的创建与继承"></a>更好的创建与继承</h2><ul>
-<li>工厂模式</li>
-</ul>
-<p>谈到封装和复用，我们可以十分自然地想到函数，如果能够用一个函数来封装整个创建对象的过程，类似一个小的对象“加工厂”，就解决了上面说的问题，这就是“工厂模式”的由来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,work</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    obj.work = work;</span><br><span class="line">    obj.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'会跑'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person1 = createPerson(<span class="string">"张三"</span>,<span class="number">16</span>,<span class="string">"程序员"</span>)</span><br><span class="line"><span class="keyword">let</span> person2 = createPerson(<span class="string">"李四"</span>,<span class="number">18</span>,<span class="string">"产品经理"</span>)</span><br></pre></td></tr></table></figure>
-<p>这个方案解决了类似对象创建的重复书写问题，是个不错的方案，但它有点不完整的地方，即“仅仅”封装了行为，创建出的对象和来源并没有什么关系，即person1、person2和createPerson是没有关系的。</p>
-<p>很多时候建立它们之间的联系都是重要的，比如继承属性和方法，所以可以继续改良。</p>
+<p>挑重点来看。</p>
+<h2 id="语言内置"><a href="#语言内置" class="headerlink" title="语言内置"></a>语言内置</h2><p>把任何一种类型的值转成字符串，可使用toString()方法。</p>
+<p>想获取字符串或数组的长度，可访问length属性。</p>
+<p>把其他值转为浮点型或整型，可用parseFloat()/parseInt()。</p>
+<p>这些均不需要开发者定义，直接使用。</p>
+<p>除此之外，还有一些特定类型的方法，比如：数字处理方面的Math对象，日期处理方面的Date对象，都是常用的内置对象，都有丰富的方法。</p>
+<h2 id="抽象、封装"><a href="#抽象、封装" class="headerlink" title="抽象、封装"></a>抽象、封装</h2><p>抽象，跟具体相对，跟实物相对，我们常会看到拿人举例，比如：姓名、性别，但这样还不是特别利于理解，很少有业务需要定义人，大多都是更具体的角色，比如：普通用户、Vip用户、学生、老师、商家、买家等，也不定是跟人相关，比如：商品、班级。只要是一个具备独立意义的角色，都可以将其封装起来，至于怎么用，用属性还是方法，按需即可。</p>
+<p>这个抽象、封装的过程，就是对象的“创建”。</p>
+<p>上篇文章，我们已经简要介绍了几种创建对象实例的方式，但最后一种class的方式并未深究，现在就来看看class的一些细节。</p>
+<h2 id="class的细节"><a href="#class的细节" class="headerlink" title="class的细节"></a>class的细节</h2><p>首先，我们把完整定义的代码再拿过来：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="constructor"><span class="keyword">constructor</span>(name,age,work)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.work = work</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">get</span> getName()&#123;     </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> setAge(newAge)&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = newAge;</span><br><span class="line">    &#125;</span><br><span class="line">    run()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"会跑"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> sayName()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"say"</span>+<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以像这样创建实例：</span></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person(<span class="string">"idea"</span>,<span class="number">18</span>,<span class="string">"程序员"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以这样继承</span></span><br><span class="line"><span class="keyword">class</span> Man extends Person&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> man1 = <span class="keyword">new</span> Man(<span class="string">"idea"</span>,<span class="number">18</span>,<span class="string">"男程序员"</span>);</span><br></pre></td></tr></table></figure>
+<p>它有什么细节？</p>
+<p><strong>和构造函数的区别</strong></p>
 <ul>
-<li>构造函数</li>
+<li>函数表达式有提升，class没有</li>
+<li>class中的代码默认以严格模式执行</li>
+<li>在使用new创建类的实例时，constructor就是用来实例化的函数，其过程与使用构造函数一致</li>
+<li>constructor参数可选，括号可选</li>
+<li>构造函数如果不使用new，就是普通的函数调用，类不能直接使用，会报错</li>
+<li>使用typeof检测class，它依然是function</li>
+<li>不能在类中添加原始值或对象作为数据，但可以在类外部进行添加</li>
 </ul>
-<p>什么是构造函数——<strong>用于构造某种对象实例的函数</strong>。</p>
-<p>ECMAScript中的构造函数是用于创建特定类型对象的，就像我们可以用 new String()创建字符串，new Number()创建数字。</p>
-<p>String()和Number()是内置函数，这里我们讨论的是自定义的构造函数。</p>
-<p>它的写法和工厂模式相似，却有着本质的不同，譬如上面的对象我们可以这样写：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,work</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.work = work;</span><br><span class="line">    <span class="keyword">this</span>.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'会跑'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> idea = <span class="keyword">new</span> Person(<span class="string">'灵感'</span>,<span class="number">18</span>,<span class="string">'前端砖工'</span>);</span><br><span class="line">idea.name <span class="comment">//'灵感'</span></span><br><span class="line">idea.age  <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
-<p>它有如下特点：</p>
+<p><strong>class继承</strong></p>
+<p>前面提到过class可使用extends实现继承，继承而来的类叫“派生类”。</p>
+<p>它可以继承任何拥有[[Construct]]和原型的对象，所以，它不仅可以继承类，还可以继承构造函数。即下面两种写法都是合法的，由此也做到了向后兼容。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span>&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engineer</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Person</span>&#123;</span>&#125;</span><br><span class="line"></span><br><span class="line">function <span class="type">Person</span>()&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engineer</span> <span class="title">Person</span>&#123;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>派生类都会通过原型链访问到类和原型上定义的方法。</p>
+<p>派生类的方法可以通过super关键字引用它们的原型。</p>
+<p>使用super的几个规则：</p>
 <ul>
-<li>首字母大写，更易与普通函数作区分</li>
-<li>没有显式创建对象，属性和方法直接赋值给this</li>
-<li>没有return</li>
+<li>派生类的构造函数必须使用super()调用父类构造函数，否则不能在构造函数中使用this关键字。这是为了确保父类先于子类得到初始化。</li>
+<li>如果没有在子类中定义构造函数，解释器会自动创建。这个隐式定义的构造函数会取得传给它的值，然后把这些值再传给super()。</li>
+<li>在静态方法中可以通过super调用继承的类上定义的静态方法。</li>
+<li>不能单独使用super</li>
 </ul>
-<p>那么本质不同是什么？这就要了解构造的过程，具体如下：</p>
-<p>（1）在内存中创建一个新对象。</p>
-<p>（2）这个新对象内部的[[Prototype]]特性被赋值为构造函数的prototype属性。</p>
-<p>（3）构造函数内部的this被赋值为这个新对象。</p>
-<p>（4）执行内部代码，给新对象添加属性。</p>
-<p>（5）如果构造函数返回非空对象，则返回该对象；否则，返回刚创建的新对象。</p>
-<p>可以看出，它不仅看起来和工厂模式像，背后做的事情也像，创建了一个新对象，添加属性和方法，再把这个对象返回。一点不同是在第2步，<strong>新对象的[[Prototype]]特性被赋值为构造函数的prototype属性</strong>，这就为实例和构造函数建立了联系。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">idea<span class="class">.constructor</span> == Person  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>所以，使用构造函数模式创建对象实例，既起到封装、复用的效果，又能为实例和构造函数之间建立联系。</p>
-<p>但是，并不代表构造函数是完美的，我们发现构造函数里有方法，方法本身是函数，函数也是对象，这样就等同于，每次创建一个实例的时候，都新建了一个Function实例。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let lisi = new <span class="function"><span class="title">Person</span><span class="params">(<span class="string">"李四"</span>,<span class="number">18</span>,<span class="string">"产品经理"</span>)</span></span></span><br><span class="line"></span><br><span class="line">lisi<span class="class">.run</span> == idea<span class="class">.run</span>  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<p>两个实例是相互独立的，但其实它们做的是同一件事，这就有些浪费资源。</p>
-<p>怎么办？有一种方法是，把函数定义放在构造函数的外部，你是new的时候发生的事情，我把你放在new操作的外部，不参与不就行了？</p>
-<p>从效果上是可行的，但有几点弊端：</p>
+<p>class已经成为现在定义对象和创建实例的主流方式，知道了这些细节，再多加练习，必会游刃有余。</p>
+<h2 id="属性的细节"><a href="#属性的细节" class="headerlink" title="属性的细节"></a>属性的细节</h2><h3 id="可计算属性"><a href="#可计算属性" class="headerlink" title="可计算属性"></a>可计算属性</h3><p>前面讨论的所有对象，属性都是固定的，比如：name、age。但有时候可能并不固定，是个变量。</p>
+<p>引入可计算属性之前，如果想使用变量的值作为属性，必须先声明对象，然后使用中括号语法来添加属性。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nameKey = <span class="string">"name"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person[nameKey] = <span class="string">'idea'</span>;</span><br></pre></td></tr></table></figure>
+<p>有了可计算属性就可以这样写：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    [nameKey] :<span class="string">'idea'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>区别就在于能不能在字面量中使用，中括号包围的对象属性键告诉运行时将其作为JavaScript表达式而不是字符串。</p>
+<p>既然是表达式，就不仅仅是变量这么简单，还可以更复杂，比如调用函数，把返回结果作为键等，具体不赘述。</p>
+<h3 id="操作干涉"><a href="#操作干涉" class="headerlink" title="操作干涉"></a>操作干涉</h3><p>不论是访问属性，调用方法，还是继承，我们都是在使用对象，在多数场景中，这就够了，那是否可以在更底层去做点文章呢？有没有应用场景？</p>
+<p>诚然，的确不常用，却能实现一些“奇妙”的效果，defineProperty便是其中之一，它因应用于Vue2.x的数据响应而受到更多关注。</p>
+<p><strong>defineProperty</strong></p>
+<p>通过字面理解，“定义属性”，就知道它可以用来定义已知对象的属性。</p>
+<p>它接收三个参数“要添加属性的对象、属性的名称和一个描述符对象”，仍以上面的对象为例。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;&#125;</span><br><span class="line">Object.defineProperty(person,<span class="string">'name'</span>,&#123;</span><br><span class="line">    writable:<span class="keyword">true</span>,</span><br><span class="line">    <span class="keyword">value</span>:<span class="string">'idea'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>对象是person，定义了一个可写，值为“idea”的属性name。</p>
+<p>不急着往下看，就看看这个writable，如果设置为false会是什么效果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">'name'</span>,&#123;</span><br><span class="line">    writable:<span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line">person.name = <span class="string">"lili"</span></span><br><span class="line"><span class="built_in">console</span>.log(person.name)  <span class="comment">//’idea‘</span></span><br></pre></td></tr></table></figure>
+<p>非严格模式下，writable为false的属性，赋值行为会被忽略，而严格模式下会直接报错。</p>
+<p>那么自然会想到，当用 new 运算或者字面量形式创建的对象，并非没有对属性的特性进行描述，而是有相应的默认值。</p>
+<p>像这种跟数据属性相关的，可称为“数据属性”，或者它更像一种配置。</p>
+<p><strong>配置</strong></p>
+<p>除了 writable 和 value，还有：</p>
 <ul>
-<li>污染全局作用域</li>
-<li>如果需要多个方法，就要在全局定义多个方法，变得较混乱</li>
-<li>这些方法只是跟单一对象相关，跟其他都无关，归属不清晰</li>
+<li>Configurable：是否可以通过delete删除并重新定义，是否可以修改它的特性，以及是否可以把它改为访问器属性。</li>
+<li>Enumerable：是否可以通过for-in循环返回。</li>
 </ul>
-<p>综上，这个方案是得不偿失的，不建议采用，那有没有更好的方式？</p>
-<p>不急，我们先来看另外一种。</p>
-<p><strong>原型模式</strong></p>
-<p>“每个函数都会创建一个prototype属性”。知道这一点，是理解原型模式的前提。</p>
-<p>prototype是个对象，对象中包含用特定引用类型创建的实例所共享的属性和方法。</p>
-<p>实际上，这个对象就是通过调用构造函数创建的对象的原型。所以，可以在它上面定义的属性和方法，从而被对象实例共享。看代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">person.prototype.name = <span class="string">'idea'</span>;</span><br><span class="line">person.prototype.age = <span class="string">'18'</span>;</span><br><span class="line">person.prototype.work = <span class="string">'程序员'</span>;</span><br><span class="line">person.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>这样以来，当我们想创建对象的时候，可以：</p>
-<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person<span class="number">1</span> = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">let</span> person<span class="number">2</span> = <span class="keyword">new</span> Person();</span><br><span class="line">person<span class="number">1</span>.run == person<span class="number">2</span>.run  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>方法run得到共享。</p>
-<p>我们来稍微探讨一下这个效果是怎么产生的。</p>
-<p>前面说过，只要创建一个函数，就会按照特定的规则为这个函数创建一个prototype属性。默认情况下，所有原型对象自动获得一个名为constructor的属性，指回与之关联的构造函数。对前面的例子而言，Person.prototype.constructor指向Person。然后，可能会给原型对象添加其他属性和方法。</p>
-<p>每次创建新实例，实例的内部[[Prototype]]指针就会被赋值为构造函数的原型对象。需要指出的是，并没有访问[[Prototype]]特性的标准方式，但多数浏览器会在每个对象上暴露<strong>proto</strong>属性，通过这个属性可以访问对象的原型。实例便是通过<strong>proto</strong>链接到原型对象，同一个构造函数的不同实例，通过<strong>proto</strong>共享原型对象，而Person.prototype指向原型对象，所以，定义在原型对象上的属性和方法就得到了共享。</p>
-<p>在这个基础之上，Object类型还有一个setPrototypeOf()方法，可以向实例的[[Prototype]]写入新值。这样就可以重写一个对象的原型继承关系.</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    age : <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = &#123;</span><br><span class="line">    name:<span class="string">'idea'</span></span><br><span class="line">&#125;</span><br><span class="line">Object.setPrototypeOf(person1,person)</span><br><span class="line">person1 // &#123;name: <span class="string">"idea"</span>&#125;</span><br><span class="line">person1.age  //<span class="number">18</span></span><br></pre></td></tr></table></figure>
-<p>这个方法接受一个目标对象和一个原型对象，将二者建立联系，使得目标对象继承原型对象的属性。</p>
-<p>但是，修改继承关系是个风险稍高（或者比较损耗性能）的操作，毕竟你不知道会有多少对象与之关联，如果的确需要在创建对象实例的时候为其指定原型这样的操作，有另一种方法——Object.create()。</p>
-<p>Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    age : <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span>  person1 = <span class="built_in">Object</span>.create(person); </span><br><span class="line">person1.age  <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
-<p>由此，还可以了解一个叫“干净”的空对象的东西。我们建立空对象可用这些方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line"><span class="keyword">let</span> obj = <span class="built_in">Object</span>.Create(<span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
-<p>如果你不是对对象完全陌生，应该会知道，通过前面两种方式创建的对象，虽然看起来没有添加属性和方法，但它们有继承自Object的属性和方法，而第三种，它没有属性，也没有方法，所以称作“干净”的空对象。</p>
-<p>以上这些是我们讨论“原型模式”延伸出的小知识点，重点仍在模式本身。</p>
-<p>“原型模式”看似很棒，也不是没有问题。首先，它弱化了向构造函数传参的能力，所有实例默认都是相同的属性值，这显然造成不便，但这不是原型的最大问题。最大问题源自它的共享特性，所谓”成也萧何，败也萧何“，共享对函数来说比较合适，对原始值属性也能接受，如果涉及引用值，问题就暴露了。</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">function</span> <span class="name">Person</span>()&#123;&#125;</span><br><span class="line"><span class="name">Person</span>.<span class="atom">prototype</span> = &#123;</span><br><span class="line">    <span class="atom">bag</span>:[<span class="string">"thinkPad"</span>,<span class="string">"iphone12"</span>,<span class="string">"ipad"</span>,<span class="string">"mac"</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="atom">let</span> <span class="atom">person1</span> = <span class="atom">new</span> <span class="name">Person</span>();</span><br><span class="line"><span class="atom">let</span> <span class="atom">person2</span> = <span class="atom">new</span> <span class="name">Person</span>();</span><br><span class="line"><span class="atom">person1</span>.<span class="atom">bag</span> //  [<span class="string">"thinkPad"</span>, <span class="string">"iphone12"</span>, <span class="string">"ipad"</span>, <span class="string">"mac"</span>]</span><br><span class="line"><span class="atom">person2</span>.<span class="atom">bag</span> //  [<span class="string">"thinkPad"</span>, <span class="string">"iphone12"</span>, <span class="string">"ipad"</span>, <span class="string">"mac"</span>]</span><br><span class="line"></span><br><span class="line">//修改<span class="atom">person1</span></span><br><span class="line"><span class="atom">person1</span>.<span class="atom">bag</span>.<span class="atom">pop</span>()  </span><br><span class="line"><span class="atom">person1</span>.<span class="atom">bag</span>   //  [<span class="string">"thinkPad"</span>, <span class="string">"iphone12"</span>, <span class="string">"ipad"</span>]</span><br><span class="line"><span class="atom">person2</span>.<span class="atom">bag</span>   //  [<span class="string">"thinkPad"</span>, <span class="string">"iphone12"</span>, <span class="string">"ipad"</span>]</span><br></pre></td></tr></table></figure>
-<p>前面讲引用类型的时候说过，它存的是地址，而不是值本身，这里person1和person2的背包指向的是同一个地址，改一方，另一方也跟着改变，但这里是需要个性化处理的，毕竟，不是每个人都能用上mac…</p>
-<p>由于这个弊端的存在，原型模式通常不会单独使用，就有了下面这种模式。</p>
-<p><strong>组合继承模式</strong></p>
-<p>通过上面的讲述，我们知道，构造函数的成员都是私有的，原型模式的成员都是共享的，既然有些成员需要共享，有些成员需要私有，将二者组合起来不就可以了？</p>
-<p>我们可以把上面的代码改成这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,work,bag</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.work = work;</span><br><span class="line">    <span class="keyword">this</span>.bag = bag;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'会跑'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person(<span class="string">"idea"</span>,<span class="number">18</span>,<span class="string">"程序员"</span>,[<span class="string">"thinkPad"</span>]);</span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person(<span class="string">"lili"</span>,<span class="number">16</span>,<span class="string">"产品经理"</span>,[<span class="string">"mac"</span>]) </span><br><span class="line"></span><br><span class="line">person1.run()  <span class="comment">// idea会跑</span></span><br><span class="line">person2.run()  <span class="comment">// lili会跑</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//有一天idea有钱了（虽然不知道哪一天）</span></span><br><span class="line">person1.bag.push(<span class="string">"mac"</span>)</span><br><span class="line">person1.bag  <span class="comment">//  ["thinkPad", "mac"]</span></span><br><span class="line">person2.bag  <span class="comment">//  ["mac"]</span></span><br></pre></td></tr></table></figure>
-<p>这种方法规避了构造函数和原型模式的不足，同时利用了各自的优点，曾经成为很流行的方式。</p>
-<p>但ES6之后，有了更好用的替代方法。</p>
-<p><strong>Class</strong></p>
-<p>在正统面向对象语言中都有类（class）的概念，类是一个模板，它描述一类对象的行为和状态。即使用类可以创建很多同类对象。</p>
-<p>ES6之前的JavaScript中是没有类的，只能通过其他方法来模拟，比如前面介绍的构造函数，或者组合继承。ES6之后推出了Class这种创建类的新工具。先看类的定义：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> Person = <span class="class"><span class="keyword">class</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>可以直接定义，也可以使用赋值表达式，这看起来是一种全新的方式，但大家应该在很多地方看到过，说class只是一种语法糖。什么是语法糖？语法层面的不同，用起来更舒服、更自然。它背后仍是构造函数与原型的组合模式。</p>
-<p>类可以包含构造函数方法、实例方法、getter函数、setter函数和静态类方法，但都不是必需的。正像上面的示例那样，空的类定义照样有效。默认情况下，类中的代码都在严格模式下执行。</p>
-<p>下面就定义一个完整的类来认识它。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="constructor"><span class="keyword">constructor</span>(name,age,work)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.work = work</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">get</span> getName()&#123;     </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> setAge(newAge)&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = newAge;</span><br><span class="line">    &#125;</span><br><span class="line">    run()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"会跑"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> sayName()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"say"</span>+<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后可以像这样定义一个实例：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let person1 = new <span class="function"><span class="title">Person</span><span class="params">(<span class="string">"idea"</span>,<span class="number">18</span>,<span class="string">"程序员"</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>通过定义类，可以非常方便地定义应该存在于实例上的成员、应该存在于原型上的成员，以及应该存在于类本身的成员。</p>
-<p><strong>实例成员</strong></p>
-<p>每次通过new调用类时，都会执行类构造函数。在函数内部，可以为新创建的实例添加“自有”属性。即上面Person类的constructor做的事。</p>
-<p>每个实例都对应一个唯一的成员对象，这意味着所有成员都不会在原型上共享。</p>
-<p><strong>原型方法与访问器</strong></p>
-<p>为了在实例间共享方法，类定义语法把在类块中定义的方法作为原型方法。比如person中的run方法。</p>
-<p>类定义也支持获取和设置访问器。语法与行为跟普通对象一样。就像上面的getName和setAge。它们分别会在访问实例属性或者修改实例属性时被调用。</p>
-<p><strong>静态类</strong></p>
-<p>使用static关键字作为前缀。在静态成员中，this引用类自身。通常用于执行不特定于实例的操作，也不要求存在类的实例。</p>
-<p>比如以上代码的sayName方法：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person1.<span class="function"><span class="title">sayName</span><span class="params">()</span></span>  <span class="comment">//Uncaught TypeError: person1.sayName is not a function</span></span><br><span class="line">Person.<span class="function"><span class="title">sayName</span><span class="params">()</span></span>  <span class="comment">//sayPerson</span></span><br></pre></td></tr></table></figure>
-<p>使用实例无法调用静态方法，而类本身可以，且返回的this是类本身，name为Person。</p>
-<p><strong>类的继承</strong></p>
-<p>继承很常用，可以省很多重复的定义，比如，上面我们定义了人，那么可以在人的基础上，再定义一个男人，这样，男人是可以继承人的属性和方法的。直接看代码：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Person</span>&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let man1 = <span class="keyword">new</span> <span class="type">Man</span>(<span class="string">"idea"</span>,<span class="number">18</span>,<span class="string">"男程序员"</span>);</span><br><span class="line">man1.work   <span class="comment">//"男程序员"</span></span><br><span class="line">man instanceof <span class="type">Person</span>   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>可以看出，Man所创建的实例，继承了Person中的属性，且Person存在于man1的原型链上。</p>
-<p>当然，类还有其他一些细节，这里不再赘述，它已经成为现在创建对象和实例最常用的方式，且在流行框架React当中应用广泛。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此文标题是”对象“之前，因为对象是个很大的话题，篇幅所限，一篇或者两篇文章可能都是说不完的，所以分开说，以减轻大家的阅读负担。</p>
-<p>本文仅介绍了从对象/类不存在到存在的这个环节，曾有过什么方法，现在主要使用什么方法，以及它们的特点，还有一些细节和对象API我们留到”之后“再详细介绍。</p>
-<p>祝学习进步，一起加油。</p>
+<p>上面说到默认值，这也是值得注意的：以常规方法定义对象，“writable、Configurable、Enumerable”默认都为true，而使用defineProperty来添加的时候，默认的值是false。</p>
+<p>看完“数据属性”，再看看“访问器属性”。</p>
+<p><strong>getter/setter</strong></p>
+<p>访问器属性不包含数据值。而是包含一个获取（getter）函数和一个设置（setter）函数，不过这两个函数不是必需的。</p>
+<p>在读取访问器属性时，会调用getter函数，返回一个有效的值。在写入访问器属性时，会调用setter函数并传入新值，这个函数必须决定对数据做出什么修改。</p>
+<p>访问器属性依然有四个特性，其中“Configurable、Enumerable”同数据属性一样，不再赘述，就说下<br>getter 和 setter。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    age_:<span class="number">16</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">'age'</span>,&#123;</span><br><span class="line">    <span class="keyword">get</span>()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.age_)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span>(newAge)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.age &gt; <span class="number">18</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"可正常访问"</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"未成年，不可访问"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">person.age <span class="comment">//16</span></span><br><span class="line">person.age = <span class="number">10</span> <span class="comment">// '未成年，不可访问'</span></span><br></pre></td></tr></table></figure>
+<p>可以看出，在访问对象属性的时候，进了get方法，打印了年龄数据，设置年龄值的时候，进入了set方法，因为age小于18，输出了“未成年，不可访问”。</p>
+<p>通常情况下，这两个方法是不需要用到的，但既然可以进入到访问或赋值的环节，就能在其中加一些额外的操作来达到自己的目的，比如监听数据变化渲染内容等。</p>
+<p>以上便是关于defineProperty对对象的一些操作了。</p>
+<h2 id="代理和反射"><a href="#代理和反射" class="headerlink" title="代理和反射"></a>代理和反射</h2><p>ES6之后，又有了一种更加强大的对对象进行“干涉”的方法，即代理。</p>
+<p>什么是代理，<strong>代理为开发者提供了拦截并向基本操作嵌入额外行为的能力</strong>。</p>
+<p>乍一听，跟defineProperty类似，但不同之处在于，它不是在对象上直接做文章，而是为想要操作的对象，即“目标对象”，指定了一个代理对象。</p>
+<p>目标对象既可以直接被操作，也可以通过代理来操作，默认情况下，在代理对象上执行的所有操作都会无障碍地传播到目标对象。因此，在任何可以使用目标对象的地方，都可以通过同样的方式来使用与之关联的代理对象。<strong>在对目标对象的各种操作影响目标对象之前，可以在代理对象中对这些操作加以控制</strong>。</p>
+<p>代理是使用Proxy构造函数创建的。接收两个参数：目标对象和处理程序对象。缺少其中任何一个参数都会抛出TypeError。</p>
+<p>使用代理的主要目的是可以定义捕获器，也就是基本操作的拦截器。简单示例如下：</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">target</span> = &#123;</span><br><span class="line">    name:'idea'</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">handler</span> = &#123;</span><br><span class="line">    get()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'hello idea'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> proxy = <span class="keyword">new</span> Proxy(<span class="keyword">target</span>,<span class="keyword">handler</span>)</span><br><span class="line"></span><br><span class="line">console.log(<span class="keyword">target</span>.name)  <span class="comment">//'idea'</span></span><br><span class="line">console.log(proxy.name)   <span class="comment">//'hello idea'</span></span><br></pre></td></tr></table></figure>
+<p>所有捕获器都可以访问相应的参数，基于这些参数可以改变被捕获方法的原始行为。</p>
+<p>我们将上面的代理对象改造一下。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const handler = &#123;</span><br><span class="line">    //trapTarget : 目标对象</span><br><span class="line">    //<span class="keyword">property</span><span class="title"> </span>: 属性</span><br><span class="line">    //recevier : 代理对象</span><br><span class="line">    get(trapTarget,<span class="keyword">property</span><span class="title"></span>,recevier)&#123;</span><br><span class="line">        return trapTarget[<span class="keyword">property</span><span class="title"></span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(proxy.name) //'idea'</span><br></pre></td></tr></table></figure>
+<p>可以看到，我们在捕获器中返回了目标对象的属性，这就改变了代理对象的返回值，这只是一种现象，但它的强大，正是基于此可添加的“自定义行为”，或者“重建”。</p>
+<p>所有捕获器都可以基于自己的参数重建原始操作，但并非所有捕获器行为都像get()那么简单。因此，通过手动写码的想法是不现实的。实际上，开发者并不需要手动重建原始行为，而是可以通过调用全局Reflect对象上（封装了原始行为）的同名方法来轻松重建。</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">    <span class="built_in">get</span>(trapTarget,property,recevier)&#123;</span><br><span class="line">        <span class="keyword">return</span> Reflect.<span class="built_in">get</span>(...arguments)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.<span class="built_in">log</span>(proxy.name) <span class="comment">//idea</span></span><br></pre></td></tr></table></figure>
+<p>基于上面那段代码，把return改了一下，效果是一样的。</p>
+<p>再进一步，甚至可以写成这样：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">    <span class="keyword">get</span>:Reflect.<span class="keyword">get</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最“过分”的，如果想创建一个可以捕获所有方法，然后将每个方法转发给对应反射API的空代理，甚至不需要定义处理程序对象。这样写就可以了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,<span class="built_in">Reflect</span>)</span><br></pre></td></tr></table></figure>
+<p>所以，代理和反射通常是成对出现的，也可以见识到它们能够发挥的作用了。</p>
+<h2 id="对象的操作"><a href="#对象的操作" class="headerlink" title="对象的操作"></a>对象的操作</h2><p>相比创建和继承，或者很少涉及的底层干预，实际编码中更高频的是对对象的操作。</p>
+<p>比如：访问属性、调用方法、迭代、拷贝对象、合并对象等。先简单介绍几个。</p>
+<p><strong>遍历</strong></p>
+<p>方法有多种，但目的无非就三种，键、值、键值对。</p>
+<p>他们对应的方法是Object.keys(),Object.values(),Object.entries()</p>
+<p>相应的，它们会返回一个由给定对象的自身可枚举属性、值、键值对组成的数组，然后可进行迭代操作。</p>
+<p><strong>解构</strong></p>
+<p>过去，如果我们想拿到对象的某个属性赋给另一个变量，需要这么干。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mike = &#123;</span><br><span class="line">    name: <span class="string">'mike'</span>,</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> name = mike.name</span><br><span class="line"><span class="keyword">let</span> age = mike.age</span><br></pre></td></tr></table></figure>
+<p>现在只需要这么干。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let &#123;name, age&#125; = <span class="keyword">node</span><span class="identifier"></span><span class="title">;</span></span><br></pre></td></tr></table></figure>
+<p>解构时，变量名可以不同，可以给默认值，也可以嵌套解构等，这里不赘述。</p>
+<p><strong>合并</strong></p>
+<p>合并另个对象可以怎么做？可以遍历赋值，但不够简洁。现在可以这么做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> target = &#123;&#125;</span><br><span class="line"><span class="built_in">let</span> <span class="built_in">source</span> = &#123;&#125;</span><br><span class="line">Object.assign(target, <span class="built_in">source</span>);</span><br></pre></td></tr></table></figure>
+<p>还可以使用展开运算符。<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="literal">result</span> = <span class="decorator">&#123;...target,...source&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>冻结、封闭</strong></p>
+<p>ES6之后还添加了一些方法用来保护对象不被不明行为或恶意破坏。</p>
+<p>Object.seal()</p>
+<p>封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。</p>
+<p>属性不可配置的效果就是属性不可删除，以及一个数据属性不能被重新定义成为访问器属性，或者反之。但属性的值仍然可以修改。</p>
+<p>Object.freeze() </p>
+<p>可以冻结一个对象。一个被冻结的对象再也不能被修改；不能添加新的属性，不能删除已有属性，不能修改已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。</p>
+<p>可以看出，封闭只是在对象创建完毕之后对添加新属性以及改变配置进行限制，冻结则限制得更彻底，创建完不能以任何方式进行修改，只能访问。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，有“对象”之前和之后的讨论就告一段落。</p>
+<p>回过头，我们从第三篇文就在聊对象，到现在看，对象是什么呢？是概念？是方法？是思想？又或是数据的载体？似乎从哪个层面去理解都没问题，正因为这样，它既简单，又复杂，既强大，又难以捉摸。</p>
+<p>关于它的话题还远未聊完，待时机合适我们继续探讨。</p>
 
         
             <div class="donate-container">
